@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Client Reviews — V7Lancers Technopark Pvt Ltd</title>
+<meta name="description" content="Read what V7Lancers clients say about our websites, software, mobile apps, and AI products — 98% client retention across India and globally."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">V7<span>Lancers</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+    <a href="products.html">Products</a><a href="portfolio.html">Portfolio</a>
+    <a href="testimonials.html" class="active">Reviews</a><a href="gallery.html">Gallery</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="toggle-icon">🌙</span><span id="themeLabel">Dark</span></button>
+    <a href="contact.html" class="cta">Get Free Consultation</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Home</a><a href="about.html" onclick="closeMobile()">About</a>
+  <a href="services.html" onclick="closeMobile()">Services</a><a href="products.html" onclick="closeMobile()">Products</a>
+  <a href="portfolio.html" onclick="closeMobile()">Portfolio</a><a href="testimonials.html" onclick="closeMobile()">Reviews</a>
+  <a href="gallery.html" onclick="closeMobile()">Gallery</a><a href="contact.html" onclick="closeMobile()">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <p class="page-hero-tag">Client Reviews</p>
+    <h1 class="page-hero-title">What Our <em>Clients</em><br/>Say About Us</h1>
+    <p class="page-hero-sub">Real feedback from 250+ businesses we've partnered with — across retail, healthcare, education, logistics, and more.</p>
+    <div class="page-hero-btns">
+      <a href="contact.html" class="btn btn-primary">Become a Client ↗</a>
+      <a href="portfolio.html" class="btn btn-outline">View Our Work</a>
+    </div>
+  </div>
+</div>
+
+<section style="background:var(--surface)">
+  <div class="container">
+    <div class="sec-header-center reveal">
+      <div class="sec-tag">Written Reviews</div>
+      <h2 class="sec-title">Client Testimonials</h2>
+      <p class="sec-body">Honest feedback from businesses that chose V7Lancers for their digital transformation journey.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"V7Lancers built our ecommerce platform from scratch and delivered ahead of schedule. Sales increased by 60% within the first two months of launch. Exceptional team!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">R</div>
+          <div>
+            <div class="testi-name">Ramesh Kumar</div>
+            <div class="testi-company">RetailPlus India</div>
+            <div class="testi-role">Managing Director</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"MeriTrack transformed how we conduct online exams for our 2,000+ students. The AI features and ease of use are unmatched. V7Lancers understood our requirements perfectly."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">P</div>
+          <div>
+            <div class="testi-name">Dr. Priya Anand</div>
+            <div class="testi-company">Chennai Training Academy</div>
+            <div class="testi-role">Principal &amp; Director</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Our mobile delivery app is smooth, reliable, and our customers love it. The V7Lancers team provided end-to-end support from planning to go-live. Highly recommended!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">S</div>
+          <div>
+            <div class="testi-name">Suresh Babu</div>
+            <div class="testi-company">QuickServe Catering</div>
+            <div class="testi-role">Founder &amp; CEO</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The custom fleet management software they built for us reduced operational costs by 30%. Their technical team is knowledgeable, responsive, and truly understands business needs."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">K</div>
+          <div>
+            <div class="testi-name">Karthik Venkat</div>
+            <div class="testi-company">LogiStar India</div>
+            <div class="testi-role">Operations Head</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"DocWave helped us go completely paperless. Document retrieval that used to take hours now takes seconds. The implementation was smooth and the support team is excellent."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">A</div>
+          <div>
+            <div class="testi-name">Anitha Rajan</div>
+            <div class="testi-company">MedCare Clinic</div>
+            <div class="testi-role">Administrator</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"We partnered with V7Lancers for our UK market website and the results exceeded expectations. Professional, affordable, and they delivered exactly what was promised on time."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">J</div>
+          <div>
+            <div class="testi-name">James Mitchell</div>
+            <div class="testi-company">GulfTrade LLC</div>
+            <div class="testi-role">Director, International Sales</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-header-center reveal">
+      <div class="sec-tag">Video Reviews</div>
+      <h2 class="sec-title">Video Testimonials</h2>
+      <p class="sec-body">Hear directly from our clients about their experience working with V7Lancers.</p>
+    </div>
+    <div class="video-grid">
+      <div class="video-card reveal">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Client Testimonial — RetailPlus India" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-body">
+          <div class="video-title">Ramesh Kumar — RetailPlus India</div>
+          <p class="video-desc">Managing Director shares how V7Lancers built their ecommerce platform and drove 60% sales growth.</p>
+        </div>
+      </div>
+      <div class="video-card reveal">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/9No-FiEInLA" title="Client Testimonial — Chennai Training Academy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-body">
+          <div class="video-title">Dr. Priya Anand — Chennai Training Academy</div>
+          <p class="video-desc">Principal discusses how MeriTrack revolutionised online examinations for 2,000+ students.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface);padding:64px 0">
+  <div class="container">
+    <div class="sec-header-center reveal">
+      <div class="sec-tag">Trusted By</div>
+      <h2 class="sec-title">Our Clients</h2>
+    </div>
+  </div>
+  <div class="clients-strip reveal">
+    <div class="clients-scroll">
+      <div class="client-logo-item">RetailPlus India</div>
+      <div class="client-logo-item">Chennai Academy</div>
+      <div class="client-logo-item">QuickServe</div>
+      <div class="client-logo-item">TechBridge Co.</div>
+      <div class="client-logo-item">MedCare Clinic</div>
+      <div class="client-logo-item">EduSpark Inst.</div>
+      <div class="client-logo-item">GulfTrade LLC</div>
+      <div class="client-logo-item">BuildPro Const.</div>
+      <div class="client-logo-item">LogiStar India</div>
+      <div class="client-logo-item">AgroTech Farm</div>
+      <div class="client-logo-item">RetailPlus India</div>
+      <div class="client-logo-item">Chennai Academy</div>
+      <div class="client-logo-item">QuickServe</div>
+      <div class="client-logo-item">TechBridge Co.</div>
+      <div class="client-logo-item">MedCare Clinic</div>
+      <div class="client-logo-item">EduSpark Inst.</div>
+      <div class="client-logo-item">GulfTrade LLC</div>
+      <div class="client-logo-item">BuildPro Const.</div>
+      <div class="client-logo-item">LogiStar India</div>
+      <div class="client-logo-item">AgroTech Farm</div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-section">
+  <div class="container">
+    <div class="quote-wrap">
+      <div class="quote-info reveal">
+        <div class="sec-tag">Join Us</div>
+        <h2 class="sec-title">Get a Free<br/><span style="color:var(--accent)">Consultation</span></h2>
+        <p class="sec-body">Experience the V7Lancers difference for yourself. Share your requirements and our team will respond within 24 hours with a tailored proposal.</p>
+        <div class="check-list" style="margin-top:24px">
+          <div class="check-item">98% client retention rate</div>
+          <div class="check-item">250+ satisfied clients globally</div>
+          <div class="check-item">Free initial consultation</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="form-box">
+          <div class="contact-form">
+            <div class="form-row">
+              <div class="form-group"><label>Your Name *</label><input type="text" placeholder="Full Name"/></div>
+              <div class="form-group"><label>Phone *</label><input type="tel" placeholder="+91 98765 43210"/></div>
+            </div>
+            <div class="form-group"><label>Email *</label><input type="email" placeholder="you@company.com"/></div>
+            <div class="form-group">
+              <label>Service Required</label>
+              <select>
+                <option value="">Select a service…</option>
+                <option>Website Design &amp; Development</option><option>Ecommerce Development</option>
+                <option>Online Delivery Application</option><option>Customized Software Development</option>
+                <option>Mobile Application Development</option><option>EezyCRM</option><option>MeriTrack</option><option>DocWave</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Your Requirements</label><textarea placeholder="Tell us about your project…"></textarea></div>
+            <button class="btn btn-primary" style="width:100%;justify-content:center" data-submit="Get Free Consultation →">Get Free Consultation →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="nav-logo footer-brand" style="display:inline-block;margin-bottom:16px">V7<span>Lancers</span></a>
+        <p class="footer-desc">V7Lancers Technopark Pvt Ltd — delivering innovative websites, software, mobile apps, and AI-powered solutions to businesses across India, UK, USA, and Gulf countries.</p>
+        <div class="footer-social">
+          <a href="https://facebook.com/v7lancers" class="footer-social-btn" target="_blank" rel="noopener">📘</a>
+          <a href="https://instagram.com/v7lancers" class="footer-social-btn" target="_blank" rel="noopener">📷</a>
+          <a href="https://linkedin.com/company/v7lancers" class="footer-social-btn" target="_blank" rel="noopener">in</a>
+          <a href="https://youtube.com/@v7lancers" class="footer-social-btn" target="_blank" rel="noopener">▶</a>
+          <a href="https://x.com/v7lancers" class="footer-social-btn" target="_blank" rel="noopener">𝕏</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a><a href="about.html">About Us</a><a href="portfolio.html">Portfolio</a>
+          <a href="testimonials.html">Testimonials</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <div class="footer-links">
+          <a href="services.html">Website Development</a><a href="services.html">Ecommerce</a>
+          <a href="services.html">Delivery Apps</a><a href="services.html">Custom Software</a><a href="services.html">Mobile Apps</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact Info</div>
+        <div class="footer-links">
+          <a href="tel:+919876543210">📞 +91 98765 43210</a>
+          <a href="mailto:hello@v7lancers.com">✉️ hello@v7lancers.com</a>
+          <span style="color:var(--muted);font-size:.87rem">📍 42, Innovation Hub, T. Nagar, Chennai – 600 017</span>
+          <span style="color:var(--muted);font-size:.87rem">🕐 Mon–Sat: 9 AM – 6:30 PM IST</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 <em>V7Lancers Technopark Pvt Ltd</em>. All rights reserved.</span>
+      <span>Built with ❤️ in Chennai, India 🇮🇳</span>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

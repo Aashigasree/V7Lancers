@@ -1,225 +1,271 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Gallery — V7Lancers Technopark Pvt Ltd</title>
-<meta name="description" content="Explore the V7Lancers gallery — company events, workshops, internships, team activities, office environment, and project milestones."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — V7Lancers Technopark Pvt Ltd</title>
+  <meta name="description"
+    content="Explore the V7Lancers gallery — company events, workshops, internships, team activities, office environment, and project milestones." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-<canvas id="canvas"></canvas>
+  <canvas id="canvas"></canvas>
 
-<nav id="navbar">
-  <a href="index.html" class="nav-logo">V7<span>Lancers</span></a>
-  <div class="nav-links">
-    <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
-    <a href="products.html">Products</a><a href="portfolio.html">Portfolio</a>
-    <a href="testimonials.html">Reviews</a><a href="gallery.html" class="active">Gallery</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="toggle-icon">🌙</span><span id="themeLabel">Dark</span></button>
-    <a href="contact.html" class="cta">Get Free Consultation</a>
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">V7<span>Lancers</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="testimonials.html">Reviews</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="toggle-icon toggle-icon--moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+        </svg>
+        <svg class="toggle-icon toggle-icon--sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+      </button>
+      <a href="contact.html" class="cta">Get Free Consultation</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobile()">Home</a>
+    <a href="about.html" onclick="closeMobile()">About</a>
+    <a href="products.html" onclick="closeMobile()">Products</a>
+    <a href="services.html" onclick="closeMobile()">Services</a>
+    <a href="portfolio.html" onclick="closeMobile()">Portfolio</a>
+    <a href="testimonials.html" onclick="closeMobile()">Reviews</a>
+    <a href="gallery.html" onclick="closeMobile()">Gallery</a>
+    <a href="contact.html" onclick="closeMobile()">Contact</a>
   </div>
-  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html" onclick="closeMobile()">Home</a><a href="about.html" onclick="closeMobile()">About</a>
-  <a href="services.html" onclick="closeMobile()">Services</a><a href="products.html" onclick="closeMobile()">Products</a>
-  <a href="portfolio.html" onclick="closeMobile()">Portfolio</a><a href="testimonials.html" onclick="closeMobile()">Reviews</a>
-  <a href="gallery.html" onclick="closeMobile()">Gallery</a><a href="contact.html" onclick="closeMobile()">Contact</a>
-</div>
 
-<div class="page-hero">
-  <div class="container">
-    <p class="page-hero-tag">Life at V7Lancers</p>
-    <h1 class="page-hero-title">Company <em>Gallery</em></h1>
-    <p class="page-hero-sub">Moments from our events, workshops, internships, team activities, office life, and project milestones — the people and culture behind our technology.</p>
-    <div class="page-hero-btns">
-      <a href="about.html" class="btn btn-primary">Meet Our Team ↗</a>
-      <a href="contact.html" class="btn btn-outline">Join Us</a>
-    </div>
-  </div>
-</div>
-
-<section style="background:var(--surface)">
-  <div class="container">
-    <div class="sec-header-center reveal">
-      <div class="sec-tag">Photo Gallery</div>
-      <h2 class="sec-title">Behind the Scenes</h2>
-      <p class="sec-body">Filter by category to explore our company culture, learning initiatives, and celebration moments.</p>
-    </div>
-    <div class="gallery-filter reveal">
-      <button class="gallery-filter-btn active" data-gfilter="all">All</button>
-      <button class="gallery-filter-btn" data-gfilter="events">Company Events</button>
-      <button class="gallery-filter-btn" data-gfilter="workshops">Workshops</button>
-      <button class="gallery-filter-btn" data-gfilter="internships">Internships</button>
-      <button class="gallery-filter-btn" data-gfilter="team">Team Activities</button>
-      <button class="gallery-filter-btn" data-gfilter="office">Office Environment</button>
-      <button class="gallery-filter-btn" data-gfilter="milestones">Project Milestones</button>
-    </div>
-    <div class="gallery-grid reveal">
-      <div class="gallery-item" data-gcat="events" data-gtitle="Annual Day Celebration 2024" data-gicon="🎉">
-        🎉
-        <span class="gallery-label">Company Events</span>
-      </div>
-      <div class="gallery-item" data-gcat="office" data-gtitle="V7Lancers Office — T. Nagar" data-gicon="🏢">
-        🏢
-        <span class="gallery-label">Office Environment</span>
-      </div>
-      <div class="gallery-item" data-gcat="workshops" data-gtitle="AI &amp; Machine Learning Workshop" data-gicon="💡">
-        💡
-        <span class="gallery-label">Workshops</span>
-      </div>
-      <div class="gallery-item" data-gcat="team" data-gtitle="Team Building Activity" data-gicon="🤝">
-        🤝
-        <span class="gallery-label">Team Activities</span>
-      </div>
-      <div class="gallery-item" data-gcat="internships" data-gtitle="Summer Internship Programme 2024" data-gicon="🎓">
-        🎓
-        <span class="gallery-label">Internships</span>
-      </div>
-      <div class="gallery-item" data-gcat="milestones" data-gtitle="250+ Clients Milestone" data-gicon="🏆">
-        🏆
-        <span class="gallery-label">Project Milestones</span>
-      </div>
-      <div class="gallery-item" data-gcat="workshops" data-gtitle="Web Development Bootcamp" data-gicon="🖥️">
-        🖥️
-        <span class="gallery-label">Workshops</span>
-      </div>
-      <div class="gallery-item" data-gcat="events" data-gtitle="Diwali Celebration at Office" data-gicon="✨">
-        ✨
-        <span class="gallery-label">Company Events</span>
-      </div>
-      <div class="gallery-item" data-gcat="office" data-gtitle="Development Team at Work" data-gicon="👨‍💻">
-        👨‍💻
-        <span class="gallery-label">Office Environment</span>
-      </div>
-      <div class="gallery-item" data-gcat="internships" data-gtitle="College Partnership — Anna University" data-gicon="📚">
-        📚
-        <span class="gallery-label">Internships</span>
-      </div>
-      <div class="gallery-item" data-gcat="milestones" data-gtitle="MeriTrack 2.0 Product Launch" data-gicon="🚀">
-        🚀
-        <span class="gallery-label">Project Milestones</span>
-      </div>
-      <div class="gallery-item" data-gcat="team" data-gtitle="Friday Team Lunch" data-gicon="🍽️">
-        🍽️
-        <span class="gallery-label">Team Activities</span>
-      </div>
-      <div class="gallery-item" data-gcat="events" data-gtitle="Tech Summit Participation 2023" data-gicon="🎤">
-        🎤
-        <span class="gallery-label">Company Events</span>
-      </div>
-      <div class="gallery-item" data-gcat="workshops" data-gtitle="Flutter Mobile Dev Workshop" data-gicon="📱">
-        📱
-        <span class="gallery-label">Workshops</span>
-      </div>
-      <div class="gallery-item" data-gcat="milestones" data-gtitle="DocWave Product Launch 2024" data-gicon="📁">
-        📁
-        <span class="gallery-label">Project Milestones</span>
-      </div>
-      <div class="gallery-item" data-gcat="internships" data-gtitle="Intern Project Presentations" data-gicon="🎯">
-        🎯
-        <span class="gallery-label">Internships</span>
+  <div class="page-hero">
+    <div class="container">
+      <p class="page-hero-tag">Life at V7Lancers</p>
+      <h1 class="page-hero-title">Company <em>Gallery</em></h1>
+      <p class="page-hero-sub">Moments from our events, workshops, internships, team activities, office life, and
+        project milestones — the people and culture behind our technology.</p>
+      <div class="page-hero-btns">
+        <a href="about.html" class="btn btn-primary">Meet Our Team ↗</a>
+        <a href="contact.html" class="btn btn-outline">Join Us</a>
       </div>
     </div>
   </div>
-</section>
 
-<section class="quote-section">
-  <div class="container">
-    <div class="quote-wrap">
-      <div class="quote-info reveal">
-        <div class="sec-tag">Join Our Team</div>
-        <h2 class="sec-title">Interested in<br/><span style="color:var(--accent)">Working With Us?</span></h2>
-        <p class="sec-body">We're always looking for talented developers, designers, and strategists. Explore internship and career opportunities at V7Lancers.</p>
-        <div class="check-list" style="margin-top:24px">
-          <div class="check-item">Active internship programmes with 5+ institutions</div>
-          <div class="check-item">Collaborative, innovation-driven culture</div>
-          <div class="check-item">Real projects from day one</div>
+  <section style="background:var(--surface)">
+    <div class="container">
+      <div class="sec-header-center reveal">
+        <div class="sec-tag">Photo Gallery</div>
+        <h2 class="sec-title">Behind the Scenes</h2>
+        <p class="sec-body">Filter by category to explore our company culture, learning initiatives, and celebration
+          moments.</p>
+      </div>
+      <div class="gallery-filter reveal">
+        <button class="gallery-filter-btn active" data-gfilter="all">All</button>
+        <button class="gallery-filter-btn" data-gfilter="events">Company Events</button>
+        <button class="gallery-filter-btn" data-gfilter="workshops">Workshops</button>
+        <button class="gallery-filter-btn" data-gfilter="internships">Internships</button>
+        <button class="gallery-filter-btn" data-gfilter="team">Team Activities</button>
+        <button class="gallery-filter-btn" data-gfilter="office">Office Environment</button>
+        <button class="gallery-filter-btn" data-gfilter="milestones">Project Milestones</button>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item" data-gcat="events" data-gtitle="Annual Day Celebration 2024" data-gicon="🎉">
+          🎉
+          <span class="gallery-label">Company Events</span>
+        </div>
+        <div class="gallery-item" data-gcat="office" data-gtitle="V7Lancers Office — T. Nagar" data-gicon="🏢">
+          🏢
+          <span class="gallery-label">Office Environment</span>
+        </div>
+        <div class="gallery-item" data-gcat="workshops" data-gtitle="AI &amp; Machine Learning Workshop"
+          data-gicon="💡">
+          💡
+          <span class="gallery-label">Workshops</span>
+        </div>
+        <div class="gallery-item" data-gcat="team" data-gtitle="Team Building Activity" data-gicon="🤝">
+          🤝
+          <span class="gallery-label">Team Activities</span>
+        </div>
+        <div class="gallery-item" data-gcat="internships" data-gtitle="Summer Internship Programme 2024"
+          data-gicon="🎓">
+          🎓
+          <span class="gallery-label">Internships</span>
+        </div>
+        <div class="gallery-item" data-gcat="milestones" data-gtitle="250+ Clients Milestone" data-gicon="🏆">
+          🏆
+          <span class="gallery-label">Project Milestones</span>
+        </div>
+        <div class="gallery-item" data-gcat="workshops" data-gtitle="Web Development Bootcamp" data-gicon="🖥️">
+          🖥️
+          <span class="gallery-label">Workshops</span>
+        </div>
+        <div class="gallery-item" data-gcat="events" data-gtitle="Diwali Celebration at Office" data-gicon="✨">
+          ✨
+          <span class="gallery-label">Company Events</span>
+        </div>
+        <div class="gallery-item" data-gcat="office" data-gtitle="Development Team at Work" data-gicon="👨‍💻">
+          👨‍💻
+          <span class="gallery-label">Office Environment</span>
+        </div>
+        <div class="gallery-item" data-gcat="internships" data-gtitle="College Partnership — Anna University"
+          data-gicon="📚">
+          📚
+          <span class="gallery-label">Internships</span>
+        </div>
+        <div class="gallery-item" data-gcat="milestones" data-gtitle="MeriTrack 2.0 Product Launch" data-gicon="🚀">
+          🚀
+          <span class="gallery-label">Project Milestones</span>
+        </div>
+        <div class="gallery-item" data-gcat="team" data-gtitle="Friday Team Lunch" data-gicon="🍽️">
+          🍽️
+          <span class="gallery-label">Team Activities</span>
+        </div>
+        <div class="gallery-item" data-gcat="events" data-gtitle="Tech Summit Participation 2023" data-gicon="🎤">
+          🎤
+          <span class="gallery-label">Company Events</span>
+        </div>
+        <div class="gallery-item" data-gcat="workshops" data-gtitle="Flutter Mobile Dev Workshop" data-gicon="📱">
+          📱
+          <span class="gallery-label">Workshops</span>
+        </div>
+        <div class="gallery-item" data-gcat="milestones" data-gtitle="DocWave Product Launch 2024" data-gicon="📁">
+          📁
+          <span class="gallery-label">Project Milestones</span>
+        </div>
+        <div class="gallery-item" data-gcat="internships" data-gtitle="Intern Project Presentations" data-gicon="🎯">
+          🎯
+          <span class="gallery-label">Internships</span>
         </div>
       </div>
-      <div class="reveal">
-        <div class="form-box">
-          <div class="contact-form">
-            <div class="form-row">
-              <div class="form-group"><label>Your Name *</label><input type="text" placeholder="Full Name"/></div>
-              <div class="form-group"><label>Phone *</label><input type="tel" placeholder="+91 98765 43210"/></div>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <div class="container">
+      <div class="quote-wrap">
+        <div class="quote-info reveal">
+          <div class="sec-tag">Join Our Team</div>
+          <h2 class="sec-title">Interested in<br /><span style="color:var(--accent)">Working With Us?</span></h2>
+          <p class="sec-body">We're always looking for talented developers, designers, and strategists. Explore
+            internship and career opportunities at V7Lancers.</p>
+          <div class="check-list" style="margin-top:24px">
+            <div class="check-item">Active internship programmes with 5+ institutions</div>
+            <div class="check-item">Collaborative, innovation-driven culture</div>
+            <div class="check-item">Real projects from day one</div>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="form-box">
+            <div class="contact-form">
+              <div class="form-row">
+                <div class="form-group"><label>Your Name *</label><input type="text" placeholder="Full Name" /></div>
+                <div class="form-group"><label>Phone *</label><input type="tel" placeholder="+91 98765 43210" /></div>
+              </div>
+              <div class="form-group"><label>Email *</label><input type="email" placeholder="you@company.com" /></div>
+              <div class="form-group">
+                <label>Enquiry Type</label>
+                <select>
+                  <option value="">Select enquiry type…</option>
+                  <option>Internship Application</option>
+                  <option>Career Opportunity</option>
+                  <option>College Partnership</option>
+                  <option>General Enquiry</option>
+                </select>
+              </div>
+              <div class="form-group"><label>Message</label><textarea
+                  placeholder="Tell us about yourself and your interest in V7Lancers…"></textarea></div>
+              <button class="btn btn-primary" style="width:100%;justify-content:center"
+                data-submit="Send Enquiry →">Send Enquiry →</button>
             </div>
-            <div class="form-group"><label>Email *</label><input type="email" placeholder="you@company.com"/></div>
-            <div class="form-group">
-              <label>Enquiry Type</label>
-              <select>
-                <option value="">Select enquiry type…</option>
-                <option>Internship Application</option>
-                <option>Career Opportunity</option>
-                <option>College Partnership</option>
-                <option>General Enquiry</option>
-              </select>
-            </div>
-            <div class="form-group"><label>Message</label><textarea placeholder="Tell us about yourself and your interest in V7Lancers…"></textarea></div>
-            <button class="btn btn-primary" style="width:100%;justify-content:center" data-submit="Send Enquiry →">Send Enquiry →</button>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Gallery preview">
-  <div class="gallery-lightbox-inner">
-    <button class="gallery-lightbox-close" id="galleryLightboxClose" aria-label="Close">✕</button>
-    <div class="gallery-lightbox-icon" id="galleryLightboxIcon"></div>
-    <div class="gallery-lightbox-title" id="galleryLightboxTitle"></div>
-    <div class="gallery-lightbox-cat" id="galleryLightboxCat"></div>
-  </div>
-</div>
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <a href="index.html" class="nav-logo footer-brand" style="display:inline-block;margin-bottom:16px">V7<span>Lancers</span></a>
-        <p class="footer-desc">V7Lancers Technopark Pvt Ltd — delivering innovative websites, software, mobile apps, and AI-powered solutions to businesses across India, UK, USA, and Gulf countries.</p>
-        <div class="footer-social">
-          <a href="https://facebook.com/v7lancers" class="footer-social-btn" target="_blank" rel="noopener">📘</a>
-          <a href="https://instagram.com/v7lancers" class="footer-social-btn" target="_blank" rel="noopener">📷</a>
-          <a href="https://linkedin.com/company/v7lancers" class="footer-social-btn" target="_blank" rel="noopener">in</a>
-          <a href="https://youtube.com/@v7lancers" class="footer-social-btn" target="_blank" rel="noopener">▶</a>
-          <a href="https://x.com/v7lancers" class="footer-social-btn" target="_blank" rel="noopener">𝕏</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-col-title">Quick Links</div>
-        <div class="footer-links">
-          <a href="index.html">Home</a><a href="about.html">About Us</a><a href="portfolio.html">Portfolio</a>
-          <a href="testimonials.html">Testimonials</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact Us</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-col-title">Services</div>
-        <div class="footer-links">
-          <a href="services.html">Website Development</a><a href="services.html">Ecommerce</a>
-          <a href="services.html">Delivery Apps</a><a href="services.html">Custom Software</a><a href="services.html">Mobile Apps</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-col-title">Contact Info</div>
-        <div class="footer-links">
-          <a href="tel:+919876543210">📞 +91 98765 43210</a>
-          <a href="mailto:hello@v7lancers.com">✉️ hello@v7lancers.com</a>
-          <span style="color:var(--muted);font-size:.87rem">📍 42, Innovation Hub, T. Nagar, Chennai – 600 017</span>
-          <span style="color:var(--muted);font-size:.87rem">🕐 Mon–Sat: 9 AM – 6:30 PM IST</span>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025 <em>V7Lancers Technopark Pvt Ltd</em>. All rights reserved.</span>
-      <span>Built with ❤️ in Chennai, India 🇮🇳</span>
+  <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Gallery preview">
+    <div class="gallery-lightbox-inner">
+      <button class="gallery-lightbox-close" id="galleryLightboxClose" aria-label="Close">✕</button>
+      <div class="gallery-lightbox-icon" id="galleryLightboxIcon"></div>
+      <div class="gallery-lightbox-title" id="galleryLightboxTitle"></div>
+      <div class="gallery-lightbox-cat" id="galleryLightboxCat"></div>
     </div>
   </div>
-</footer>
-<script src="script.js"></script>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="nav-logo footer-brand"
+            style="display:inline-block;margin-bottom:16px">V7<span>Lancers</span></a>
+          <p class="footer-desc">V7Lancers Technopark Pvt Ltd — delivering innovative websites, software, mobile apps,
+            and AI-powered solutions to businesses across India, UK, USA, and Gulf countries.</p>
+          <div class="footer-social">
+            <a href="https://facebook.com/v7lancers" class="footer-social-btn" target="_blank" rel="noopener">📘</a>
+            <a href="https://instagram.com/v7lancers" class="footer-social-btn" target="_blank" rel="noopener">📷</a>
+            <a href="https://linkedin.com/company/v7lancers" class="footer-social-btn" target="_blank"
+              rel="noopener">in</a>
+            <a href="https://youtube.com/@v7lancers" class="footer-social-btn" target="_blank" rel="noopener">▶</a>
+            <a href="https://x.com/v7lancers" class="footer-social-btn" target="_blank" rel="noopener">𝕏</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <div class="footer-links">
+            <a href="index.html">Home</a><a href="about.html">About Us</a><a href="portfolio.html">Portfolio</a>
+            <a href="testimonials.html">Testimonials</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact
+              Us</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <div class="footer-links">
+            <a href="services.html">Website Development</a><a href="services.html">Ecommerce</a>
+            <a href="services.html">Delivery Apps</a><a href="services.html">Custom Software</a><a
+              href="services.html">Mobile Apps</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact Info</div>
+          <div class="footer-links">
+            <a href="tel:+919876543210">📞 +91 98765 43210</a>
+            <a href="mailto:hello@v7lancers.com">✉️ hello@v7lancers.com</a>
+            <span style="color:var(--muted);font-size:.87rem">📍 42, Innovation Hub, T. Nagar, Chennai – 600 017</span>
+            <span style="color:var(--muted);font-size:.87rem">🕐 Mon–Sat: 9 AM – 6:30 PM IST</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 <em>V7Lancers Technopark Pvt Ltd</em>. All rights reserved.</span>
+        <span>Built with ❤️ in Chennai, India 🇮🇳</span>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
 </body>
+
 </html>

@@ -60,10 +60,12 @@ nav.scrolled { border-bottom-color:var(--border);background:rgba(13,13,13,.97) }
 .nav-links a.cta:hover { transform:scale(1.04);box-shadow:0 6px 24px rgba(232,255,0,.28) }
 
 /* ─── THEME TOGGLE ───────────────────────────────────── */
-.theme-toggle { background:var(--card);border:1px solid var(--border);border-radius:20px;padding:5px 12px;cursor:pointer;display:flex;align-items:center;gap:5px;font-size:.72rem;font-family:var(--font-mono);color:var(--muted);transition:all var(--tr);flex-shrink:0 }
+.theme-toggle { background:var(--card);border:1px solid var(--border);border-radius:50%;width:36px;height:36px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all var(--tr);flex-shrink:0;padding:0 }
 .theme-toggle:hover { border-color:var(--accent);color:var(--accent) }
-.theme-toggle .toggle-icon { font-size:.95rem;transition:transform .4s }
-[data-theme="light"] .theme-toggle .toggle-icon { transform:rotate(180deg) }
+.toggle-icon--sun  { display:block }
+.toggle-icon--moon { display:none }
+[data-theme="light"] .toggle-icon--sun  { display:none }
+[data-theme="light"] .toggle-icon--moon { display:block }
 
 /* ─── HAMBURGER ──────────────────────────────────────── */
 .hamburger { display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px }

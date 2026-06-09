@@ -55,13 +55,9 @@
 
 /* ── DARK / LIGHT MODE ────────────────────────────────── */
 const themeToggle = document.getElementById('themeToggle');
-const themeLabel  = document.getElementById('themeLabel');
 const htmlEl      = document.documentElement;
 function applyTheme(t){
   htmlEl.setAttribute('data-theme',t);
-  const icon = themeToggle && themeToggle.querySelector('.toggle-icon');
-  if(icon){ icon.textContent = t==='light'?'☀️':'🌙'; }
-  if(themeLabel){ themeLabel.textContent = t==='light'?'Light':'Dark'; }
   localStorage.setItem('v7-theme',t);
 }
 const savedTheme = localStorage.getItem('v7-theme')||'dark';

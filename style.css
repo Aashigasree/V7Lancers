@@ -215,6 +215,43 @@ nav.scrolled {
   color: var(--text);
 }
 
+/* Theme-Aware Site Logo styles */
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.site-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: opacity var(--tr), transform var(--tr);
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Hover effects */
+a.nav-logo:hover .site-logo {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+/* Default Dark Mode logo visibility (displays Light logo) */
+.site-logo.light-logo {
+  display: block;
+}
+.site-logo.dark-logo {
+  display: none;
+}
+
+/* Light Mode logo visibility (displays Dark logo) */
+[data-theme="light"] .site-logo.light-logo {
+  display: none;
+}
+[data-theme="light"] .site-logo.dark-logo {
+  display: block;
+}
+
 .nav-links {
   display: flex;
   gap: 22px;
@@ -593,17 +630,16 @@ nav.scrolled {
 
 .client-logo-item {
   display: flex;
-  align-items: center;
+  flex-direction: column;   /* stack image + text */
+  align-items: center;      /* center them */
   justify-content: center;
-  height: 48px;
-  min-width: 120px;
-  padding: 0 20px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  font-family: var(--font-mono);
-  font-size: .68rem;
-  color: var(--muted);
+  gap: 8px;                 /* space between logo and name */
+  text-align: center;
+
+  padding: 12px 16px;
+  border: 1px solid var(--muted);
+  border-radius: 10px;
+
   flex-shrink: 0;
   transition: border-color var(--tr), color var(--tr);
 }
@@ -647,6 +683,14 @@ nav.scrolled {
   align-items: center;
 }
 
+.about-image {
+  /* Establish positioning context so .about-badge anchors to this column,
+     not to the grid/section — this is the root cause of the text overlap. */
+  position: relative;
+  /* Reserve space below the image box for the badge that bleeds out */
+  padding-bottom: 30px;
+}
+
 .about-img-box {
   aspect-ratio: 4/3;
   background: var(--card);
@@ -668,7 +712,7 @@ nav.scrolled {
 
 .about-badge {
   position: absolute;
-  bottom: -20px;
+  bottom: 0;
   right: -20px;
   background: var(--accent);
   color: var(--on-accent);
@@ -677,6 +721,8 @@ nav.scrolled {
   font-family: var(--font-display);
   font-size: 2rem;
   line-height: 1;
+  /* Lift above any stacking siblings cleanly */
+  z-index: 2;
 }
 
 .about-badge small {
@@ -2340,6 +2386,10 @@ footer {
 
 /* ─── RESPONSIVE ─────────────────────────────────────── */
 @media(max-width:1024px) {
+  .site-logo {
+    height: 40px;
+  }
+
   nav {
     padding: 14px 20px;
   }
@@ -2363,6 +2413,17 @@ footer {
   .footer-grid,
   .quote-wrap {
     grid-template-columns: 1fr;
+  }
+
+  /* When grid stacks, badge stays anchored to the left column (.about-image),
+     no risk of overlapping the content column */
+  .about-image {
+    padding-bottom: 36px;
+  }
+
+  .about-badge {
+    right: 0;
+    bottom: 0;
   }
 
   .portfolio-grid {
@@ -2450,6 +2511,10 @@ footer {
 }
 
 @media(max-width:640px) {
+  .site-logo {
+    height: 32px;
+  }
+
   nav {
     padding: 12px 16px;
   }

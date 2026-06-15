@@ -12,20 +12,25 @@
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="preload" as="image" href="assets/logo-dark.png" />
+  <link rel="preload" as="image" href="assets/logo-light.png" />
 </head>
 
 <body>
   <canvas id="canvas"></canvas>
 
   <nav id="navbar">
-    <a href="index.html" class="nav-logo">V7<span>Lancers</span></a>
+    <a href="index.html" class="nav-logo" aria-label="V7Lancers - Home">
+      <img class="site-logo light-logo" src="assets/logo-dark.png" alt="V7Lancers Logo" width="180" height="48" />
+      <img class="site-logo dark-logo" src="assets/logo-light.png" alt="V7Lancers Logo" width="180" height="48" />
+    </a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="products.html">Products</a>
       <a href="services.html">Services</a>
       <a href="portfolio.html">Portfolio</a>
-      <a href="testimonials.html" class="active">Reviews</a>
+      <a href="testimonials.html" class="active">Testimonials</a>
       <a href="gallery.html">Gallery</a>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
         <svg class="toggle-icon toggle-icon--moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
@@ -57,7 +62,7 @@
     <a href="products.html" onclick="closeMobile()">Products</a>
     <a href="services.html" onclick="closeMobile()">Services</a>
     <a href="portfolio.html" onclick="closeMobile()">Portfolio</a>
-    <a href="testimonials.html" onclick="closeMobile()">Reviews</a>
+    <a href="testimonials.html" onclick="closeMobile()">Testimonials</a>
     <a href="gallery.html" onclick="closeMobile()">Gallery</a>
     <a href="contact.html" onclick="closeMobile()">Contact</a>
   </div>
@@ -86,79 +91,93 @@
       <div class="testi-grid">
         <div class="testi-card reveal">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"V7Lancers built our ecommerce platform from scratch and delivered ahead of schedule.
-            Sales increased by 60% within the first two months of launch. Exceptional team!"</p>
-          <div class="testi-author">
-            <div class="testi-avatar">R</div>
-            <div>
-              <div class="testi-name">Ramesh Kumar</div>
-              <div class="testi-company">RetailPlus India</div>
-              <div class="testi-role">Managing Director</div>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card reveal">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"MeriTrack transformed how we conduct online exams for our 2,000+ students. The AI
-            features and ease of use are unmatched. V7Lancers understood our requirements perfectly."</p>
-          <div class="testi-author">
-            <div class="testi-avatar">P</div>
-            <div>
-              <div class="testi-name">Dr. Priya Anand</div>
-              <div class="testi-company">Chennai Training Academy</div>
-              <div class="testi-role">Principal &amp; Director</div>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card reveal">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"Our mobile delivery app is smooth, reliable, and our customers love it. The V7Lancers
-            team provided end-to-end support from planning to go-live. Highly recommended!"</p>
-          <div class="testi-author">
-            <div class="testi-avatar">S</div>
-            <div>
-              <div class="testi-name">Suresh Babu</div>
-              <div class="testi-company">QuickServe Catering</div>
-              <div class="testi-role">Founder &amp; CEO</div>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card reveal">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"The custom fleet management software they built for us reduced operational costs by
-            30%. Their technical team is knowledgeable, responsive, and truly understands business needs."</p>
+          <p class="testi-text">"We are using V7 Lancers CRM for our office, and it’s very useful for managing leads and
+            follow-ups. Easy to use, well-organized, and helps improve our team productivity. Highly recommended!"</p>
           <div class="testi-author">
             <div class="testi-avatar">K</div>
             <div>
-              <div class="testi-name">Karthik Venkat</div>
-              <div class="testi-company">LogiStar India</div>
-              <div class="testi-role">Operations Head</div>
+              <div class="testi-name">Anuarjun</div>
+              <div class="testi-company">Team Ambiora</div>
+
             </div>
           </div>
         </div>
         <div class="testi-card reveal">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"DocWave helped us go completely paperless. Document retrieval that used to take hours
-            now takes seconds. The implementation was smooth and the support team is excellent."</p>
+          <p class="testi-text">"You have been my one of the right choices. Even after the project delivery your support
+            and customer service is great. It's been a great experience working with you. The product EezyCRM is very
+            useful for our productivity. Strongly recommended."</p>
           <div class="testi-author">
-            <div class="testi-avatar">A</div>
+            <div class="testi-avatar">S</div>
             <div>
-              <div class="testi-name">Anitha Rajan</div>
-              <div class="testi-company">MedCare Clinic</div>
-              <div class="testi-role">Administrator</div>
+              <div class="testi-name">G Karthik</div>
+              <div class="testi-company">Banyan Constech & Pre Engineering Buildings</div>
+
             </div>
           </div>
         </div>
         <div class="testi-card reveal">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"We partnered with V7Lancers for our UK market website and the results exceeded
-            expectations. Professional, affordable, and they delivered exactly what was promised on time."</p>
+          <p class="testi-text">"Thank you for all the effort and work you have done on this project. It was really
+            great working with you. Thank you for always being patient and making things easier for me.I really
+            appreciate the attention to detail, the smooth communication throughout the process, and how well you
+            captured the essence of what I was looking for. Everything from the design to the functionality feels
+            aligned with the goals we discussed. Truly great work."</p>
           <div class="testi-author">
-            <div class="testi-avatar">J</div>
+            <div class="testi-avatar">P</div>
             <div>
-              <div class="testi-name">James Mitchell</div>
-              <div class="testi-company">GulfTrade LLC</div>
-              <div class="testi-role">Director, International Sales</div>
+              <div class="testi-name">Prem Raina</div>
+              <div class="testi-company">Nalam Homeo Care</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Great experience, right from the start understanding our requirements and until
+            delivering the CRM. Even after the delivery they are still with us providing support on how to use the CRM
+            efficiently and we thank you for it. Customer comfort put first!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">S</div>
+            <div>
+              <div class="testi-name">Shakthi S</div>
+              <div class="testi-company">VishanCreators</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"We are extremely happy with the professional support and services provided by V7
+            Lancers for developing the CRM and E-Catalogue solutions for our companies, Axentra Commercial Appliances
+            and Envey Aqua SolutionZ.
+
+            The team understood our requirements clearly and delivered a well-structured, user-friendly, and
+            professional output with excellent coordination and timely execution. Their approach, responsiveness, and
+            commitment towards quality made the entire process smooth and hassle-free.
+
+            We truly appreciate their efforts and would confidently recommend V7 Lancers for businesses looking for
+            reliable digital and CRM solutions.
+            "</p>
+          <div class="testi-author">
+            <div class="testi-avatar">G</div>
+            <div>
+              <div class="testi-name">Team Sairam</div>
+              <div class="testi-company">
+                Sairam Agencies</div>
+
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Such a thoughtful person, coming up with new ideas.
+            Great going, All the best.."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">S</div>
+            <div>
+              <div class="testi-name">Aishwarya Lakshimi</div>
+              <div class="testi-company">Yoloshy Technologies</div>
+
             </div>
           </div>
         </div>
@@ -176,27 +195,33 @@
       <div class="video-grid">
         <div class="video-card reveal">
           <div class="video-embed">
-            <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Client Testimonial — RetailPlus India"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen loading="lazy"></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/EIcz8yGubgc?si=Mu-8ANSpFL_QoTGs"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
           <div class="video-body">
-            <div class="video-title">Ramesh Kumar — RetailPlus India</div>
-            <p class="video-desc">Managing Director shares how V7Lancers built their ecommerce platform and drove 60%
-              sales growth.</p>
+            <div class="video-title">Eezyshop Arola Client Project Eco bamboo Online Business V7Lancers</div>
+            <p class="video-desc">Eezyshop Arola is an eco-friendly e-commerce project built for bamboo products.
+              Designed by V7Lancers, it focuses on a clean UI, smooth user experience, and a responsive online store
+              setup that supports sustainable business growth.
+
+            </p>
           </div>
         </div>
         <div class="video-card reveal">
           <div class="video-embed">
-            <iframe src="https://www.youtube.com/embed/9No-FiEInLA"
-              title="Client Testimonial — Chennai Training Academy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen loading="lazy"></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/hgHhzge4TQQ?si=QJC7ozaifWlQocTU"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
           <div class="video-body">
-            <div class="video-title">Dr. Priya Anand — Chennai Training Academy</div>
-            <p class="video-desc">Principal discusses how MeriTrack revolutionised online examinations for 2,000+
-              students.</p>
+            <div class="video-title">The Ambiora | Website Design Showcase</div>
+            <p class="video-desc">Explore the official website of The Ambiora, designed to reflect elegance, clarity,
+              and a strong digital presence. This project showcases our expertise in modern UI/UX design, responsive
+              development, and seamless user experiences across all devices.
+            </p>
           </div>
         </div>
       </div>
@@ -212,26 +237,28 @@
     </div>
     <div class="clients-strip reveal">
       <div class="clients-scroll">
-        <div class="client-logo-item">RetailPlus India</div>
-        <div class="client-logo-item">Chennai Academy</div>
-        <div class="client-logo-item">QuickServe</div>
-        <div class="client-logo-item">TechBridge Co.</div>
-        <div class="client-logo-item">MedCare Clinic</div>
-        <div class="client-logo-item">EduSpark Inst.</div>
-        <div class="client-logo-item">GulfTrade LLC</div>
-        <div class="client-logo-item">BuildPro Const.</div>
-        <div class="client-logo-item">LogiStar India</div>
-        <div class="client-logo-item">AgroTech Farm</div>
-        <div class="client-logo-item">RetailPlus India</div>
-        <div class="client-logo-item">Chennai Academy</div>
-        <div class="client-logo-item">QuickServe</div>
-        <div class="client-logo-item">TechBridge Co.</div>
-        <div class="client-logo-item">MedCare Clinic</div>
-        <div class="client-logo-item">EduSpark Inst.</div>
-        <div class="client-logo-item">GulfTrade LLC</div>
-        <div class="client-logo-item">BuildPro Const.</div>
-        <div class="client-logo-item">LogiStar India</div>
-        <div class="client-logo-item">AgroTech Farm</div>
+        <div class="client-logo-item">DJ Academy</div>
+        <div class="client-logo-item">Gandhigram Trust</div>
+        <div class="client-logo-item">Padmarajam</div>
+        <div class="client-logo-item">Star Xerox</div>
+        <div class="client-logo-item">Ohyes Events</div>
+        <div class="client-logo-item">AMBC Technology</div>
+        <div class="client-logo-item">Sidone Infrastructure</div>
+        <div class="client-logo-item">Vinsup</div>
+        <div class="client-logo-item">Pumo</div>
+        <div class="client-logo-item">Aboudi Cargo Services</div>
+        <div class="client-logo-item">FFinder</div>
+        <div class="client-logo-item">JFC Infrastructure</div>
+        <div class="client-logo-item">E3 Innovation</div>
+        <div class="client-logo-item">Finlife</div>
+        <div class="client-logo-item">Finwallet</div>
+        <div class="client-logo-item">Pro Arc Design</div>
+        <div class="client-logo-item">ARC Builders</div>
+        <div class="client-logo-item">Padmarajam Institute</div>
+        <div class="client-logo-item">Fatima College</div>
+        <div class="client-logo-item">Banyan Engineering</div>
+        <div class="client-logo-item">Greennest</div>
+        <div class="client-logo-item">CVS Tiles and Granites</div>
       </div>
     </div>
   </section>
@@ -287,8 +314,11 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <a href="index.html" class="nav-logo footer-brand"
-            style="display:inline-block;margin-bottom:16px">V7<span>Lancers</span></a>
+          <a href="index.html" class="nav-logo footer-brand" style="display:inline-block;margin-bottom:16px"
+            aria-label="V7Lancers - Home">
+            <img class="site-logo light-logo" src="assets/logo-dark.png" alt="V7Lancers Logo" width="180" height="48" />
+            <img class="site-logo dark-logo" src="assets/logo-light.png" alt="V7Lancers Logo" width="180" height="48" />
+          </a>
           <p class="footer-desc">V7Lancers Technopark Pvt Ltd — delivering innovative websites, software, mobile apps,
             and AI-powered solutions to businesses across India, UK, USA, and Gulf countries.</p>
           <div class="footer-social">
@@ -319,9 +349,10 @@
         <div>
           <div class="footer-col-title">Contact Info</div>
           <div class="footer-links">
-            <a href="tel:+919876543210">📞 +91 98765 43210</a>
+            <a href="tel:+919876543210">📞 +91 91500 56163</a>
             <a href="mailto:hello@v7lancers.com">✉️ hello@v7lancers.com</a>
-            <span style="color:var(--muted);font-size:.87rem">📍 42, Innovation Hub, T. Nagar, Chennai – 600 017</span>
+            <span style="color:var(--muted);font-size:.87rem">📍 Theppakulam main road, Anuppanadi Rd, near Sourashtra
+              Girls school, Madurai, Tamil Nadu 625009</span>
             <span style="color:var(--muted);font-size:.87rem">🕐 Mon–Sat: 9 AM – 6:30 PM IST</span>
           </div>
         </div>

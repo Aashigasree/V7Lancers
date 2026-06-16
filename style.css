@@ -462,7 +462,9 @@ a.nav-logo:hover .site-logo {
 
 .btn-outline:hover {
   transform: translateY(-2px);
-  border-color: var(--muted);
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
   box-shadow: var(--shadow-sm);
 }
 

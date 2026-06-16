@@ -621,7 +621,7 @@ a.nav-logo:hover .site-logo {
   gap: 40px;
   width: max-content;
   will-change: transform;
-  animation: scrollX 28s linear infinite;
+  animation: scrollX 60s linear infinite;
 }
 
 .clients-strip:hover .clients-scroll {
@@ -653,12 +653,7 @@ a.nav-logo:hover .site-logo {
   height: 28px;
   width: auto;
   object-fit: contain;
-  filter: grayscale(1) opacity(.6);
   transition: filter var(--tr);
-}
-
-.client-logo-item:hover img {
-  filter: grayscale(0) opacity(1);
 }
 
 @keyframes scrollX {

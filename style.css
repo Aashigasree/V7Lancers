@@ -35,8 +35,8 @@
   --accent2: #c62828;
   --accent2-rgb: 198, 40, 40;
   --on-accent: #ffffff;
-  --text: #111111;
-  --muted: #666666;
+  --text: #0d0d0e;
+  --muted: #48484c;
 
   /* Soft, light-mode compliant shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -222,7 +222,7 @@ nav.scrolled {
 }
 
 .site-logo {
-  height: 48px;
+  height: 55px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -561,6 +561,34 @@ a.nav-logo:hover .site-logo {
   font-style: normal;
 }
 
+.hero-carousel {
+  display: inline-grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  color: var(--accent);
+  font-style: normal;
+  vertical-align: bottom;
+}
+
+.carousel-item {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(.4, 0, .2, 1), transform 0.5s cubic-bezier(.4, 0, .2, 1);
+  pointer-events: none;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.carousel-item.exit {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
 .hero-sub {
   font-size: 1.05rem;
   color: var(--muted);
@@ -754,6 +782,18 @@ a.nav-logo:hover .site-logo {
   content: '✓';
   color: var(--accent);
   font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.no-tick::before {
+  content: none;
+}
+
+.check-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -1339,11 +1379,49 @@ a.nav-logo:hover .site-logo {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 64px;
-  align-items: start;
+  align-items: center;
+}
+
+.quote-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .quote-info .sec-title {
-  margin-bottom: 18px;
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.quote-info .sec-body {
+  margin-top: 10px;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.quote-info .check-list {
+  margin-top: 20px !important;
+  gap: 8px !important;
+}
+
+.quote-info .check-item {
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.quote-info div[style*="margin-top:24px"],
+.quote-info div[style*="margin-top: 24px"] {
+  margin-top: 20px !important;
+}
+
+.quote-info div[style*="margin-top:28px"],
+.quote-info div[style*="margin-top: 28px"] {
+  margin-top: 20px !important;
+}
+
+.quote-info div[style*="gap:8px"],
+.quote-info div[style*="gap: 8px"] {
+  gap: 6px !important;
 }
 
 .form-box {

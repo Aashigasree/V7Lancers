@@ -171,3 +171,24 @@ document.querySelectorAll('[data-submit]').forEach(btn=>{
     },1600);
   });
 });
+
+/* ── HERO TEXT CAROUSEL ──────────────────────────────── */
+(function() {
+  const carouselItems = document.querySelectorAll('.hero-carousel .carousel-item');
+  if (carouselItems.length === 0) return;
+  let currentIndex = 0;
+  setInterval(() => {
+    const current = carouselItems[currentIndex];
+    currentIndex = (currentIndex + 1) % carouselItems.length;
+    const next = carouselItems[currentIndex];
+    
+    current.classList.remove('active');
+    current.classList.add('exit');
+    
+    next.classList.add('active');
+    
+    setTimeout(() => {
+      current.classList.remove('exit');
+    }, 500);
+  }, 3500);
+})();

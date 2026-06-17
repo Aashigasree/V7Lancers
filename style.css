@@ -567,9 +567,14 @@ a.nav-logo:hover .site-logo {
   display: inline-grid;
   grid-template-columns: 1fr;
   justify-items: center;
-  color: var(--accent);
+  color: inherit;
+  /* changed */
   font-style: normal;
   vertical-align: bottom;
+}
+
+.hero-carousel .accent-text {
+  color: var(--accent);
 }
 
 .carousel-item {
@@ -688,7 +693,20 @@ a.nav-logo:hover .site-logo {
   height: 28px;
   width: auto;
   object-fit: contain;
-  transition: filter var(--tr);
+  transition: filter var(--tr), transform var(--tr);
+
+  /* Dark mode default */
+  filter: brightness(0) invert(1) opacity(0.8);
+}
+
+/* Light mode override */
+[data-theme="light"] .client-logo-item img {
+  filter: none;
+}
+
+.client-logo-item:hover img {
+  filter: none;
+  transform: scale(1.05);
 }
 
 @keyframes scrollX {

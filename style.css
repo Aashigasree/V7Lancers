@@ -567,14 +567,9 @@ a.nav-logo:hover .site-logo {
   display: inline-grid;
   grid-template-columns: 1fr;
   justify-items: center;
-  color: inherit;
-  /* changed */
+  color: var(--accent);
   font-style: normal;
   vertical-align: bottom;
-}
-
-.hero-carousel .accent-text {
-  color: var(--accent);
 }
 
 .carousel-item {
@@ -693,20 +688,7 @@ a.nav-logo:hover .site-logo {
   height: 28px;
   width: auto;
   object-fit: contain;
-  transition: filter var(--tr), transform var(--tr);
-
-  /* Dark mode default */
-  filter: brightness(0) invert(1) opacity(0.8);
-}
-
-/* Light mode override */
-[data-theme="light"] .client-logo-item img {
-  filter: none;
-}
-
-.client-logo-item:hover img {
-  filter: none;
-  transform: scale(1.05);
+  transition: filter var(--tr);
 }
 
 @keyframes scrollX {
@@ -2867,4 +2849,39 @@ footer {
 
   --accent: #e8ff00;
   --accent-rgb: 232, 255, 0;
+}
+
+.about-img-box {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.about-theme-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* DEFAULT = DARK THEME (your root default) */
+.light-img {
+  display: none;
+}
+
+.dark-img {
+  display: block;
+}
+
+/* LIGHT THEME OVERRIDE */
+[data-theme="light"] .light-img {
+  display: block;
+}
+
+[data-theme="light"] .dark-img {
+  display: none;
 }

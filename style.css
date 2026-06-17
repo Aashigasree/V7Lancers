@@ -240,6 +240,7 @@ a.nav-logo:hover .site-logo {
 .site-logo.light-logo {
   display: block;
 }
+
 .site-logo.dark-logo {
   display: none;
 }
@@ -248,6 +249,7 @@ a.nav-logo:hover .site-logo {
 [data-theme="light"] .site-logo.light-logo {
   display: none;
 }
+
 [data-theme="light"] .site-logo.dark-logo {
   display: block;
 }
@@ -565,9 +567,14 @@ a.nav-logo:hover .site-logo {
   display: inline-grid;
   grid-template-columns: 1fr;
   justify-items: center;
-  color: var(--accent);
+  color: inherit;
+  /* changed */
   font-style: normal;
   vertical-align: bottom;
+}
+
+.hero-carousel .accent-text {
+  color: var(--accent);
 }
 
 .carousel-item {
@@ -660,10 +667,13 @@ a.nav-logo:hover .site-logo {
 
 .client-logo-item {
   display: flex;
-  flex-direction: column;   /* stack image + text */
-  align-items: center;      /* center them */
+  flex-direction: column;
+  /* stack image + text */
+  align-items: center;
+  /* center them */
   justify-content: center;
-  gap: 8px;                 /* space between logo and name */
+  gap: 8px;
+  /* space between logo and name */
   text-align: center;
 
   padding: 12px 16px;
@@ -683,7 +693,20 @@ a.nav-logo:hover .site-logo {
   height: 28px;
   width: auto;
   object-fit: contain;
-  transition: filter var(--tr);
+  transition: filter var(--tr), transform var(--tr);
+
+  /* Dark mode default */
+  filter: brightness(0) invert(1) opacity(0.8);
+}
+
+/* Light mode override */
+[data-theme="light"] .client-logo-item img {
+  filter: none;
+}
+
+.client-logo-item:hover img {
+  filter: none;
+  transform: scale(1.05);
 }
 
 @keyframes scrollX {

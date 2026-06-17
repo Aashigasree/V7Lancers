@@ -240,6 +240,7 @@ a.nav-logo:hover .site-logo {
 .site-logo.light-logo {
   display: block;
 }
+
 .site-logo.dark-logo {
   display: none;
 }
@@ -248,6 +249,7 @@ a.nav-logo:hover .site-logo {
 [data-theme="light"] .site-logo.light-logo {
   display: none;
 }
+
 [data-theme="light"] .site-logo.dark-logo {
   display: block;
 }
@@ -660,10 +662,13 @@ a.nav-logo:hover .site-logo {
 
 .client-logo-item {
   display: flex;
-  flex-direction: column;   /* stack image + text */
-  align-items: center;      /* center them */
+  flex-direction: column;
+  /* stack image + text */
+  align-items: center;
+  /* center them */
   justify-content: center;
-  gap: 8px;                 /* space between logo and name */
+  gap: 8px;
+  /* space between logo and name */
   text-align: center;
 
   padding: 12px 16px;
@@ -2740,4 +2745,53 @@ footer {
     font-size: clamp(1.4rem, 5.5vh, 1.8rem);
     padding: clamp(4px, 1vh, 8px) 0;
   }
+}
+
+
+.why-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-icon img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  transition: all .3s ease;
+}
+
+.icon-dark {
+  display: none;
+}
+
+/* Dark Theme */
+[data-theme="dark"] .icon-light,
+.dark-theme .icon-light,
+body.dark .icon-light {
+  display: none;
+}
+
+[data-theme="dark"] .icon-dark,
+.dark-theme .icon-dark,
+body.dark .icon-dark {
+  display: block;
+}
+
+/* Light Theme */
+[data-theme="light"] .icon-light,
+body:not(.dark) .icon-light {
+  display: block;
+}
+
+[data-theme="light"] .icon-dark,
+body:not(.dark) .icon-dark {
+  display: none;
+}
+
+.why-card:hover .why-icon img {
+  transform: scale(1.08);
 }

@@ -2800,3 +2800,35 @@ footer {
   --accent: #e8ff00;
   --accent-rgb: 232, 255, 0;
 }
+
+```css .service-icon {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-radius: 18px;
+  background: rgba(var(--accent-rgb), 0.08);
+  border: 1px solid rgba(var(--accent-rgb), 0.18);
+  color: var(--accent);
+  transition: .35s ease;
+}
+
+.service-icon svg {
+  width: 34px;
+  height: 34px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.service-card:hover .service-icon {
+  background: var(--accent);
+  color: var(--bg);
+  transform: translateY(-5px);
+}
+
+```

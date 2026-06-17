@@ -719,11 +719,10 @@ a.nav-logo:hover .site-logo {
   position: relative;
   /* Reserve space below the image box for the badge that bleeds out */
   padding-bottom: 30px;
-  
 }
 
 .about-img-box {
-  aspect-ratio: auto;
+  aspect-ratio: 4/3;
   background: var(--card);
   border-radius: 10px;
   border: 1px solid var(--border);
@@ -732,16 +731,6 @@ a.nav-logo:hover .site-logo {
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 85%;
-  margin: 0 auto;
-
-}
-
-.dark-mode .about-image img {
-    filter:
-        hue-rotate(70deg)
-        saturate(1.2)
-        brightness(.9);
 }
 
 .about-img-inner {

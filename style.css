@@ -2801,23 +2801,25 @@ footer {
   --accent-rgb: 232, 255, 0;
 }
 
-```css .service-icon {
+.service-icon {
   width: 72px;
   height: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 20px;
   margin-bottom: 20px;
-  border-radius: 18px;
+
   background: rgba(var(--accent-rgb), 0.08);
   border: 1px solid rgba(var(--accent-rgb), 0.18);
+
   color: var(--accent);
-  transition: .35s ease;
+  transition: all .35s ease;
 }
 
 .service-icon svg {
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
@@ -2831,4 +2833,20 @@ footer {
   transform: translateY(-5px);
 }
 
-```
+/* Light Theme */
+:root {
+  --accent: #8b0004;
+  --accent-rgb: 139, 0, 4;
+  --accent2: #c62828;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg: #0d0d0d;
+  --surface: #161616;
+  --card: #1d1d1d;
+  --border: #2a2a2a;
+
+  --accent: #e8ff00;
+  --accent-rgb: 232, 255, 0;
+}

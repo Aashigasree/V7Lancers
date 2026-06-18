@@ -666,21 +666,15 @@ a.nav-logo:hover .site-logo {
 
 .client-logo-item {
   display: flex;
-  flex-direction: column;
-  /* stack image + text */
   align-items: center;
-  /* center them */
   justify-content: center;
-  gap: 8px;
-  /* space between logo and name */
-  text-align: center;
-
-  padding: 12px 16px;
+  padding: 18px 28px;
+  min-width: 150px;
+  height: 80px;
   border: 1px solid var(--muted);
-  border-radius: 10px;
-
+  border-radius: 12px;
   flex-shrink: 0;
-  transition: border-color var(--tr), color var(--tr);
+  transition: border-color var(--tr);
 }
 
 .client-logo-item:hover {
@@ -689,7 +683,9 @@ a.nav-logo:hover .site-logo {
 }
 
 .client-logo-item img {
-  height: 28px;
+  max-width: 130px;
+  max-height: 50px;
+  height: auto;
   width: auto;
   object-fit: contain;
   transition: filter var(--tr), transform var(--tr);
@@ -964,7 +960,8 @@ a.nav-logo:hover .site-logo {
   border-radius: 20px;
   margin-bottom: 20px;
 
-  font-size: 40px; /* Increase icon size */
+  font-size: 40px;
+  /* Increase icon size */
   color: var(--accent);
   transition: all .35s ease;
 }
@@ -1063,6 +1060,7 @@ a.nav-logo:hover .site-logo {
   background: var(--accent);
   color: var(--on-accent);
 }
+
 /* ─── WHY US ─────────────────────────────────────────── */
 #why-us {
   background: var(--bg);
@@ -2472,8 +2470,34 @@ footer {
   font-size: .68rem;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--accent);
   margin-bottom: 18px;
+}
+
+.fa-facebook-f {
+  color: #1877F2;
+}
+
+.fa-instagram {
+  color: #E4405F;
+}
+
+.fa-linkedin-in {
+  color: #0A66C2;
+}
+
+.fa-youtube {
+  color: #FF0000;
+}
+
+/* X adapts to theme */
+.fa-x-twitter {
+  color: var(--text);
+}
+
+.footer-social-btn i {
+  font-size: 20px;
+  line-height: 1;
 }
 
 .footer-links {
@@ -2868,8 +2892,8 @@ footer {
   border-radius: 20px;
   margin-bottom: 20px;
 
-  font-size: 40px; /* Controls emoji size */
+  font-size: 40px;
+  /* Controls emoji size */
   color: var(--accent);
   transition: all 0.35s ease;
 }
-

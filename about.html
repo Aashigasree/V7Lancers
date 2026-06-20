@@ -218,6 +218,7 @@
         </div>
         <div class="reveal">
           <div class="timeline">
+            <div class="timeline-progress-dot"></div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
               <div class="timeline-year">2016</div>
@@ -512,6 +513,31 @@
     </div>
   </footer>
   <script src="script.js"></script>
+  <script>
+const items = document.querySelectorAll('.timeline-item');
+const progressDot = document.querySelector('.timeline-progress-dot');
+
+function updateTimeline() {
+  let activeItem = items[0];
+
+  items.forEach(item => {
+    const rect = item.getBoundingClientRect();
+
+    if (rect.top < window.innerHeight * 0.45) {
+      activeItem = item;
+    }
+  });
+
+  const targetDot = activeItem.querySelector('.timeline-dot');
+
+  progressDot.style.top =
+    (activeItem.offsetTop + targetDot.offsetTop) + 'px';
+}
+
+window.addEventListener('scroll', updateTimeline);
+window.addEventListener('resize', updateTimeline);
+updateTimeline();
+  </script>
 </body>
 
 </html>

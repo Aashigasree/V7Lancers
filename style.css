@@ -691,7 +691,7 @@ a.nav-logo:hover .site-logo {
   transition: filter var(--tr), transform var(--tr);
 
   /* Dark mode default */
-  filter: brightness(0) invert(1) opacity(0.8);
+  filter: brightness(0) invert(1) opacity(1);
 }
 
 /* Light mode override */
@@ -1963,14 +1963,20 @@ a.nav-logo:hover .site-logo {
 
 .timeline-dot {
   position: absolute;
-  left: -32px;
+  left: -40px;
   top: 4px;
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--accent);
+  background: #3a3a3a;
   border: 3px solid var(--bg);
-  flex-shrink: 0;
+
+
+}
+
+/* Light */
+[data-theme="light"] .timeline-dot {
+  background: #c5c5c5;
 }
 
 .timeline-year {
@@ -1991,6 +1997,22 @@ a.nav-logo:hover .site-logo {
   color: var(--muted);
   line-height: 1.6;
 }
+
+.timeline-progress-dot {
+  position: absolute;
+  left: 0px;
+  top: 4px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--accent);
+ 
+  box-shadow: 0 0 20px var(--accent);
+  z-index: 10;
+  transition: top .4s ease;
+}
+
+
 
 /* ─── TIMELINE IMAGE ─────────────────────────────────── */
 .timeline-left-img {

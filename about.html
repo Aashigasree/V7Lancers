@@ -76,9 +76,9 @@
     <div class="container">
       <p class="page-hero-tag">About V7Lancers Technopark Pvt Ltd</p>
 
-<h1 class="page-hero-title">
-  Building <em>Excellence</em> with V7Lancers
-</h1>
+      <h1 class="page-hero-title">
+        Building <em>Excellence</em> with V7Lancers
+      </h1>
 
 
 
@@ -135,7 +135,8 @@
                     <path d="M9 21V12h6v9" stroke="currentColor" stroke-width="2" />
                   </svg>
                 </span>
-                Government registered Private Limited Company (CIN available on request)
+                <p>Government-registered <strong style="color:var(--accent)">Private Limited Company</strong>
+</p >
               </div>
 
               <div class="check-item no-tick">
@@ -148,7 +149,10 @@
                     <path d="M10 20c1.5-4 6-6 6-6s4.5 2 6 6" stroke="currentColor" stroke-width="2" />
                   </svg>
                 </span>
-                250+ clients served globally with 98% retention rate
+                <p>Trusted by <strong style="color:var(--accent)">250+</strong> businesses worldwide, maintaining a <strong style="color:var(--accent)">98%</strong> client retention rate
+
+                </p>
+
               </div>
 
               <div class="check-item no-tick">
@@ -159,7 +163,10 @@
                     <path d="M4 21c1.5-5 6-7 8-7s6.5 2 8 7" stroke="currentColor" stroke-width="2" />
                   </svg>
                 </span>
-                18+ full-time skilled professionals across design, development, and strategy
+                <p>Team of <strong style="color:var(--accent)">18+</strong> skilled professionals specializing in web, software, mobile, and AI solutions
+
+                </p>
+
               </div>
 
               <div class="check-item no-tick">
@@ -178,7 +185,12 @@
                     <path d="M19 9h4M19 12h4M19 15h4" stroke="currentColor" stroke-width="2" />
                   </svg>
                 </span>
-                Proprietary AI-powered software products: EezyCRM, MeriTrack, DocWave
+                <p>Creators of proprietary AI-driven platforms:
+<strong style="color:var(--accent)">EezyCRM</strong>,
+<strong style="color:var(--accent)">MeriTrack</strong>,
+and <strong style="color:var(--accent)">DocWave</strong></p>
+                
+
               </div>
 
               <div class="check-item no-tick">
@@ -189,7 +201,7 @@
                     <path d="M6 12v4c0 2 3 4 6 4s6-2 6-4v-4" stroke="currentColor" stroke-width="2" />
                   </svg>
                 </span>
-                5 active educational institution partnerships and internship programmes
+                <p>Collaborating with <strong style="color:var(--accent)">5</strong> leading educational institutions through strategic partnerships and internship programmes</p>
               </div>
             </div>
           </div>
@@ -515,29 +527,29 @@
   </footer>
   <script src="script.js"></script>
   <script>
-const items = document.querySelectorAll('.timeline-item');
-const progressDot = document.querySelector('.timeline-progress-dot');
+    const items = document.querySelectorAll('.timeline-item');
+    const progressDot = document.querySelector('.timeline-progress-dot');
 
-function updateTimeline() {
-  let activeItem = items[0];
+    function updateTimeline() {
+      let activeItem = items[0];
 
-  items.forEach(item => {
-    const rect = item.getBoundingClientRect();
+      items.forEach(item => {
+        const rect = item.getBoundingClientRect();
 
-    if (rect.top < window.innerHeight * 0.45) {
-      activeItem = item;
+        if (rect.top < window.innerHeight * 0.45) {
+          activeItem = item;
+        }
+      });
+
+      const targetDot = activeItem.querySelector('.timeline-dot');
+
+      progressDot.style.top =
+        (activeItem.offsetTop + targetDot.offsetTop) + 'px';
     }
-  });
 
-  const targetDot = activeItem.querySelector('.timeline-dot');
-
-  progressDot.style.top =
-    (activeItem.offsetTop + targetDot.offsetTop) + 'px';
-}
-
-window.addEventListener('scroll', updateTimeline);
-window.addEventListener('resize', updateTimeline);
-updateTimeline();
+    window.addEventListener('scroll', updateTimeline);
+    window.addEventListener('resize', updateTimeline);
+    updateTimeline();
   </script>
 </body>
 

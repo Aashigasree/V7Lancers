@@ -2006,7 +2006,7 @@ a.nav-logo:hover .site-logo {
   height: 15px;
   border-radius: 50%;
   background: var(--accent);
- 
+
   box-shadow: 0 0 20px var(--accent);
   z-index: 10;
   transition: top .4s ease;
@@ -2018,11 +2018,11 @@ a.nav-logo:hover .site-logo {
 .timeline-left-img {
   position: relative;
   width: 100%;
-  max-width: 420px;
+  max-width: 550px;
   aspect-ratio: 3 / 4;
   margin: auto;
   overflow: hidden;
-  transform: translateX(-60px);
+  transform: translateX(-20px) translateY(-90px);
 }
 
 .timeline-left-img img {

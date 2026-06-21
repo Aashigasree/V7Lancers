@@ -1117,18 +1117,63 @@ a.nav-logo:hover .site-logo {
   overflow: hidden;
 }
 
+/* Change: move accent bar to TOP, always visible */
+.product-card-home::before {
+  /* NEW — top bar, always on */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 10px 10px 0 0;
+}
+
 .product-card-home::after {
+  /* KEEP — bottom bar on hover for motion */
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  background: var(--accent);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--tr);
 }
+
+/* Change: remove negative margin, add proper spacing */
+.product-name-big {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  letter-spacing: .03em;
+  margin-bottom: 4px;
+  /* was -10px — that was the bug */
+}
+
+/* Change: label becomes a small eyebrow above the name */
+.product-label {
+  font-family: var(--font-mono);
+  font-size: .62rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Change: features use text color, not muted */
+.pf-item {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  /* was center — better for wrapped text */
+  font-size: .82rem;
+  color: var(--text);
+  /* was var(--muted) */
+  line-height: 1.45;
+}
+
 
 .product-card-home:hover {
   transform: translateY(-6px);
@@ -1139,20 +1184,69 @@ a.nav-logo:hover .site-logo {
   transform: scaleX(1);
 }
 
-.product-label {
-  font-family: var(--font-mono);
-  font-size: .68rem;
-  letter-spacing: .16em;
-  color: var(--accent);
-  margin-bottom: 16px;
+/* new layout pieces */
+/* ─── PRODUCT HEADER ROW (icon | label + name) ─────── */
+.product-header-row {
+  display: flex;
+  align-items: center;        /* vertically center icon with label+name block */
+  gap: 16px;                  /* more space between icon and text */
+  margin-bottom: 20px;        /* more breathing room below header */
+  padding-bottom: 16px;       /* extra space before tagline */
+  border-bottom: 1px solid var(--border); /* subtle separator like reference */
 }
 
-.product-name-big {
-  font-family: var(--font-display);
-  font-size: 2.2rem;
-  letter-spacing: .03em;
-  margin-bottom: -10px;
+.product-header-row .product-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--accent-rgb), .10);
+  border-radius: 10px;
+  color: var(--accent);
 }
+
+.product-header-row .product-label {
+  font-family: var(--font-mono);
+  font-size: .60rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;         /* space between label and name */
+  line-height: 1;
+}
+
+.product-header-row .product-name-big {
+  font-size: 1.6rem;          /* slightly smaller so it fits beside icon */
+  letter-spacing: .02em;
+  line-height: 1.1;
+  margin-bottom: 0;
+}
+
+
+
+.product-hook {
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.product-tagline {
+  font-size: .8rem;
+  color: var(--muted);
+  margin-bottom: 14px;
+  line-height: 1.65;
+}
+
+.product-divider {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 12px;
+}
+
 
 .product-tagline {
   font-size: .88rem;
@@ -1168,13 +1262,6 @@ a.nav-logo:hover .site-logo {
   margin-top: 18px;
 }
 
-.pf-item {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  font-size: .82rem;
-  color: var(--muted);
-}
 
 .pf-item::before {
   content: '→';

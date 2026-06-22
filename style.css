@@ -1176,8 +1176,10 @@ a.nav-logo:hover .site-logo {
 
 
 .product-card-home:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-8px);
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.08),
+    0 20px 50px rgba(0,0,0,0.05);
 }
 
 .product-card-home:hover::after {

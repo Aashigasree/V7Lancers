@@ -3001,17 +3001,23 @@ footer {
     display: none !important; /* Hide separator line on vertical stack */
   }
 
-  /* 3. Hide Unwanted Sections Completely on Mobile */
-  #why-us,
-  #process-section,
-  .stats-section,
-  .clients-section,
-  #blog,
-  #quote,
-  #testimonials,
-  .service-card-cta {
-    display: none !important;
-  }
+
+/* 3. Hide Unwanted Sections Completely on Mobile */
+#why-us,
+#process-section,
+.stats-section,
+.clients-section,
+#blog,
+#quote,
+#testimonials,
+.service-card-cta {
+  display: none !important;
+}
+
+/* Hide checklist inside about section on mobile */
+#about-section .check-list {
+  display: none !important;
+}
 
   /* 4. Display Mobile-Only Sections */
   .mobile-only-section {
@@ -3160,6 +3166,11 @@ footer {
     z-index: 10;
   }
 
+  /* Hide cloned cards on mobile (if any clones exist due to screen size changes) */
+  #psTrack .ps-card:nth-child(n+4) {
+    display: none !important;
+  }
+
   /* 7. Services Section - Mobile Adjustments */
   .service-card {
     cursor: pointer !important;
@@ -3205,4 +3216,4 @@ footer {
     max-width: 320px;
     margin: 0 auto;
   }
-}
+}

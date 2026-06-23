@@ -305,4 +305,45 @@ document.querySelectorAll('.services-grid a.service-card').forEach(card => {
     });
   });
 
+  /* ── MOBILE STICKY NAV ACTIVE HIGHLIGHT ────────────────── */
+  var sections = [
+    document.getElementById('home-hero'),
+    document.getElementById('about-section'),
+    document.getElementById('products-section'),
+    document.getElementById('services'),
+    document.getElementById('management-team'),
+    document.getElementById('quote')
+  ].filter(Boolean);
+
+  var navLinks = document.querySelectorAll('.sticky-nav-link');
+
+  if (sections.length > 0 && navLinks.length > 0) {
+    var observerOptions = {
+      root: null,
+      rootMargin: '-100px 0px -60% 0px',
+      threshold: 0
+    };
+
+    var sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.getAttribute('id');
+          navLinks.forEach(function (link) {
+            if (link.getAttribute('href') === '#' + id) {
+              link.classList.add('active');
+              // Automatically scroll the active link into view in the horizontal nav
+              link.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(function (sec) {
+      sectionObserver.observe(sec);
+    });
+  }
+
 })();

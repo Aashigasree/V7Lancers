@@ -202,3 +202,107 @@ document.querySelectorAll('.services-grid a.service-card').forEach(card => {
   });
 });
 
+
+
+
+/* ================================================================
+   V7LANCERS — MOBILE OPTIMIZATIONS (JavaScript)
+   Add this block at the bottom of script.js, or load as a
+   separate file after script.js.
+   All logic is wrapped in a mobile-only guard (≤768px).
+   Desktop behaviour is completely unchanged.
+================================================================ */
+
+(function () {
+
+  /* Only run on mobile viewports */
+  if (window.innerWidth > 768) return;
+
+  /* ── PRODUCTS SECTION: disable cloning script side-effects ── */
+  /*
+   * The inline <script> in index.html clones ps-cards for the desktop
+   * infinite-scroll track. It is guarded with `if (window.innerWidth > 768)`
+   * so it already skips on mobile — no action needed here.
+   *
+   * What we do need: stop any residual animation and ensure the track
+   * behaves as a vertical list (handled by CSS above).
+   */
+  var psTrack = document.getElementById('psTrack');
+  if (psTrack) {
+    /* Pause CSS animation just in case a resize fires */
+    psTrack.style.animation = 'none';
+    psTrack.style.transform = 'none';
+  }
+
+  /* ── MOBILE NAV: filter to Home, Products, Services, Contact ── */
+  /*
+   * Links to hide are already handled via CSS display:none above.
+   * This JS layer provides a belt-and-braces approach and also
+   * re-orders visible links so Contact appears last.
+   */
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (mobileMenu) {
+    var HIDE_HREFS = ['portfolio.html', 'testimonials.html', 'gallery.html', 'about.html'];
+    mobileMenu.querySelectorAll('a').forEach(function (a) {
+      var href = (a.getAttribute('href') || '').split('/').pop();
+      if (HIDE_HREFS.indexOf(href) !== -1) {
+        a.style.display = 'none';
+      }
+    });
+  }
+
+  /* ── MANAGEMENT TEAM SECTION: ensure it is visible ──────── */
+  /*
+   * #management-team carries class "mobile-only-section".
+   * CSS sets display:block for it on mobile; this JS removes any
+   * inline display:none that might be set elsewhere at runtime.
+   */
+  var teamSection = document.getElementById('management-team');
+  if (teamSection) {
+    teamSection.style.removeProperty('display');
+  }
+
+  /* ── REDUCE PARTICLE COUNT ON MOBILE (performance) ──────── */
+  /*
+   * The particle canvas is already initialised by the time this runs.
+   * We lower opacity via CSS (see mobile-optimizations.css) and stop
+   * mouse-tracking which is irrelevant on touch screens.
+   */
+  window.addEventListener('mousemove', function () {}, { passive: true }); /* no-op replacement handled in CSS */
+
+  /* ── SERVICE CARD LINKS: keep clickable on mobile ─────────── */
+  /*
+   * The existing script.js prevents clicks on service cards when
+   * window.innerWidth > 768, which is correct. Nothing extra needed.
+   */
+
+  /* ── SCROLL REVEAL: lower threshold for smaller screens ───── */
+  /*
+   * Existing IntersectionObserver uses threshold:0.1.
+   * On very small screens deeply nested cards may never fully cross
+   * that threshold. We re-observe any not-yet-visible .reveal elements
+   * with a more forgiving observer.
+   */
+  var mobileObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        mobileObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+
+  document.querySelectorAll('.reveal:not(.visible)').forEach(function (el) {
+    mobileObserver.observe(el);
+  });
+
+  /* ── STAGGER DELAY: reduce on mobile for snappier feel ────── */
+  document.querySelectorAll(
+    '.services-grid, .team-grid, .ps-track'
+  ).forEach(function (grid) {
+    Array.from(grid.children).forEach(function (child, i) {
+      child.style.transitionDelay = (i * 40) + 'ms'; /* 40ms vs 70ms desktop */
+    });
+  });
+
+})();

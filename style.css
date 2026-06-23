@@ -1121,7 +1121,9 @@ a.nav-logo:hover .site-logo {
 .product-card-home::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 3px;
   background: var(--accent);
   border-radius: 12px 12px 0 0;
@@ -1130,7 +1132,9 @@ a.nav-logo:hover .site-logo {
 .product-card-home::after {
   content: '';
   position: absolute;
-  bottom: 0; left: 0; right: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   height: 3px;
   background: var(--accent);
   transform: scaleX(0);
@@ -1774,16 +1778,17 @@ a.nav-logo:hover .site-logo {
   transform: scale(1.05);
 }
 
-.service-visual-image{
-  display:flex;
-  justify-content:center;
-  align-items:center;
+.service-visual-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .service-image {
   width: 100%;
   max-width: 600px;
-  height: 400px; /* same height for all */
+  height: 400px;
+  /* same height for all */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2966,254 +2971,542 @@ footer {
   color: var(--accent);
   transition: all 0.35s ease;
 }
+/* ================================================================
+   V7LANCERS — MOBILE OPTIMIZATIONS
+   Scope: @media (max-width: 768px) only.
+   Desktop layout is completely untouched.
+   ================================================================ */
 
-/* ═══ MOBILE SPECIFIC OPTIMIZATIONS (768px & below) ═══ */
 @media (max-width: 768px) {
-  /* 1. Mobile Menu Clean Navigation */
-  #mobileMenu a[href="about.html"],
+
+  /* ── GLOBAL SPACING ─────────────────────────────────────────── */
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  section {
+    padding-top: 52px !important;
+    padding-bottom: 52px !important;
+  }
+
+
+  /* ================================================================
+     NAVIGATION
+     Show: Home, Products, Services, Contact only.
+     Hide: Portfolio, Testimonials, Gallery from mobile menu.
+  ================================================================ */
+
+  /* Hide secondary links in mobile drawer */
+  #mobileMenu a[href="portfolio.html"],
   #mobileMenu a[href="testimonials.html"],
-  #mobileMenu a[href="gallery.html"] {
+  #mobileMenu a[href="gallery.html"],
+  #mobileMenu a[href="about.html"] {
+    display: none;
+  }
+
+
+  /* ================================================================
+     SECTIONS — HIDE ON MOBILE
+     Sections that must not appear on mobile home.
+  ================================================================ */
+
+  /* Why Choose Us / What Sets V7Lancers Apart */
+  #why-us {
     display: none !important;
   }
 
-  /* 2. Visual Merge: About Inception section merged into Home Hero */
-  #about-section {
-    background: transparent !important;
-    padding-top: 0 !important;
-    margin-top: -40px !important;
-  }
-  
-  #about-section .sec-title {
-    font-size: 2.2rem !important;
-    line-height: 1.1 !important;
-  }
-
-  /* Hide the "Our Full Story" button under inception story on mobile */
-  .about-content-wrap .btn[href="about.html"] {
+  /* How We Work / Our Process */
+  #process-section {
     display: none !important;
   }
 
-  /* Hide verbose process subtexts */
-  .process-step .step-desc {
+  /* Testimonials */
+  #testimonials {
     display: none !important;
   }
-  .process-steps::before {
-    display: none !important; /* Hide separator line on vertical stack */
+
+  /* Client Logos / Trusted By / Partner Sections */
+  .clients-section {
+    display: none !important;
   }
 
-
-/* 3. Hide Unwanted Sections Completely on Mobile */
-#why-us,
-#process-section,
-.stats-section,
-.clients-section,
-#blog,
-#quote,
-#testimonials,
-.service-card-cta {
-  display: none !important;
-}
-
-/* Hide checklist inside about section on mobile */
-#about-section .check-list {
-  display: none !important;
-}
-
-  /* 4. Display Mobile-Only Sections */
-  .mobile-only-section {
-    display: block !important;
+  /* Insights / Blog / Articles */
+  #blog {
+    display: none !important;
   }
 
-  /* Reduce massive section paddings to shorten page height */
-  section, 
-  #home-hero, 
-  #services, 
-  #about-section,
-  #management-team {
-    padding: 48px 16px !important;
+  /* Stats band — keep it but trim padding */
+  .stats-section {
+    padding: 0 !important;
   }
 
-  /* 5. Single-Column Layout Structure */
-  .about-grid,
-  .services-grid,
-  .why-grid,
-  .blog-grid,
-  .footer-grid,
-  .quote-wrap,
-  .stats-band,
-  .process-steps,
-  .team-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    grid-template-columns: 1fr !important;
-    gap: 24px !important;
+  .stats-band {
+    flex-wrap: wrap;
+    gap: 0;
+    border-radius: 14px;
+    padding: 12px 4px;
   }
 
-  /* Spacing adjustments for stacked layouts */
-  .process-step {
-    padding: 16px 0 !important;
-    border-bottom: 1px dashed var(--border);
+  .stat-band-item {
+    flex: 0 0 50%;
+    padding: 16px 8px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    text-align: center;
   }
-  .process-step:last-child {
+
+  /* Last item: span full width so grid doesn't leave odd one out */
+  .stat-band-item:last-child {
+    flex: 0 0 100%;
     border-bottom: none;
   }
-  .step-circle {
-    margin-bottom: 10px !important;
+
+  .stat-band-num {
+    font-size: 1.8rem;
   }
 
-  /* 6. Products Section - List/Grid Layout (No Carousel) */
+  .stat-band-label {
+    font-size: 0.72rem;
+  }
+
+
+  /* ================================================================
+     HERO — keep visible, improve readability
+  ================================================================ */
+
+  #home-hero {
+    padding-top: 110px !important;
+    padding-bottom: 56px !important;
+    min-height: auto;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 9vw, 3rem);
+    line-height: 1.18;
+  }
+
+  .hero-carousel {
+    min-height: 170px;
+  }
+
+  .hero-sub {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-top: 16px;
+    padding: 0 4px;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .hero-btns .btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+
+  /* ================================================================
+     COMPANY STORY (INCEPTION) — keep visible, stack vertically
+  ================================================================ */
+
+  #about-section .about-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* Image block */
+  #about-section .about-image {
+    order: 1;
+  }
+
+  #about-section .about-img-box {
+    height: 220px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  #about-section .about-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #about-section .about-badge {
+    bottom: -14px;
+    right: 14px;
+    padding: 10px 16px;
+    font-size: 1.2rem;
+  }
+
+  /* Content block */
+  #about-section .about-content-wrap {
+    order: 2;
+  }
+
+  #about-section .sec-title {
+    font-size: clamp(1.5rem, 6vw, 2.1rem);
+  }
+
+  #about-section .sec-body {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  /* Reduce vertical density of check-list */
+  #about-section .check-item {
+    gap: 10px;
+    padding: 8px 0;
+    font-size: 0.88rem;
+  }
+
+  /* Buttons row: stack vertically */
+  #about-section [style*="display:flex;gap:16px"] {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  #about-section [style*="display:flex;gap:16px"] .btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+
+  /* ================================================================
+     PRODUCTS — replace horizontal auto-scroll with vertical cards
+  ================================================================ */
+
+  /* Wrapper: disable animation, allow normal flow */
   .ps-track-wrapper {
     overflow: visible !important;
-    padding: 0 0 24px !important;
+    padding: 0 !important;
     mask-image: none !important;
     -webkit-mask-image: none !important;
   }
+
+  /* Track: switch from flex-scrolling row to vertical column */
   .ps-track {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
     width: 100% !important;
     animation: none !important;
-    transform: none !important;
+    gap: 20px;
+    padding: 0;
   }
+
+  /* Hide cloned duplicate cards (created by inline JS for desktop scroll) */
+  .ps-track .ps-card:nth-child(n+4) {
+    display: none !important;
+  }
+
+  /* Card: full-width vertical layout, auto height */
   .ps-card {
     flex: none !important;
     width: 100% !important;
     height: auto !important;
+    min-height: 0 !important;
+    border-radius: 20px !important;
     margin: 0 !important;
-    padding: 24px !important;
-    background: var(--card) !important;
-    border: 1px solid var(--border) !important;
-    border-radius: 16px !important;
-    box-shadow: var(--shadow-sm) !important;
-    outline: none !important;
     transform: none !important;
-    opacity: 1 !important;
-    position: relative !important;
+    transition: box-shadow 0.3s ease !important;
   }
+
+  /* Odd/even y-offset: reset for mobile */
   .ps-card:nth-child(even) {
-    --y-offset: 0px !important;
-    transform: none !important;
+    --y-offset: 0px;
   }
-  .ps-track:hover .ps-card {
-    opacity: 1 !important;
+
+  /* Screen panel: auto height, readable padding */
+  .ps-screen {
+    position: relative !important;
+    border-radius: 14px !important;
+    padding: 20px 18px 18px !important;
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
   }
-  .ps-track:hover .ps-card:hover {
-    transform: translateY(-4px) !important;
-    box-shadow: var(--shadow-md) !important;
-  }
+
+  /* Remove dynamic phone island on mobile */
   .ps-phone-island {
     display: none !important;
   }
-  .ps-screen {
-    position: relative !important;
-    background: transparent !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 16px !important;
-    height: auto !important;
-  }
-  .ps-screen-header {
-    border-bottom: none !important;
-    padding-bottom: 0 !important;
-    gap: 12px !important;
-  }
-  .ps-screen-logo {
-    width: 36px !important;
-    height: 36px !important;
-  }
-  .ps-screen-title {
-    font-size: 18px !important;
-    font-weight: 700 !important;
-  }
-  .ps-screen-label {
-    display: none !important;
-  }
-  .ps-screen-body {
-    margin: 0 !important;
-    gap: 0 !important;
-  }
-  .ps-ui-snippet {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-  }
+
+  /* Description text: more legible size */
   .ps-screen-desc {
-    font-size: 0.95rem !important;
-    line-height: 1.6 !important;
-    color: var(--muted) !important;
+    font-size: 0.88rem;
+    line-height: 1.65;
   }
+
+  /* Tags row: allow wrapping */
   .ps-screen-tags {
-    display: none !important;
+    flex-wrap: wrap;
+    gap: 6px;
   }
-  
-  /* Stretched link to make whole card clickable, navigating to products.html */
+
+  /* Button: full-width tap target */
   .ps-screen-btn {
-    margin-top: 12px !important;
-    width: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    box-sizing: border-box !important;
-  }
-  .ps-screen-btn::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 10;
+    display: block;
+    text-align: center;
+    margin-top: 6px;
+    border-radius: 10px !important;
+    padding: 12px !important;
+    font-size: 0.88rem;
   }
 
-  /* Hide cloned cards on mobile (if any clones exist due to screen size changes) */
-  #psTrack .ps-card:nth-child(n+4) {
-    display: none !important;
+  /* Footer link */
+  .ps-footer {
+    text-align: center;
+    margin-top: 28px;
   }
 
-  /* 7. Services Section - Mobile Adjustments */
+  /* Track hover dimming: disable on mobile (touch) */
+  .ps-track:hover .ps-card {
+    opacity: 1 !important;
+  }
+
+
+  /* ================================================================
+     SERVICES — convert grid to single-column vertical list
+  ================================================================ */
+
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
   .service-card {
-    cursor: pointer !important;
+    padding: 22px 18px !important;
+    border-radius: 16px;
   }
+
+  .service-num {
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+  }
+
+  .service-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .service-name {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .service-desc {
+    font-size: 0.87rem;
+    line-height: 1.65;
+  }
+
   .service-tech {
-    display: none !important; /* Hide tech tags to keep it lightweight */
+    margin-top: 12px;
+    flex-wrap: wrap;
+    gap: 6px;
   }
 
-  /* 8. Touch Targets & Scrolling Experience */
-  .mobile-menu a,
-  .nav-links a {
-    padding: 14px 20px !important;
-    min-height: 48px;
+  /* CTA card within services grid */
+  .service-card-cta {
+    padding: 24px 18px !important;
+  }
+
+  .cta-title {
+    font-size: 1.05rem;
+  }
+
+  .cta-desc {
+    font-size: 0.87rem;
+  }
+
+  .cta-btn {
+    margin-top: 16px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* "View All Services" button */
+  #services > .container > [style*="text-align:center"] {
+    margin-top: 24px !important;
+  }
+
+
+  /* ================================================================
+     MANAGEMENT TEAM — single-column, optimized images & spacing
+  ================================================================ */
+
+  /* Show the mobile-only section (hidden on desktop via class) */
+  .mobile-only-section {
+    display: block !important;
+  }
+
+  /* Full-width single-column grid */
+  .team-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  .team-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 16px;
+    padding: 18px 16px;
+    border-radius: 16px;
+  }
+
+  /* Avatar circle: fixed compact size */
+  .team-photo {
+    flex-shrink: 0;
+    width: 56px !important;
+    height: 56px !important;
+    font-size: 1.1rem !important;
+    border-radius: 50% !important;
+  }
+
+  .team-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .team-name {
+    font-size: 0.97rem;
+    margin-bottom: 2px;
+  }
+
+  .team-role {
+    font-size: 0.77rem;
+    margin-bottom: 6px;
+  }
+
+  .team-bio {
+    font-size: 0.83rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+
+  /* ================================================================
+     QUOTE / CONTACT FORM — stack columns, tighten spacing
+  ================================================================ */
+
+  .quote-wrap {
+    grid-template-columns: 1fr !important;
+    gap: 32px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+  }
+
+  .form-box {
+    padding: 22px 16px !important;
+    border-radius: 16px;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+
+  .quote-info .sec-title {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+
+  .quote-check-list .check-item {
+    font-size: 0.87rem;
+    padding: 8px 0;
+  }
+
+
+  /* ================================================================
+     FOOTER — single column, condensed
+  ================================================================ */
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px;
+  }
+
+  .footer-desc {
+    font-size: 0.87rem;
+    line-height: 1.65;
+  }
+
+  .footer-social {
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 8px;
   }
 
-  /* Lead Gen optimization: CTA and Inputs focus */
-  .btn, 
-  .cta,
-  .product-card-cta,
-  .ps-screen-btn {
-    min-height: 48px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-size: 0.9rem !important;
-    font-weight: 700 !important;
-    border-radius: 8px !important;
-    width: 100% !important; /* Full width CTAs on mobile for easy reach */
-    box-sizing: border-box;
+  .footer-links a,
+  .footer-links span {
+    font-size: 0.87rem;
   }
 
-  .form-group input,
-  .form-group textarea,
-  .form-group select {
-    min-height: 48px !important;
-    font-size: 1rem !important; /* Prevents iOS auto-zoom on focus */
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 6px;
+    text-align: center;
+    font-size: 0.78rem;
+    padding-top: 20px;
   }
 
-  /* General improvements */
-  .about-image {
-    max-width: 320px;
-    margin: 0 auto;
+  /* Footer logo sizing */
+  .footer-brand .site-logo {
+    width: 140px !important;
   }
-}
+
+
+  /* ================================================================
+     SEC HEADERS — compact section headings
+  ================================================================ */
+
+  .sec-header-center {
+    margin-bottom: 28px;
+  }
+
+  .sec-title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    line-height: 1.25;
+  }
+
+  .sec-body {
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+  .sec-tag {
+    font-size: 0.65rem;
+    padding: 3px 10px;
+  }
+
+
+  /* ================================================================
+     CANVAS PARTICLE BACKGROUND — reduce on mobile for performance
+  ================================================================ */
+
+  #canvas {
+    opacity: 0.5;
+  }
+
+} /* END @media (max-width: 768px) */

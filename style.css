@@ -2961,3 +2961,152 @@ footer {
   color: var(--accent);
   transition: all 0.35s ease;
 }
+
+/* ═══ MOBILE SPECIFIC OPTIMIZATIONS (768px & below) ═══ */
+@media (max-width: 768px) {
+  /* 1. Mobile Menu Clean Navigation */
+  #mobileMenu a[href="about.html"],
+  #mobileMenu a[href="testimonials.html"],
+  #mobileMenu a[href="gallery.html"] {
+    display: none !important;
+  }
+
+  /* 2. Visual Merge: About Inception section merged into Home Hero */
+  #about-section {
+    background: transparent !important;
+    padding-top: 0 !important;
+    margin-top: -40px !important;
+  }
+  
+  #about-section .sec-title {
+    font-size: 2.2rem !important;
+    line-height: 1.1 !important;
+  }
+
+  /* 3. Content Length Reduction (do not remove critical text but clamp descriptions) */
+  .hero-sub {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 24px !important;
+  }
+  
+  .sec-body {
+    font-size: 0.88rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Hide secondary paragraph in inception story to save vertical height */
+  .about-content-wrap p.sec-body:nth-of-type(2) {
+    display: none !important;
+  }
+  
+  /* Hide verbose process subtexts */
+  .process-step .step-desc {
+    display: none !important;
+  }
+  .process-steps::before {
+    display: none !important; /* Hide separator line on vertical stack */
+  }
+
+  /* Reduce massive section paddings to shorten page height */
+  section, 
+  .quote-section, 
+  #home-hero, 
+  #services, 
+  #about-section, 
+  #why-us, 
+  #blog,
+  #testimonials {
+    padding: 48px 16px !important;
+  }
+
+  /* 4. Single-Column Layout Structure */
+  .about-grid,
+  .services-grid,
+  .why-grid,
+  .blog-grid,
+  .footer-grid,
+  .quote-wrap,
+  .stats-band,
+  .process-steps {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Spacing adjustments for stacked layouts */
+  .stat-band-item {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border) !important;
+    padding: 24px 16px !important;
+  }
+  .stat-band-item:last-child {
+    border-bottom: none !important;
+  }
+
+  .process-step {
+    padding: 16px 0 !important;
+    border-bottom: 1px dashed var(--border);
+  }
+  .process-step:last-child {
+    border-bottom: none;
+  }
+  .step-circle {
+    margin-bottom: 10px !important;
+  }
+
+  /* 5. Portfolio Limit (Show only top 3 items) */
+  .portfolio-grid .portfolio-item:nth-child(n+4) {
+    display: none !important;
+  }
+
+  /* 6. Hide Testimonials and Gallery */
+  #testimonials,
+  .gallery-section,
+  .gallery-grid {
+    display: none !important;
+  }
+
+  /* 7. Touch Targets & Scrolling Experience */
+  .mobile-menu a,
+  .nav-links a {
+    padding: 14px 20px !important;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Lead Gen optimization: CTA and Inputs focus */
+  .btn, 
+  .cta,
+  .product-card-cta,
+  .ps-screen-btn {
+    min-height: 48px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    width: 100% !important; /* Full width CTAs on mobile for easy reach */
+    box-sizing: border-box;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    min-height: 48px !important;
+    font-size: 1rem !important; /* Prevents iOS auto-zoom on focus */
+  }
+
+  /* General improvements */
+  .about-image {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}

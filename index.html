@@ -607,9 +607,11 @@
 (function(){
   const track = document.getElementById("psTrack");
   if (!track) return;
-  const cards = Array.from(track.children);
-  for (let i = 0; i < 2; i++) {
-    cards.forEach(card => track.appendChild(card.cloneNode(true)));
+  if (window.innerWidth > 768) {
+    const cards = Array.from(track.children);
+    for (let i = 0; i < 2; i++) {
+      cards.forEach(card => track.appendChild(card.cloneNode(true)));
+    }
   }
 })();
 </script>
@@ -663,7 +665,7 @@
   </section>
 
   <!-- ══ SECTION 5 — STATS ══════════════════════════════════ -->
-  <section style="background:var(--bg);padding:0">
+  <section class="stats-section" style="background:var(--bg);padding:0">
     <div class="container" style="padding-top:0;padding-bottom:0">
       <div class="stats-band reveal">
         <div class="stat-band-item">
@@ -700,7 +702,7 @@
           and beyond.</p>
       </div>
       <div class="services-grid">
-        <div class="service-card reveal">
+        <a href="services.html" class="service-card reveal">
           <div class="service-num">01</div>
           <div class="service-icon">🖥️</div>
           <div class="service-name">Website Design &amp; Development</div>
@@ -708,8 +710,8 @@
             into customers.</p>
           <div class="service-tech"><span class="tech-tag">HTML/CSS</span><span class="tech-tag">Bootstrap</span><span
               class="tech-tag">React</span><span class="tech-tag">Angular</span></div>
-        </div>
-        <div class="service-card reveal">
+        </a>
+        <a href="services.html" class="service-card reveal">
           <div class="service-num">02</div>
           <div class="service-icon">🛒</div>
           <div class="service-name">Ecommerce Development</div>
@@ -717,8 +719,8 @@
             experience that drives sales.</p>
           <div class="service-tech"><span class="tech-tag">Shopify</span><span class="tech-tag">WooCommerce</span><span
               class="tech-tag">Custom</span></div>
-        </div>
-        <div class="service-card reveal">
+        </a>
+        <a href="services.html" class="service-card reveal">
           <div class="service-num">03</div>
           <div class="service-icon">🚚</div>
           <div class="service-name">Online Delivery Applications</div>
@@ -726,8 +728,8 @@
             real-time tracking and management.</p>
           <div class="service-tech"><span class="tech-tag">Flutter</span><span class="tech-tag">Firebase</span><span
               class="tech-tag">Maps API</span></div>
-        </div>
-        <div class="service-card reveal">
+        </a>
+        <a href="services.html" class="service-card reveal">
           <div class="service-num">04</div>
           <div class="service-icon">⚙️</div>
           <div class="service-name">Custom Software Development</div>
@@ -735,8 +737,8 @@
             digital transformation.</p>
           <div class="service-tech"><span class="tech-tag">Python</span><span class="tech-tag">Node.js</span><span
               class="tech-tag">MySQL</span><span class="tech-tag">AWS</span></div>
-        </div>
-        <div class="service-card reveal">
+        </a>
+        <a href="services.html" class="service-card reveal">
           <div class="service-num">05</div>
           <div class="service-icon">📱</div>
           <div class="service-name">Mobile App Development</div>
@@ -744,7 +746,7 @@
             performance.</p>
           <div class="service-tech"><span class="tech-tag">Flutter</span><span class="tech-tag">React Native</span><span
               class="tech-tag">iOS</span><span class="tech-tag">Android</span></div>
-        </div>
+        </a>
         <!-- CTA -->
         <div class="service-card reveal service-card-cta">
           <div class="cta-title">Have a project in mind?</div>
@@ -858,7 +860,7 @@
   </section>
 
   <!-- ══ SECTION 9 — CLIENT LOGOS ══════════════════════════ -->
-  <section style="background:var(--bg);padding:64px 0">
+  <section class="clients-section" style="background:var(--bg);padding:64px 0">
     <div class="container">
       <div class="sec-header-center reveal">
         <div class="sec-tag">Trusted By</div>
@@ -1122,6 +1124,56 @@
               <button class="btn btn-primary" style="width:100%;justify-content:center"
                 data-submit="Get Free Consultation →">Get Free Consultation →</button>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MANAGEMENT TEAM (MOBILE ONLY) ════════════════════ -->
+  <section id="management-team" class="mobile-only-section" style="background:var(--surface)">
+    <div class="container">
+      <div class="sec-header-center reveal">
+        <div class="sec-tag">Our People</div>
+        <h2 class="sec-title">Meet the Management Team</h2>
+        <p class="sec-body">The experienced professionals who lead V7Lancers — bringing together technology, design, and
+          business expertise.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-photo">GP</div>
+          <div class="team-body">
+            <div class="team-name">Gautam Prakash</div>
+            <div class="team-role">CEO &amp; Managing Director</div>
+            <p class="team-bio">Visionary leader driving V7Lancers' strategic growth, technology innovation, and client
+              relationships since the company's inception in 2016.</p>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-photo">VS</div>
+          <div class="team-body">
+            <div class="team-name">Vikram Selvam</div>
+            <div class="team-role">Chief Technology Officer</div>
+            <p class="team-bio">Technology architect overseeing all development projects, product roadmap, and the
+              engineering team's day-to-day operations.</p>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-photo">ML</div>
+          <div class="team-body">
+            <div class="team-name">Meera Lakshmi</div>
+            <div class="team-role">Head of Design</div>
+            <p class="team-bio">Creative lead responsible for UI/UX design, brand identity, and ensuring every project
+              delivers an exceptional user experience.</p>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-photo">S</div>
+          <div class="team-body">
+            <div class="team-name">Sanjay</div>
+            <div class="team-role">Business Development Manager</div>
+            <p class="team-bio">Driving client acquisition, partnerships, and growth initiatives across India and
+              international markets including UK, USA, and Gulf.</p>
           </div>
         </div>
       </div>

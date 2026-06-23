@@ -192,3 +192,13 @@ document.querySelectorAll('[data-submit]').forEach(btn=>{
     }, 500);
   }, 3500);
 })();
+
+/* ── SERVICE CARD CLICK PREVENT ON DESKTOP ────────────── */
+document.querySelectorAll('.services-grid a.service-card').forEach(card => {
+  card.addEventListener('click', e => {
+    if (window.innerWidth > 768) {
+      e.preventDefault();
+    }
+  });
+});
+

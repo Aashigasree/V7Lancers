@@ -2661,6 +2661,11 @@ footer {
   }
 }
 
+/* Mobile-only elements hidden by default on desktop */
+.mobile-only-section {
+  display: none !important;
+}
+
 /* ─── RESPONSIVE ─────────────────────────────────────── */
 @media(max-width:1024px) {
   .site-logo {
@@ -2983,27 +2988,11 @@ footer {
     line-height: 1.1 !important;
   }
 
-  /* 3. Content Length Reduction (do not remove critical text but clamp descriptions) */
-  .hero-sub {
-    font-size: 0.9rem !important;
-    line-height: 1.6 !important;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    margin-bottom: 24px !important;
-  }
-  
-  .sec-body {
-    font-size: 0.88rem !important;
-    line-height: 1.6 !important;
-  }
-  
-  /* Hide secondary paragraph in inception story to save vertical height */
-  .about-content-wrap p.sec-body:nth-of-type(2) {
+  /* Hide the "Our Full Story" button under inception story on mobile */
+  .about-content-wrap .btn[href="about.html"] {
     display: none !important;
   }
-  
+
   /* Hide verbose process subtexts */
   .process-step .step-desc {
     display: none !important;
@@ -3012,19 +3001,33 @@ footer {
     display: none !important; /* Hide separator line on vertical stack */
   }
 
+  /* 3. Hide Unwanted Sections Completely on Mobile */
+  #why-us,
+  #process-section,
+  .stats-section,
+  .clients-section,
+  #blog,
+  #quote,
+  #testimonials,
+  .service-card-cta {
+    display: none !important;
+  }
+
+  /* 4. Display Mobile-Only Sections */
+  .mobile-only-section {
+    display: block !important;
+  }
+
   /* Reduce massive section paddings to shorten page height */
   section, 
-  .quote-section, 
   #home-hero, 
   #services, 
-  #about-section, 
-  #why-us, 
-  #blog,
-  #testimonials {
+  #about-section,
+  #management-team {
     padding: 48px 16px !important;
   }
 
-  /* 4. Single-Column Layout Structure */
+  /* 5. Single-Column Layout Structure */
   .about-grid,
   .services-grid,
   .why-grid,
@@ -3032,7 +3035,8 @@ footer {
   .footer-grid,
   .quote-wrap,
   .stats-band,
-  .process-steps {
+  .process-steps,
+  .team-grid {
     display: flex !important;
     flex-direction: column !important;
     grid-template-columns: 1fr !important;
@@ -3040,15 +3044,6 @@ footer {
   }
 
   /* Spacing adjustments for stacked layouts */
-  .stat-band-item {
-    border-right: none !important;
-    border-bottom: 1px solid var(--border) !important;
-    padding: 24px 16px !important;
-  }
-  .stat-band-item:last-child {
-    border-bottom: none !important;
-  }
-
   .process-step {
     padding: 16px 0 !important;
     border-bottom: 1px dashed var(--border);
@@ -3060,19 +3055,120 @@ footer {
     margin-bottom: 10px !important;
   }
 
-  /* 5. Portfolio Limit (Show only top 3 items) */
-  .portfolio-grid .portfolio-item:nth-child(n+4) {
+  /* 6. Products Section - List/Grid Layout (No Carousel) */
+  .ps-track-wrapper {
+    overflow: visible !important;
+    padding: 0 0 24px !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+  }
+  .ps-track {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    width: 100% !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  .ps-card {
+    flex: none !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 24px !important;
+    background: var(--card) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 16px !important;
+    box-shadow: var(--shadow-sm) !important;
+    outline: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    position: relative !important;
+  }
+  .ps-card:nth-child(even) {
+    --y-offset: 0px !important;
+    transform: none !important;
+  }
+  .ps-track:hover .ps-card {
+    opacity: 1 !important;
+  }
+  .ps-track:hover .ps-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: var(--shadow-md) !important;
+  }
+  .ps-phone-island {
     display: none !important;
   }
-
-  /* 6. Hide Testimonials and Gallery */
-  #testimonials,
-  .gallery-section,
-  .gallery-grid {
+  .ps-screen {
+    position: relative !important;
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    height: auto !important;
+  }
+  .ps-screen-header {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    gap: 12px !important;
+  }
+  .ps-screen-logo {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .ps-screen-title {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+  }
+  .ps-screen-label {
     display: none !important;
   }
+  .ps-screen-body {
+    margin: 0 !important;
+    gap: 0 !important;
+  }
+  .ps-ui-snippet {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+  .ps-screen-desc {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    color: var(--muted) !important;
+  }
+  .ps-screen-tags {
+    display: none !important;
+  }
+  
+  /* Stretched link to make whole card clickable, navigating to products.html */
+  .ps-screen-btn {
+    margin-top: 12px !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+  .ps-screen-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+  }
 
-  /* 7. Touch Targets & Scrolling Experience */
+  /* 7. Services Section - Mobile Adjustments */
+  .service-card {
+    cursor: pointer !important;
+  }
+  .service-tech {
+    display: none !important; /* Hide tech tags to keep it lightweight */
+  }
+
+  /* 8. Touch Targets & Scrolling Experience */
   .mobile-menu a,
   .nav-links a {
     padding: 14px 20px !important;

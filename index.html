@@ -203,102 +203,360 @@
     </div>
   </section>
 
-  <!-- ══ SECTION 3 — PRODUCTS ══════════════════════════════ -->
-<section id="products" style="background:var(--bg)">
-  <div class="container">
-    <div class="sec-header-center reveal">
-      <div class="sec-tag">Our Products</div>
-      <h2 class="sec-title">AI-Powered Products</h2>
-      <p class="sec-body">Proprietary software designed to automate and accelerate business operations.</p>
-    </div>
+<!-- ══ SECTION 3 — PRODUCTS ══════════════════════════════ -->
+<style>
+  .ps-section {
+    padding: 48px 0 64px;
+    overflow: hidden;
+    position: relative;
+    background: transparent;
+    font-family: var(--font-sans);
+  }
+  .ps-header {
+    text-align: center;
+    margin-bottom: 32px;
+    padding: 0 24px;
+  }
+  .ps-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    border: 0.5px solid var(--color-border-secondary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  .ps-title {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin: 0 0 10px;
+    letter-spacing: -0.02em;
+  }
+  .ps-subtitle {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: 1.6;
+  }
+  .ps-track-wrapper {
+    overflow: hidden;
+    position: relative;
+    padding: 28px 0 80px;
+    mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+  }
+  .ps-track {
+    display: flex;
+    align-items: flex-start;
+    width: max-content;
+    will-change: transform;
+    animation: psScroll 44s linear infinite;
+  }
+  .ps-track:hover { animation-play-state: paused; }
+  @keyframes psScroll {
+    from { transform: translate3d(0,0,0); }
+    to { transform: translate3d(-33.3333%,0,0); }
+  }
 
-    <div class="products-grid-home">
+  .ps-card {
+    flex: 0 0 264px;
+    width: 264px;
+    height: 448px;
+    margin: 0 20px;
+    background: #ffffff;
+    border: 9px solid #ffffff;
+    border-radius: 36px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    outline: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.04);
+    --y-offset: 0px;
+    transform: translateY(var(--y-offset)) scale(1);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, opacity 0.4s ease;
+  }
 
-      <div class="product-card-home reveal">
-        <div class="product-header-row">
-          <div class="product-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
+  .ps-card:nth-child(even) {
+    --y-offset: 28px;
+  }
+
+  .ps-track:hover .ps-card { opacity: 0.6; }
+  .ps-track:hover .ps-card:hover {
+    opacity: 1;
+    transform: translateY(calc(var(--y-offset) - 12px)) scale(1.03);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12), 0 8px 20px rgba(0, 0, 0, 0.04);
+    z-index: 10;
+  }
+
+  .ps-phone-island {
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 68px;
+    height: 14px;
+    background: #e2e8f0;
+    border-radius: 20px;
+    z-index: 10;
+  }
+
+  .ps-screen {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #f8fafc;
+    border-radius: 27px;
+    padding: 32px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .ps-screen-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 10px;
+  }
+  .ps-screen-logo {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .ps-screen-logo.is-crm  { background: #e0e7ff; color: #4f46e5; }
+  .ps-screen-logo.is-exam { background: #e0f2fe; color: #0284c7; }
+  .ps-screen-logo.is-doc  { background: #f5f3ff; color: #7c3aed; }
+
+  .ps-screen-title-area {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  .ps-screen-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  .ps-screen-label {
+    font-size: 9.5px;
+    color: #64748b;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .ps-screen-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    margin: 16px 0 10px;
+  }
+
+  .ps-ui-snippet {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    text-align: left;
+  }
+  .ps-screen-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0;
+  }
+
+  .ps-screen-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: auto;
+  }
+  .ps-screen-tag {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 7px;
+    white-space: nowrap;
+  }
+  .ps-screen-tag.is-crm  { background: #eef2ff; color: #4f46e5; }
+  .ps-screen-tag.is-exam { background: #f0f9ff; color: #0284c7; }
+  .ps-screen-tag.is-doc  { background: #faf5ff; color: #7c3aed; }
+
+  .ps-screen-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+    margin-top: 2px;
+  }
+  .ps-screen-btn.is-crm  { background: #4f46e5; color: #ffffff; }
+  .ps-screen-btn.is-crm:hover { background: #4338ca; }
+  .ps-screen-btn.is-exam { background: #0284c7; color: #ffffff; }
+  .ps-screen-btn.is-exam:hover { background: #0369a1; }
+  .ps-screen-btn.is-doc  { background: #7c3aed; color: #ffffff; }
+  .ps-screen-btn.is-doc:hover { background: #6d28d9; }
+
+  .ps-footer { text-align: center; padding-top: 8px; }
+  .ps-view-btn {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    border: 0.5px solid var(--color-border-secondary);
+    padding: 9px 22px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .ps-view-btn:hover { color: var(--color-text-primary); border-color: var(--color-border-primary); }
+</style>
+
+<section class="ps-section">
+  <h2 class="sr-only">AI-powered product showcase featuring EezyCRM, MeriTrack, and DocWave</h2>
+
+  <div class="ps-header">
+    <div class="ps-tag">Our Products</div>
+    <p class="ps-title">AI-Powered Products</p>
+    <p class="ps-subtitle">Proprietary software designed to automate and accelerate business operations.</p>
+  </div>
+
+  <div class="ps-track-wrapper">
+    <div class="ps-track" id="psTrack">
+
+      <div class="ps-card">
+        <div class="ps-phone-island"></div>
+        <div class="ps-screen">
+          <div class="ps-screen-header">
+            <div class="ps-screen-logo is-crm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div class="ps-screen-title-area">
+              <span class="ps-screen-title">EezyCRM</span>
+              <span class="ps-screen-label">CRM Platform</span>
+            </div>
           </div>
-          <div>
-            <div class="product-label">CRM Platform</div>
-            <div class="product-name-big">EezyCRM</div>
+          <div class="ps-screen-body">
+            <div class="ps-ui-snippet">
+              <p class="ps-screen-desc">A smart CRM built for service and manufacturing businesses — manage leads, track pipelines, and get real-time financial insights all in one place.</p>
+            </div>
+            <div class="ps-screen-tags">
+              <span class="ps-screen-tag is-crm">Digital Marketing</span>
+              <span class="ps-screen-tag is-crm">Real Estate</span>
+              <span class="ps-screen-tag is-crm">Insurance</span>
+            </div>
           </div>
+          <a href="products.html" class="ps-screen-btn is-crm">Learn More →</a>
         </div>
-
-        <p class="product-desc">A smart CRM built for service and manufacturing businesses — manage leads, track pipelines, and get real-time financial insights all in one place.</p>
-
-        <div class="service-tech">
-          <span class="tech-tag">Digital Marketing</span>
-          <span class="tech-tag">Real Estate</span>
-          <span class="tech-tag">Insurance</span>
-        </div>
-
-        <a href="products.html" class="product-cta">Learn More →</a>
       </div>
 
-      <div class="product-card-home reveal">
-        <div class="product-header-row">
-          <div class="product-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-              <path d="M6 12v5c3 3 9 3 12 0v-5" />
-            </svg>
+      <div class="ps-card">
+        <div class="ps-phone-island"></div>
+        <div class="ps-screen">
+          <div class="ps-screen-header">
+            <div class="ps-screen-logo is-exam">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </div>
+            <div class="ps-screen-title-area">
+              <span class="ps-screen-title">MeriTrack</span>
+              <span class="ps-screen-label">AI Exam Platform</span>
+            </div>
           </div>
-          <div>
-            <div class="product-label">AI Exam Platform</div>
-            <div class="product-name-big">MeriTrack</div>
+          <div class="ps-screen-body">
+            <div class="ps-ui-snippet">
+              <p class="ps-screen-desc">An AI-powered portal that lets institutions run unlimited exams, auto-generate questions by topic, and ensure integrity through smart proctoring.</p>
+            </div>
+            <div class="ps-screen-tags">
+              <span class="ps-screen-tag is-exam">Coaching Centres</span>
+              <span class="ps-screen-tag is-exam">Colleges</span>
+              <span class="ps-screen-tag is-exam">HR Teams</span>
+            </div>
           </div>
+          <a href="products.html" class="ps-screen-btn is-exam">Learn More →</a>
         </div>
-
-        <p class="product-desc">An AI-powered portal that lets institutions run unlimited exams, auto-generate questions by topic, and ensure integrity through smart proctoring.</p>
-
-        <div class="service-tech">
-          <span class="tech-tag">Coaching Centres</span>
-          <span class="tech-tag">Colleges</span>
-          <span class="tech-tag">HR Teams</span>
-        </div>
-
-        <a href="products.html" class="product-cta">Learn More →</a>
       </div>
 
-      <div class="product-card-home reveal">
-        <div class="product-header-row">
-          <div class="product-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-              <polyline points="14 2 14 8 20 8" />
-              <line x1="16" y1="13" x2="8" y2="13" />
-              <line x1="16" y1="17" x2="8" y2="17" />
-            </svg>
+      <div class="ps-card">
+        <div class="ps-phone-island"></div>
+        <div class="ps-screen">
+          <div class="ps-screen-header">
+            <div class="ps-screen-logo is-doc">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+            <div class="ps-screen-title-area">
+              <span class="ps-screen-title">DocWave</span>
+              <span class="ps-screen-label">Document Management</span>
+            </div>
           </div>
-          <div>
-            <div class="product-label">Document Management</div>
-            <div class="product-name-big">DocWave</div>
+          <div class="ps-screen-body">
+            <div class="ps-ui-snippet">
+              <p class="ps-screen-desc">A secure document system with AI-powered deep search, automated approval workflows, and end-to-end encryption for compliance-heavy industries.</p>
+            </div>
+            <div class="ps-screen-tags">
+              <span class="ps-screen-tag is-doc">Law Firms</span>
+              <span class="ps-screen-tag is-doc">Auditing</span>
+              <span class="ps-screen-tag is-doc">Public Sector</span>
+            </div>
           </div>
+          <a href="products.html" class="ps-screen-btn is-doc">Learn More →</a>
         </div>
-
-        <p class="product-desc">A secure document system with AI-powered deep search, automated approval workflows, and end-to-end encryption for compliance-heavy industries.</p>
-
-        <div class="service-tech">
-          <span class="tech-tag">Law Firms</span>
-          <span class="tech-tag">Auditing</span>
-          <span class="tech-tag">Public Sector</span>
-        </div>
-
-        <a href="products.html" class="product-cta">Learn More →</a>
       </div>
 
     </div>
-    <div style="text-align:center;margin-top:40px">
-      <a href="products.html" class="btn btn-outline">View All Products →</a>
-    </div>
+  </div>
+
+  <div class="ps-footer">
+    <a href="products.html" class="ps-view-btn">View All Products →</a>
   </div>
 </section>
 
+<script>
+(function(){
+  const track = document.getElementById("psTrack");
+  if (!track) return;
+  const cards = Array.from(track.children);
+  for (let i = 0; i < 2; i++) {
+    cards.forEach(card => track.appendChild(card.cloneNode(true)));
+  }
+})();
+</script>
   <!-- ══ SECTION 4 — WHY V7LANCERS ════════════════════════ -->
   <section id="why-us" style="background:var(--surface)">
     <div class="container">

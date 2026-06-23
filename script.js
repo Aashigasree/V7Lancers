@@ -356,3 +356,9 @@ document.querySelectorAll('.services-grid a.service-card').forEach(card => {
   }
 
 })();
+
+const bottomHamburger = document.getElementById("bottomHamburger");
+
+bottomHamburger?.addEventListener("click", () => {
+  document.getElementById("mobileMenu").classList.toggle("open");
+});

@@ -2977,7 +2977,26 @@ footer {
    Desktop layout is completely untouched.
    ================================================================ */
 
+/* Utility Classes for Responsive Toggles */
+.mobile-only {
+  display: none !important;
+}
+
 @media (max-width: 768px) {
+
+  /* Utility Classes toggles */
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: block !important;
+  }
+  div.mobile-only {
+    display: block !important;
+  }
+  nav.mobile-only {
+    display: flex !important;
+  }
 
   /* ── GLOBAL SPACING ─────────────────────────────────────────── */
   .container {
@@ -2986,10 +3005,9 @@ footer {
   }
 
   section {
-    padding-top: 52px !important;
-    padding-bottom: 52px !important;
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
   }
-
 
   /* ================================================================
      NAVIGATION
@@ -3002,111 +3020,106 @@ footer {
   #mobileMenu a[href="testimonials.html"],
   #mobileMenu a[href="gallery.html"],
   #mobileMenu a[href="about.html"] {
-    display: none;
-  }
-
-
-  /* ================================================================
-     SECTIONS — HIDE ON MOBILE
-     Sections that must not appear on mobile home.
-  ================================================================ */
-
-  /* Why Choose Us / What Sets V7Lancers Apart */
-  #why-us {
     display: none !important;
   }
 
-  /* How We Work / Our Process */
-  #process-section {
-    display: none !important;
+  /* Sticky Bottom Navigation - Glassmorphism */
+  .mobile-sticky-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: calc(60px + env(safe-area-inset-bottom));
+    padding-bottom: env(safe-area-inset-bottom);
+    background: rgba(22, 22, 22, 0.75);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex !important;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
   }
 
-  /* Testimonials */
-  #testimonials {
-    display: none !important;
+  [data-theme="light"] .mobile-sticky-nav {
+    background: rgba(235, 235, 239, 0.75);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
   }
 
-  /* Client Logos / Trusted By / Partner Sections */
-  .clients-section {
-    display: none !important;
-  }
-
-  /* Insights / Blog / Articles */
-  #blog {
-    display: none !important;
-  }
-
-  /* Stats band — keep it but trim padding */
-  .stats-section {
-    padding: 0 !important;
-  }
-
-  .stats-band {
-    flex-wrap: wrap;
-    gap: 0;
-    border-radius: 14px;
-    padding: 12px 4px;
-  }
-
-  .stat-band-item {
-    flex: 0 0 50%;
-    padding: 16px 8px;
-    border-right: none;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-    text-align: center;
-  }
-
-  /* Last item: span full width so grid doesn't leave odd one out */
-  .stat-band-item:last-child {
-    flex: 0 0 100%;
-    border-bottom: none;
-  }
-
-  .stat-band-num {
-    font-size: 1.8rem;
-  }
-
-  .stat-band-label {
+  .mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: var(--muted);
     font-size: 0.72rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color var(--tr), transform var(--tr);
+    flex: 1;
+    height: 100%;
   }
 
+  .mobile-nav-item i {
+    font-size: 1.15rem;
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-nav-item.active {
+    color: var(--accent);
+  }
+
+  .mobile-nav-item:active i {
+    transform: scale(0.9);
+  }
+
+  /* Padding adjustment for pages to not get cut off by bottom nav */
+  body {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom)) !important;
+  }
 
   /* ================================================================
-     HERO — keep visible, improve readability
+     HERO — keep visible, optimize for one-screen visibility
   ================================================================ */
 
   #home-hero {
-    padding-top: 110px !important;
-    padding-bottom: 56px !important;
+    padding-top: 100px !important;
+    padding-bottom: 32px !important;
     min-height: auto;
   }
 
   .hero-eyebrow {
     font-size: 0.7rem;
     letter-spacing: 0.08em;
+    margin-bottom: 16px;
   }
 
   .hero-title {
-    font-size: clamp(2rem, 9vw, 3rem);
-    line-height: 1.18;
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    line-height: 1.2;
+    margin-bottom: 20px;
   }
 
   .hero-carousel {
-    min-height: 170px;
+    min-height: 120px;
   }
 
   .hero-sub {
-    font-size: 0.92rem;
-    line-height: 1.65;
-    margin-top: 16px;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-top: 12px;
     padding: 0 4px;
+    margin-bottom: 24px;
   }
 
   .hero-btns {
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    margin-top: 28px;
+    margin-top: 20px;
   }
 
   .hero-btns .btn {
@@ -3115,284 +3128,273 @@ footer {
     justify-content: center;
   }
 
-
-  /* ================================================================
-     COMPANY STORY (INCEPTION) — keep visible, stack vertically
-  ================================================================ */
-
-  #about-section .about-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  /* Image block */
-  #about-section .about-image {
-    order: 1;
-  }
-
-  #about-section .about-img-box {
-    height: 220px;
-    border-radius: 16px;
-    overflow: hidden;
-  }
-
-  #about-section .about-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  #about-section .about-badge {
-    bottom: -14px;
-    right: 14px;
-    padding: 10px 16px;
-    font-size: 1.2rem;
-  }
-
-  /* Content block */
-  #about-section .about-content-wrap {
-    order: 2;
-  }
-
-  #about-section .sec-title {
-    font-size: clamp(1.5rem, 6vw, 2.1rem);
-  }
-
-  #about-section .sec-body {
-    font-size: 0.9rem;
-    line-height: 1.7;
-  }
-
-  /* Reduce vertical density of check-list */
-  #about-section .check-item {
-    gap: 10px;
-    padding: 8px 0;
-    font-size: 0.88rem;
-  }
-
-  /* Buttons row: stack vertically */
-  #about-section [style*="display:flex;gap:16px"] {
-    flex-direction: column !important;
-    gap: 12px !important;
-  }
-
-  #about-section [style*="display:flex;gap:16px"] .btn {
-    width: 100%;
-    max-width: 320px;
-    justify-content: center;
-  }
-
-
-  /* ================================================================
-     PRODUCTS — replace horizontal auto-scroll with vertical cards
-  ================================================================ */
-
-  /* Wrapper: disable animation, allow normal flow */
-  .ps-track-wrapper {
-    overflow: visible !important;
-    padding: 0 !important;
-    mask-image: none !important;
-    -webkit-mask-image: none !important;
-  }
-
-  /* Track: switch from flex-scrolling row to vertical column */
-  .ps-track {
-    display: flex !important;
-    flex-direction: column !important;
-    width: 100% !important;
-    animation: none !important;
-    gap: 20px;
-    padding: 0;
-  }
-
-  /* Hide cloned duplicate cards (created by inline JS for desktop scroll) */
-  .ps-track .ps-card:nth-child(n+4) {
+  /* Hide secondary button in hero on mobile to optimize space */
+  .hero-btns .btn-outline {
     display: none !important;
   }
 
-  /* Card: full-width vertical layout, auto height */
-  .ps-card {
-    flex: none !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    border-radius: 20px !important;
-    margin: 0 !important;
-    transform: none !important;
-    transition: box-shadow 0.3s ease !important;
+  /* ================================================================
+     COMPANY STORY (INCEPTION) — Mobile cards
+  ================================================================ */
+
+  .mobile-story-container {
+    padding: 0 4px;
   }
 
-  /* Odd/even y-offset: reset for mobile */
-  .ps-card:nth-child(even) {
-    --y-offset: 0px;
-  }
-
-  /* Screen panel: auto height, readable padding */
-  .ps-screen {
-    position: relative !important;
-    border-radius: 14px !important;
-    padding: 20px 18px 18px !important;
-    gap: 12px;
+  .mobile-story-cards {
     display: flex;
     flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
   }
 
-  /* Remove dynamic phone island on mobile */
-  .ps-phone-island {
-    display: none !important;
+  .mobile-story-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    transition: transform var(--tr), box-shadow var(--tr);
+    text-align: left;
+    box-shadow: var(--shadow-sm);
   }
 
-  /* Description text: more legible size */
-  .ps-screen-desc {
+  .mobile-story-card .card-icon {
+    font-size: 24px;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .mobile-story-card .card-title {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+
+  .mobile-story-card .card-text {
     font-size: 0.88rem;
-    line-height: 1.65;
+    line-height: 1.6;
+    color: var(--muted);
+    margin-bottom: 16px;
   }
 
-  /* Tags row: allow wrapping */
-  .ps-screen-tags {
-    flex-wrap: wrap;
-    gap: 6px;
+  .mobile-story-card .btn-readmore {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    transition: background var(--tr), color var(--tr);
   }
 
-  /* Button: full-width tap target */
-  .ps-screen-btn {
+  .mobile-story-card .btn-readmore:hover {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  /* ================================================================
+     PRODUCTS — Mobile Cards with bullet points
+  ================================================================ */
+
+  .mobile-products-container {
+    padding: 0 4px;
+  }
+
+  .mobile-products-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .mobile-product-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .mobile-product-card .product-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(232, 255, 0, 0.1);
+    color: var(--accent);
+  }
+
+  [data-theme="light"] .mobile-product-card .product-icon {
+    background: rgba(139, 0, 4, 0.08);
+    color: var(--accent);
+  }
+
+  .mobile-product-card .product-name {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .mobile-product-card .product-bullets {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mobile-product-card .product-bullets li {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  .mobile-product-card .btn-view-product {
     display: block;
     text-align: center;
-    margin-top: 6px;
-    border-radius: 10px !important;
-    padding: 12px !important;
-    font-size: 0.88rem;
+    padding: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: var(--accent);
+    color: var(--on-accent);
+    border: none;
+    border-radius: 8px;
+    margin-top: 4px;
   }
-
-  /* Footer link */
-  .ps-footer {
-    text-align: center;
-    margin-top: 28px;
-  }
-
-  /* Track hover dimming: disable on mobile (touch) */
-  .ps-track:hover .ps-card {
-    opacity: 1 !important;
-  }
-
 
   /* ================================================================
-     SERVICES — convert grid to single-column vertical list
+     SERVICES — Mobile Cards with bullet points
   ================================================================ */
 
-  .services-grid {
-    grid-template-columns: 1fr !important;
+  .mobile-services-container {
+    padding: 0 4px;
+  }
+
+  .mobile-services-grid {
+    display: flex;
+    flex-direction: column;
     gap: 16px;
+    margin-top: 24px;
   }
 
-  .service-card {
-    padding: 22px 18px !important;
+  .mobile-service-card {
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: 16px;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: var(--shadow-sm);
   }
 
-  .service-num {
-    font-size: 0.7rem;
-    margin-bottom: 8px;
+  .mobile-service-card .service-icon {
+    font-size: 28px;
   }
 
-  .service-icon {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+  .mobile-service-card .service-name {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text);
   }
 
-  .service-name {
-    font-size: 1rem;
-    margin-bottom: 8px;
+  .mobile-service-card .service-bullets {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
-  .service-desc {
-    font-size: 0.87rem;
-    line-height: 1.65;
+  .mobile-service-card .service-bullets li {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--muted);
   }
 
-  .service-tech {
-    margin-top: 12px;
-    flex-wrap: wrap;
-    gap: 6px;
+  .mobile-service-card .btn-view-service {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: var(--accent);
+    color: var(--on-accent);
+    border: none;
+    border-radius: 8px;
+    margin-top: 4px;
   }
-
-  /* CTA card within services grid */
-  .service-card-cta {
-    padding: 24px 18px !important;
-  }
-
-  .cta-title {
-    font-size: 1.05rem;
-  }
-
-  .cta-desc {
-    font-size: 0.87rem;
-  }
-
-  .cta-btn {
-    margin-top: 16px;
-    width: 100%;
-    justify-content: center;
-  }
-
-  /* "View All Services" button */
-  #services > .container > [style*="text-align:center"] {
-    margin-top: 24px !important;
-  }
-
 
   /* ================================================================
-     MANAGEMENT TEAM — single-column, optimized images & spacing
+     MANAGEMENT TEAM — 2 per row grid
   ================================================================ */
 
-  /* Show the mobile-only section (hidden on desktop via class) */
   .mobile-only-section {
     display: block !important;
   }
 
-  /* Full-width single-column grid */
   .team-grid {
-    grid-template-columns: 1fr !important;
-    gap: 16px;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
   }
 
   .team-card {
     display: flex !important;
-    flex-direction: row !important;
-    align-items: flex-start !important;
-    gap: 16px;
-    padding: 18px 16px;
-    border-radius: 16px;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 16px 12px !important;
+    border-radius: 16px !important;
+    box-shadow: var(--shadow-sm);
   }
 
-  /* Avatar circle: fixed compact size */
   .team-photo {
-    flex-shrink: 0;
-    width: 56px !important;
-    height: 56px !important;
-    font-size: 1.1rem !important;
+    margin-bottom: 12px !important;
+    width: 64px !important;
+    height: 64px !important;
     border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.25rem !important;
+    flex-shrink: 0;
   }
 
   .team-body {
-    flex: 1;
-    min-width: 0;
+    text-align: center !important;
   }
 
   .team-name {
-    font-size: 0.97rem;
-    margin-bottom: 2px;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 4px !important;
   }
 
   .team-role {
-    font-size: 0.77rem;
-    margin-bottom: 6px;
+    font-size: 0.75rem !important;
+    color: var(--accent) !important;
+    line-height: 1.3;
   }
 
   .team-bio {
-    font-size: 0.83rem;
-    line-height: 1.6;
-    margin: 0;
+    display: none !important;
   }
 
 

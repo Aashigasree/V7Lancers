@@ -308,19 +308,18 @@ document.querySelectorAll('.services-grid a.service-card').forEach(card => {
   /* ── MOBILE STICKY NAV ACTIVE HIGHLIGHT ────────────────── */
   var sections = [
     document.getElementById('home-hero'),
-    document.getElementById('about-section'),
     document.getElementById('products-section'),
     document.getElementById('services'),
     document.getElementById('management-team'),
     document.getElementById('quote')
   ].filter(Boolean);
 
-  var navLinks = document.querySelectorAll('.sticky-nav-link');
+  var navLinks = document.querySelectorAll('.mobile-nav-item');
 
   if (sections.length > 0 && navLinks.length > 0) {
     var observerOptions = {
       root: null,
-      rootMargin: '-100px 0px -60% 0px',
+      rootMargin: '-120px 0px -50% 0px',
       threshold: 0
     };
 
@@ -331,8 +330,6 @@ document.querySelectorAll('.services-grid a.service-card').forEach(card => {
           navLinks.forEach(function (link) {
             if (link.getAttribute('href') === '#' + id) {
               link.classList.add('active');
-              // Automatically scroll the active link into view in the horizontal nav
-              link.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
             } else {
               link.classList.remove('active');
             }
@@ -343,6 +340,18 @@ document.querySelectorAll('.services-grid a.service-card').forEach(card => {
 
     sections.forEach(function (sec) {
       sectionObserver.observe(sec);
+    });
+
+    /* Smooth Scrolling for bottom navigation on click */
+    navLinks.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        var targetId = link.getAttribute('href');
+        var targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
     });
   }
 

@@ -71,17 +71,29 @@
     <a href="contact.html" onclick="closeMobile()">Contact</a>
   </div>
 
-  <!-- MOBILE-ONLY STICKY SECTION NAV -->
-  <div id="mobile-sticky-nav" class="mobile-only-nav">
-    <div class="sticky-nav-scroll">
-      <a href="#home-hero" class="sticky-nav-link active">Home</a>
-      <a href="#about-section" class="sticky-nav-link">Story</a>
-      <a href="#products-section" class="sticky-nav-link">Products</a>
-      <a href="#services" class="sticky-nav-link">Services</a>
-      <a href="#management-team" class="sticky-nav-link">Team</a>
-      <a href="#quote" class="sticky-nav-link">Contact</a>
-    </div>
-  </div>
+  <!-- MOBILE-ONLY STICKY BOTTOM NAV -->
+  <nav class="mobile-sticky-nav mobile-only">
+    <a href="#home-hero" class="mobile-nav-item active">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </a>
+    <a href="#products-section" class="mobile-nav-item">
+      <i class="fa-solid fa-box-archive"></i>
+      <span>Products</span>
+    </a>
+    <a href="#services" class="mobile-nav-item">
+      <i class="fa-solid fa-gears"></i>
+      <span>Services</span>
+    </a>
+    <a href="#management-team" class="mobile-nav-item">
+      <i class="fa-solid fa-users"></i>
+      <span>Team</span>
+    </a>
+    <a href="#quote" class="mobile-nav-item">
+      <i class="fa-solid fa-envelope"></i>
+      <span>Contact</span>
+    </a>
+  </nav>
 
   <!-- ══ SECTION 1 — HERO ══════════════════════════════════ -->
   <section id="home-hero">
@@ -122,7 +134,7 @@
   <!-- ══ SECTION 2 — INCEPTION ═════════════════════════════ -->
   <section id="about-section" style="background:var(--surface)">
     <div class="container">
-      <div class="about-grid">
+      <div class="about-grid desktop-only">
         <div class="about-image reveal">
           <div class="about-img-box">
             <img src="assets/home-image.png" alt="V7Lancers Team" class="about-img">
@@ -209,6 +221,30 @@
           <div style="margin-top:32px;display:flex;gap:16px;flex-wrap:wrap">
             <a href="about.html" class="btn btn-primary">Our Full Story →</a>
             <a href="contact.html" class="btn btn-outline">Work With Us</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile-only Company Story Section -->
+      <div class="mobile-only mobile-story-container">
+        <div class="sec-header-center">
+          <div class="sec-tag">Company Story</div>
+          <h2 class="sec-title">About V7Lancers</h2>
+        </div>
+        <div class="mobile-story-cards">
+          <!-- Card 1: Our Story -->
+          <div class="mobile-story-card">
+            <div class="card-icon"><i class="fa-solid fa-book-open"></i></div>
+            <h3 class="card-title">Our Story</h3>
+            <p class="card-text">V7Lancers started its journey in 2016 as a small freelancing initiative driven by passion, innovation, and commitment towards delivering quality technology services. With consistent growth, the company was officially incorporated as a Private Limited Company in December 2018...</p>
+            <a href="about.html" class="btn btn-readmore">Read More →</a>
+          </div>
+          <!-- Card 2: The Inception of V7Lancers -->
+          <div class="mobile-story-card">
+            <div class="card-icon"><i class="fa-solid fa-rocket"></i></div>
+            <h3 class="card-title">The Inception of V7Lancers</h3>
+            <p class="card-text">What began with just 3 Employees has grown into a team of Passionate Professionals driven by curiosity, collaboration, and a commitment to delivering meaningful technology solutions for businesses globally...</p>
+            <a href="about.html" class="btn btn-readmore">Read More →</a>
           </div>
         </div>
       </div>
@@ -508,13 +544,13 @@
 <section class="ps-section" id="products-section">
   <h2 class="sr-only">AI-powered product showcase featuring EezyCRM, MeriTrack, and DocWave</h2>
 
-  <div class="ps-header">
+  <div class="ps-header desktop-only">
     <div class="ps-tag">Our Products</div>
     <p class="ps-title">AI-Powered Products</p>
     <p class="ps-subtitle">Proprietary software designed to automate and accelerate business operations.</p>
   </div>
 
-  <div class="ps-track-wrapper">
+  <div class="ps-track-wrapper desktop-only">
     <div class="ps-track" id="psTrack">
 
       <div class="ps-card">
@@ -610,8 +646,72 @@
     </div>
   </div>
 
-  <div class="ps-footer">
+  <div class="ps-footer desktop-only">
     <a href="products.html" class="ps-view-btn">View All Products →</a>
+  </div>
+
+  <!-- Mobile-only Products Overview -->
+  <div class="mobile-only mobile-products-container">
+    <div class="sec-header-center">
+      <div class="sec-tag">Our Products</div>
+      <h2 class="sec-title">AI-Powered Products</h2>
+      <p class="sec-body">Proprietary software designed to automate and accelerate business operations.</p>
+    </div>
+    <div class="mobile-products-grid">
+      <!-- EezyCRM -->
+      <div class="mobile-product-card">
+        <div class="product-icon is-crm">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3 class="product-name">EezyCRM</h3>
+        <ul class="product-bullets">
+          <li>Lead &amp; pipeline management built for service and manufacturing businesses</li>
+          <li>Real-time financial insights and pipeline tracking in one place</li>
+          <li>Automated lead capture, email reminders, and follow-ups</li>
+        </ul>
+        <a href="products.html" class="btn btn-view-product">View Product</a>
+      </div>
+
+      <!-- MeriTrack -->
+      <div class="mobile-product-card">
+        <div class="product-icon is-exam">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <h3 class="product-name">MeriTrack</h3>
+        <ul class="product-bullets">
+          <li>Run unlimited online exams with topic-wise custom question generation</li>
+          <li>AI-powered smart proctoring to prevent cheating and maintain integrity</li>
+          <li>Instant grading, performance analytics, and automated certification</li>
+        </ul>
+        <a href="products.html" class="btn btn-view-product">View Product</a>
+      </div>
+
+      <!-- DocWave -->
+      <div class="mobile-product-card">
+        <div class="product-icon is-doc">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+          </svg>
+        </div>
+        <h3 class="product-name">DocWave</h3>
+        <ul class="product-bullets">
+          <li>Secure document management with advanced AI-powered search</li>
+          <li>Automated multi-level approval workflows and e-signature routing</li>
+          <li>End-to-end encryption with granular role-based access control</li>
+        </ul>
+        <a href="products.html" class="btn btn-view-product">View Product</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -628,7 +728,7 @@
 })();
 </script>
   <!-- ══ SECTION 4 — WHY V7LANCERS ════════════════════════ -->
-  <section id="why-us" style="background:var(--surface)">
+  <section id="why-us" class="desktop-only" style="background:var(--surface)">
     <div class="container">
       <div class="sec-header-center reveal">
         <div class="sec-tag">Why Choose Us</div>
@@ -677,7 +777,7 @@
   </section>
 
   <!-- ══ SECTION 5 — STATS ══════════════════════════════════ -->
-  <section class="stats-section" style="background:var(--bg);padding:0">
+  <section class="stats-section desktop-only" style="background:var(--bg);padding:0">
     <div class="container" style="padding-top:0;padding-bottom:0">
       <div class="stats-band reveal">
         <div class="stat-band-item">
@@ -707,13 +807,13 @@
   <!-- ══ SECTION 3 — SERVICES ══════════════════════════════ -->
   <section id="services" style="background:var(--bg)">
     <div class="container">
-      <div class="sec-header-center reveal">
+      <div class="sec-header-center reveal desktop-only">
         <div class="sec-tag">What We Do</div>
         <h2 class="sec-title">Our Services</h2>
         <p class="sec-body">End-to-end digital solutions tailored to your business needs — from concept to deployment
           and beyond.</p>
       </div>
-      <div class="services-grid">
+      <div class="services-grid desktop-only">
         <a href="services.html" class="service-card reveal">
           <div class="service-num">01</div>
           <div class="service-icon">🖥️</div>
@@ -769,8 +869,78 @@
           <a href="contact.html" class="btn cta-btn">Get Free Quote →</a>
         </div>
       </div>
-      <div style="text-align:center;margin-top:40px">
+      <div style="text-align:center;margin-top:40px" class="desktop-only">
         <a href="services.html" class="btn btn-outline">View All Services →</a>
+      </div>
+
+      <!-- Mobile-only Services Overview -->
+      <div class="mobile-only mobile-services-container">
+        <div class="sec-header-center">
+          <div class="sec-tag">What We Do</div>
+          <h2 class="sec-title">Our Services</h2>
+          <p class="sec-body">End-to-end digital solutions tailored to your business needs.</p>
+        </div>
+        <div class="mobile-services-grid">
+          <!-- Service 1: Website Design & Development -->
+          <div class="mobile-service-card">
+            <div class="service-icon">🖥️</div>
+            <h3 class="service-name">Website Design &amp; Development</h3>
+            <ul class="service-bullets">
+              <li>Custom, responsive, and modern website layouts</li>
+              <li>SEO-optimized semantic code for search visibility</li>
+              <li>Fast page load speeds and intuitive navigation design</li>
+            </ul>
+            <a href="services.html" class="btn btn-view-service">View Service</a>
+          </div>
+
+          <!-- Service 2: Ecommerce Development -->
+          <div class="mobile-service-card">
+            <div class="service-icon">🛒</div>
+            <h3 class="service-name">Ecommerce Development</h3>
+            <ul class="service-bullets">
+              <li>Secure shopping cart systems and checkout flows</li>
+              <li>Payment gateway integrations (Stripe, UPI, PayPal)</li>
+              <li>Custom Shopify, WooCommerce, and tailored platforms</li>
+            </ul>
+            <a href="services.html" class="btn btn-view-service">View Service</a>
+          </div>
+
+          <!-- Service 3: Online Delivery Applications -->
+          <div class="mobile-service-card">
+            <div class="service-icon">🚚</div>
+            <h3 class="service-name">Online Delivery Applications</h3>
+            <ul class="service-bullets">
+              <li>Real-time order tracking and map routing API</li>
+              <li>Custom client, merchant, and driver application portals</li>
+              <li>Seamless notifications, payment hooks, and auto-dispatch</li>
+            </ul>
+            <a href="services.html" class="btn btn-view-service">View Service</a>
+          </div>
+
+          <!-- Service 4: Custom Software Development -->
+          <div class="mobile-service-card">
+            <div class="service-icon">⚙️</div>
+            <h3 class="service-name">Custom Software Development</h3>
+            <ul class="service-bullets">
+              <li>Enterprise-grade web dashboards and custom CRM tools</li>
+              <li>Database normalization and performance optimization</li>
+              <li>Third-party API development and secure system integration</li>
+            </ul>
+            <a href="services.html" class="btn btn-view-service">View Service</a>
+          </div>
+
+          <!-- Service 5: Mobile App Development -->
+          <div class="mobile-service-card">
+            <div class="service-icon">📱</div>
+            <h3 class="service-name">Mobile App Development</h3>
+            <ul class="service-bullets">
+              <li>Cross-platform deployment for iOS and Android</li>
+              <li>Offline caching capabilities and local storage</li>
+              <li>Fluid native touch gestures and device hardware integration</li>
+            </ul>
+            <a href="services.html" class="btn btn-view-service">View Service</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -778,7 +948,7 @@
 
 
   <!-- ══ SECTION 7 — PROCESS ═══════════════════════════════ -->
-  <section id="process-section">
+  <section id="process-section" class="desktop-only">
     <div class="container">
       <div class="sec-header-center reveal">
         <div class="sec-tag">How We Work</div>
@@ -817,7 +987,7 @@
   </section>
 
   <!-- ══ SECTION 8 — TESTIMONIALS ══════════════════════════ -->
-  <section id="testimonials" style="background:var(--surface)">
+  <section id="testimonials" class="desktop-only" style="background:var(--surface)">
     <div class="container">
       <div class="sec-header-center reveal">
         <div class="sec-tag">Client Reviews</div>
@@ -872,7 +1042,7 @@
   </section>
 
   <!-- ══ SECTION 9 — CLIENT LOGOS ══════════════════════════ -->
-  <section class="clients-section" style="background:var(--bg);padding:64px 0">
+  <section class="clients-section desktop-only" style="background:var(--bg);padding:64px 0">
     <div class="container">
       <div class="sec-header-center reveal">
         <div class="sec-tag">Trusted By</div>
@@ -1009,7 +1179,7 @@
   </section>
 
   <!-- ══ SECTION 10 — BLOG & ARTICLES ══════════════════════ -->
-  <section id="blog" style="background:var(--surface)">
+  <section id="blog" class="desktop-only" style="background:var(--surface)">
     <div class="container">
       <div class="sec-header-center reveal">
         <div class="sec-tag">Insights</div>

@@ -2107,6 +2107,97 @@ a.nav-logo:hover .site-logo {
   opacity: 1;
 }
 
+/* ═════════ DIRECTOR SECTION ═════════ */
+
+.director-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.director-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.director-name {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.director-qualification {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.director-heading {
+  margin: 32px 0 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.director-quote {
+  margin-top: 32px;
+  padding: 18px 0 18px 20px;
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.8;
+}
+
+.director-quote::before,
+.director-quote::after {
+  content: none;
+}
+
+@media (max-width: 768px) {
+  .director-name {
+    font-size: 2rem;
+  }
+
+  .director-qualification {
+    font-size: 0.8rem;
+  }
+
+  .director-heading {
+    margin-top: 28px;
+  }
+
+  .director-quote {
+    margin-top: 24px;
+    padding-left: 16px;
+  }
+}
+
+.director-info .check-list{
+  gap: 10px;
+  margin-top: 0;
+}
+
+.director-info .check-item{
+  padding: 0;
+  min-height: auto;
+  line-height: 1.5;
+}
+
+.director-info .director-heading{
+  margin: 24px 0 10px;
+}
+
+.director-info .sec-body{
+  margin: 12px 0 24px;
+}
+
 /* ─── TEAM CARDS ─────────────────────────────────────── */
 .team-grid {
   display: grid;

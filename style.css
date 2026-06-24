@@ -1810,10 +1810,11 @@ a.nav-logo:hover .site-logo {
   right: 4%;
 }
 
-.process-container{
-    max-width: 1400px;   /* increase from your normal container width */
-    width: 95%;
-    margin: 0 auto;
+.process-container {
+  max-width: 1400px;
+  /* increase from your normal container width */
+  width: 95%;
+  margin: 0 auto;
 }
 
 /* ─── SUCCESS STORIES ────────────────────────────────── */
@@ -2172,7 +2173,7 @@ a.nav-logo:hover .site-logo {
 
 .team-role {
   font-family: var(--font-mono);
-  font-size: .7rem;
+  font-size: 0.65rem;
   color: var(--accent);
   letter-spacing: .08em;
   margin-bottom: 10px;
@@ -2184,29 +2185,27 @@ a.nav-logo:hover .site-logo {
   line-height: 1.6;
 }
 
-.team-socials{
-  display:flex;
-  gap:12px;
-  margin-top:18px;
+.team-socials {
+  display: flex;
+  gap: 4px;
+  margin-top: 14px;
 }
 
-.team-socials a{
-  width:38px;
-  height:38px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:10px;
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.08);
-  color:var(--text);
-  transition:.3s ease;
+.team-socials a {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .3s ease;
 }
 
-.team-socials a:hover{
-  background:var(--primary);
-  color:#fff;
-  transform:translateY(-3px);
+.team-socials a:hover {
+  background: var(--primary);
+  transform: translateY(-3px);
 }
 
 /* ─── AWARDS GRID ────────────────────────────────────── */
@@ -2594,6 +2593,10 @@ footer {
 /* X adapts to theme */
 .fa-x-twitter {
   color: var(--text);
+}
+
+.fa-whatsapp {
+  color: #20c75d;
 }
 
 .footer-social-btn i {
@@ -3002,6 +3005,7 @@ footer {
   color: var(--accent);
   transition: all 0.35s ease;
 }
+
 /* ================================================================
    V7LANCERS — MOBILE OPTIMIZATIONS
    Scope: @media (max-width: 768px) only.
@@ -3019,12 +3023,15 @@ footer {
   .desktop-only {
     display: none !important;
   }
+
   .mobile-only {
     display: block !important;
   }
+
   div.mobile-only {
     display: block !important;
   }
+
   nav.mobile-only {
     display: flex !important;
   }
@@ -3542,4 +3549,6 @@ footer {
     opacity: 0.5;
   }
 
-} /* END @media (max-width: 768px) */
+}
+
+/* END @media (max-width: 768px) */

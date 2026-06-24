@@ -93,9 +93,9 @@
       <i class="fa-solid fa-envelope"></i>
       <span>Contact</span>
     </a>
-   <button class="hamburger" id="bottomHamburger" aria-label="Menu">
-  <span></span><span></span><span></span>
-</button>
+    <button class="hamburger" id="bottomHamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- ══ SECTION 1 — HERO ══════════════════════════════════ -->
@@ -239,14 +239,18 @@
           <div class="mobile-story-card">
             <div class="card-icon"><i class="fa-solid fa-book-open"></i></div>
             <h3 class="card-title">Our Story</h3>
-            <p class="card-text">V7Lancers started its journey in 2016 as a small freelancing initiative driven by passion, innovation, and commitment towards delivering quality technology services. With consistent growth, the company was officially incorporated as a Private Limited Company in December 2018...</p>
+            <p class="card-text">V7Lancers started its journey in 2016 as a small freelancing initiative driven by
+              passion, innovation, and commitment towards delivering quality technology services. With consistent
+              growth, the company was officially incorporated as a Private Limited Company in December 2018...</p>
             <a href="about.html" class="btn btn-readmore">Read More →</a>
           </div>
           <!-- Card 2: The Inception of V7Lancers -->
           <div class="mobile-story-card">
             <div class="card-icon"><i class="fa-solid fa-rocket"></i></div>
             <h3 class="card-title">The Inception of V7Lancers</h3>
-            <p class="card-text">What began with just 3 Employees has grown into a team of Passionate Professionals driven by curiosity, collaboration, and a commitment to delivering meaningful technology solutions for businesses globally...</p>
+            <p class="card-text">What began with just 3 Employees has grown into a team of Passionate Professionals
+              driven by curiosity, collaboration, and a commitment to delivering meaningful technology solutions for
+              businesses globally...</p>
             <a href="about.html" class="btn btn-readmore">Read More →</a>
           </div>
         </div>
@@ -254,482 +258,665 @@
     </div>
   </section>
 
-<!-- ══ SECTION 3 — PRODUCTS ══════════════════════════════ -->
-<style>
- .ps-section {
-    padding: 48px 0 64px;
-    overflow: hidden;
-    position: relative;
-    background: transparent;
-    font-family: var(--font-sans);
-  }
-  .ps-header {
-    text-align: center;
-    margin-bottom: 32px;
-    padding: 0 24px;
-  }
-  .ps-tag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--color-text-secondary);
-    border: 0.5px solid var(--color-border-secondary);
-    padding: 4px 12px;
-    border-radius: 20px;
-    margin-bottom: 14px;
-  }
-  .ps-title {
-    font-size: 28px;
-    font-weight: 500;
-    color: var(--color-text-primary);
-    margin: 0 0 10px;
-    letter-spacing: -0.02em;
-  }
-  .ps-subtitle {
-    font-size: 15px;
-    color: var(--color-text-secondary);
-    margin: 0;
-    line-height: 1.6;
-  }
-  .ps-track-wrapper {
-    overflow: hidden;
-    position: relative;
-    padding: 28px 0 80px;
-    mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
-  }
-  .ps-track {
-    display: flex;
-    align-items: flex-start;
-    width: max-content;
-    will-change: transform;
-    animation: psScroll 44s linear infinite;
-  }
-  .ps-track:hover { animation-play-state: paused; }
-  @keyframes psScroll {
-    from { transform: translate3d(0,0,0); }
-    to { transform: translate3d(-33.3333%,0,0); }
-  }
+  <!-- ══ SECTION 3 — PRODUCTS ══════════════════════════════ -->
+  <style>
+    .ps-section {
+      padding: 48px 0 64px;
+      overflow: hidden;
+      position: relative;
+      background: transparent;
+      font-family: var(--font-sans);
+    }
 
-  .ps-card {
-    flex: 0 0 264px;
-    width: 264px;
-    height: 448px;
-    margin: 0 20px;
-    background: #1d1d1d;
-    border: 9px solid #1d1d1d;
-    border-radius: 36px;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    outline: 1px solid rgba(255, 255, 255, 0.07);
-    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
-    --y-offset: 0px;
-    transform: translateY(var(--y-offset)) scale(1);
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, opacity 0.4s ease;
-  }
+    .ps-header {
+      text-align: center;
+      margin-bottom: 32px;
+      padding: 0 24px;
+    }
 
-  .ps-card:nth-child(even) {
-    --y-offset: 28px;
-  }
+    .ps-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      border: 0.5px solid var(--color-border-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
 
-  .ps-track:hover .ps-card { opacity: 0.6; }
-  .ps-track:hover .ps-card:hover {
-    opacity: 1;
-    transform: translateY(calc(var(--y-offset) - 12px)) scale(1.03);
-    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6), 0 8px 20px rgba(0, 0, 0, 0.3);
-    z-index: 10;
-  }
+    .ps-title {
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--color-text-primary);
+      margin: 0 0 10px;
+      letter-spacing: -0.02em;
+    }
 
-  .ps-phone-island {
-    position: absolute;
-    top: 7px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 68px;
-    height: 14px;
-    background: #2a2a2a;
-    border-radius: 20px;
-    z-index: 10;
-  }
+    .ps-subtitle {
+      font-size: 15px;
+      color: var(--color-text-secondary);
+      margin: 0;
+      line-height: 1.6;
+    }
 
-  .ps-screen {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: #161616;
-    border-radius: 27px;
-    padding: 32px 18px 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-  }
+    .ps-product-preview {
+      width: 100%;
+      height: 140px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 5px;
+      border: 1px solid #2a2a2a;
+    }
 
-  .ps-screen-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-bottom: 1px solid #2a2a2a;
-    padding-bottom: 10px;
-  }
-  .ps-screen-logo {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .ps-screen-logo.is-crm  { background: rgba(232, 255, 0, 0.15); color: #e8ff00; }
-  .ps-screen-logo.is-exam { background: rgba(232, 255, 0, 0.15); color: #e8ff00; }
-  .ps-screen-logo.is-doc  { background: rgba(232, 255, 0, 0.1); color: #e8ff00; }
+    .ps-product-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-  .ps-screen-title-area {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-  }
-  .ps-screen-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: #f0f0f0;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-  }
-  .ps-screen-label {
-    font-size: 9.5px;
-    color: #a0a0a0;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
+    .ps-product-tagline {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--muted);
+      margin: 0 0 5px;
+    }
 
-  .ps-screen-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 10px;
-    margin: 16px 0 10px;
-  }
+    .ps-suitable-for {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--text);
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
 
-  .ps-ui-snippet {
-    background: #1d1d1d;
-    border: 1px solid #2a2a2a;
-    border-radius: 14px;
-    padding: 14px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    text-align: left;
-  }
-  .ps-screen-desc {
-    font-size: 13.5px;
-    line-height: 1.6;
-    color: #a0a0a0;
-    margin: 0;
-  }
+    .ps-track-wrapper {
+      overflow: hidden;
+      position: relative;
+      padding: 28px 0 80px;
+      mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+    }
 
-  .ps-screen-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-top: auto;
-  }
-  .ps-screen-tag {
-    font-size: 12px;
-    font-weight: 600;
-    padding: 4px 8px;
-    border-radius: 7px;
-    white-space: nowrap;
-  }
-  .ps-screen-tag.is-crm  { background: rgba(232, 255, 0, 0.12); color: #e8ff00; }
-  .ps-screen-tag.is-exam { background: rgba(232, 255, 0, 0.12); color: #e8ff00; }
-  .ps-screen-tag.is-doc  { background: rgba(232, 255, 0, 0.08); color: #e8ff00; }
+    .ps-track {
+      display: flex;
+      align-items: flex-start;
+      width: max-content;
+      will-change: transform;
+      animation: psScroll 44s linear infinite;
+    }
 
-  .ps-screen-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 12px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.2s;
-    margin-top: 2px;
-  }
-  .ps-screen-btn.is-crm  { background: #e8ff00; color: #0d0d0d; }
-  .ps-screen-btn.is-crm:hover { background: #d4e900; }
-  .ps-screen-btn.is-exam { background: #e8ff00; color: #0d0d0d; }
-  .ps-screen-btn.is-exam:hover { background: #e8ff00;; }
-  .ps-screen-btn.is-doc  { background: #e8ff00; color: #0d0d0d; }
-  .ps-screen-btn.is-doc:hover { background: #d4e900; }
+    .ps-track:hover {
+      animation-play-state: paused;
+    }
 
-  .ps-footer { text-align: center; padding-top: 8px; }
-  .ps-view-btn {
-    display: inline-block;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--color-text-secondary);
-    border: 0.5px solid var(--color-border-secondary);
-    padding: 9px 22px;
-    border-radius: 20px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .ps-view-btn:hover { color: var(--color-text-primary); border-color: var(--color-border-primary); }
+    @keyframes psScroll {
+      from {
+        transform: translateX(0);
+      }
 
-  [data-theme="light"] .ps-card {
-    background: #ffffff;
-    border-color: #ffffff;
-    outline: 1px solid rgba(0, 0, 0, 0.06);
-    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
-  }
+      to {
+        transform: translateX(-50%);
+      }
+    }
 
-  [data-theme="light"] .ps-track:hover .ps-card:hover {
-    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.14), 0 8px 20px rgba(0, 0, 0, 0.06);
-  }
+    .ps-card {
+      flex: 0 0 285px;
+      width: 285px;
+      height: 520px;
+      margin: 0 20px;
+      background: #1d1d1d;
+      border: 9px solid #1d1d1d;
+      border-radius: 36px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      outline: 1px solid rgba(255, 255, 255, 0.07);
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+      --y-offset: 0px;
+      transform: translateY(var(--y-offset)) scale(1);
+      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, opacity 0.4s ease;
+    }
 
-  [data-theme="light"] .ps-phone-island {
-    background: #d2d2d7;
-  }
+    .ps-card:nth-child(even) {
+      --y-offset: 28px;
+    }
 
-  [data-theme="light"] .ps-screen {
-    background: #f5f5f7;
-  }
+    .ps-track:hover .ps-card {
+      opacity: 0.6;
+    }
 
-  [data-theme="light"] .ps-screen-header {
-    border-bottom-color: #d2d2d7;
-  }
+    .ps-track:hover .ps-card:hover {
+      opacity: 1;
+      transform: translateY(calc(var(--y-offset) - 12px)) scale(1.03);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6), 0 8px 20px rgba(0, 0, 0, 0.3);
+      z-index: 10;
+    }
 
-  [data-theme="light"] .ps-screen-logo.is-crm  { background: rgba(139, 0, 4, 0.1); color: #8b0004; }
-  [data-theme="light"] .ps-screen-logo.is-exam { background: rgba(198, 40, 40, 0.1); color: #c62828; }
-  [data-theme="light"] .ps-screen-logo.is-doc  { background: rgba(139, 0, 4, 0.08); color: #8b0004; }
+    .ps-phone-island {
+      position: absolute;
+      top: 7px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 68px;
+      height: 14px;
+      background: #2a2a2a;
+      border-radius: 20px;
+      z-index: 10;
+    }
 
-  [data-theme="light"] .ps-screen-title {
-    color: #0d0d0e;
-  }
+    .ps-screen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #161616;
+      border-radius: 27px;
+      padding: 32px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
 
-  [data-theme="light"] .ps-screen-label {
-    color: #48484c;
-  }
+    .ps-screen-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid #2a2a2a;
+      padding-bottom: 10px;
+    }
 
-  [data-theme="light"] .ps-ui-snippet {
-    background: #ffffff;
-    border-color: #d2d2d7;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  }
+    .ps-screen-logo {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
 
-  [data-theme="light"] .ps-screen-desc {
-    color: #48484c;
-  }
+    .ps-screen-logo.is-crm {
+      background: rgba(232, 255, 0, 0.15);
+      color: #e8ff00;
+    }
 
-  [data-theme="light"] .ps-screen-tag.is-crm  { background: rgba(139, 0, 4, 0.08); color: #8b0004; }
-  [data-theme="light"] .ps-screen-tag.is-exam { background: rgba(198, 40, 40, 0.08); color: #c62828; }
-  [data-theme="light"] .ps-screen-tag.is-doc  { background: rgba(139, 0, 4, 0.06); color: #8b0004; }
+    .ps-screen-logo.is-exam {
+      background: rgba(232, 255, 0, 0.15);
+      color: #e8ff00;
+    }
 
-  [data-theme="light"] .ps-screen-btn.is-crm  { background: #8b0004; color: #ffffff; }
-  [data-theme="light"] .ps-screen-btn.is-crm:hover { background: #6e0003; }
-  [data-theme="light"] .ps-screen-btn.is-exam { background: #c62828; color: #ffffff; }
-  [data-theme="light"] .ps-screen-btn.is-exam:hover { background: #b71c1c; }
-  [data-theme="light"] .ps-screen-btn.is-doc  { background: #8b0004; color: #ffffff; }
-  [data-theme="light"] .ps-screen-btn.is-doc:hover { background: #6e0003; }
-</style>
+    .ps-screen-logo.is-doc {
+      background: rgba(232, 255, 0, 0.1);
+      color: #e8ff00;
+    }
 
-<section class="ps-section" id="products-section">
-  <h2 class="sr-only">AI-powered product showcase featuring EezyCRM, MeriTrack, and DocWave</h2>
+    .ps-screen-title-area {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      margin-top: 10px;
+    }
 
-  <div class="ps-header desktop-only">
-    <div class="ps-tag">Our Products</div>
-    <p class="ps-title">AI-Powered Products</p>
-    <p class="ps-subtitle">Proprietary software designed to automate and accelerate business operations.</p>
-  </div>
+    .ps-screen-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #f0f0f0;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
 
-  <div class="ps-track-wrapper desktop-only">
-    <div class="ps-track" id="psTrack">
+    .ps-screen-label {
+      font-size: 9.5px;
+      color: #a0a0a0;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
 
-      <div class="ps-card">
-        <div class="ps-phone-island"></div>
-        <div class="ps-screen">
-          <div class="ps-screen-header">
-            <div class="ps-screen-logo is-crm">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
-            </div>
-            <div class="ps-screen-title-area">
-              <span class="ps-screen-title">EezyCRM</span>
-              <span class="ps-screen-label">CRM Platform</span>
-            </div>
-          </div>
-          <div class="ps-screen-body">
-            <div class="ps-ui-snippet">
-              <p class="ps-screen-desc">A smart CRM built for service and manufacturing businesses — manage leads, track pipelines, and get real-time financial insights all in one place.</p>
-            </div>
-            <div class="ps-screen-tags">
-              <span class="ps-screen-tag is-crm">Digital Marketing</span>
-              <span class="ps-screen-tag is-crm">Real Estate</span>
-              <span class="ps-screen-tag is-crm">Insurance</span>
-            </div>
-          </div>
-          <a href="products.html" class="ps-screen-btn is-crm">Learn More →</a>
-        </div>
-      </div>
+    .ps-screen-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 10px;
+      margin: 16px 0 10px;
+    }
 
-      <div class="ps-card">
-        <div class="ps-phone-island"></div>
-        <div class="ps-screen">
-          <div class="ps-screen-header">
-            <div class="ps-screen-logo is-exam">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-              </svg>
-            </div>
-            <div class="ps-screen-title-area">
-              <span class="ps-screen-title">MeriTrack</span>
-              <span class="ps-screen-label">AI Exam Platform</span>
-            </div>
-          </div>
-          <div class="ps-screen-body">
-            <div class="ps-ui-snippet">
-              <p class="ps-screen-desc">An AI-powered portal that lets institutions run unlimited exams, auto-generate questions by topic, and ensure integrity through smart proctoring.</p>
-            </div>
-            <div class="ps-screen-tags">
-              <span class="ps-screen-tag is-exam">Coaching Centres</span>
-              <span class="ps-screen-tag is-exam">Colleges</span>
-              <span class="ps-screen-tag is-exam">HR Teams</span>
-            </div>
-          </div>
-          <a href="products.html" class="ps-screen-btn is-exam">Learn More →</a>
-        </div>
-      </div>
+    .ps-ui-snippet {
+      background: #1d1d1d;
+      border: 1px solid #2a2a2a;
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      text-align: left;
+    }
 
-      <div class="ps-card">
-        <div class="ps-phone-island"></div>
-        <div class="ps-screen">
-          <div class="ps-screen-header">
-            <div class="ps-screen-logo is-doc">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <polyline points="14 2 14 8 20 8"/>
-                <line x1="16" y1="13" x2="8" y2="13"/>
-                <line x1="16" y1="17" x2="8" y2="17"/>
-              </svg>
-            </div>
-            <div class="ps-screen-title-area">
-              <span class="ps-screen-title">DocWave</span>
-              <span class="ps-screen-label">Document Management</span>
-            </div>
-          </div>
-          <div class="ps-screen-body">
-            <div class="ps-ui-snippet">
-              <p class="ps-screen-desc">A secure document system with AI-powered deep search, automated approval workflows, and end-to-end encryption for compliance-heavy industries.</p>
-            </div>
-            <div class="ps-screen-tags">
-              <span class="ps-screen-tag is-doc">Law Firms</span>
-              <span class="ps-screen-tag is-doc">Auditing</span>
-              <span class="ps-screen-tag is-doc">Public Sector</span>
-            </div>
-          </div>
-          <a href="products.html" class="ps-screen-btn is-doc">Learn More →</a>
-        </div>
-      </div>
+    .ps-screen-desc {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #a0a0a0;
+      margin: 0;
+    }
 
-    </div>
-  </div>
+    .ps-screen-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: auto;
+    }
 
-  <div class="ps-footer desktop-only">
-    <a href="products.html" class="ps-view-btn">View All Products →</a>
-  </div>
+    .ps-screen-tag {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 7px;
+      white-space: nowrap;
+    }
 
-  <!-- Mobile-only Products Overview -->
-  <div class="mobile-only mobile-products-container">
-    <div class="sec-header-center">
+    .ps-screen-tag.is-crm {
+      background: rgba(232, 255, 0, 0.12);
+      color: #e8ff00;
+    }
+
+    .ps-screen-tag.is-exam {
+      background: rgba(232, 255, 0, 0.12);
+      color: #e8ff00;
+    }
+
+    .ps-screen-tag.is-doc {
+      background: rgba(232, 255, 0, 0.08);
+      color: #e8ff00;
+    }
+
+    .ps-screen-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+      margin-top: 2px;
+    }
+
+    .ps-screen-btn.is-crm {
+      background: #e8ff00;
+      color: #0d0d0d;
+    }
+
+    .ps-screen-btn.is-crm:hover {
+      background: #d4e900;
+    }
+
+    .ps-screen-btn.is-exam {
+      background: #e8ff00;
+      color: #0d0d0d;
+    }
+
+    .ps-screen-btn.is-exam:hover {
+      background: #e8ff00;
+      ;
+    }
+
+    .ps-screen-btn.is-doc {
+      background: #e8ff00;
+      color: #0d0d0d;
+    }
+
+    .ps-screen-btn.is-doc:hover {
+      background: #d4e900;
+    }
+
+    .ps-footer {
+      text-align: center;
+      padding-top: 8px;
+    }
+
+    .ps-view-btn {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      border: 0.5px solid var(--color-border-secondary);
+      padding: 9px 22px;
+      border-radius: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .ps-view-btn:hover {
+      color: var(--color-text-primary);
+      border-color: var(--color-border-primary);
+    }
+
+    [data-theme="light"] .ps-card {
+      background: #ffffff;
+      border-color: #ffffff;
+      outline: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    [data-theme="light"] .ps-track:hover .ps-card:hover {
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.14), 0 8px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    [data-theme="light"] .ps-phone-island {
+      background: #d2d2d7;
+    }
+
+    [data-theme="light"] .ps-screen {
+      background: #f5f5f7;
+    }
+
+    [data-theme="light"] .ps-screen-header {
+      border-bottom-color: #d2d2d7;
+    }
+
+    [data-theme="light"] .ps-screen-logo.is-crm {
+      background: rgba(139, 0, 4, 0.1);
+      color: #8b0004;
+    }
+
+    [data-theme="light"] .ps-screen-logo.is-exam {
+      background: rgba(198, 40, 40, 0.1);
+      color: #c62828;
+    }
+
+    [data-theme="light"] .ps-screen-logo.is-doc {
+      background: rgba(139, 0, 4, 0.08);
+      color: #8b0004;
+    }
+
+    [data-theme="light"] .ps-screen-title {
+      color: #0d0d0e;
+    }
+
+    [data-theme="light"] .ps-screen-label {
+      color: #48484c;
+    }
+
+    [data-theme="light"] .ps-ui-snippet {
+      background: #ffffff;
+      border-color: #d2d2d7;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    [data-theme="light"] .ps-screen-desc {
+      color: #48484c;
+    }
+
+    [data-theme="light"] .ps-screen-tag.is-crm {
+      background: rgba(139, 0, 4, 0.08);
+      color: #8b0004;
+    }
+
+    [data-theme="light"] .ps-screen-tag.is-exam {
+      background: rgba(198, 40, 40, 0.08);
+      color: #c62828;
+    }
+
+    [data-theme="light"] .ps-screen-tag.is-doc {
+      background: rgba(139, 0, 4, 0.06);
+      color: #8b0004;
+    }
+
+    [data-theme="light"] .ps-screen-btn.is-crm {
+      background: #8b0004;
+      color: #ffffff;
+    }
+
+    [data-theme="light"] .ps-screen-btn.is-crm:hover {
+      background: #6e0003;
+    }
+
+    [data-theme="light"] .ps-screen-btn.is-exam {
+      background: #c62828;
+      color: #ffffff;
+    }
+
+    [data-theme="light"] .ps-screen-btn.is-exam:hover {
+      background: #b71c1c;
+    }
+
+    [data-theme="light"] .ps-screen-btn.is-doc {
+      background: #8b0004;
+      color: #ffffff;
+    }
+
+    [data-theme="light"] .ps-screen-btn.is-doc:hover {
+      background: #6e0003;
+    }
+  </style>
+
+  <section class="ps-section" id="products-section">
+    <h2 class="sr-only">AI-powered product showcase featuring EezyCRM, MeriTrack, and DocWave</h2>
+
+    <div class="sec-header-center reveal">
       <div class="sec-tag">Our Products</div>
       <h2 class="sec-title">AI-Powered Products</h2>
       <p class="sec-body">Proprietary software designed to automate and accelerate business operations.</p>
     </div>
-    <div class="mobile-products-grid">
-      <!-- EezyCRM -->
-      <div class="mobile-product-card">
-        <div class="product-icon is-crm">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
-        </div>
-        <h3 class="product-name">EezyCRM</h3>
-        <ul class="product-bullets">
-          <li>Lead &amp; pipeline management built for service and manufacturing businesses</li>
-          <li>Real-time financial insights and pipeline tracking in one place</li>
-          <li>Automated lead capture, email reminders, and follow-ups</li>
-        </ul>
-        <a href="products.html" class="btn btn-view-product">View Product</a>
-      </div>
 
-      <!-- MeriTrack -->
-      <div class="mobile-product-card">
-        <div class="product-icon is-exam">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-          </svg>
-        </div>
-        <h3 class="product-name">MeriTrack</h3>
-        <ul class="product-bullets">
-          <li>Run unlimited online exams with topic-wise custom question generation</li>
-          <li>AI-powered smart proctoring to prevent cheating and maintain integrity</li>
-          <li>Instant grading, performance analytics, and automated certification</li>
-        </ul>
-        <a href="products.html" class="btn btn-view-product">View Product</a>
-      </div>
+    <div class="ps-track-wrapper desktop-only">
+      <div class="ps-track" id="psTrack">
 
-      <!-- DocWave -->
-      <div class="mobile-product-card">
-        <div class="product-icon is-doc">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-            <line x1="16" y1="13" x2="8" y2="13"/>
-            <line x1="16" y1="17" x2="8" y2="17"/>
-          </svg>
+        <div class="ps-card">
+          <div class="ps-phone-island"></div>
+          <div class="ps-screen">
+            <div class="ps-screen-header">
+              <div class="ps-screen-logo is-crm">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <div class="ps-screen-title-area">
+                <span class="ps-screen-title">EezyCRM</span>
+                <span class="ps-screen-label">CRM Platform</span>
+              </div>
+            </div>
+            <div class="ps-screen-body">
+              <div class="ps-product-preview">
+                <img src="assets/images/eezycrm-dashboard.webp" alt="EezyCRM Dashboard">
+              </div>
+
+              <p class="ps-product-tagline">
+                Track leads, automate follow-ups and monitor revenue from one platform. </p>
+
+              <div class="ps-suitable-for">
+                <span>Suitable For:</span>
+              </div>
+              <div class="ps-screen-tags">
+                <span class="ps-screen-tag is-crm">Digital Marketing</span>
+                <span class="ps-screen-tag is-crm">Real Estate</span>
+                <span class="ps-screen-tag is-crm">Insurance</span>
+                <span class="ps-screen-tag is-crm">Manufacturing</span>
+              </div>
+            </div>
+            <a href="products.html" class="ps-screen-btn is-crm">Learn More →</a>
+          </div>
         </div>
-        <h3 class="product-name">DocWave</h3>
-        <ul class="product-bullets">
-          <li>Secure document management with advanced AI-powered search</li>
-          <li>Automated multi-level approval workflows and e-signature routing</li>
-          <li>End-to-end encryption with granular role-based access control</li>
-        </ul>
-        <a href="products.html" class="btn btn-view-product">View Product</a>
+
+        <div class="ps-card">
+          <div class="ps-phone-island"></div>
+          <div class="ps-screen">
+            <div class="ps-screen-header">
+              <div class="ps-screen-logo is-exam">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                  <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                </svg>
+              </div>
+              <div class="ps-screen-title-area">
+                <span class="ps-screen-title">MeriTrack</span>
+                <span class="ps-screen-label">AI Exam Platform</span>
+              </div>
+            </div>
+            <div class="ps-screen-body">
+
+              <div class="ps-product-preview">
+                <img src="assets/images/meritrack-dashboard.webp" alt="MeriTrack Dashboard">
+              </div>
+
+              <p class="ps-product-tagline">
+                Run unlimited AI-powered exams with smart proctoring and instant evaluation.
+              </p>
+
+              <div class="ps-suitable-for">Suitable For:</div>
+
+              <div class="ps-screen-tags">
+                <span class="ps-screen-tag is-exam">Coaching Centres</span>
+                <span class="ps-screen-tag is-exam">Colleges</span>
+                <span class="ps-screen-tag is-exam">HR Teams</span>
+                <span class="ps-screen-tag is-exam">Schools</span>
+
+              </div>
+
+            </div>
+            <a href="products.html" class="ps-screen-btn is-exam">Learn More →</a>
+          </div>
+        </div>
+
+        <div class="ps-card">
+          <div class="ps-phone-island"></div>
+          <div class="ps-screen">
+            <div class="ps-screen-header">
+              <div class="ps-screen-logo is-doc">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                </svg>
+              </div>
+              <div class="ps-screen-title-area">
+                <span class="ps-screen-title">DocWave</span>
+                <span class="ps-screen-label">Document Management</span>
+              </div>
+            </div>
+            <div class="ps-screen-body">
+
+              <div class="ps-product-preview">
+                <img src="assets/images/docwave-dashboard.webp" alt="DocWave Dashboard">
+              </div>
+
+              <p class="ps-product-tagline">
+                Secure document management with AI search, approvals and compliance workflows.
+              </p>
+
+              <div class="ps-suitable-for">Suitable For:</div>
+
+              <div class="ps-screen-tags">
+                <span class="ps-screen-tag is-doc">Law Firms</span>
+                <span class="ps-screen-tag is-doc">Auditing</span>
+                <span class="ps-screen-tag is-doc">Public Sector</span>
+                <span class="ps-screen-tag is-doc">Healthcare</span>
+              </div>
+
+            </div>
+            <a href="products.html" class="ps-screen-btn is-doc">Learn More →</a>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
-</section>
+
+    <div style="text-align:center;margin-top:40px">
+      <a href="products.html" class="btn btn-outline">View All Products →</a>
+    </div>
+
+    <!-- Mobile-only Products Overview -->
+    <div class="mobile-only mobile-products-container">
+      <div class="sec-header-center">
+        <div class="sec-tag">Our Products</div>
+        <h2 class="sec-title">AI-Powered Products</h2>
+        <p class="sec-body">Proprietary software designed to automate and accelerate business operations.</p>
+      </div>
+      <div class="mobile-products-grid">
+        <!-- EezyCRM -->
+        <div class="mobile-product-card">
+          <div class="product-icon is-crm">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h3 class="product-name">EezyCRM</h3>
+          <ul class="product-bullets">
+            <li>Lead &amp; pipeline management built for service and manufacturing businesses</li>
+            <li>Real-time financial insights and pipeline tracking in one place</li>
+            <li>Automated lead capture, email reminders, and follow-ups</li>
+          </ul>
+          <a href="products.html" class="btn btn-view-product">View Product</a>
+        </div>
+
+        <!-- MeriTrack -->
+        <div class="mobile-product-card">
+          <div class="product-icon is-exam">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+              <path d="M6 12v5c3 3 9 3 12 0v-5" />
+            </svg>
+          </div>
+          <h3 class="product-name">MeriTrack</h3>
+          <ul class="product-bullets">
+            <li>Run unlimited online exams with topic-wise custom question generation</li>
+            <li>AI-powered smart proctoring to prevent cheating and maintain integrity</li>
+            <li>Instant grading, performance analytics, and automated certification</li>
+          </ul>
+          <a href="products.html" class="btn btn-view-product">View Product</a>
+        </div>
+
+        <!-- DocWave -->
+        <div class="mobile-product-card">
+          <div class="product-icon is-doc">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+            </svg>
+          </div>
+          <h3 class="product-name">DocWave</h3>
+          <ul class="product-bullets">
+            <li>Secure document management with advanced AI-powered search</li>
+            <li>Automated multi-level approval workflows and e-signature routing</li>
+            <li>End-to-end encryption with granular role-based access control</li>
+          </ul>
+          <a href="products.html" class="btn btn-view-product">View Product</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
 <script>
-(function(){
-  const track = document.getElementById("psTrack");
-  if (!track) return;
-  if (window.innerWidth > 768) {
-    const cards = Array.from(track.children);
-    for (let i = 0; i < 2; i++) {
-      cards.forEach(card => track.appendChild(card.cloneNode(true)));
-    }
-  }
-})();
+  (function () {
+    const track = document.getElementById("psTrack");
+    if (!track || window.innerWidth <= 768) return;
+
+    track.innerHTML += track.innerHTML;
+  })();
 </script>
+
   <!-- ══ SECTION 4 — WHY V7LANCERS ════════════════════════ -->
   <section id="why-us" class="desktop-only" style="background:var(--surface)">
     <div class="container">

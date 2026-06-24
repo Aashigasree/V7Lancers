@@ -106,17 +106,23 @@ document.querySelectorAll('.services-grid,.testi-grid,.awards-grid,.products-gri
 });
 
 /* ── PORTFOLIO FILTER ─────────────────────────────────── */
-document.querySelectorAll('.filter-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+/* ── VIDEO FILTER ─────────────────────────────────── */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+
+    document.querySelectorAll('.filter-btn').forEach(b =>
+      b.classList.remove('active')
+    );
+
     btn.classList.add('active');
-    const f=btn.dataset.filter;
-    document.querySelectorAll('.portfolio-item').forEach(item=>{
-      const show=f==='all'||item.dataset.cat===f;
-      item.style.opacity=show?'1':'.18';
-      item.style.transform=show?'':'scale(.97)';
-      item.style.pointerEvents=show?'':'none';
-    });
+
+    const f = btn.dataset.filter;
+
+  document.querySelectorAll('.video-card').forEach(item => {
+  const show = f === 'all' || item.dataset.cat === f;
+  item.style.display = show ? 'block' : 'none';
+});
+
   });
 });
 

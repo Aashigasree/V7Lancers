@@ -22,8 +22,10 @@
 
   <nav id="navbar">
     <a href="index.html" class="nav-logo" aria-label="V7Lancers - Home">
-      <img class="site-logo light-logo" src="assets/site-logo/logo-dark.png" alt="V7Lancers Logo" width="180" height="48" />
-      <img class="site-logo dark-logo" src="assets/site-logo/logo-light.png" alt="V7Lancers Logo" width="180" height="48" />
+      <img class="site-logo light-logo" src="assets/site-logo/logo-dark.png" alt="V7Lancers Logo" width="180"
+        height="48" />
+      <img class="site-logo dark-logo" src="assets/site-logo/logo-light.png" alt="V7Lancers Logo" width="180"
+        height="48" />
     </a>
     <div class="nav-links">
       <a href="index.html">Home</a>
@@ -84,10 +86,14 @@
   <section style="background:var(--surface)">
     <div class="container">
       <div class="sec-header-center reveal">
-        <div class="sec-tag">Selected Work</div>
-        <h2 class="sec-title">Featured Projects</h2>
-        <p class="sec-body">A curated showcase of our best work across industries — filter by category to explore.</p>
+        <div class="sec-tag">Project Videos</div>
+        <h2 class="sec-title">Watch Our Work</h2>
+        <p class="sec-body">
+          Explore real client projects, website showcases, software demos, ecommerce solutions, and mobile applications
+          delivered by V7Lancers.
+        </p>
       </div>
+
       <div class="portfolio-filter reveal">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="website">Websites</button>
@@ -95,88 +101,69 @@
         <button class="filter-btn" data-filter="ecommerce">Ecommerce</button>
         <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
       </div>
-      <div class="portfolio-grid">
-        <div class="portfolio-item reveal" data-cat="ecommerce">
-          <div class="portfolio-item-inner">🛒</div>
-          <div class="portfolio-overlay">
-            <div class="portfolio-title">RetailPlus India</div>
-            <div class="portfolio-cat">Ecommerce · Retail</div>
-            <div class="portfolio-meta"><span class="portfolio-tech">React</span><span
-                class="portfolio-tech">Node.js</span><span class="portfolio-tech">Razorpay</span></div>
+
+      <div class="video-grid">
+
+        <!-- Ecommerce -->
+        <div class="video-card reveal" data-cat="ecommerce">
+          <div class="video-embed">
+            <iframe src="https://www.youtube.com/embed/EIcz8yGubgc" title="Eezyshop Arola" allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="video-body">
+            <div class="video-title">Eezyshop Arola</div>
+            <p class="video-desc">
+              Ecommerce solution developed for eco-friendly bamboo products with a modern shopping experience.
+            </p>
           </div>
         </div>
-        <div class="portfolio-item reveal" data-cat="website">
-          <div class="portfolio-item-inner">🖥️</div>
-          <div class="portfolio-overlay">
-            <div class="portfolio-title">MedCare Clinic Portal</div>
-            <div class="portfolio-cat">Website · Healthcare</div>
-            <div class="portfolio-meta"><span class="portfolio-tech">WordPress</span><span
-                class="portfolio-tech">PHP</span></div>
+
+        <!-- Website -->
+        <div class="video-card reveal" data-cat="website">
+          <div class="video-embed">
+            <iframe src="https://www.youtube.com/embed/hgHhzge4TQQ" title="The Ambiora Website" allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="video-body">
+            <div class="video-title">The Ambiora</div>
+            <p class="video-desc">
+              Premium hospitality website showcasing elegant UI design and responsive development.
+            </p>
           </div>
         </div>
-        <div class="portfolio-item reveal" data-cat="mobile">
-          <div class="portfolio-item-inner">📱</div>
-          <div class="portfolio-overlay">
-            <div class="portfolio-title">QuickServe Delivery App</div>
-            <div class="portfolio-cat">Mobile · Food Delivery</div>
-            <div class="portfolio-meta"><span class="portfolio-tech">Flutter</span><span
-                class="portfolio-tech">Firebase</span></div>
+
+        <!-- Software -->
+        <div class="video-card reveal" data-cat="software">
+          <div class="video-embed">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Software Demo" allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="video-body">
+            <div class="video-title">EezyCRM Demo</div>
+            <p class="video-desc">
+              CRM platform walkthrough featuring lead tracking, automation and reporting tools.
+            </p>
           </div>
         </div>
-        <div class="portfolio-item reveal" data-cat="software">
-          <div class="portfolio-item-inner">⚙️</div>
-          <div class="portfolio-overlay">
-            <div class="portfolio-title">LogiStar Fleet Management</div>
-            <div class="portfolio-cat">Software · Logistics</div>
-            <div class="portfolio-meta"><span class="portfolio-tech">Python</span><span
-                class="portfolio-tech">MySQL</span><span class="portfolio-tech">AWS</span></div>
+
+        <!-- Mobile -->
+        <div class="video-card reveal" data-cat="mobile">
+          <div class="video-embed">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Mobile App Demo" allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="video-body">
+            <div class="video-title">MeriTrack App</div>
+            <p class="video-desc">
+              Student management and examination platform built for educational institutions.
+            </p>
           </div>
         </div>
-        <div class="portfolio-item reveal" data-cat="website">
-          <div class="portfolio-item-inner">🏢</div>
-          <div class="portfolio-overlay">
-            <div class="portfolio-title">TechBridge Corporate Site</div>
-            <div class="portfolio-cat">Website · Corporate</div>
-            <div class="portfolio-meta"><span class="portfolio-tech">React</span><span
-                class="portfolio-tech">Bootstrap</span></div>
-          </div>
-        </div>
-        <div class="portfolio-item reveal" data-cat="ecommerce">
-          <div class="portfolio-item-inner">🌐</div>
-          <div class="portfolio-overlay">
-            <div class="portfolio-title">GulfTrade B2B Portal</div>
-            <div class="portfolio-cat">Ecommerce · B2B Trade</div>
-            <div class="portfolio-meta"><span class="portfolio-tech">Shopify</span><span class="portfolio-tech">Custom
-                API</span></div>
-          </div>
-        </div>
-        <div class="portfolio-item reveal" data-cat="software">
-          <div class="portfolio-item-inner">📊</div>
-          <div class="portfolio-overlay">
-            <div class="portfolio-title">EezyCRM Dashboard</div>
-            <div class="portfolio-cat">Software · CRM &amp; PM</div>
-            <div class="portfolio-meta"><span class="portfolio-tech">Angular</span><span
-                class="portfolio-tech">Node.js</span></div>
-          </div>
-        </div>
-        <div class="portfolio-item reveal" data-cat="mobile">
-          <div class="portfolio-item-inner">🎓</div>
-          <div class="portfolio-overlay">
-            <div class="portfolio-title">MeriTrack Student App</div>
-            <div class="portfolio-cat">Mobile · Education</div>
-            <div class="portfolio-meta"><span class="portfolio-tech">Flutter</span><span
-                class="portfolio-tech">AI</span></div>
-          </div>
-        </div>
-        <div class="portfolio-item reveal" data-cat="website">
-          <div class="portfolio-item-inner">🏗️</div>
-          <div class="portfolio-overlay">
-            <div class="portfolio-title">BuildPro Construction</div>
-            <div class="portfolio-cat">Website · Real Estate</div>
-            <div class="portfolio-meta"><span class="portfolio-tech">HTML/CSS</span><span
-                class="portfolio-tech">React</span></div>
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
@@ -211,50 +198,7 @@
     </div>
   </section>
 
-  <section style="background:var(--surface)">
-    <div class="container">
-      <div class="sec-header-center reveal">
-        <div class="sec-tag">Project Videos</div>
-        <h2 class="sec-title">Watch Our Work</h2>
-        <p class="sec-body">Project walkthroughs and client testimonials from the V7Lancers YouTube channel.</p>
-      </div>
-      <div class="video-grid">
-        <div class="video-card reveal">
-          <div class="video-embed">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/EIcz8yGubgc?si=Mu-8ANSpFL_QoTGs"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-          <div class="video-body">
-            <div class="video-title">Eezyshop Arola Client Project Eco bamboo Online Business V7Lancers</div>
-            <p class="video-desc">Eezyshop Arola is an eco-friendly e-commerce project built for bamboo products.
-              Designed by V7Lancers, it focuses on a clean UI, smooth user experience, and a responsive online store
-              setup that supports sustainable business growth.
-
-            </p>
-          </div>
-        </div>
-        <div class="video-card reveal">
-          <div class="video-embed">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/hgHhzge4TQQ?si=QJC7ozaifWlQocTU"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-          <div class="video-body">
-            <div class="video-title">The Ambiora | Website Design Showcase</div>
-            <p class="video-desc">Explore the official website of The Ambiora, designed to reflect elegance, clarity,
-              and a strong digital presence. This project showcases our expertise in modern UI/UX design, responsive
-              development, and seamless user experiences across all devices.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="quote-section" style="background:var(--bg)">
+  <section class="quote-section" style="background:var(--surface)">
     <div class="container">
       <div class="quote-wrap">
         <div class="quote-info reveal">
@@ -303,9 +247,12 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <a href="index.html" class="nav-logo footer-brand" style="display:inline-block;margin-bottom:16px" aria-label="V7Lancers - Home">
-            <img class="site-logo light-logo" src="assets/site-logo/logo-dark.png" alt="V7Lancers Logo" width="180" height="48" />
-            <img class="site-logo dark-logo" src="assets/site-logo/logo-light.png" alt="V7Lancers Logo" width="180" height="48" />
+          <a href="index.html" class="nav-logo footer-brand" style="display:inline-block;margin-bottom:16px"
+            aria-label="V7Lancers - Home">
+            <img class="site-logo light-logo" src="assets/site-logo/logo-dark.png" alt="V7Lancers Logo" width="180"
+              height="48" />
+            <img class="site-logo dark-logo" src="assets/site-logo/logo-light.png" alt="V7Lancers Logo" width="180"
+              height="48" />
           </a>
           <p class="footer-desc">V7Lancers Technopark Pvt Ltd — delivering innovative websites, software, mobile apps,
             and AI-powered solutions to businesses across India, UK, USA, and Gulf countries.</p>
@@ -356,7 +303,8 @@
           <div class="footer-links">
             <a href="tel:+919150056163">📞 +91 91500 56163</a>
             <a href="mailto:sales@v7lancers.com">✉️ sales@v7lancers.com</a>
-            <span style="color:var(--muted);font-size:.87rem">📍  Theppakulam main road, Anuppanadi Rd, near Sourashtra Girls school, Madurai, Tamil Nadu 625009</span>
+            <span style="color:var(--muted);font-size:.87rem">📍 Theppakulam main road, Anuppanadi Rd, near Sourashtra
+              Girls school, Madurai, Tamil Nadu 625009</span>
             <span style="color:var(--muted);font-size:.87rem">🕐 Mon–Sat: 10 AM – 8 PM IST</span>
           </div>
         </div>

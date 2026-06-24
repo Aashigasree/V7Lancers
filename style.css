@@ -2373,111 +2373,24 @@ a.nav-logo:hover .site-logo {
   color: var(--on-accent);
 }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.portfolio-item {
-  background: var(--card);
-  border-radius: 10px;
-  aspect-ratio: 4/3;
-  border: 1px solid var(--border);
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-  transition: transform var(--tr), box-shadow var(--tr);
-}
-
-.portfolio-item:hover {
-  transform: scale(1.02);
-  box-shadow: var(--shadow-lg);
-}
-
-.portfolio-item-inner {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-size: 3.5rem;
-  color: rgba(255, 255, 255, .06);
-  transition: color var(--tr);
-}
-
-.portfolio-item-inner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.portfolio-item:hover .portfolio-item-inner {
-  color: rgba(var(--accent-rgb), .12);
-}
-
-.portfolio-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(13, 13, 13, .88);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 24px;
-  opacity: 0;
-  transition: opacity var(--tr);
-}
-
-.portfolio-item:hover .portfolio-overlay {
-  opacity: 1;
-}
-
-.portfolio-title {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  letter-spacing: .04em;
-}
-
-.portfolio-cat {
-  font-family: var(--font-mono);
-  font-size: .7rem;
-  color: var(--accent);
-  letter-spacing: .1em;
-  margin-top: 4px;
-}
-
-.portfolio-item:nth-child(1) {
-  grid-column: span 2;
-}
-
-.portfolio-item:nth-child(4) {
-  grid-column: span 2;
-}
-
-.portfolio-meta {
-  display: flex;
-  gap: 6px;
-  margin-top: 8px;
-  flex-wrap: wrap;
-}
-
-.portfolio-tech {
-  font-family: var(--font-mono);
-  font-size: .6rem;
-  background: rgba(var(--accent-rgb), .08);
-  color: var(--accent);
-  padding: 3px 7px;
-  border-radius: 3px;
-  border: 1px solid rgba(var(--accent-rgb), .18);
-}
-
 /* ─── VIDEO PORTFOLIO ────────────────────────────────── */
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+}
+
+
+@media (max-width: 992px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .video-card {
@@ -2899,10 +2812,6 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .video-grid {
-    grid-template-columns: 1fr;
-  }
-
   .contact-wrap,
   .contact-forms-grid {
     grid-template-columns: 1fr;
@@ -2972,7 +2881,6 @@ footer {
   .testi-grid,
   .awards-grid,
   .why-grid,
-  .video-grid,
   .blog-grid,
   .success-grid,
   .process-steps,
@@ -3078,9 +2986,6 @@ footer {
     padding: clamp(4px, 1vh, 8px) 0;
   }
 }
-
-
-
 
 .why-icon {
   width: 74px;

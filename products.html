@@ -248,18 +248,18 @@
     @media (max-width: 480px) {
       .pcc-tabs-container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        overflow: visible;
+        grid-template-columns: repeat(2, 1fr);
       }
+    }
 
-      .pcc-tab {
-        justify-content: center;
-        text-align: center;
-      }
+    .pcc-tab {
+      justify-content: center;
+      text-align: center;
+    }
 
-      .pcc-tab .tab-icon {
-        display: none;
-      }
+    .pcc-tab .tab-icon {
+      display: none;
+    }
     }
   </style>
 </head>
@@ -352,6 +352,11 @@
               <span class="tab-icon">📁</span>
               <span class="tab-name">DocWave</span>
             </button>
+            <button class="pcc-tab" onclick="switchProduct('eezytrack', this)">
+              <span class="tab-icon">📍</span>
+              <span class="tab-name">EezyTrack</span>
+            </button>
+
           </div>
         </aside>
 
@@ -467,12 +472,52 @@
                 <div class="check-item">Protected File Sharing & Privacy Controls</div>
                 <div class="check-item">Password Protection & Auto Encryption</div>
               </div>
-              
+
               <div style="margin-top:40px; display:flex; gap:12px; align-items:center;">
                 <a href="contact.html" class="btn btn-primary">
                   Request Demo
                 </a>
                 <a href="assets/brochures/eezycrm-brochure.pdf" class="btn btn-outline" download>
+                  Download Brochure
+                </a>
+              </div>
+            </div>
+
+            <div class="pcc-visual">
+              <div class="mock-grid">
+                <div class="mock-card" style="background:var(--border)"></div>
+                <div class="mock-card" style="background:var(--border)"></div>
+                <div class="mock-card" style="background:var(--border)"></div>
+                <div class="mock-card" style="background:var(--border)"></div>
+              </div>
+              <div class="mock-line" style="margin-top:10px"></div>
+            </div>
+          </div>
+
+          <!-- EezyTrack -->
+          <div id="eezytrack" class="pcc-panel">
+            <div class="pcc-content">
+              <h3>EezyTrack</h3>
+              <span class="pcc-tagline">// AI-Powered Field Staff Tracking Platform</span>
+
+              <p class="sec-body" style="margin-bottom:24px">
+                Smart GPS-based tracking platform that helps businesses monitor field staff,
+                sales agents, technicians, and mobile teams with live location tracking,
+                route analytics, travel insights, and productivity monitoring.
+              </p>
+
+              <div class="check-list">
+                <div class="check-item">Live Location Tracking & Real-Time Monitoring</div>
+                <div class="check-item">Route History, Map View & Travel Analytics</div>
+                <div class="check-item">Distance Travelled & Working Time Reports</div>
+                <div class="check-item">Idle Time Detection & Field Productivity Insights</div>
+              </div>
+
+              <div style="margin-top:40px; display:flex; gap:12px; align-items:center;">
+                <a href="contact.html" class="btn btn-primary">
+                  Request Demo
+                </a>
+                <a href="assets/brochures/eezytrack-brochure.pdf" class="btn btn-outline" download>
                   Download Brochure
                 </a>
               </div>
@@ -590,6 +635,7 @@
                   <option>EezyCRM — CRM &amp; Project Management</option>
                   <option>MeriTrack — Online Examination Portal</option>
                   <option>DocWave — Document Management</option>
+                  <option>EezyTrack — Field Staff Tracking</option>
                   <option>Multiple Products</option>
                   <option>Not Sure Yet</option>
                 </select>
@@ -653,8 +699,10 @@
         <div>
           <div class="footer-col-title">Products</div>
           <div class="footer-links">
-            <a href="products.html">EezyCRM</a><a href="products.html">MeriTrack</a><a href="products.html">DocWave</a>
-            <a href="services.html">Custom Software</a><a href="services.html">Mobile Apps</a>
+            <a href="products.html">EezyCRM</a>
+            <a href="products.html">MeriTrack</a>
+            <a href="products.html">DocWave</a>
+            <a href="products.html">EezyTrack</a>
           </div>
         </div>
         <div>

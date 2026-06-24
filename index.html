@@ -229,7 +229,7 @@
       </div>
 
       <!-- Mobile-only Company Story Section -->
-      
+
     </div>
   </section>
 
@@ -283,7 +283,7 @@
       border-radius: 12px;
       overflow: hidden;
       margin-bottom: 5px;
-      border: 1px solid #2a2a2a;
+      border: 1px solid #949494;
     }
 
     .ps-product-preview img {
@@ -322,7 +322,9 @@
       align-items: flex-start;
       width: max-content;
       will-change: transform;
-      animation: psScroll 44s linear infinite;
+      animation: psScroll 60s linear infinite;
+      transform: translateZ(0);
+      backface-visibility: hidden;
     }
 
     .ps-track:hover {
@@ -709,7 +711,7 @@
             </div>
             <div class="ps-screen-body">
               <div class="ps-product-preview">
-                <img src="assets/images/eezycrm-dashboard.webp" alt="EezyCRM Dashboard">
+                <img src="assets/home-product/eezycrm-dashboard.png" alt="EezyCRM Dashboard">
               </div>
 
               <p class="ps-product-tagline">
@@ -747,7 +749,7 @@
             <div class="ps-screen-body">
 
               <div class="ps-product-preview">
-                <img src="assets/images/meritrack-dashboard.webp" alt="MeriTrack Dashboard">
+                <img src="assets/home-product/meritrack-dashboard.png" alt="MeriTrack Dashboard">
               </div>
 
               <p class="ps-product-tagline">
@@ -789,7 +791,7 @@
             <div class="ps-screen-body">
 
               <div class="ps-product-preview">
-                <img src="assets/images/docwave-dashboard.webp" alt="DocWave Dashboard">
+                <img src="assets/home-product/docwave-dashboard.png" alt="DocWave Dashboard">
               </div>
 
               <p class="ps-product-tagline">
@@ -810,6 +812,49 @@
           </div>
         </div>
 
+        <div class="ps-card">
+          <div class="ps-phone-island"></div>
+          <div class="ps-screen">
+            <div class="ps-screen-header">
+              <div class="ps-screen-logo is-exam">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19l-5-5 5-5"></path>
+                  <path d="M15 5l5 5-5 5"></path>
+                  <path d="M14 3l-4 18"></path>
+                </svg>
+              </div>
+              <div class="ps-screen-title-area">
+                <span class="ps-screen-title">EezyTrack</span>
+                <span class="ps-screen-label">Field Tracking App</span>
+              </div>
+            </div>
+            <div class="ps-screen-body">
+
+              <div class="ps-product-preview">
+                <img src="assets/home-product/eezytrack-dashboard.webp" alt="EezyTrack Dashboard">
+
+              </div>
+
+              <p class="ps-product-tagline">
+                Track field teams, monitor routes and analyze travel activity in real time.
+
+              </p>
+
+              <div class="ps-suitable-for">Suitable For:</div>
+
+              <div class="ps-screen-tags">
+                <span class="ps-screen-tag is-exam">Traders</span>
+                <span class="ps-screen-tag is-exam">Manufacturers</span>
+                <span class="ps-screen-tag is-exam">Service Teams</span>
+                <span class="ps-screen-tag is-exam">Sales Agents</span>
+              </div>
+
+            </div>
+            <a href="products.html" class="ps-screen-btn is-exam">Learn More →</a>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -819,7 +864,7 @@
 
     <!-- Mobile-only Products Overview -->
     <div class="mobile-only mobile-products-container">
-      
+
       <div class="mobile-products-grid">
         <!-- EezyCRM -->
         <div class="mobile-product-card">
@@ -879,14 +924,14 @@
     </div>
   </section>
 
-<script>
-  (function () {
-    const track = document.getElementById("psTrack");
-    if (!track || window.innerWidth <= 768) return;
+  <script>
+    (function () {
+      const track = document.getElementById("psTrack");
+      if (!track || window.innerWidth <= 768) return;
 
-    track.innerHTML += track.innerHTML;
-  })();
-</script>
+      track.innerHTML += track.innerHTML;
+    })();
+  </script>
 
   <!-- ══ SECTION 4 — WHY V7LANCERS ════════════════════════ -->
   <section id="why-us" class="desktop-only" style="background:var(--surface)">
@@ -1576,8 +1621,10 @@
         <div>
           <div class="footer-col-title">Products</div>
           <div class="footer-links">
-            <a href="products.html">EezyCRM</a><a href="products.html">MeriTrack</a><a href="products.html">DocWave</a>
-            <a href="services.html">Custom Software</a><a href="services.html">Mobile Apps</a>
+            <a href="products.html">EezyCRM</a>
+            <a href="products.html">MeriTrack</a>
+            <a href="products.html">DocWave</a>
+            <a href="products.html">EezyTrack</a>
           </div>
         </div>
         <div>

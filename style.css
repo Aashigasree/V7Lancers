@@ -1810,6 +1810,12 @@ a.nav-logo:hover .site-logo {
   right: 4%;
 }
 
+.process-container{
+    max-width: 1400px;   /* increase from your normal container width */
+    width: 95%;
+    margin: 0 auto;
+}
+
 /* ─── SUCCESS STORIES ────────────────────────────────── */
 .success-grid {
   display: grid;
@@ -2176,6 +2182,31 @@ a.nav-logo:hover .site-logo {
   font-size: .82rem;
   color: var(--muted);
   line-height: 1.6;
+}
+
+.team-socials{
+  display:flex;
+  gap:12px;
+  margin-top:18px;
+}
+
+.team-socials a{
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:10px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  color:var(--text);
+  transition:.3s ease;
+}
+
+.team-socials a:hover{
+  background:var(--primary);
+  color:#fff;
+  transform:translateY(-3px);
 }
 
 /* ─── AWARDS GRID ────────────────────────────────────── */

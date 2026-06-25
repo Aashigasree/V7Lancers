@@ -18,7 +18,8 @@
 </head>
 
 <body>
-  <canvas id="canvas"></canvas>
+  <div class="desktop-only">
+    <canvas id="canvas"></canvas>
 
   <nav id="navbar">
     <a href="index.html" class="nav-logo" aria-label="V7Lancers - Home">
@@ -442,6 +443,246 @@
       </div>
     </div>
   </footer>
+  </div>
+  
+  <!-- MOBILE SERVICES PAGE -->
+
+<section class="mobile-services-page mobile-only">
+
+  <div class="mobile-service-header">
+    <h1>Our Services</h1>
+    <p>Tap any service to explore details</p>
+  </div>
+
+  <!-- WEBSITE -->
+  <div class="service-card" id="website"  onclick="this.classList.toggle('active')">
+
+    <img src="assets/services/web-development.png"
+         alt="Website Development">
+
+    <div class="service-preview">
+
+      <h3>🌐 Website Development</h3>
+
+      <ul>
+        <li>Responsive Design</li>
+        <li>SEO Ready</li>
+        <li>Fast Loading</li>
+      </ul>
+
+    </div>
+
+    <div class="service-expand">
+
+      <p>
+        Professional websites built with modern technologies
+        to improve brand visibility and generate leads.
+      </p>
+
+      <div class="service-tags">
+        <span>HTML</span>
+        <span>React</span>
+        <span>WordPress</span>
+      </div>
+
+      <a href="contact.html" class="service-btn">
+        Get Quote
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- ECOMMERCE -->
+
+  <div class="service-card" id="ecommerce"onclick="this.classList.toggle('active')">
+
+    <img src="assets/services/ecommerce-development.png"
+         alt="Ecommerce">
+
+    <div class="service-preview">
+
+      <h3>🛒 Ecommerce</h3>
+
+      <ul>
+        <li>Online Store</li>
+        <li>Payments</li>
+        <li>Inventory</li>
+      </ul>
+
+    </div>
+
+    <div class="service-expand">
+
+      <p>
+        Complete ecommerce solutions with secure payments,
+        shipping and order management.
+      </p>
+
+      <div class="service-tags">
+        <span>Shopify</span>
+        <span>WooCommerce</span>
+      </div>
+
+      <a href="contact.html" class="service-btn">
+        Get Quote
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- DELIVERY -->
+
+  <div class="service-card" id="delivery"  onclick="this.classList.toggle('active')">
+
+    <img src="assets/services/online-delivery.png"
+         alt="Delivery App">
+
+    <div class="service-preview">
+
+      <h3>🚚 Delivery Apps</h3>
+
+      <ul>
+        <li>Live Tracking</li>
+        <li>Notifications</li>
+        <li>Payments</li>
+      </ul>
+
+    </div>
+
+    <div class="service-expand">
+
+      <p>
+        Delivery solutions with real-time tracking,
+        fleet management and customer notifications.
+      </p>
+
+      <div class="service-tags">
+        <span>Flutter</span>
+        <span>Firebase</span>
+      </div>
+
+      <a href="contact.html" class="service-btn">
+        Get Quote
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- SOFTWARE -->
+
+  <div class="service-card"  id="software" onclick="this.classList.toggle('active')">
+
+    <img src="assets/services/software-development.png"
+         alt="Software">
+
+    <div class="service-preview">
+
+      <h3>⚙️ Custom Software</h3>
+
+      <ul>
+        <li>CRM</li>
+        <li>ERP</li>
+        <li>Automation</li>
+      </ul>
+
+    </div>
+
+    <div class="service-expand">
+
+      <p>
+        Tailor-made software systems designed to automate
+        and streamline business operations.
+      </p>
+
+      <div class="service-tags">
+        <span>Python</span>
+        <span>NodeJS</span>
+        <span>MySQL</span>
+      </div>
+
+      <a href="contact.html" class="service-btn">
+        Get Quote
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- MOBILE APP -->
+
+  <div class="service-card" id="mobileapp" onclick="this.classList.toggle('active')">
+
+    <img src="assets/services/app-development.png"
+         alt="Mobile App">
+
+    <div class="service-preview">
+
+      <h3>📱 Mobile Apps</h3>
+
+      <ul>
+        <li>Android</li>
+        <li>iOS</li>
+        <li>Cross Platform</li>
+      </ul>
+
+    </div>
+
+    <div class="service-expand">
+
+      <p>
+        High-performance Android and iOS applications
+        with modern UI and scalable backend systems.
+      </p>
+
+      <div class="service-tags">
+        <span>Flutter</span>
+        <span>React Native</span>
+      </div>
+
+      <a href="contact.html" class="service-btn">
+        Get Quote
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- BOTTOM SERVICE NAV -->
+
+<nav class="service-bottom-nav mobile-only">
+
+  <a href="#website">
+    <i class="fa-solid fa-globe"></i>
+    <span>Web</span>
+  </a>
+
+  <a href="#ecommerce">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span>Store</span>
+  </a>
+
+  <a href="#delivery">
+    <i class="fa-solid fa-truck"></i>
+    <span>Delivery</span>
+  </a>
+
+  <a href="#software">
+    <i class="fa-solid fa-code"></i>
+    <span>Software</span>
+  </a>
+
+  <a href="#mobileapp">
+    <i class="fa-solid fa-mobile-screen"></i>
+    <span>Apps</span>
+  </a>
+
+</nav>
   <script src="script.js"></script>
 </body>
 

@@ -3482,3 +3482,37 @@ footer {
 .slide-actions a{
   flex:1;
 }
+.service-nav{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -4px 20px rgba(0,0,0,.08);
+  z-index: 9999;
+  box-sizing: border-box;
+}
+
+.service-nav a{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.service-nav a i{
+  font-size: 1.2rem;
+}
+
+.service-nav a.active,
+.service-nav a:hover{
+  color: var(--accent);
+}

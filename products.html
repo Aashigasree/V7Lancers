@@ -260,7 +260,8 @@
 </head>
 
 <body>
-  <canvas id="canvas"></canvas>
+  <section class="ps-section desktop-only">
+ <canvas id="canvas"></canvas>
   <nav id="navbar">
     <a href="index.html" class="nav-logo" aria-label="V7Lancers - Home">
       <img class="site-logo light-logo" src="assets/site-logo/logo-dark.png" alt="V7Lancers Logo" width="180"
@@ -356,7 +357,7 @@
         </aside>
 
         <!-- MAIN DISPLAY PANEL -->
-        <main class="pcc-main">
+        <main  class="pcc-main">
 
           <!-- EezyCRM -->
           <div id="eezy" class="pcc-panel active">
@@ -773,6 +774,126 @@
       </div>
     </div>
   </footer>
+  </section>
+ 
+  <section class="mobile-products-page mobile-only">
+
+ 
+  <!-- Slider -->
+  <div class="product-slider" id="productSlider">
+
+    <!-- EezyCRM -->
+    <article class="product-slide">
+      <img src="assets/home-product/eezycrm-dashboard.png" alt="EezyCRM">
+
+      <h2>EezyCRM</h2>
+      <span class="tagline">CRM Platform</span>
+
+      <p>
+        Manage leads, customers, projects, support operations,
+        and business performance from one unified system.
+      </p>
+
+      <ul>
+        <li>Lead Management</li>
+        <li>Project Collaboration</li>
+        <li>Finance Reports</li>
+        <li>Customer Support</li>
+      </ul>
+
+      <div class="slide-actions">
+        <a href="contact.html" class="btn btn-primary">Request Demo</a>
+        <a href="products.html" class="btn btn-outline">Learn More</a>
+      </div>
+    </article>
+
+    <!-- MeriTrack -->
+    <article class="product-slide">
+      <img src="assets/home-product/meritrack-dashboard.png" alt="MeriTrack">
+
+      <h2>MeriTrack</h2>
+      <span class="tagline">AI Exam Platform</span>
+
+      <p>
+        AI-powered examination platform for schools,
+        colleges, academies and training centres.
+      </p>
+
+      <ul>
+        <li>Unlimited Exams</li>
+        <li>AI Question Generation</li>
+        <li>Smart Proctoring</li>
+        <li>Instant Evaluation</li>
+      </ul>
+
+      <div class="slide-actions">
+        <a href="contact.html" class="btn btn-primary">Request Demo</a>
+        <a href="products.html" class="btn btn-outline">Learn More</a>
+      </div>
+    </article>
+
+    <!-- DocWave -->
+    <article class="product-slide">
+      <img src="assets/home-product/docwave-dashboard.png" alt="DocWave">
+
+      <h2>DocWave</h2>
+      <span class="tagline">Document Management</span>
+
+      <p>
+        Securely store, organize and retrieve documents
+        with AI-powered search and workflow automation.
+      </p>
+
+      <ul>
+        <li>AI Search</li>
+        <li>Approval Workflow</li>
+        <li>File Sharing</li>
+        <li>Auto Encryption</li>
+      </ul>
+
+      <div class="slide-actions">
+        <a href="contact.html" class="btn btn-primary">Request Demo</a>
+        <a href="products.html" class="btn btn-outline">Learn More</a>
+      </div>
+    </article>
+
+    <!-- EezyTrack -->
+    <article class="product-slide">
+      <img src="assets/home-product/eezytrack-dashboard.png" alt="EezyTrack">
+
+      <h2>EezyTrack</h2>
+      <span class="tagline">Field Tracking Platform</span>
+
+      <p>
+        Track field teams, routes, travel activity
+        and productivity in real time.
+      </p>
+
+      <ul>
+        <li>Live Tracking</li>
+        <li>Route Analytics</li>
+        <li>Travel Reports</li>
+        <li>Productivity Insights</li>
+      </ul>
+
+      <div class="slide-actions">
+        <a href="contact.html" class="btn btn-primary">Request Demo</a>
+        <a href="products.html" class="btn btn-outline">Learn More</a>
+      </div>
+    </article>
+    
+
+  </div>
+   <!-- Sticky Product Nav -->
+  <div class="product-nav">
+    <button class="active" data-slide="0">EezyCRM</button>
+    <button data-slide="1">MeriTrack</button>
+    <button data-slide="2">DocWave</button>
+    <button data-slide="3">EezyTrack</button>
+  </div>
+
+
+</section>
   <script src="script.js"></script>
   <script>
     /* ── PRODUCT SWITCHER LOGIC ── */

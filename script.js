@@ -363,3 +363,34 @@ document.querySelectorAll('.services-grid a.service-card').forEach(card => {
 
 })();
 
+const slider = document.getElementById("productSlider");
+const tabs = document.querySelectorAll(".product-nav button");
+
+tabs.forEach((tab,index)=>{
+
+  tab.addEventListener("click",()=>{
+
+    slider.scrollTo({
+      left:index * slider.clientWidth,
+      behavior:"smooth"
+    });
+
+    tabs.forEach(t=>t.classList.remove("active"));
+    tab.classList.add("active");
+  });
+
+});
+
+slider.addEventListener("scroll",()=>{
+
+  const index = Math.round(
+    slider.scrollLeft / slider.clientWidth
+  );
+
+  tabs.forEach(t=>t.classList.remove("active"));
+
+  if(tabs[index]){
+    tabs[index].classList.add("active");
+  }
+
+});

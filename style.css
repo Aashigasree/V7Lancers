@@ -3475,7 +3475,7 @@ footer {
 }
 
 .product-slide ul li::before{
-  content:"✓";
+ 
   margin-right:10px;
   color:var(--accent);
 }

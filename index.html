@@ -69,34 +69,10 @@
     <a href="testimonials.html" onclick="closeMobile()">Testimonials</a>
     <a href="gallery.html" onclick="closeMobile()">Gallery</a>
     <a href="contact.html" onclick="closeMobile()">Contact</a>
+    
   </div>
 
-  <!-- MOBILE-ONLY STICKY BOTTOM NAV -->
-  <nav class="mobile-sticky-nav mobile-only">
-    <a href="#home-hero" class="mobile-nav-item active">
-      <i class="fa-solid fa-house"></i>
-      <span>Home</span>
-    </a>
-    <a href="#products-section" class="mobile-nav-item">
-      <i class="fa-solid fa-box-archive"></i>
-      <span>Products</span>
-    </a>
-    <a href="#services" class="mobile-nav-item">
-      <i class="fa-solid fa-gears"></i>
-      <span>Services</span>
-    </a>
-    <a href="#management-team" class="mobile-nav-item">
-      <i class="fa-solid fa-users"></i>
-      <span>Team</span>
-    </a>
-    <a href="#quote" class="mobile-nav-item">
-      <i class="fa-solid fa-envelope"></i>
-      <span>Contact</span>
-    </a>
-    <button class="hamburger" id="bottomHamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+ 
 
   <!-- ══ SECTION 1 — HERO ══════════════════════════════════ -->
   <section id="home-hero">
@@ -228,7 +204,6 @@
         </div>
       </div>
 
-      <!-- Mobile-only Company Story Section -->
 
     </div>
   </section>
@@ -862,66 +837,6 @@
       <a href="products.html" class="btn btn-outline">View All Products →</a>
     </div>
 
-    <!-- Mobile-only Products Overview -->
-    <div class="mobile-only mobile-products-container">
-
-      <div class="mobile-products-grid">
-        <!-- EezyCRM -->
-        <div class="mobile-product-card">
-          <div class="product-icon is-crm">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
-          </div>
-          <h3 class="product-name">EezyCRM</h3>
-          <ul class="product-bullets">
-            <li>Lead &amp; pipeline management built for service and manufacturing businesses</li>
-            <li>Real-time financial insights and pipeline tracking in one place</li>
-            <li>Automated lead capture, email reminders, and follow-ups</li>
-          </ul>
-          <a href="products.html" class="btn btn-view-product">View Product</a>
-        </div>
-
-        <!-- MeriTrack -->
-        <div class="mobile-product-card">
-          <div class="product-icon is-exam">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-              <path d="M6 12v5c3 3 9 3 12 0v-5" />
-            </svg>
-          </div>
-          <h3 class="product-name">MeriTrack</h3>
-          <ul class="product-bullets">
-            <li>Run unlimited online exams with topic-wise custom question generation</li>
-            <li>AI-powered smart proctoring to prevent cheating and maintain integrity</li>
-            <li>Instant grading, performance analytics, and automated certification</li>
-          </ul>
-          <a href="products.html" class="btn btn-view-product">View Product</a>
-        </div>
-
-        <!-- DocWave -->
-        <div class="mobile-product-card">
-          <div class="product-icon is-doc">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-              <polyline points="14 2 14 8 20 8" />
-              <line x1="16" y1="13" x2="8" y2="13" />
-              <line x1="16" y1="17" x2="8" y2="17" />
-            </svg>
-          </div>
-          <h3 class="product-name">DocWave</h3>
-          <ul class="product-bullets">
-            <li>Secure document management with advanced AI-powered search</li>
-            <li>Automated multi-level approval workflows and e-signature routing</li>
-            <li>End-to-end encryption with granular role-based access control</li>
-          </ul>
-          <a href="products.html" class="btn btn-view-product">View Product</a>
-        </div>
-      </div>
-    </div>
   </section>
 
   <script>
@@ -1079,79 +994,131 @@
         <a href="services.html" class="btn btn-outline">View All Services →</a>
       </div>
 
-      <!-- Mobile-only Services Overview -->
-      <div class="mobile-only mobile-services-container">
-        <div class="sec-header-center">
-          <div class="sec-tag">What We Do</div>
-          <h2 class="sec-title">Our Services</h2>
-          <p class="sec-body">End-to-end digital solutions tailored to your business needs.</p>
-        </div>
-        <div class="mobile-services-grid">
-          <!-- Service 1: Website Design & Development -->
-          <div class="mobile-service-card">
-            <div class="service-icon">🖥️</div>
-            <h3 class="service-name">Website Design &amp; Development</h3>
-            <ul class="service-bullets">
-              <li>Custom, responsive, and modern website layouts</li>
-              <li>SEO-optimized semantic code for search visibility</li>
-              <li>Fast page load speeds and intuitive navigation design</li>
-            </ul>
-            <a href="services.html" class="btn btn-view-service">View Service</a>
-          </div>
-
-          <!-- Service 2: Ecommerce Development -->
-          <div class="mobile-service-card">
-            <div class="service-icon">🛒</div>
-            <h3 class="service-name">Ecommerce Development</h3>
-            <ul class="service-bullets">
-              <li>Secure shopping cart systems and checkout flows</li>
-              <li>Payment gateway integrations (Stripe, UPI, PayPal)</li>
-              <li>Custom Shopify, WooCommerce, and tailored platforms</li>
-            </ul>
-            <a href="services.html" class="btn btn-view-service">View Service</a>
-          </div>
-
-          <!-- Service 3: Online Delivery Applications -->
-          <div class="mobile-service-card">
-            <div class="service-icon">🚚</div>
-            <h3 class="service-name">Online Delivery Applications</h3>
-            <ul class="service-bullets">
-              <li>Real-time order tracking and map routing API</li>
-              <li>Custom client, merchant, and driver application portals</li>
-              <li>Seamless notifications, payment hooks, and auto-dispatch</li>
-            </ul>
-            <a href="services.html" class="btn btn-view-service">View Service</a>
-          </div>
-
-          <!-- Service 4: Custom Software Development -->
-          <div class="mobile-service-card">
-            <div class="service-icon">⚙️</div>
-            <h3 class="service-name">Custom Software Development</h3>
-            <ul class="service-bullets">
-              <li>Enterprise-grade web dashboards and custom CRM tools</li>
-              <li>Database normalization and performance optimization</li>
-              <li>Third-party API development and secure system integration</li>
-            </ul>
-            <a href="services.html" class="btn btn-view-service">View Service</a>
-          </div>
-
-          <!-- Service 5: Mobile App Development -->
-          <div class="mobile-service-card">
-            <div class="service-icon">📱</div>
-            <h3 class="service-name">Mobile App Development</h3>
-            <ul class="service-bullets">
-              <li>Cross-platform deployment for iOS and Android</li>
-              <li>Offline caching capabilities and local storage</li>
-              <li>Fluid native touch gestures and device hardware integration</li>
-            </ul>
-            <a href="services.html" class="btn btn-view-service">View Service</a>
-          </div>
-        </div>
-      </div>
+     
     </div>
   </section>
 
+  <!-- ══ SECTION mobile ══════════════════════════════ -->
+   <!-- MOBILE PRODUCT & SERVICE HUB -->
+<div class="mobile-only mobile-hub">
 
+  <h2 class="mobile-hub-title">What We Do</h2>
+
+  <div class="mobile-hub-grid">
+
+    <button class="hub-card" onclick="document.getElementById('productPanel').classList.add('active')">
+      <div class="hub-icon product">⚙️</div>
+      <h3>Super Products</h3>
+      <p>Innovative Solutions</p>
+    </button>
+
+    <button class="hub-card" onclick="document.getElementById('servicePanel').classList.add('active')">
+      <div class="hub-icon service">▣</div>
+      <h3>Super Services</h3>
+      <p>Custom Development</p>
+    </button>
+
+  </div>
+
+  <!-- PRODUCTS PANEL -->
+
+  <div class="mobile-panel" id="productPanel">
+
+    <button class="panel-close"
+      onclick="document.getElementById('productPanel').classList.remove('active')">×</button>
+
+    <h3 class="panel-title">
+      <span>Super</span> Products
+    </h3>
+
+    <a href="products.html" class="panel-item">
+      <div>
+        <strong>EezyCRM</strong>
+        <small>Smart CRM Platform</small>
+      </div>
+      <span>→</span>
+    </a>
+
+    <a href="products.html" class="panel-item">
+      <div>
+        <strong>MeriTrack</strong>
+        <small>AI Exam Platform</small>
+      </div>
+      <span>→</span>
+    </a>
+
+    <a href="products.html" class="panel-item">
+      <div>
+        <strong>DocWave</strong>
+        <small>Document Management</small>
+      </div>
+      <span>→</span>
+    </a>
+
+    <a href="products.html" class="panel-item">
+      <div>
+        <strong>EezyTrack</strong>
+        <small>Field Tracking App</small>
+      </div>
+      <span>→</span>
+    </a>
+
+  </div>
+
+  <!-- SERVICES PANEL -->
+
+  <div class="mobile-panel" id="servicePanel">
+
+    <button class="panel-close"
+      onclick="document.getElementById('servicePanel').classList.remove('active')">×</button>
+
+    <h3 class="panel-title">
+      <span>Super</span> Services
+    </h3>
+
+    <a href="services.html" class="panel-item">
+      <div>
+        <strong>Website Development</strong>
+        <small>Modern Responsive Websites</small>
+      </div>
+      <span>→</span>
+    </a>
+
+    <a href="services.html" class="panel-item">
+      <div>
+        <strong>Ecommerce</strong>
+        <small>Online Store Solutions</small>
+      </div>
+      <span>→</span>
+    </a>
+
+    <a href="services.html" class="panel-item">
+      <div>
+        <strong>Delivery Apps</strong>
+        <small>Real-Time Tracking Systems</small>
+      </div>
+      <span>→</span>
+    </a>
+
+    <a href="services.html" class="panel-item">
+      <div>
+        <strong>Custom Software</strong>
+        <small>Business Automation</small>
+      </div>
+      <span>→</span>
+    </a>
+
+    <a href="services.html" class="panel-item">
+      <div>
+        <strong>Mobile Apps</strong>
+        <small>Android & iOS Solutions</small>
+      </div>
+      <span>→</span>
+    </a>
+
+  </div>
+
+</div>
 
   <!-- ══ SECTION 7 — PROCESS ═══════════════════════════════ -->
   <section id="process-section" class="desktop-only">
@@ -1518,58 +1485,9 @@
     </div>
   </section>
 
-  <!-- ══ MANAGEMENT TEAM (MOBILE ONLY) ════════════════════ -->
-  <section id="management-team" class="mobile-only-section" style="background:var(--surface)">
-    <div class="container">
-      <div class="sec-header-center reveal">
-        <div class="sec-tag">Our People</div>
-        <h2 class="sec-title">Meet the Management Team</h2>
-        <p class="sec-body">The experienced professionals who lead V7Lancers — bringing together technology, design, and
-          business expertise.</p>
-      </div>
-      <div class="team-grid">
-        <div class="team-card reveal">
-          <div class="team-photo">GP</div>
-          <div class="team-body">
-            <div class="team-name">Gautam Prakash</div>
-            <div class="team-role">CEO &amp; Managing Director</div>
-            <p class="team-bio">Visionary leader driving V7Lancers' strategic growth, technology innovation, and client
-              relationships since the company's inception in 2016.</p>
-          </div>
-        </div>
-        <div class="team-card reveal">
-          <div class="team-photo">VS</div>
-          <div class="team-body">
-            <div class="team-name">Vikram Selvam</div>
-            <div class="team-role">Chief Technology Officer</div>
-            <p class="team-bio">Technology architect overseeing all development projects, product roadmap, and the
-              engineering team's day-to-day operations.</p>
-          </div>
-        </div>
-        <div class="team-card reveal">
-          <div class="team-photo">ML</div>
-          <div class="team-body">
-            <div class="team-name">Meera Lakshmi</div>
-            <div class="team-role">Head of Design</div>
-            <p class="team-bio">Creative lead responsible for UI/UX design, brand identity, and ensuring every project
-              delivers an exceptional user experience.</p>
-          </div>
-        </div>
-        <div class="team-card reveal">
-          <div class="team-photo">S</div>
-          <div class="team-body">
-            <div class="team-name">Sanjay</div>
-            <div class="team-role">Business Development Manager</div>
-            <p class="team-bio">Driving client acquisition, partnerships, and growth initiatives across India and
-              international markets including UK, USA, and Gulf.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ══ SECTION 12 — FOOTER ════════════════════════════════ -->
-  <footer>
+  <footer class="desktop-footer" >
     <div class="container">
       <div class="footer-grid">
         <div>
@@ -1644,7 +1562,55 @@
       </div>
     </div>
   </footer>
+ <footer class="mobile-footer mobile-only">
 
+  <h2 class="mobile-footer-title">Get In Touch</h2>
+
+  <a href="tel:+919150056163" class="footer-contact-card">
+    <div class="footer-icon phone">📞</div>
+    <div>
+      <h4>Call Us</h4>
+      <p>+91 91500 56163</p>
+    </div>
+    <span>→</span>
+  </a>
+
+  <a href="mailto:sales@v7lancers.com" class="footer-contact-card">
+    <div class="footer-icon email">✉️</div>
+    <div>
+      <h4>Email Us</h4>
+      <p>sales@v7lancers.com</p>
+    </div>
+    <span>→</span>
+  </a>
+
+  <a href="https://maps.google.com/?q=Madurai,Tamil Nadu" class="footer-contact-card">
+    <div class="footer-icon location">📍</div>
+    <div>
+      <h4>Visit Us</h4>
+      <p>Madurai, Tamil Nadu</p>
+    </div>
+    <span>→</span>
+  </a>
+
+  <div class="footer-brand">
+    <img src="assets/site-logo/logo-light.png" alt="V7Lancers">
+    <span>V7Lancers</span>
+  </div>
+
+  <div class="footer-social">
+    <a href="https://www.facebook.com/v7lancersOfficial/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/v7lancers_technopark/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/v7-lancers/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="https://youtube.com/@v7lancers" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://x.com/VLancers" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+  </div>
+
+  <div class="footer-copy">
+    © 2026 V7Lancers Technopark Pvt Ltd
+  </div>
+
+</footer>
   <script src="script.js"></script>
 </body>
 

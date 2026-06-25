@@ -3114,15 +3114,15 @@ footer {
     text-align:center;
   }
 
-  .mobile-hub-title{
-    font-size:2rem;
-    font-weight:800;
-    margin-bottom:25px;
-    background:linear-gradient(135deg,var(--accent),var(--accent2));
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-  }
-
+.mobile-hub-title{
+    font-family: var(--font-display); /* Bebas Neue */
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg,var(--accent),var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
   .mobile-hub-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -3284,15 +3284,16 @@ footer {
     background:var(--bg);
   }
 
-  .mobile-footer-title{
-    text-align:center;
-    font-size:2rem;
-    font-weight:800;
-    margin-bottom:24px;
-    background:linear-gradient(135deg,var(--accent),var(--accent2));
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-  }
+ .mobile-footer-title{
+    font-family: var(--font-display);
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg,var(--accent),var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
   .footer-contact-card{
     display:flex;

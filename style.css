@@ -3269,6 +3269,18 @@ footer {
 /* ── Mobile ─────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
 
+  /* Prevent horizontal scrolling */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  /* Hamburger & Navbar Fix */
+  .hamburger { display: flex !important; }
+  .nav-links { display: none !important; }
+  nav { top: 0 !important; margin: 0 !important; }
+
   /* Utility overrides */
   .desktop-only     { display: none !important; }
   .mobile-only      { display: block !important; }
@@ -3303,7 +3315,7 @@ footer {
 
   /* Hero */
   #home-hero {
-    padding-top: 100px !important;
+    padding-top: 80px !important;
     padding-bottom: 32px !important;
     min-height: auto;
   }
@@ -3336,26 +3348,14 @@ footer {
   }
 
   /* Services page */
-  .mobile-services-page { padding: 20px 16px 100px; background: var(--bg); }
+  .mobile-services-page { padding: 20px 16px 40px; background: var(--bg); }
 
-  /* Bottom nav */
-  .service-bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: var(--card);
-    border-top: 1px solid var(--border);
-    z-index: 9999;
-  }
+  /* Product nav styles moved out of fixed positioning */
+
 
   /* Footer swap */
   .desktop-footer { display: none !important; }
-  .mobile-footer  { display: block !important; padding: 40px 16px 24px; background: var(--bg); }
+  .mobile-footer  { display: block !important; padding: 40px 16px 80px; background: var(--bg); }
 
   .mobile-footer-title {
     font-family: var(--font-display);
@@ -3374,6 +3374,7 @@ footer {
 
 .mobile-products-page{
   background:#fff;
+  padding: 20px 16px 40px;
 }
 
 .product-nav{

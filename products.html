@@ -16,7 +16,7 @@
   <link rel="preload" as="image" href="assets/site-logo/logo-light.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <style>
-    /* ── REDESIGNED PRODUCT CONTROL CENTER STYLES ── */
+    /* ── PRODUCT CONTROL CENTER STYLES ── */
     .pcc-section {
       padding: 80px 0 100px;
       background: var(--surface);
@@ -70,7 +70,8 @@
       padding: 16px 28px;
       border-radius: 12px 12px 0 0;
       cursor: pointer;
-      text-align: left;
+      text-align: center;
+      justify-content: center;
       transition: all var(--tr);
       display: flex;
       align-items: center;
@@ -134,8 +135,102 @@
     .pcc-panel.active {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
       gap: 60px;
+      align-items: start;
+    }
+
+    /* Actions row spans full width — buttons left, More Features right */
+    .pcc-actions-row {
+      grid-column: 1 / -1;
+      display: flex;
       align-items: center;
+      gap: 12px;
+      margin-top: -20px;
+    }
+
+    .pcc-actions-row .more-features-toggle {
+      margin-left: auto;
+      margin-bottom: 0;
+    }
+
+    /* ── MORE FEATURES ── */
+    .more-features-wrap {
+      margin-top: 32px;
+    }
+
+    .more-features-toggle {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      padding: 8px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all var(--tr);
+      margin-bottom: 20px;
+    }
+
+    .more-features-toggle:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .more-features-toggle .toggle-arrow {
+      transition: transform 0.3s ease;
+      display: inline-block;
+    }
+
+    .more-features-toggle.open .toggle-arrow {
+      transform: rotate(180deg);
+    }
+
+    .more-features-grid {
+      display: none;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      animation: pccFade 0.4s ease forwards;
+    }
+
+    .more-features-grid.visible {
+      display: grid;
+    }
+
+    .mf-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      transition: border-color var(--tr);
+    }
+
+    .mf-card:hover {
+      border-color: var(--accent);
+    }
+
+    .mf-card-icon {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .mf-card-title {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .mf-card-desc {
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.5;
     }
 
     @keyframes pccFade {
@@ -143,7 +238,6 @@
         opacity: 0;
         transform: translateY(20px);
       }
-
       to {
         opacity: 1;
         transform: translateY(0);
@@ -219,6 +313,7 @@
 
       .pcc-panel.active {
         grid-template-columns: 1fr;
+        grid-template-rows: auto;
       }
 
       .pcc-visual {
@@ -228,6 +323,15 @@
 
       .pcc-content h3 {
         font-size: 3rem;
+      }
+
+      .pcc-actions-row {
+        flex-wrap: wrap;
+        margin-top: 0;
+      }
+
+      .more-features-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -243,6 +347,10 @@
       .pcc-tab .tab-name {
         font-size: 1.1rem;
       }
+
+      .more-features-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 480px) {
@@ -251,22 +359,15 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
-
-    .pcc-tab {
-      justify-content: center;
-      text-align: center;
-    }
   </style>
 </head>
 
 <body>
- <canvas id="canvas"></canvas>
+  <canvas id="canvas"></canvas>
   <nav id="navbar">
     <a href="index.html" class="nav-logo" aria-label="V7Lancers - Home">
-      <img class="site-logo light-logo" src="assets/site-logo/logo-dark.png" alt="V7Lancers Logo" width="180"
-        height="48" />
-      <img class="site-logo dark-logo" src="assets/site-logo/logo-light.png" alt="V7Lancers Logo" width="180"
-        height="48" />
+      <img class="site-logo light-logo" src="assets/site-logo/logo-dark.png" alt="V7Lancers Logo" width="180" height="48" />
+      <img class="site-logo dark-logo" src="assets/site-logo/logo-light.png" alt="V7Lancers Logo" width="180" height="48" />
     </a>
     <div class="nav-links">
       <a href="index.html">Home</a>
@@ -300,6 +401,7 @@
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
+
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html" onclick="closeMobile()">Home</a>
     <a href="about.html" onclick="closeMobile()">About</a>
@@ -310,610 +412,792 @@
     <a href="gallery.html" onclick="closeMobile()">Gallery</a>
     <a href="contact.html" onclick="closeMobile()">Contact</a>
   </div>
+
+  <!-- ══════════════════════════════════════════════
+       DESKTOP VERSION
+  ══════════════════════════════════════════════ -->
   <section class="ps-section desktop-only">
-  <div class="page-hero">
-    <div class="container">
-      <p class="page-hero-tag">Proprietary Software</p>
-      <h1 class="page-hero-title">AI-Powered <em>Products</em><br />Designed for Business Growth</h1>
-      <p class="page-hero-sub">Purpose-built software products that automate workflows, improve productivity, and scale
-        with your organisation — from CRM to examinations to document management.</p>
-      <div class="page-hero-btns">
-        <a href="contact.html" class="btn btn-primary">Request a Demo ↗</a>
-        <a href="portfolio.html" class="btn btn-outline">See Product Work</a>
+    <div class="page-hero">
+      <div class="container">
+        <p class="page-hero-tag">Proprietary Software</p>
+        <h1 class="page-hero-title">AI-Powered <em>Products</em><br />Designed for Business Growth</h1>
+        <p class="page-hero-sub">Purpose-built software products that automate workflows, improve productivity, and scale
+          with your organisation — from CRM to examinations to document management.</p>
+        <div class="page-hero-btns">
+          <a href="contact.html" class="btn btn-primary">Request a Demo ↗</a>
+          <a href="portfolio.html" class="btn btn-outline">See Product Work</a>
+        </div>
       </div>
     </div>
-  </div>
-  <section class="pcc-section">
-    <div class="container">
-      <div class="sec-header-center reveal">
-        <div class="sec-tag">Product Suite</div>
-        <h2 class="sec-title">Product Control Center</h2>
-        <p class="sec-body">Manage your business operations from a single unified interface by switching between our
-          flagship AI modules.</p>
-      </div>
-      <div class="pcc-dashboard reveal">
-        <!-- TOP NAVIGATION SELECTOR -->
-        <aside class="pcc-sidebar">
-          <div class="pcc-nav-label">Select Module</div>
-          <div class="pcc-tabs-container">
-            <button class="pcc-tab active" onclick="switchProduct('eezy', this)">
-              <span class="tab-icon">📊</span>
-              <span class="tab-name">EezyCRM</span>
-            </button>
-            <button class="pcc-tab" onclick="switchProduct('meri', this)">
-              <span class="tab-icon">🎓</span>
-              <span class="tab-name">MeriTrack</span>
-            </button>
-            <button class="pcc-tab" onclick="switchProduct('doc', this)">
-              <span class="tab-icon">📁</span>
-              <span class="tab-name">DocWave</span>
-            </button>
-            <button class="pcc-tab" onclick="switchProduct('eezytrack', this)">
-              <span class="tab-icon">📍</span>
-              <span class="tab-name">EezyTrack</span>
-            </button>
 
-          </div>
-        </aside>
+    <!-- ── PRODUCT CONTROL CENTER ── -->
+    <section class="pcc-section">
+      <div class="container">
+        <div class="sec-header-center reveal">
+          <div class="sec-tag">Product Suite</div>
+          <h2 class="sec-title">Product Control Center</h2>
+          <p class="sec-body">Manage your business operations from a single unified interface by switching between our flagship AI modules.</p>
+        </div>
 
-        <!-- MAIN DISPLAY PANEL -->
-        <main  class="pcc-main">
+        <div class="pcc-dashboard reveal">
 
-          <!-- EezyCRM -->
-          <div id="eezy" class="pcc-panel active">
-            <div class="pcc-content">
-              <h3>EezyCRM</h3>
-              <span class="pcc-tagline">// CRM Platform</span>
-
-              <p class="sec-body" style="margin-bottom:24px">
-                CRM platform built for service providers and manufacturing businesses.
-                Manage leads, customer relationships, projects, support operations,
-                and business performance from a single unified system.
-              </p>
-
-              <div class="check-list">
-                <div class="check-item">Effective Sales Pipeline & Lead Management</div>
-                <div class="check-item">Project, Task & Team Collaboration</div>
-                <div class="check-item">Finance Reports & Realtime Insights</div>
-                <div class="check-item">Customer Support, Tickets & Activity Logs</div>
-              </div>
-
-              <div style="margin-top:40px; display:flex; gap:12px; align-items:center;">
-                <a href="contact.html" class="btn btn-primary">
-                  Request Demo
-                </a>
-                <a href="assets/brochures/eezycrm-brochure.pdf" class="btn btn-outline" download>
-                  Download Brochure
-                </a>
-              </div>
+          <!-- TOP NAVIGATION TABS -->
+          <aside class="pcc-sidebar">
+            <div class="pcc-nav-label">Select Module</div>
+            <div class="pcc-tabs-container">
+              <button class="pcc-tab active" onclick="switchProduct('eezy', this)">
+                <span class="tab-icon">📊</span>
+                <span class="tab-name">EezyCRM</span>
+              </button>
+              <button class="pcc-tab" onclick="switchProduct('meri', this)">
+                <span class="tab-icon">🎓</span>
+                <span class="tab-name">MeriTrack</span>
+              </button>
+              <button class="pcc-tab" onclick="switchProduct('doc', this)">
+                <span class="tab-icon">📁</span>
+                <span class="tab-name">DocWave</span>
+              </button>
+              <button class="pcc-tab" onclick="switchProduct('eezytrack', this)">
+                <span class="tab-icon">📍</span>
+                <span class="tab-name">EezyTrack</span>
+              </button>
             </div>
+          </aside>
 
-            <div class="pcc-visual">
-              <div class="mock-header"></div>
-              <div class="mock-grid">
-                <div class="mock-card">
-                  <div class="mock-line"></div>
-                  <div class="mock-line short"></div>
-                </div>
-                <div class="mock-card">
-                  <div class="mock-line"></div>
-                  <div class="mock-line short"></div>
-                </div>
-                <div class="mock-card" style="grid-column: span 2">
-                  <div class="mock-line"></div>
-                  <div class="mock-line"></div>
+          <!-- MAIN PANEL AREA -->
+          <main class="pcc-main">
+
+            <!-- ══ EezyCRM PANEL ══ -->
+            <div id="eezy" class="pcc-panel active">
+
+              <div class="pcc-content">
+                <h3>EezyCRM</h3>
+                <span class="pcc-tagline">// CRM Platform</span>
+                <p class="sec-body" style="margin-bottom:24px">
+                  CRM platform built for service providers and manufacturing businesses.
+                  Manage leads, customer relationships, projects, support operations,
+                  and business performance from a single unified system.
+                </p>
+                <div class="check-list">
+                  <div class="check-item">Effective Sales Pipeline & Lead Management</div>
+                  <div class="check-item">Project, Task & Team Collaboration</div>
+                  <div class="check-item">Finance Reports & Realtime Insights</div>
+                  <div class="check-item">Customer Support, Tickets & Activity Logs</div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <!-- MeriTrack -->
-          <div id="meri" class="pcc-panel">
-            <div class="pcc-content">
-              <h3>MeriTrack</h3>
-              <span class="pcc-tagline">// AI Exam Platform</span>
-
-              <p class="sec-body" style="margin-bottom:24px">
-                AI-powered examination and assessment platform designed for
-                academies, schools, colleges, coaching centres, and training
-                organisations. Create, conduct, evaluate, and monitor assessments
-                with intelligent automation.
-              </p>
-
-              <div class="check-list">
-                <div class="check-item">Unlimited Quizzes, Assignments & Mock Examinations</div>
-                <div class="check-item">Unlimited Users & Instructor Access</div>
-                <div class="check-item">AI Question Generation by Subject & Topic</div>
-                <div class="check-item">AI Smart Proctoring & Integrity Scoring</div>
-              </div>
-
-              <div style="margin-top:40px; display:flex; gap:12px; align-items:center;">
-                <a href="contact.html" class="btn btn-primary">
-                  Request Demo
-                </a>
-                <a href="assets/brochures/eezycrm-brochure.pdf" class="btn btn-outline" download>
-                  Download Brochure
-                </a>
-              </div>
-            </div>
-
-            <div class="pcc-visual">
-              <div class="mock-header" style="width:60%; background:var(--accent)"></div>
-              <div class="mock-card"
-                style="flex-grow:1; display:flex; flex-direction:column; justify-content:center; align-items:center;">
-                <div style="font-size:3rem; margin-bottom:15px; color:var(--accent); font-family:var(--font-display)">
-                  88%
+              <div class="pcc-visual">
+                <div class="mock-header"></div>
+                <div class="mock-grid">
+                  <div class="mock-card">
+                    <div class="mock-line"></div>
+                    <div class="mock-line short"></div>
+                  </div>
+                  <div class="mock-card">
+                    <div class="mock-line"></div>
+                    <div class="mock-line short"></div>
+                  </div>
+                  <div class="mock-card" style="grid-column: span 2">
+                    <div class="mock-line"></div>
+                    <div class="mock-line"></div>
+                  </div>
                 </div>
-                <div class="mock-line" style="width:80%"></div>
-                <div class="mock-line short" style="width:40%"></div>
+              </div>
+
+              <!-- FULL-WIDTH ACTIONS ROW -->
+              <div class="pcc-actions-row">
+                <a href="contact.html" class="btn btn-primary">Request Demo</a>
+                <a href="assets/brochures/eezycrm-brochure.pdf" class="btn btn-outline" download>Download Brochure</a>
+                <button class="more-features-toggle" onclick="toggleMoreFeatures('eezy-more', this)">
+                  <span>More Features</span>
+                  <span class="toggle-arrow">▾</span>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- EezyCRM MORE FEATURES -->
+            <div class="more-features-wrap" id="eezy-more">
+              <div class="more-features-grid">
+                <div class="mf-card">
+                  <span class="mf-card-icon">📬</span>
+                  <div class="mf-card-title">Automated Follow-Ups</div>
+                  <div class="mf-card-desc">Schedule drip campaigns and auto-reminders to keep leads warm.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">👤</span>
+                  <div class="mf-card-title">Contact & Account Management</div>
+                  <div class="mf-card-desc">Centralize all client profiles, history, and interactions.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">🗂️</span>
+                  <div class="mf-card-title">Custom Fields & Data Structures</div>
+                  <div class="mf-card-desc">Build flexible forms and records tailored to your workflow.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">🔐</span>
+                  <div class="mf-card-title">Role-Based Permissions</div>
+                  <div class="mf-card-desc">Control team access with granular user roles and visibility rules.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">📧</span>
+                  <div class="mf-card-title">Email Integration & Inbox Sync</div>
+                  <div class="mf-card-desc">Connect your mailbox and track all client email threads directly.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">🧾</span>
+                  <div class="mf-card-title">Quotation & Invoice Generation</div>
+                  <div class="mf-card-desc">Create and send professional quotes and invoices in seconds.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">🛍️</span>
+                  <div class="mf-card-title">Product & Service Catalogue</div>
+                  <div class="mf-card-desc">Maintain a master list of offerings with pricing and descriptions.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">💱</span>
+                  <div class="mf-card-title">Multi-Currency & Tax Support</div>
+                  <div class="mf-card-desc">Handle global clients with auto currency conversion and tax rules.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">📎</span>
+                  <div class="mf-card-title">Document Storage & Attachments</div>
+                  <div class="mf-card-desc">Attach contracts, images, and files directly to records and deals.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">📱</span>
+                  <div class="mf-card-title">Mobile-Friendly Dashboard</div>
+                  <div class="mf-card-desc">Access your CRM on the go with a fully responsive mobile interface.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">🔌</span>
+                  <div class="mf-card-title">API & Third-Party Integrations</div>
+                  <div class="mf-card-desc">Connect to your favourite tools via open API and native integrations.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">📋</span>
+                  <div class="mf-card-title">Audit Trail & Compliance Logs</div>
+                  <div class="mf-card-desc">Track every action with timestamped logs for full accountability.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ══ MeriTrack PANEL ══ -->
+            <div id="meri" class="pcc-panel">
+
+              <div class="pcc-content">
+                <h3>MeriTrack</h3>
+                <span class="pcc-tagline">// AI Exam Platform</span>
+                <p class="sec-body" style="margin-bottom:24px">
+                  AI-powered examination and assessment platform designed for academies, schools,
+                  colleges, coaching centres, and training organisations. Create, conduct, evaluate,
+                  and monitor assessments with intelligent automation.
+                </p>
+                <div class="check-list">
+                  <div class="check-item">Unlimited Quizzes, Assignments & Mock Examinations</div>
+                  <div class="check-item">Unlimited Users & Instructor Access</div>
+                  <div class="check-item">AI Question Generation by Subject & Topic</div>
+                  <div class="check-item">AI Smart Proctoring & Integrity Scoring</div>
+                </div>
+              </div>
+
+              <div class="pcc-visual">
+                <div class="mock-header" style="width:60%; background:var(--accent)"></div>
+                <div class="mock-card"
+                  style="flex-grow:1; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                  <div style="font-size:3rem; margin-bottom:15px; color:var(--accent); font-family:var(--font-display)">88%</div>
+                  <div class="mock-line" style="width:80%"></div>
+                  <div class="mock-line short" style="width:40%"></div>
+                </div>
+              </div>
+
+              <!-- FULL-WIDTH ACTIONS ROW -->
+              <div class="pcc-actions-row">
+                <a href="contact.html" class="btn btn-primary">Request Demo</a>
+                <a href="assets/brochures/meritrack-brochure.pdf" class="btn btn-outline" download>Download Brochure</a>
+                <button class="more-features-toggle" onclick="toggleMoreFeatures('meri-more', this)">
+                  <span>More Features</span>
+                  <span class="toggle-arrow">▾</span>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- MeriTrack MORE FEATURES -->
+            <div class="more-features-wrap" id="meri-more">
+              <div class="more-features-grid">
+                <div class="mf-card">
+                  <span class="mf-card-icon">🧠</span>
+                  <div class="mf-card-title">AI Question Bank Builder</div>
+                  <div class="mf-card-desc">Auto-generate topic-wise questions at varied difficulty levels using AI.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">⏱️</span>
+                  <div class="mf-card-title">Timed & Scheduled Exams</div>
+                  <div class="mf-card-desc">Set exam windows, auto-start, auto-submit, and time-limit controls.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">🎯</span>
+                  <div class="mf-card-title">Instant Result & Score Cards</div>
+                  <div class="mf-card-desc">Publish results immediately after submission with detailed score breakdowns.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">👁️</span>
+                  <div class="mf-card-title">AI Proctoring & Tab Detection</div>
+                  <div class="mf-card-desc">Monitor screen activity, tab switches, and suspicious behaviour in real time.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">📊</span>
+                  <div class="mf-card-title">Student Performance Analytics</div>
+                  <div class="mf-card-desc">Track progress trends, weak areas, and improvement over multiple attempts.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">🏫</span>
+                  <div class="mf-card-title">Multi-Batch & Class Management</div>
+                  <div class="mf-card-desc">Organise students into batches, sections, and assign exams accordingly.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">📝</span>
+                  <div class="mf-card-title">Descriptive & MCQ Support</div>
+                  <div class="mf-card-desc">Support both multiple-choice and long-form descriptive answer formats.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">🔀</span>
+                  <div class="mf-card-title">Question Randomisation</div>
+                  <div class="mf-card-desc">Shuffle questions and options per student to prevent copying.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">📜</span>
+                  <div class="mf-card-title">Auto Certificate Generation</div>
+                  <div class="mf-card-desc">Issue branded certificates automatically upon exam completion and passing.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">🌐</span>
+                  <div class="mf-card-title">Multilingual Exam Support</div>
+                  <div class="mf-card-desc">Conduct exams in multiple languages for diverse student groups.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">📱</span>
+                  <div class="mf-card-title">Mobile-Optimised Interface</div>
+                  <div class="mf-card-desc">Students can attempt exams seamlessly on any smartphone or tablet.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">🔗</span>
+                  <div class="mf-card-title">LMS & Portal Integration</div>
+                  <div class="mf-card-desc">Embed MeriTrack into your existing learning management system via API.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ══ DocWave PANEL ══ -->
+            <div id="doc" class="pcc-panel">
+
+              <div class="pcc-content">
+                <h3>DocWave</h3>
+                <span class="pcc-tagline">// Document Management System</span>
+                <p class="sec-body" style="margin-bottom:24px">
+                  AI-powered document management platform that helps organisations securely store,
+                  organise, retrieve, share, and manage critical business documents while
+                  maintaining compliance and control.
+                </p>
+                <div class="check-list">
+                  <div class="check-item">Document Flow, Approvals & Workflows</div>
+                  <div class="check-item">AI Deep Search & Document Retrieval</div>
+                  <div class="check-item">Protected File Sharing & Privacy Controls</div>
+                  <div class="check-item">Password Protection & Auto Encryption</div>
+                </div>
+              </div>
+
+              <div class="pcc-visual">
+                <div class="mock-grid">
+                  <div class="mock-card" style="background:var(--border)"></div>
+                  <div class="mock-card" style="background:var(--border)"></div>
+                  <div class="mock-card" style="background:var(--border)"></div>
+                  <div class="mock-card" style="background:var(--border)"></div>
+                </div>
+                <div class="mock-line" style="margin-top:10px"></div>
+              </div>
+
+              <!-- FULL-WIDTH ACTIONS ROW -->
+              <div class="pcc-actions-row">
+                <a href="contact.html" class="btn btn-primary">Request Demo</a>
+                <a href="assets/brochures/docwave-brochure.pdf" class="btn btn-outline" download>Download Brochure</a>
+                <button class="more-features-toggle" onclick="toggleMoreFeatures('doc-more', this)">
+                  <span>More Features</span>
+                  <span class="toggle-arrow">▾</span>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- DocWave MORE FEATURES -->
+            <div class="more-features-wrap" id="doc-more">
+              <div class="more-features-grid">
+                <div class="mf-card">
+                  <span class="mf-card-icon">🔍</span>
+                  <div class="mf-card-title">AI Full-Text Search</div>
+                  <div class="mf-card-desc">Search inside document content, not just filenames, with AI-powered indexing.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">✅</span>
+                  <div class="mf-card-title">Multi-Level Approval Workflows</div>
+                  <div class="mf-card-desc">Route documents through sequential or parallel approval chains automatically.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">🔒</span>
+                  <div class="mf-card-title">Document Encryption at Rest</div>
+                  <div class="mf-card-desc">All files are encrypted at storage level with AES-256 security standards.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">🗃️</span>
+                  <div class="mf-card-title">Smart Folder & Tag System</div>
+                  <div class="mf-card-desc">Auto-categorise documents using tags, metadata, and AI-suggested folders.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">📤</span>
+                  <div class="mf-card-title">Secure External Sharing</div>
+                  <div class="mf-card-desc">Share files via expiry-linked secure URLs with download controls.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">📆</span>
+                  <div class="mf-card-title">Document Expiry & Renewal Alerts</div>
+                  <div class="mf-card-desc">Get notified before contracts, licences, or certificates expire.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">🖊️</span>
+                  <div class="mf-card-title">e-Signature Integration</div>
+                  <div class="mf-card-desc">Collect legally binding digital signatures directly within the platform.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">📋</span>
+                  <div class="mf-card-title">Version Control & History</div>
+                  <div class="mf-card-desc">Track every edit, compare versions, and restore previous document states.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">👥</span>
+                  <div class="mf-card-title">Team & Department Access Control</div>
+                  <div class="mf-card-desc">Restrict document visibility by team, role, or department level.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">🔗</span>
+                  <div class="mf-card-title">ERP & CRM Integration</div>
+                  <div class="mf-card-desc">Connect DocWave to your ERP, CRM, or HRMS for seamless document flow.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">📊</span>
+                  <div class="mf-card-title">Usage & Compliance Reports</div>
+                  <div class="mf-card-desc">Generate audit-ready reports on document access, edits, and approvals.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">☁️</span>
+                  <div class="mf-card-title">Cloud & On-Premise Deployment</div>
+                  <div class="mf-card-desc">Choose cloud-hosted or self-hosted deployment to match your IT policy.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ══ EezyTrack PANEL ══ -->
+            <div id="eezytrack" class="pcc-panel">
+
+              <div class="pcc-content">
+                <h3>EezyTrack</h3>
+                <span class="pcc-tagline">// AI-Powered Field Staff Tracking Platform</span>
+                <p class="sec-body" style="margin-bottom:24px">
+                  Smart GPS-based tracking platform that helps businesses monitor field staff,
+                  sales agents, technicians, and mobile teams with live location tracking,
+                  route analytics, travel insights, and productivity monitoring.
+                </p>
+                <div class="check-list">
+                  <div class="check-item">Live Location Tracking & Real-Time Monitoring</div>
+                  <div class="check-item">Route History, Map View & Travel Analytics</div>
+                  <div class="check-item">Distance Travelled & Working Time Reports</div>
+                  <div class="check-item">Idle Time Detection & Field Productivity Insights</div>
+                </div>
+              </div>
+
+              <div class="pcc-visual">
+                <div class="mock-grid">
+                  <div class="mock-card" style="background:var(--border)"></div>
+                  <div class="mock-card" style="background:var(--border)"></div>
+                  <div class="mock-card" style="background:var(--border)"></div>
+                  <div class="mock-card" style="background:var(--border)"></div>
+                </div>
+                <div class="mock-line" style="margin-top:10px"></div>
+              </div>
+
+              <!-- FULL-WIDTH ACTIONS ROW -->
+              <div class="pcc-actions-row">
+                <a href="contact.html" class="btn btn-primary">Request Demo</a>
+                <a href="assets/brochures/eezytrack-brochure.pdf" class="btn btn-outline" download>Download Brochure</a>
+                <button class="more-features-toggle" onclick="toggleMoreFeatures('track-more', this)">
+                  <span>More Features</span>
+                  <span class="toggle-arrow">▾</span>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- EezyTrack MORE FEATURES -->
+            <div class="more-features-wrap" id="track-more">
+              <div class="more-features-grid">
+                <div class="mf-card">
+                  <span class="mf-card-icon">🗺️</span>
+                  <div class="mf-card-title">Live Map Dashboard</div>
+                  <div class="mf-card-desc">View all field agents on a single live map with real-time position updates.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">📍</span>
+                  <div class="mf-card-title">Geofence Alerts</div>
+                  <div class="mf-card-desc">Set virtual boundaries and get instant alerts when staff enter or exit zones.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">🛣️</span>
+                  <div class="mf-card-title">Route Playback & History</div>
+                  <div class="mf-card-desc">Replay any staff member's travel path for any past date or time period.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">⏰</span>
+                  <div class="mf-card-title">Attendance & Check-In Tracking</div>
+                  <div class="mf-card-desc">Auto-mark attendance based on GPS location when staff arrive at sites.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">⛽</span>
+                  <div class="mf-card-title">Fuel & Expense Tracking</div>
+                  <div class="mf-card-desc">Calculate travel expenses automatically based on distance covered per day.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">📋</span>
+                  <div class="mf-card-title">Daily Visit & Task Reports</div>
+                  <div class="mf-card-desc">Auto-generate daily field activity summaries for managers and supervisors.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">🔔</span>
+                  <div class="mf-card-title">Manager Alerts & Notifications</div>
+                  <div class="mf-card-desc">Receive alerts for idle time, late starts, missed visits, or route deviations.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">📱</span>
+                  <div class="mf-card-title">Staff Mobile App</div>
+                  <div class="mf-card-desc">Field staff check in, update tasks, and share visit notes from the mobile app.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">👥</span>
+                  <div class="mf-card-title">Team & Territory Management</div>
+                  <div class="mf-card-desc">Assign territories, plan routes, and group staff by region or department.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">📊</span>
+                  <div class="mf-card-title">Productivity Leaderboards</div>
+                  <div class="mf-card-desc">Compare field performance across agents with KPI-based ranking reports.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">🔗</span>
+                  <div class="mf-card-title">CRM & ERP Integration</div>
+                  <div class="mf-card-desc">Sync field visit data directly into your CRM or ERP for unified reporting.</div>
+                </div>
+                <div class="mf-card">
+                  <span class="mf-card-icon">🔋</span>
+                  <div class="mf-card-title">Battery-Efficient Tracking</div>
+                  <div class="mf-card-desc">Optimised GPS polling ensures accurate tracking with minimal battery drain.</div>
+                </div>
+              </div>
+            </div>
+
+          </main>
+        </div><!-- /.pcc-dashboard -->
+      </div><!-- /.container -->
+    </section><!-- /.pcc-section -->
+
+    <!-- ── CLIENTS STRIP ── -->
+    <section style="background:var(--bg);padding:64px 0">
+      <div class="container">
+        <div class="sec-header-center reveal">
+          <div class="sec-tag">Happy Clients</div>
+          <h2 class="sec-title">Organisations Using Our Products</h2>
+        </div>
+      </div>
+      <div class="clients-strip reveal">
+        <div class="clients-scroll">
+          <div class="client-logo-item"><img src="assets/client-logo/ambc-technology.png" alt="AMBC Technology"></div>
+          <div class="client-logo-item"><img src="assets/client-logo/sidone-infrastructure.png" alt="Sidone Infrastructure"></div>
+          <div class="client-logo-item"><img src="assets/client-logo/vinsup.png" alt="Vinsup"></div>
+          <div class="client-logo-item"><img src="assets/client-logo/pumo.png" alt="Pumo Technovation"></div>
+          <div class="client-logo-item"><img src="assets/client-logo/finwallet.png" alt="Finwallet"></div>
+          <div class="client-logo-item"><img src="assets/client-logo/arc-builders.png" alt="ARC Builders"></div>
+          <div class="client-logo-item"><img src="assets/client-logo/padmarajam-institute.png" alt="Padmarajam Institute"></div>
+          <div class="client-logo-item"><img src="assets/client-logo/banyan-engineering.png" alt="Banyan Engineering"></div>
+          <div class="client-logo-item"><img src="assets/client-logo/greennest.png" alt="Greennest"></div>
+          <!-- Duplicate for infinite scroll -->
+          <div class="client-logo-item"><img src="assets/client-logo/ambc-technology.png" alt="AMBC Technology"></div>
+          <div class="client-logo-item"><img src="assets/client-logo/sidone-infrastructure.png" alt="Sidone Infrastructure"></div>
+          <div class="client-logo-item"><img src="assets/client-logo/vinsup.png" alt="Vinsup"></div>
+          <div class="client-logo-item"><img src="assets/client-logo/pumo.png" alt="Pumo Technovation"></div>
+          <div class="client-logo-item"><img src="assets/client-logo/finwallet.png" alt="Finwallet"></div>
+          <div class="client-logo-item"><img src="assets/client-logo/arc-builders.png" alt="ARC Builders"></div>
+          <div class="client-logo-item"><img src="assets/client-logo/padmarajam-institute.png" alt="Padmarajam Institute"></div>
+          <div class="client-logo-item"><img src="assets/client-logo/banyan-engineering.png" alt="Banyan Engineering"></div>
+          <div class="client-logo-item"><img src="assets/client-logo/greennest.png" alt="Greennest"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HOW WE DEPLOY ── -->
+    <section id="process-section" style="background:var(--surface)">
+      <div class="container">
+        <div class="sec-header-center reveal">
+          <div class="sec-tag">Product Onboarding</div>
+          <h2 class="sec-title">How We Deploy Products</h2>
+          <p class="sec-body">A smooth, guided process from first discussion to full deployment and ongoing support.</p>
+        </div>
+        <div class="process-steps reveal">
+          <div class="process-step">
+            <div class="step-circle">01</div>
+            <div class="step-name">Product Demo</div>
+            <p class="step-desc">Live walkthrough of features tailored to your use case and industry.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-circle">02</div>
+            <div class="step-name">Requirement Discussion</div>
+            <p class="step-desc">We understand your workflows, team size, and specific product needs.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-circle">03</div>
+            <div class="step-name">Customization</div>
+            <p class="step-desc">Configure modules, branding, integrations, and user roles as needed.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-circle">04</div>
+            <div class="step-name">Deployment</div>
+            <p class="step-desc">Cloud setup, data migration, team onboarding, and go-live support.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-circle">05</div>
+            <div class="step-name">Support</div>
+            <p class="step-desc">Dedicated technical support, updates, and training for your team.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DEMO REQUEST FORM ── -->
+    <section class="quote-section">
+      <div class="container">
+        <div class="quote-wrap">
+          <div class="quote-info reveal">
+            <div class="sec-tag">Get Started</div>
+            <h2 class="sec-title">Get a Free<br /><span style="color:var(--accent)">Product Demo</span></h2>
+            <p class="sec-body">Tell us which product interests you and we'll schedule a personalised demo with our
+              product team — no obligation required.</p>
+            <div class="check-list" style="margin-top:24px">
+              <div class="check-item">Free live product demonstration</div>
+              <div class="check-item">Custom pricing based on your requirements</div>
+              <div class="check-item">Response within 24 hours</div>
+            </div>
+          </div>
+          <div class="reveal">
+            <div class="form-box">
+              <div class="contact-form">
+                <div class="form-row">
+                  <div class="form-group"><label>Your Name *</label><input type="text" placeholder="Full Name" /></div>
+                  <div class="form-group"><label>Phone *</label><input type="tel" placeholder="+91 98765 43210" /></div>
+                </div>
+                <div class="form-group"><label>Email *</label><input type="email" placeholder="you@company.com" /></div>
+                <div class="form-group">
+                  <label>Product Interest</label>
+                  <select>
+                    <option value="">Select a product…</option>
+                    <option>EezyCRM — CRM &amp; Project Management</option>
+                    <option>MeriTrack — Online Examination Portal</option>
+                    <option>DocWave — Document Management</option>
+                    <option>EezyTrack — Field Staff Tracking</option>
+                    <option>Multiple Products</option>
+                    <option>Not Sure Yet</option>
+                  </select>
+                </div>
+                <div class="form-group"><label>Your Requirements</label><textarea
+                    placeholder="Tell us about your organisation and what you're looking to achieve…"></textarea></div>
+                <button class="btn btn-primary" style="width:100%;justify-content:center"
+                  data-submit="Request Product Demo →">Request Product Demo →</button>
               </div>
             </div>
           </div>
-
-          <!-- DocWave -->
-          <div id="doc" class="pcc-panel">
-            <div class="pcc-content">
-              <h3>DocWave</h3>
-              <span class="pcc-tagline">// Document Management System</span>
-
-              <p class="sec-body" style="margin-bottom:24px">
-                AI-powered document management platform that helps organisations
-                securely store, organise, retrieve, share, and manage critical
-                business documents while maintaining compliance and control.
-              </p>
-
-              <div class="check-list">
-                <div class="check-item">Document Flow, Approvals & Workflows</div>
-                <div class="check-item">AI Deep Search & Document Retrieval</div>
-                <div class="check-item">Protected File Sharing & Privacy Controls</div>
-                <div class="check-item">Password Protection & Auto Encryption</div>
-              </div>
-
-              <div style="margin-top:40px; display:flex; gap:12px; align-items:center;">
-                <a href="contact.html" class="btn btn-primary">
-                  Request Demo
-                </a>
-                <a href="assets/brochures/eezycrm-brochure.pdf" class="btn btn-outline" download>
-                  Download Brochure
-                </a>
-              </div>
-            </div>
-
-            <div class="pcc-visual">
-              <div class="mock-grid">
-                <div class="mock-card" style="background:var(--border)"></div>
-                <div class="mock-card" style="background:var(--border)"></div>
-                <div class="mock-card" style="background:var(--border)"></div>
-                <div class="mock-card" style="background:var(--border)"></div>
-              </div>
-              <div class="mock-line" style="margin-top:10px"></div>
-            </div>
-          </div>
-
-          <!-- EezyTrack -->
-          <div id="eezytrack" class="pcc-panel">
-            <div class="pcc-content">
-              <h3>EezyTrack</h3>
-              <span class="pcc-tagline">// AI-Powered Field Staff Tracking Platform</span>
-
-              <p class="sec-body" style="margin-bottom:24px">
-                Smart GPS-based tracking platform that helps businesses monitor field staff,
-                sales agents, technicians, and mobile teams with live location tracking,
-                route analytics, travel insights, and productivity monitoring.
-              </p>
-
-              <div class="check-list">
-                <div class="check-item">Live Location Tracking & Real-Time Monitoring</div>
-                <div class="check-item">Route History, Map View & Travel Analytics</div>
-                <div class="check-item">Distance Travelled & Working Time Reports</div>
-                <div class="check-item">Idle Time Detection & Field Productivity Insights</div>
-              </div>
-
-              <div style="margin-top:40px; display:flex; gap:12px; align-items:center;">
-                <a href="contact.html" class="btn btn-primary">
-                  Request Demo
-                </a>
-                <a href="assets/brochures/eezytrack-brochure.pdf" class="btn btn-outline" download>
-                  Download Brochure
-                </a>
-              </div>
-            </div>
-
-            <div class="pcc-visual">
-              <div class="mock-grid">
-                <div class="mock-card" style="background:var(--border)"></div>
-                <div class="mock-card" style="background:var(--border)"></div>
-                <div class="mock-card" style="background:var(--border)"></div>
-                <div class="mock-card" style="background:var(--border)"></div>
-              </div>
-              <div class="mock-line" style="margin-top:10px"></div>
-            </div>
-          </div>
-
-        </main>
-      </div>
-    </div>
-  </section>
-  <section style="background:var(--bg);padding:64px 0">
-    <div class="container">
-      <div class="sec-header-center reveal">
-        <div class="sec-tag">Happy Clients</div>
-        <h2 class="sec-title">Organisations Using Our Products</h2>
-      </div>
-    </div>
-    <div class="clients-strip reveal">
-      <div class="clients-scroll">
-
-        <div class="client-logo-item">
-          <img src="assets/client-logo/ambc-technology.png" alt="AMBC Technology">
-        </div>
-
-        <div class="client-logo-item">
-          <img src="assets/client-logo/sidone-infrastructure.png" alt="Sidone Infrastructure">
-        </div>
-
-        <div class="client-logo-item">
-          <img src="assets/client-logo/vinsup.png" alt="Vinsup">
-        </div>
-
-        <div class="client-logo-item">
-          <img src="assets/client-logo/pumo.png" alt="Pumo Technovation">
-        </div>
-
-        <div class="client-logo-item">
-          <img src="assets/client-logo/finwallet.png" alt="Finwallet">
-        </div>
-
-        <div class="client-logo-item">
-          <img src="assets/client-logo/arc-builders.png" alt="ARC Builders">
-        </div>
-
-        <div class="client-logo-item">
-          <img src="assets/client-logo/padmarajam-institute.png" alt="Padmarajam Institute">
-        </div>
-
-        <div class="client-logo-item">
-          <img src="assets/client-logo/banyan-engineering.png" alt="Banyan Engineering">
-        </div>
-
-        <div class="client-logo-item">
-          <img src="assets/client-logo/greennest.png" alt="Greennest">
-        </div>
-
-        <!-- Duplicate set for infinite scroll -->
-
-        <div class="client-logo-item">
-          <img src="assets/client-logo/ambc-technology.png" alt="AMBC Technology">
-        </div>
-
-        <div class="client-logo-item">
-          <img src="assets/client-logo/sidone-infrastructure.png" alt="Sidone Infrastructure">
-        </div>
-
-        <div class="client-logo-item">
-          <img src="assets/client-logo/vinsup.png" alt="Vinsup">
-        </div>
-
-        <div class="client-logo-item">
-          <img src="assets/client-logo/pumo.png" alt="Pumo Technovation">
-        </div>
-
-        <div class="client-logo-item">
-          <img src="assets/client-logo/finwallet.png" alt="Finwallet">
-        </div>
-
-        <div class="client-logo-item">
-          <img src="assets/client-logo/arc-builders.png" alt="ARC Builders">
-        </div>
-
-        <div class="client-logo-item">
-          <img src="assets/client-logo/padmarajam-institute.png" alt="Padmarajam Institute">
-        </div>
-
-        <div class="client-logo-item">
-          <img src="assets/client-logo/banyan-engineering.png" alt="Banyan Engineering">
-        </div>
-
-        <div class="client-logo-item">
-          <img src="assets/client-logo/greennest.png" alt="Greennest">
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <section id="process-section" style="background:var(--surface)">
-    <div class="container">
-      <div class="sec-header-center reveal">
-        <div class="sec-tag">Product Onboarding</div>
-        <h2 class="sec-title">How We Deploy Products</h2>
-        <p class="sec-body">A smooth, guided process from first discussion to full deployment and ongoing support.</p>
-      </div>
-      <div class="process-steps reveal">
-        <div class="process-step">
-          <div class="step-circle">01</div>
-          <div class="step-name">Product Demo</div>
-          <p class="step-desc">Live walkthrough of features tailored to your use case and industry.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-circle">02</div>
-          <div class="step-name">Requirement Discussion</div>
-          <p class="step-desc">We understand your workflows, team size, and specific product needs.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-circle">03</div>
-          <div class="step-name">Customization</div>
-          <p class="step-desc">Configure modules, branding, integrations, and user roles as needed.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-circle">04</div>
-          <div class="step-name">Deployment</div>
-          <p class="step-desc">Cloud setup, data migration, team onboarding, and go-live support.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-circle">05</div>
-          <div class="step-name">Support</div>
-          <p class="step-desc">Dedicated technical support, updates, and training for your team.</p>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="quote-section">
-    <div class="container">
-      <div class="quote-wrap">
-        <div class="quote-info reveal">
-          <div class="sec-tag">Get Started</div>
-          <h2 class="sec-title">Get a Free<br /><span style="color:var(--accent)">Product Demo</span></h2>
-          <p class="sec-body">Tell us which product interests you and we'll schedule a personalised demo with our
-            product team — no obligation required.</p>
-          <div class="check-list" style="margin-top:24px">
-            <div class="check-item">Free live product demonstration</div>
-            <div class="check-item">Custom pricing based on your requirements</div>
-            <div class="check-item">Response within 24 hours</div>
-          </div>
-        </div>
-        <div class="reveal">
-          <div class="form-box">
-            <div class="contact-form">
-              <div class="form-row">
-                <div class="form-group"><label>Your Name *</label><input type="text" placeholder="Full Name" /></div>
-                <div class="form-group"><label>Phone *</label><input type="tel" placeholder="+91 98765 43210" /></div>
-              </div>
-              <div class="form-group"><label>Email *</label><input type="email" placeholder="you@company.com" /></div>
-              <div class="form-group">
-                <label>Product Interest</label>
-                <select>
-                  <option value="">Select a product…</option>
-                  <option>EezyCRM — CRM &amp; Project Management</option>
-                  <option>MeriTrack — Online Examination Portal</option>
-                  <option>DocWave — Document Management</option>
-                  <option>EezyTrack — Field Staff Tracking</option>
-                  <option>Multiple Products</option>
-                  <option>Not Sure Yet</option>
-                </select>
-              </div>
-              <div class="form-group"><label>Your Requirements</label><textarea
-                  placeholder="Tell us about your organisation and what you're looking to achieve…"></textarea></div>
-              <button class="btn btn-primary" style="width:100%;justify-content:center"
-                data-submit="Request Product Demo →">Request Product Demo →</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <a href="index.html" class="nav-logo footer-brand" style="display:inline-block;margin-bottom:16px"
-            aria-label="V7Lancers - Home">
-            <img class="site-logo light-logo" src="assets/site-logo/logo-dark.png" alt="V7Lancers Logo" width="180"
-              height="48" />
-            <img class="site-logo dark-logo" src="assets/site-logo/logo-light.png" alt="V7Lancers Logo" width="180"
-              height="48" />
-          </a>
-          <p class="footer-desc">V7Lancers Technopark Pvt Ltd — delivering innovative websites, software, mobile apps,
-            and AI-powered solutions to businesses across India, UK, USA, and Gulf countries.</p>
-          <div class="footer-social">
-            <a href="https://www.facebook.com/v7lancersOfficial/" class="footer-social-btn" target="_blank"
-              rel="noopener">
-              <i class="fa-brands fa-facebook-f"></i>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a href="index.html" class="nav-logo footer-brand" style="display:inline-block;margin-bottom:16px"
+              aria-label="V7Lancers - Home">
+              <img class="site-logo light-logo" src="assets/site-logo/logo-dark.png" alt="V7Lancers Logo" width="180" height="48" />
+              <img class="site-logo dark-logo" src="assets/site-logo/logo-light.png" alt="V7Lancers Logo" width="180" height="48" />
             </a>
-
-            <a href="https://www.instagram.com/v7lancers_technopark/" class="footer-social-btn" target="_blank"
-              rel="noopener">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-
-            <a href="https://www.linkedin.com/company/v7-lancers/?originalSubdomain=in" class="footer-social-btn"
-              target="_blank" rel="noopener">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-
-            <a href="https://youtube.com/@v7lancers" class="footer-social-btn" target="_blank" rel="noopener">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-
-            <a href="https://x.com/VLancers" class="footer-social-btn" target="_blank" rel="noopener">
-              <i class="fa-brands fa-x-twitter"></i>
-            </a>
+            <p class="footer-desc">V7Lancers Technopark Pvt Ltd — delivering innovative websites, software, mobile apps,
+              and AI-powered solutions to businesses across India, UK, USA, and Gulf countries.</p>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/v7lancersOfficial/" class="footer-social-btn" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/v7lancers_technopark/" class="footer-social-btn" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/company/v7-lancers/?originalSubdomain=in" class="footer-social-btn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://youtube.com/@v7lancers" class="footer-social-btn" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://x.com/VLancers" class="footer-social-btn" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+          </div>
+          <div>
+            <div class="footer-col-title">Quick Links</div>
+            <div class="footer-links">
+              <a href="index.html">Home</a><a href="about.html">About Us</a><a href="portfolio.html">Portfolio</a>
+              <a href="testimonials.html">Testimonials</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact Us</a>
+            </div>
+          </div>
+          <div>
+            <div class="footer-col-title">Products</div>
+            <div class="footer-links">
+              <a href="products.html">EezyCRM</a>
+              <a href="products.html">MeriTrack</a>
+              <a href="products.html">DocWave</a>
+              <a href="products.html">EezyTrack</a>
+            </div>
+          </div>
+          <div>
+            <div class="footer-col-title">Contact Info</div>
+            <div class="footer-links">
+              <a href="tel:+919150056163">📞 +91 91500 56163</a>
+              <a href="mailto:sales@v7lancers.com">✉️ sales@v7lancers.com</a>
+              <span style="color:var(--muted);font-size:.87rem">📍 Theppakulam main road, Anuppanadi Rd, near Sourashtra Girls school, Madurai, Tamil Nadu 625009</span>
+              <span style="color:var(--muted);font-size:.87rem">🕐 Mon–Sat: 10 AM – 8 PM IST</span>
+            </div>
           </div>
         </div>
-        <div>
-          <div class="footer-col-title">Quick Links</div>
-          <div class="footer-links">
-            <a href="index.html">Home</a><a href="about.html">About Us</a><a href="portfolio.html">Portfolio</a>
-            <a href="testimonials.html">Testimonials</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact
-              Us</a>
-          </div>
-        </div>
-        <div>
-          <div class="footer-col-title">Products</div>
-          <div class="footer-links">
-            <a href="products.html">EezyCRM</a>
-            <a href="products.html">MeriTrack</a>
-            <a href="products.html">DocWave</a>
-            <a href="products.html">EezyTrack</a>
-
-          </div>
-        </div>
-        <div>
-          <div class="footer-col-title">Contact Info</div>
-          <div class="footer-links">
-            <a href="tel:+919150056163">📞 +91 91500 56163</a>
-            <a href="mailto:sales@v7lancers.com">✉️ sales@v7lancers.com</a>
-            <span style="color:var(--muted);font-size:.87rem">📍 Theppakulam main road, Anuppanadi Rd, near Sourashtra
-              Girls school, Madurai, Tamil Nadu 625009</span>
-            <span style="color:var(--muted);font-size:.87rem">🕐 Mon–Sat: 10 AM – 8 PM IST</span>
-          </div>
+        <div class="footer-bottom">
+          <span>© 2026 <em>V7Lancers Technopark Pvt Ltd</em>. All rights reserved.</span>
+          <span>Built with ❤️ in Madurai, India 🇮🇳</span>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span>© 2026 <em>V7Lancers Technopark Pvt Ltd</em>. All rights reserved.</span>
-        <span>Built with ❤️ in Madurai, India 🇮🇳</span>
-      </div>
-    </div>
-  </footer>
+    </footer>
   </section>
- 
+
+  <!-- ══════════════════════════════════════════════
+       MOBILE VERSION
+  ══════════════════════════════════════════════ -->
   <section class="mobile-products-page mobile-only">
+    <div class="product-slider" id="productSlider">
 
- 
-  <!-- Slider -->
-  <div class="product-slider" id="productSlider">
+      <!-- EezyCRM -->
+      <article class="product-slide" id="eezycrm">
+        <img src="assets/home-product/eezycrm-dashboard.png" alt="EezyCRM">
+        <h2>EezyCRM</h2>
+        <span class="tagline">CRM Platform</span>
+        <p>Manage leads, customers, projects, support operations, and business performance from one unified system.</p>
+        <ul class="product-features">
+          <li><i class="fas fa-user-group"></i> Lead Management</li>
+          <li><i class="fas fa-people-arrows"></i> Project Collaboration</li>
+          <li><i class="fas fa-chart-pie"></i> Finance Reports</li>
+          <li><i class="fas fa-headset"></i> Customer Support</li>
+        </ul>
+        <div class="slide-actions">
+          <a href="contact.html" class="btn btn-primary">Request Demo</a>
+          <a href="products.html" class="btn btn-outline">Learn More</a>
+        </div>
+      </article>
 
-    <!-- EezyCRM -->
-    <article class="product-slide" id="eezycrm">
-      <img src="assets/home-product/eezycrm-dashboard.png" alt="EezyCRM">
+      <!-- MeriTrack -->
+      <article class="product-slide" id="meritrack">
+        <img src="assets/home-product/meritrack-dashboard.png" alt="MeriTrack">
+        <h2>MeriTrack</h2>
+        <span class="tagline">AI Exam Platform</span>
+        <p>AI-powered examination platform for schools, colleges, academies and training centres.</p>
+        <ul class="product-features">
+          <li><i class="fas fa-infinity"></i> Unlimited Exams</li>
+          <li><i class="fas fa-robot"></i> AI Question Generation</li>
+          <li><i class="fas fa-user-shield"></i> Smart Proctoring</li>
+          <li><i class="fas fa-bolt"></i> Instant Evaluation</li>
+        </ul>
+        <div class="slide-actions">
+          <a href="contact.html" class="btn btn-primary">Request Demo</a>
+          <a href="products.html" class="btn btn-outline">Learn More</a>
+        </div>
+      </article>
 
-      <h2>EezyCRM</h2>
-      <span class="tagline">CRM Platform</span>
+      <!-- DocWave -->
+      <article class="product-slide" id="docwave">
+        <img src="assets/home-product/docwave-dashboard.png" alt="DocWave">
+        <h2>DocWave</h2>
+        <span class="tagline">Document Management</span>
+        <p>Securely store, organize and retrieve documents with AI-powered search and workflow automation.</p>
+        <ul class="product-features">
+          <li><i class="fas fa-magnifying-glass"></i> AI Search</li>
+          <li><i class="fas fa-diagram-project"></i> Approval Workflow</li>
+          <li><i class="fas fa-share-nodes"></i> File Sharing</li>
+          <li><i class="fas fa-lock"></i> Auto Encryption</li>
+        </ul>
+        <div class="slide-actions">
+          <a href="contact.html" class="btn btn-primary">Request Demo</a>
+          <a href="products.html" class="btn btn-outline">Learn More</a>
+        </div>
+      </article>
 
-      <p>
-        Manage leads, customers, projects, support operations,
-        and business performance from one unified system.
-      </p>
+      <!-- EezyTrack -->
+      <article class="product-slide" id="product-eezytrack">
+        <img src="assets/home-product/eezytrack-dashboard.png" alt="EezyTrack">
+        <h2>EezyTrack</h2>
+        <span class="tagline">Field Tracking Platform</span>
+        <p>Track field teams, routes, travel activity and productivity in real time.</p>
+        <ul class="product-features">
+          <li><i class="fas fa-location-dot"></i> Live Tracking</li>
+          <li><i class="fas fa-route"></i> Route Analytics</li>
+          <li><i class="fas fa-file-lines"></i> Travel Reports</li>
+          <li><i class="fas fa-chart-line"></i> Productivity Insights</li>
+        </ul>
+        <div class="slide-actions">
+          <a href="contact.html" class="btn btn-primary">Request Demo</a>
+          <a href="products.html" class="btn btn-outline">Learn More</a>
+        </div>
+      </article>
 
-    <ul class="product-features">
-  <li><i class="fas fa-user-group"></i> Lead Management</li>
-  <li><i class="fas fa-people-arrows"></i> Project Collaboration</li>
-  <li><i class="fas fa-chart-pie"></i> Finance Reports</li>
-  <li><i class="fas fa-headset"></i> Customer Support</li>
-</ul>
-      <div class="slide-actions">
-        <a href="contact.html" class="btn btn-primary">Request Demo</a>
-        <a href="products.html" class="btn btn-outline">Learn More</a>
-      </div>
-    </article>
+    </div>
 
-    <!-- MeriTrack -->
-    <article class="product-slide" id="meritrack">
-      <img src="assets/home-product/meritrack-dashboard.png" alt="MeriTrack">
+    <div class="product-nav">
+      <a href="#eezycrm" title="EezyCRM"><i class="fas fa-users"></i></a>
+      <a href="#meritrack" title="MeriTrack"><i class="fas fa-graduation-cap"></i></a>
+      <a href="#docwave" title="DocWave"><i class="fas fa-file-lines"></i></a>
+      <a href="#product-eezytrack" title="EezyTrack"><i class="fas fa-location-dot"></i></a>
+    </div>
+  </section>
 
-      <h2>MeriTrack</h2>
-      <span class="tagline">AI Exam Platform</span>
-
-      <p>
-        AI-powered examination platform for schools,
-        colleges, academies and training centres.
-      </p>
-
-   <ul class="product-features">
-  <li><i class="fas fa-infinity"></i> Unlimited Exams</li>
-  <li><i class="fas fa-robot"></i> AI Question Generation</li>
-  <li><i class="fas fa-user-shield"></i> Smart Proctoring</li>
-  <li><i class="fas fa-bolt"></i> Instant Evaluation</li>
-</ul>
-
-      <div class="slide-actions">
-        <a href="contact.html" class="btn btn-primary">Request Demo</a>
-        <a href="products.html" class="btn btn-outline">Learn More</a>
-      </div>
-    </article>
-
-    <!-- DocWave -->
-    <article class="product-slide"  id="docwave">
-      <img src="assets/home-product/docwave-dashboard.png" alt="DocWave">
-
-      <h2>DocWave</h2>
-      <span class="tagline">Document Management</span>
-
-      <p>
-        Securely store, organize and retrieve documents
-        with AI-powered search and workflow automation.
-      </p>
-
-    <ul class="product-features">
-  <li><i class="fas fa-magnifying-glass"></i> AI Search</li>
-  <li><i class="fas fa-diagram-project"></i> Approval Workflow</li>
-  <li><i class="fas fa-share-nodes"></i> File Sharing</li>
-  <li><i class="fas fa-lock"></i> Auto Encryption</li>
-</ul>
-
-      <div class="slide-actions">
-        <a href="contact.html" class="btn btn-primary">Request Demo</a>
-        <a href="products.html" class="btn btn-outline">Learn More</a>
-      </div>
-    </article>
-
-    <!-- EezyTrack -->
-   <article class="product-slide" id="product-eezytrack">
-      <img src="assets/home-product/eezytrack-dashboard.png" alt="EezyTrack">
-
-      <h2>EezyTrack</h2>
-      <span class="tagline">Field Tracking Platform</span>
-
-      <p>
-        Track field teams, routes, travel activity
-        and productivity in real time.
-      </p>
-<ul class="product-features">
-  <li><i class="fas fa-location-dot"></i> Live Tracking</li>
-  <li><i class="fas fa-route"></i> Route Analytics</li>
-  <li><i class="fas fa-file-lines"></i> Travel Reports</li>
-  <li><i class="fas fa-chart-line"></i> Productivity Insights</li>
-</ul>
-
-      <div class="slide-actions">
-        <a href="contact.html" class="btn btn-primary">Request Demo</a>
-        <a href="products.html" class="btn btn-outline">Learn More</a>
-      </div>
-    </article>
-   <!-- Sticky Product Nav -->
-
-
-  </div>
-<div class="product-nav">
-  <a href="#eezycrm" title="EezyCRM">
-    <i class="fas fa-users"></i>
-  </a>
-
-  <a href="#meritrack" title="MeriTrack">
-    <i class="fas fa-graduation-cap"></i>
-  </a>
-
-  <a href="#docwave" title="DocWave">
-    <i class="fas fa-file-lines"></i>
-  </a>
-
-  <a href="#product-eezytrack" title="EezyTrack">
-    <i class="fas fa-location-dot"></i>
-  </a>
-</div>
-
-</section>
   <script src="script.js"></script>
   <script>
-    /* ── PRODUCT SWITCHER LOGIC ── */
+    /* ── PRODUCT SWITCHER ── */
     function switchProduct(productId, btn) {
-      // Update Buttons
+      // Hide all more-features panels first
+      document.querySelectorAll('.more-features-wrap').forEach(w => {
+        w.querySelector('.more-features-grid').classList.remove('visible');
+        const toggle = w.previousElementSibling?.querySelector?.('.more-features-toggle') ||
+                       document.querySelector(`[onclick*="${w.id}"]`);
+      });
+      // Reset all toggle buttons
+      document.querySelectorAll('.more-features-toggle').forEach(t => {
+        t.classList.remove('open');
+        t.querySelector('span:first-child').textContent = 'More Features';
+      });
+      // Switch tabs
       document.querySelectorAll('.pcc-tab').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      // Update Panels
+      // Switch panels
       document.querySelectorAll('.pcc-panel').forEach(p => p.classList.remove('active'));
       document.getElementById(productId).classList.add('active');
     }
+
+    /* ── MORE FEATURES TOGGLE ── */
+    function toggleMoreFeatures(wrapperId, btn) {
+      const grid = document.querySelector('#' + wrapperId + ' .more-features-grid');
+      const isOpen = grid.classList.contains('visible');
+      grid.classList.toggle('visible', !isOpen);
+      btn.classList.toggle('open', !isOpen);
+      btn.querySelector('span:first-child').textContent = isOpen ? 'More Features' : 'Less Features';
+    }
   </script>
 </body>
-
 </html>

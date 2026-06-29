@@ -1006,13 +1006,13 @@
 
   <div class="mobile-hub-grid">
 
-    <button class="hub-card"    onclick="document.getElementById('productPanel').classList.toggle('active')">
+    <button class="hub-card" onclick="openPanel('productPanel')">
       <div class="hub-icon product">  <i class="fa-solid fa-box"></i></div>
       <h3>Products</h3>
       <p>Designed to Scale & Automate</p>
     </button>
 
-    <button class="hub-card"    onclick="document.getElementById('servicePanel').classList.toggle('active')">
+    <button class="hub-card" onclick="openPanel('servicePanel')">
       <div class="hub-icon service"><i class="fa-solid fa-briefcase"></i></div>
       <h3>Services</h3>
      <p>Smart Solutions for Growth</p>
@@ -1025,7 +1025,7 @@
   <div class="mobile-panel" id="productPanel">
 
     <button class="panel-close"
-      onclick="document.getElementById('productPanel').classList.remove('active')">×</button>
+      onclick="closePanel('productPanel')"> ×</button>
 
     <h3 class="panel-title">
       <span>Our</span> Products
@@ -1069,8 +1069,7 @@
 
   <div class="mobile-panel" id="servicePanel">
 
-    <button class="panel-close"
-      onclick="document.getElementById('servicePanel').classList.remove('active')">×</button>
+    <button class="panel-close" onclick="closePanel('servicePanel')">×</button>
 
     <h3 class="panel-title">
       <span>Our</span> Services
@@ -1117,6 +1116,7 @@
     </a>
 
   </div>
+  
 
 </div>
 

@@ -394,3 +394,13 @@ slider.addEventListener("scroll",()=>{
   }
 
 });
+
+function openPanel(id) {
+    document.getElementById(id).classList.add("active");
+    document.body.classList.add("no-scroll");
+}
+
+function closePanel(id) {
+    document.getElementById(id).classList.remove("active");
+    document.body.classList.remove("no-scroll");
+}

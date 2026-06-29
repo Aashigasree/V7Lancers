@@ -3223,25 +3223,44 @@ footer {
 /* ── Mobile Panel ───────────────────────────────────────────────── */
 .mobile-panel {
   position: fixed;
-  left: 15px;
-  right: 15px;
-  bottom: 20px;
+  top: 50%;
+  left: 50%;
+
+  width: calc(100% - 30px);
+  max-width: 420px;
+  max-height: 80vh;
+
   padding: 20px;
+  overflow-y: auto;
+
   border-radius: 24px;
   background: var(--card);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-lg);
   z-index: 9999;
+
   opacity: 0;
   visibility: hidden;
-  transform: translateY(40px);
-  transition: var(--tr);
+
+  transform: translate(-50%, -45%);
+  transition: opacity .3s ease, transform .3s ease;
 }
 
 .mobile-panel.active {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translate(-50%, -50%);
+}
+body.no-scroll {
+  overflow: hidden;
+}
+
+body.no-scroll::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 9998;
 }
 
 .panel-close {
@@ -3421,6 +3440,15 @@ footer {
     width: 100%;
     position: relative;
   }
+   #navbar {
+    min-height: 80px;
+    padding: 10px 16px;
+  }
+
+  .nav-logo .site-logo {
+    height: 60px;
+    width: auto;
+  }
 
   /* Hamburger & Navbar Fix */
   .hamburger {
@@ -3434,6 +3462,7 @@ footer {
   nav {
     top: 0 !important;
     margin: 0 !important;
+
   }
 
   /* Utility overrides */
@@ -3489,16 +3518,16 @@ footer {
 
   /* Hero */
   #home-hero {
-    padding-top: 80px !important;
+    padding-top: 120px !important;
     padding-bottom: 32px !important;
     min-height: auto;
   }
 
+@media (max-width: 768px) {
   .hero-eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    margin-bottom: 16px;
+    display: none;
   }
+}
 
   .hero-title {
     font-size: clamp(1.8rem, 8vw, 2.5rem);

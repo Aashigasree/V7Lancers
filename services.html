@@ -69,8 +69,24 @@
     <a href="gallery.html" onclick="closeMobile()">Gallery</a>
     <a href="contact.html" onclick="closeMobile()">Contact</a>
     <button class="mobile-theme-toggle" id="mobileThemeToggle" aria-label="Toggle theme">
-      <svg class="toggle-icon toggle-icon--sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      <svg class="toggle-icon toggle-icon--moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      <svg class="toggle-icon toggle-icon--sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+      </svg>
+      <svg class="toggle-icon toggle-icon--moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+      </svg>
       <span class="mobile-theme-label mobile-theme-label--dark">Dark Mode</span>
       <span class="mobile-theme-label mobile-theme-label--light">Light Mode</span>
     </button>
@@ -255,26 +271,65 @@
       </div>
       <div class="clients-strip reveal">
         <div class="clients-scroll">
-          <div class="client-logo-item">RetailPlus India</div>
-          <div class="client-logo-item">Chennai Academy</div>
-          <div class="client-logo-item">QuickServe</div>
-          <div class="client-logo-item">TechBridge Co.</div>
-          <div class="client-logo-item">MedCare Clinic</div>
-          <div class="client-logo-item">EduSpark Inst.</div>
-          <div class="client-logo-item">GulfTrade LLC</div>
-          <div class="client-logo-item">BuildPro Const.</div>
-          <div class="client-logo-item">LogiStar India</div>
-          <div class="client-logo-item">AgroTech Farm</div>
-          <div class="client-logo-item">RetailPlus India</div>
-          <div class="client-logo-item">Chennai Academy</div>
-          <div class="client-logo-item">QuickServe</div>
-          <div class="client-logo-item">TechBridge Co.</div>
-          <div class="client-logo-item">MedCare Clinic</div>
-          <div class="client-logo-item">EduSpark Inst.</div>
-          <div class="client-logo-item">GulfTrade LLC</div>
-          <div class="client-logo-item">BuildPro Const.</div>
-          <div class="client-logo-item">LogiStar India</div>
-          <div class="client-logo-item">AgroTech Farm</div>
+
+          <div class="client-logo-item">
+            <img src="assets/client-logo/gandhigram-trust.png" alt="Gandhigram Trust">
+          </div>
+
+          <div class="client-logo-item">
+            <img src="assets/client-logo/star-xerox.jpeg" alt="Star Xerox">
+          </div>
+
+          <div class="client-logo-item">
+            <img src="assets/client-logo/ohyes-events.png" alt="Ohyes Events">
+          </div>
+
+          <div class="client-logo-item">
+            <img src="assets/client-logo/aboudi-cargo-services.png" alt="Aboudi Cargo Services">
+          </div>
+
+          <div class="client-logo-item">
+            <img src="assets/client-logo/ffinder.png" alt="FFinder">
+          </div>
+
+          <div class="client-logo-item">
+            <img src="assets/client-logo/fatima-college.png" alt="Fatima College">
+          </div>
+
+          <div class="client-logo-item">
+            <img src="assets/client-logo/cvs-tiles-granites.png" alt="CVS Tiles & Granites">
+          </div>
+
+          <!-- Duplicate set for infinite scroll -->
+
+          <div class="client-logo-item">
+            <img src="assets/client-logo/gandhigram-trust.png" alt="Gandhigram Trust">
+          </div>
+
+          <div class="client-logo-item">
+            <img src="assets/client-logo/star-xerox.jpeg" alt="Star Xerox">
+          </div>
+
+          <div class="client-logo-item">
+            <img src="assets/client-logo/ohyes-events.png" alt="Ohyes Events">
+          </div>
+
+          <div class="client-logo-item">
+            <img src="assets/client-logo/aboudi-cargo-services.png" alt="Aboudi Cargo Services">
+          </div>
+
+          <div class="client-logo-item">
+            <img src="assets/client-logo/ffinder.png" alt="FFinder">
+          </div>
+
+          <div class="client-logo-item">
+            <img src="assets/client-logo/fatima-college.png" alt="Fatima College">
+          </div>
+
+          <div class="client-logo-item">
+            <img src="assets/client-logo/cvs-tiles-granites.png" alt="CVS Tiles & Granites">
+          </div>
+
         </div>
       </div>
     </section>
@@ -484,18 +539,18 @@
       <img src="assets/services/web-development.png" alt="Website Development">
 
       <div class="service-preview">
-    <div class="service-left">
-      
-        <p>Web Development</p>
-    </div>
-    <div class="service-right">
-        <ul class="product-features">
+        <div class="service-left">
+
+          <p>Web Development</p>
+        </div>
+        <div class="service-right">
+          <ul class="product-features">
             <li><i class="fas fa-mobile-alt"></i>Responsive</li>
             <li><i class="fas fa-search"></i>SEO Ready</li>
             <li><i class="fas fa-bolt"></i>Fast Loading</li>
-        </ul>
-    </div>
-</div>
+          </ul>
+        </div>
+      </div>
 
       <div class="service-expand">
 
@@ -520,174 +575,174 @@
 
 
 
-  <!-- ECOMMERCE -->
-<div class="service-card" id="ecommerce" onclick="this.classList.toggle('active')">
+    <!-- ECOMMERCE -->
+    <div class="service-card" id="ecommerce" onclick="this.classList.toggle('active')">
 
-    <img src="assets/services/ecommerce-development.png" alt="Ecommerce Development">
+      <img src="assets/services/ecommerce-development.png" alt="Ecommerce Development">
 
-    <div class="service-preview">
+      <div class="service-preview">
 
         <div class="service-left">
-            <p>Ecommerce</p>
+          <p>Ecommerce</p>
         </div>
 
         <div class="service-right">
-            <ul class="product-features">
-                <li><i class="fas fa-store"></i>Online Store</li>
-                <li><i class="fas fa-credit-card"></i>Secure Payments</li>
-                <li><i class="fas fa-boxes-stacked"></i>Inventory</li>
-            </ul>
+          <ul class="product-features">
+            <li><i class="fas fa-store"></i>Online Store</li>
+            <li><i class="fas fa-credit-card"></i>Secure Payments</li>
+            <li><i class="fas fa-boxes-stacked"></i>Inventory</li>
+          </ul>
         </div>
 
-    </div>
+      </div>
 
-    <div class="service-expand">
+      <div class="service-expand">
 
         <p>
-            Complete ecommerce solutions with secure payments,
-            inventory management, shipping, and order tracking.
+          Complete ecommerce solutions with secure payments,
+          inventory management, shipping, and order tracking.
         </p>
 
         <div class="service-tags">
-            <span>Shopify</span>
-            <span>WooCommerce</span>
+          <span>Shopify</span>
+          <span>WooCommerce</span>
         </div>
 
         <a href="contact.html" class="service-btn">
-            Get Quote
+          Get Quote
         </a>
 
-    </div>
+      </div>
 
-</div>
+    </div>
     <!-- DELIVERY -->
 
- <!-- DELIVERY APPS -->
-<div class="service-card" id="delivery" onclick="this.classList.toggle('active')">
+    <!-- DELIVERY APPS -->
+    <div class="service-card" id="delivery" onclick="this.classList.toggle('active')">
 
-    <img src="assets/services/online-delivery.png" alt="Delivery App">
+      <img src="assets/services/online-delivery.png" alt="Delivery App">
 
-    <div class="service-preview">
+      <div class="service-preview">
 
         <div class="service-left">
-            <p>Delivery Apps</p>
+          <p>Delivery Apps</p>
         </div>
 
         <div class="service-right">
-            <ul class="product-features">
-                <li><i class="fas fa-location-dot"></i>Live Tracking</li>
-                <li><i class="fas fa-bell"></i>Notifications</li>
-                <li><i class="fas fa-credit-card"></i>Payments</li>
-            </ul>
+          <ul class="product-features">
+            <li><i class="fas fa-location-dot"></i>Live Tracking</li>
+            <li><i class="fas fa-bell"></i>Notifications</li>
+            <li><i class="fas fa-credit-card"></i>Payments</li>
+          </ul>
         </div>
 
-    </div>
+      </div>
 
-    <div class="service-expand">
+      <div class="service-expand">
 
         <p>
-            Delivery solutions with real-time tracking,
-            fleet management, customer notifications, and secure payments.
+          Delivery solutions with real-time tracking,
+          fleet management, customer notifications, and secure payments.
         </p>
 
         <div class="service-tags">
-            <span>Flutter</span>
-            <span>Firebase</span>
+          <span>Flutter</span>
+          <span>Firebase</span>
         </div>
 
         <a href="contact.html" class="service-btn">
-            Get Quote
+          Get Quote
         </a>
 
-    </div>
+      </div>
 
-</div>
+    </div>
 
     <!-- SOFTWARE -->
-<!-- CUSTOM SOFTWARE -->
-<div class="service-card" id="software" onclick="this.classList.toggle('active')">
+    <!-- CUSTOM SOFTWARE -->
+    <div class="service-card" id="software" onclick="this.classList.toggle('active')">
 
-    <img src="assets/services/software-development.png" alt="Custom Software Development">
+      <img src="assets/services/software-development.png" alt="Custom Software Development">
 
-    <div class="service-preview">
+      <div class="service-preview">
 
         <div class="service-left">
-            <p>Custom Software</p>
+          <p>Custom Software</p>
         </div>
 
         <div class="service-right">
-            <ul class="product-features">
-                <li><i class="fas fa-users-gear"></i>CRM</li>
-                <li><i class="fas fa-building"></i>ERP</li>
-                <li><i class="fas fa-gears"></i>Automation</li>
-            </ul>
+          <ul class="product-features">
+            <li><i class="fas fa-users-gear"></i>CRM</li>
+            <li><i class="fas fa-building"></i>ERP</li>
+            <li><i class="fas fa-gears"></i>Automation</li>
+          </ul>
         </div>
 
-    </div>
+      </div>
 
-    <div class="service-expand">
+      <div class="service-expand">
 
         <p>
-            Tailor-made software systems designed to automate
-            business processes and streamline operations.
+          Tailor-made software systems designed to automate
+          business processes and streamline operations.
         </p>
 
         <div class="service-tags">
-            <span>Python</span>
-            <span>NodeJS</span>
-            <span>MySQL</span>
+          <span>Python</span>
+          <span>NodeJS</span>
+          <span>MySQL</span>
         </div>
 
         <a href="contact.html" class="service-btn">
-            Get Quote
+          Get Quote
         </a>
 
-    </div>
+      </div>
 
-</div>
+    </div>
 
     <!-- MOBILE APP -->
 
-  <!-- MOBILE APPS -->
-<div class="service-card" id="mobileapp" onclick="this.classList.toggle('active')">
+    <!-- MOBILE APPS -->
+    <div class="service-card" id="mobileapp" onclick="this.classList.toggle('active')">
 
-    <img src="assets/services/app-development.png" alt="Mobile App Development">
+      <img src="assets/services/app-development.png" alt="Mobile App Development">
 
-    <div class="service-preview">
+      <div class="service-preview">
 
         <div class="service-left">
-            <p>Mobile Apps</p>
+          <p>Mobile Apps</p>
         </div>
 
         <div class="service-right">
-            <ul class="product-features">
-                <li><i class="fab fa-android"></i>Android</li>
-                <li><i class="fab fa-apple"></i>iOS</li>
-                <li><i class="fas fa-mobile-screen-button"></i>Cross Platform</li>
-            </ul>
+          <ul class="product-features">
+            <li><i class="fab fa-android"></i>Android</li>
+            <li><i class="fab fa-apple"></i>iOS</li>
+            <li><i class="fas fa-mobile-screen-button"></i>Cross Platform</li>
+          </ul>
         </div>
 
-    </div>
+      </div>
 
-    <div class="service-expand">
+      <div class="service-expand">
 
         <p>
-            High-performance Android and iOS applications
-            with modern UI and scalable backend systems.
+          High-performance Android and iOS applications
+          with modern UI and scalable backend systems.
         </p>
 
         <div class="service-tags">
-            <span>Flutter</span>
-            <span>React Native</span>
+          <span>Flutter</span>
+          <span>React Native</span>
         </div>
 
         <a href="contact.html" class="service-btn">
-            Get Quote
+          Get Quote
         </a>
 
-    </div>
+      </div>
 
-</div>
+    </div>
     <div class="service-nav">
       <a href="#website" title="Website">
         <i class="fas fa-globe"></i>

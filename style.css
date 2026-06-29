@@ -17,6 +17,25 @@
   --font-mono: 'DM Mono', monospace;
   --radius: 6px;
   --tr: 0.28s cubic-bezier(.4, 0, .2, 1);
+  /* Smooth theme transition duration — used globally */
+  --theme-tr: 0.3s ease;
+
+  /* Nav background tokens — adapt per theme */
+  --nav-bg: rgba(13, 13, 13, 0.82);
+  --nav-bg-scrolled: rgba(13, 13, 13, 0.97);
+
+  /* Overlay / scrim tokens */
+  --scrim: rgba(13, 13, 13, 0.92);
+  --label-bg: rgba(0, 0, 0, 0.65);
+  --photo-label-bg: rgba(0, 0, 0, 0.5);
+
+  /* Placeholder ghost color (dark default) */
+  --placeholder-ghost: rgba(255, 255, 255, 0.06);
+
+  /* CTA card inner colors */
+  --cta-desc: rgba(0, 0, 0, 0.7);
+  --cta-btn-bg: #0d0d0d;
+  --cta-btn-color: var(--accent);
 
   /* Dynamic shadows to adapt cleanly across themes */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
@@ -39,6 +58,23 @@
   --text: #0d0d0e;
   --muted: #48484c;
 
+  /* Nav background tokens for light theme */
+  --nav-bg: rgba(245, 245, 247, 0.92);
+  --nav-bg-scrolled: rgba(245, 245, 247, 0.98);
+
+  /* Overlay / scrim tokens for light theme */
+  --scrim: rgba(245, 245, 247, 0.94);
+  --label-bg: rgba(0, 0, 0, 0.45);
+  --photo-label-bg: rgba(0, 0, 0, 0.35);
+
+  /* Placeholder ghost color (light: very subtle dark tint) */
+  --placeholder-ghost: rgba(0, 0, 0, 0.06);
+
+  /* CTA card inner colors for light theme */
+  --cta-desc: var(--muted);
+  --cta-btn-bg: var(--accent);
+  --cta-btn-color: var(--on-accent);
+
   /* Soft, light-mode compliant shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.08);
@@ -48,18 +84,6 @@
 
 [data-theme="light"] #canvas {
   opacity: .18;
-}
-
-[data-theme="light"] nav {
-  background: rgba(245, 245, 247, .92) !important;
-}
-
-[data-theme="light"] nav.scrolled {
-  background: rgba(245, 245, 247, .98) !important;
-}
-
-[data-theme="light"] .mobile-menu {
-  background: var(--bg);
 }
 
 [data-theme="light"] .asset-preview.dark-bg {
@@ -94,12 +118,14 @@ html {
 
 ::-webkit-scrollbar-track {
   background: var(--bg);
+  transition: background var(--theme-tr);
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--border);
   border-radius: var(--radius);
   border: 2px solid var(--bg);
+  transition: background-color var(--theme-tr);
 }
 
 /* Selection highlights */
@@ -112,6 +138,66 @@ html {
   color: #ffffff;
 }
 
+/*
+ * ─── GLOBAL THEME TRANSITION ──────────────────────────────
+ * Applied to all elements so the dark ↔ light switch is smooth
+ * across EVERY component — desktop and mobile alike.
+ * Only background, color, border-color and box-shadow transition;
+ * layout properties are left untouched for performance.
+ * ──────────────────────────────────────────────────────────
+ */
+*,
+*::before,
+*::after {
+  transition:
+    background-color var(--theme-tr),
+    border-color     var(--theme-tr),
+    color            var(--theme-tr),
+    box-shadow       var(--theme-tr),
+    fill             var(--theme-tr);
+}
+
+/*
+ * Override: elements whose layout/visual transitions must NOT be
+ * clobbered by the global theme transition get their own rule.
+ */
+nav,
+.hamburger span,
+.mobile-menu,
+.mobile-menu a,
+.mobile-panel,
+.btn,
+.service-card,
+.why-card,
+.product-card-home,
+.hub-card,
+.contact-card,
+.mobile-footer-contact-card,
+.gallery-item,
+.gallery-lightbox,
+.theme-toggle,
+.site-logo,
+.clients-scroll,
+.client-logo-item img,
+.stat-band-item,
+.nav-links a,
+.nav-links a.cta,
+.product-nav a,
+.service-nav a,
+.service-bottom-nav a,
+.mobile-footer-social a,
+.panel-item,
+.carousel-item {
+  transition:
+    background-color var(--theme-tr),
+    border-color     var(--theme-tr),
+    color            var(--theme-tr),
+    box-shadow       var(--theme-tr),
+    fill             var(--theme-tr),
+    opacity          var(--tr),
+    transform        var(--tr);
+}
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -120,7 +206,7 @@ body {
   line-height: 1.65;
   overflow-x: hidden;
   min-height: 100vh;
-  transition: background var(--tr), color var(--tr);
+  transition: background-color var(--theme-tr), color var(--theme-tr);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -195,14 +281,14 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 16px 40px;
-  background: rgba(13, 13, 13, .82);
+  background: var(--nav-bg);
   border-bottom: 1px solid transparent;
-  transition: border-color var(--tr), background var(--tr);
+  transition: border-color var(--theme-tr), background-color var(--theme-tr);
 }
 
 nav.scrolled {
   border-bottom-color: var(--border);
-  background: rgba(13, 13, 13, .97);
+  background: var(--nav-bg-scrolled);
 }
 
 .nav-logo {
@@ -1014,15 +1100,15 @@ a.nav-logo:hover .site-logo {
 
 .service-card-cta .cta-desc {
   font-size: .88rem;
-  color: rgba(0, 0, 0, .7);
+  color: var(--cta-desc);
   margin-bottom: 24px;
-  transition: color var(--tr);
+  transition: color var(--theme-tr);
 }
 
 .service-card-cta .cta-btn {
-  background: #000000;
-  color: var(--accent);
-  transition: background var(--tr), color var(--tr), transform var(--tr), box-shadow var(--tr);
+  background: var(--cta-btn-bg);
+  color: var(--cta-btn-color);
+  transition: background-color var(--theme-tr), color var(--theme-tr), transform var(--tr), box-shadow var(--tr);
 }
 
 .service-card-cta .cta-btn:hover {
@@ -1030,7 +1116,7 @@ a.nav-logo:hover .site-logo {
   box-shadow: var(--shadow-sm);
 }
 
-/* Light Mode adaptations for CTA Card */
+/* CTA Card adapts automatically via CSS variables — no [data-theme] overrides needed */
 [data-theme="light"] .service-card-cta {
   background: var(--card);
   border-color: var(--accent);
@@ -1039,19 +1125,6 @@ a.nav-logo:hover .site-logo {
 
 [data-theme="light"] .service-card-cta:hover {
   box-shadow: var(--shadow-md);
-}
-
-[data-theme="light"] .service-card-cta .cta-title {
-  color: var(--text);
-}
-
-[data-theme="light"] .service-card-cta .cta-desc {
-  color: var(--muted);
-}
-
-[data-theme="light"] .service-card-cta .cta-btn {
-  background: var(--accent);
-  color: var(--on-accent);
 }
 
 /* ─── WHY US ─────────────────────────────────────────── */
@@ -1401,7 +1474,7 @@ a.nav-logo:hover .site-logo {
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  color: rgba(255, 255, 255, .06);
+  color: var(--placeholder-ghost);
   position: relative;
   overflow: hidden;
 }
@@ -1876,7 +1949,7 @@ a.nav-logo:hover .site-logo {
 .gallery-lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(13, 13, 13, .92);
+  background: var(--scrim);
   z-index: 200;
   display: flex;
   align-items: center;
@@ -1884,7 +1957,7 @@ a.nav-logo:hover .site-logo {
   padding: 24px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--tr);
+  transition: opacity var(--tr), background-color var(--theme-tr);
 }
 
 .gallery-lightbox.open {
@@ -2255,7 +2328,7 @@ a.nav-logo:hover .site-logo {
   font-family: var(--font-mono);
   font-size: .58rem;
   color: var(--muted);
-  background: rgba(0, 0, 0, .5);
+  background: var(--photo-label-bg);
   padding: 3px 8px;
   border-radius: 4px;
 }
@@ -2541,8 +2614,8 @@ a.nav-logo:hover .site-logo {
   align-items: center;
   justify-content: center;
   font-size: 2.4rem;
-  color: rgba(255, 255, 255, .05);
-  transition: transform var(--tr), border-color var(--tr), box-shadow var(--tr);
+  color: var(--placeholder-ghost);
+  transition: transform var(--tr), border-color var(--theme-tr), box-shadow var(--tr);
   cursor: pointer;
   position: relative;
 }
@@ -2581,11 +2654,11 @@ a.nav-logo:hover .site-logo {
   font-family: var(--font-mono);
   font-size: .58rem;
   color: var(--muted);
-  background: rgba(0, 0, 0, .65);
+  background: var(--label-bg);
   padding: 3px 8px;
   border-radius: 4px;
   opacity: 0;
-  transition: opacity var(--tr);
+  transition: opacity var(--tr), background-color var(--theme-tr);
   z-index: 2;
 }
 
@@ -3288,10 +3361,11 @@ body.no-scroll::before {
   position: fixed;
   inset: 0;
   background:
-  radial-gradient(circle at 20% 20%, rgba(139, 0, 4, 0.08), transparent 40%),
-  radial-gradient(circle at 80% 30%, rgba(198, 40, 40, 0.06), transparent 45%),
-  var(--bg);
+    radial-gradient(circle at 20% 20%, rgba(var(--accent-rgb), 0.08), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(var(--accent2-rgb), 0.06), transparent 45%),
+    var(--bg);
   z-index: 9998;
+  transition: background-color var(--theme-tr);
 }
 
 
@@ -3760,7 +3834,7 @@ body.no-scroll::before {
     50%{transform:translateX(6px);}
 }
 .mobile-products-page {
-  background: #fff;
+  background: var(--bg);
   padding: 20px 16px 40px;
 }
 
@@ -3799,7 +3873,7 @@ body.no-scroll::before {
 .product-nav a.active,
 .product-nav a:hover {
   color: var(--accent);
-  background: rgba(255, 255, 255, .05);
+  background: rgba(var(--accent-rgb), 0.08);
 }
 
 .mobile-products-page {

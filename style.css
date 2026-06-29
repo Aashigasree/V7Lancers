@@ -1466,10 +1466,6 @@ a.nav-logo:hover .site-logo {
 }
 
 /* ─── QUOTE / CONTACT FORM ───────────────────────────── */
-.quote-section {
-  background: var(--surface);
-}
-
 .quote-wrap {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -1740,8 +1736,13 @@ a.nav-logo:hover .site-logo {
   background: transparent;
   border: none;
   border-radius: 0;
-  height: auto;
   overflow: visible;
+  /* Flex container so the image is always centred in the column */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Give the column a defined height so the image has room to expand */
+  min-height: 440px;
 }
 
 .service-visual:hover {
@@ -1771,21 +1772,48 @@ a.nav-logo:hover .site-logo {
   align-items: center;
 }
 
+/* ── Generic service illustration base ───────────────── */
 .service-image {
+  display: block;
+  /* Fill the column width; natural height is preserved via aspect ratio */
   width: 100%;
-  max-width: 600px;
-  height: 400px;
-  /* same height for all */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: auto;
+  /* Never let it overflow on very wide screens */
+  max-width: 560px;
+  margin: 0 auto;
+  /* Slight upscale to absorb transparent padding common in illustrations */
+  transform: scale(1.12);
+  transform-origin: center center;
 }
 
-.service-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+/* ── Per-image fine-tuning ───────────────────────────── */
+/* web-development.png  1536×1024 — standard ratio, needs modest boost */
+.service-image[src*="web-development"] {
+  transform: scale(1.18);
 }
+
+/* ecommerce-development.png  1536×1024 — similar, slight boost */
+.service-image[src*="ecommerce-development"] {
+  transform: scale(1.10);
+}
+
+/* online-delivery.png  1536×1024 — matching boost */
+.service-image[src*="online-delivery"] {
+  transform: scale(1.20);
+}
+
+/* software-development.png  1127×827 — slightly taller ratio,
+   push a little harder so it visually matches the others */
+.service-image[src*="software-development"] {
+  transform: scale(1.18);
+}
+
+/* app-development.png  1408×1024 — tallest ratio, moderate boost */
+.service-image[src*="app-development"] {
+  transform: scale(1.08);
+}
+
+
 
 /* ─── PROCESS 7 STEPS ────────────────────────────────── */
 .process-steps-7 {

@@ -63,6 +63,8 @@ function applyTheme(t){
 const savedTheme = localStorage.getItem('v7-theme')||'dark';
 applyTheme(savedTheme);
 if(themeToggle) themeToggle.addEventListener('click',()=>applyTheme(htmlEl.getAttribute('data-theme')==='dark'?'light':'dark'));
+const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+if(mobileThemeToggle) mobileThemeToggle.addEventListener('click',()=>applyTheme(htmlEl.getAttribute('data-theme')==='dark'?'light':'dark'));
 
 /* ── NAV SCROLL ───────────────────────────────────────── */
 const navbar = document.getElementById('navbar');

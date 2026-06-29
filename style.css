@@ -3110,24 +3110,32 @@ footer {
 
 /* ── Service Header ─────────────────────────────────────────────── */
 .mobile-service-header {
+  padding: 60px 20px 40px;
   text-align: center;
-  padding: 20px 16px;
-  margin-bottom: 20px;
+  background: var(--bg);
 }
 
+/* Small red "OUR SERVICES" style */
 .mobile-service-header h1 {
-  font-family: var(--font-display);
-  font-size: 2.4rem;
-  font-weight: 400;
-  letter-spacing: 0.06em;
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .25em;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  color: var(--accent);
+  margin: 0 0 18px;
 }
 
+/* Large black description */
 .mobile-service-header p {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 7vw, 4rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 0;
 }
 
 /* ── Service Card ───────────────────────────────────────────────── */

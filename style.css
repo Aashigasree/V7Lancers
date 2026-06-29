@@ -210,16 +210,12 @@ nav.scrolled {
   font-size: 1.9rem;
   letter-spacing: .06em;
   color: var(--accent);
+  display: flex;
+  align-items: center;
 }
 
 .nav-logo span {
   color: var(--text);
-}
-
-/* Theme-Aware Site Logo styles */
-.nav-logo {
-  display: flex;
-  align-items: center;
 }
 
 .site-logo {
@@ -951,7 +947,8 @@ a.nav-logo:hover .site-logo {
   margin-bottom: 18px;
 }
 
-.service-icon {
+.service-icon,
+.why-icon {
   width: 74px;
   height: 72px;
   display: flex;
@@ -959,11 +956,9 @@ a.nav-logo:hover .site-logo {
   justify-content: center;
   border-radius: 20px;
   margin-bottom: 20px;
-
   font-size: 40px;
-  /* Increase icon size */
   color: var(--accent);
-  transition: all .35s ease;
+  transition: all var(--tr);
 }
 
 .service-name {
@@ -981,9 +976,10 @@ a.nav-logo:hover .site-logo {
 
 .service-tech {
   display: flex;
-  gap: 6px;
   flex-wrap: wrap;
+  gap: 8px;
   margin-top: 16px;
+  margin-bottom: 20px;
 }
 
 .tech-tag {
@@ -1011,7 +1007,7 @@ a.nav-logo:hover .site-logo {
   font-family: var(--font-display);
   font-size: 1.6rem;
   letter-spacing: .02em;
-  color: #000000;
+  color: var(--on-accent);
   margin-bottom: 14px;
   transition: color var(--tr);
 }
@@ -1203,12 +1199,6 @@ a.nav-logo:hover .site-logo {
 }
 
 /* ─── TAGS ───────────────────────────────────────────── */
-.service-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
-}
 
 /* ─── CTA ────────────────────────────────────────────── */
 .product-cta {
@@ -2020,15 +2010,8 @@ a.nav-logo:hover .site-logo {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #3a3a3a;
+  background: var(--border);
   border: 3px solid var(--bg);
-
-
-}
-
-/* Light */
-[data-theme="light"] .timeline-dot {
-  background: #c5c5c5;
 }
 
 .timeline-year {
@@ -2061,7 +2044,7 @@ a.nav-logo:hover .site-logo {
 
   box-shadow: 0 0 20px var(--accent);
   z-index: 10;
-  transition: top .4s ease;
+  transition: top var(--tr);
 }
 
 
@@ -2083,7 +2066,7 @@ a.nav-logo:hover .site-logo {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: opacity 0.4s ease;
+  transition: opacity var(--tr);
 }
 
 /* default: light visible */
@@ -2288,11 +2271,11 @@ a.nav-logo:hover .site-logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: .3s ease;
+  transition: var(--tr);
 }
 
 .team-socials a:hover {
-  background: var(--primary);
+  background: var(--surface);
   transform: translateY(-3px);
 }
 
@@ -2368,7 +2351,7 @@ a.nav-logo:hover .site-logo {
   align-items: center;
   justify-content: center;
 
-  transition: .3s ease;
+  transition: var(--tr);
 }
 
 .college-card:hover {
@@ -2651,11 +2634,6 @@ footer {
   color: #20c75d;
 }
 
-.footer-social-btn i {
-  font-size: 20px;
-  line-height: 1;
-}
-
 .footer-links {
   display: flex;
   flex-direction: column;
@@ -2768,10 +2746,7 @@ footer {
   }
 }
 
-/* Mobile-only elements hidden by default on desktop */
-.mobile-only-section {
-  display: none !important;
-}
+
 
 /* ─── RESPONSIVE ─────────────────────────────────────── */
 @media(max-width:1024px) {
@@ -2892,6 +2867,10 @@ footer {
 
   .process-steps-7::before {
     display: none;
+  }
+
+  .quote-section {
+    display: none !important;
   }
 }
 
@@ -3051,20 +3030,7 @@ footer {
   }
 }
 
-.why-icon {
-  width: 74px;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 20px;
-  margin-bottom: 20px;
-
-  font-size: 40px;
-  /* Controls emoji size */
-  color: var(--accent);
-  transition: all 0.35s ease;
-}
+/* .why-icon styles merged into .service-icon above */
 
 
 /* ================================================================
@@ -3095,14 +3061,7 @@ footer {
   display: none;
 }
 
-#canvas {
-  opacity: 1;
-}
 
-.app-container {
-  padding-left: 18px;
-  padding-right: 18px;
-}
 
 /* =================================================================
    C. COMPONENTS — Device-agnostic shared styles
@@ -3151,29 +3110,7 @@ footer {
     50%{transform:translateY(-4px);}
 }
 
-/* ── Service Card ───────────────────────────────────────────────── */
-.service-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  overflow: hidden;
-  margin-bottom: 18px;
-  box-shadow: var(--shadow-sm);
-  transition: 0.3s ease;
-  cursor: pointer;
-}
-
-.service-card:active {
-  transform: scale(0.99);
-}
-
-.service-card img {
-  width: 100%;
-  height: auto;
-  max-height: 40vh;
-  object-fit: contain;
-  display: block;
-}
+/* ── Service Card (mobile accordion — guarded) ──────────────────── */
 
 .service-preview {
   padding: 18px;
@@ -3200,7 +3137,7 @@ footer {
 .service-expand {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
+  transition: max-height var(--tr);
   padding: 0 18px;
 }
 
@@ -3298,7 +3235,7 @@ footer {
   opacity: 0;
   visibility: hidden;
   transform: translateY(40px);
-  transition: 0.3s;
+  transition: var(--tr);
 }
 
 .mobile-panel.active {
@@ -3472,12 +3409,7 @@ footer {
    D. MEDIA QUERIES
 ================================================================= */
 
-/* ── Tablet ─────────────────────────────────────────────────────── */
-@media (max-width: 1024px) {
-  .quote-section {
-    display: none !important;
-  }
-}
+/* .quote-section tablet hide consolidated into @media(max-width:1024px) above */
 
 /* ── Mobile ─────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
@@ -3665,6 +3597,60 @@ footer {
   #canvas {
     opacity: 0.5;
   }
+
+  /* ── Service Card — mobile accordion (guarded) ───────────────── */
+  .service-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--tr);
+    cursor: pointer;
+  }
+
+  .service-card:active {
+    transform: scale(0.99);
+  }
+
+  .service-card img {
+    width: 100%;
+    height: auto;
+    max-height: 40vh;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* ── Contact page mobile overrides ───────────────────────────── */
+  .mobile-contact-info {
+    display: block;
+    padding: 30px 20px;
+  }
+
+  .contact-info-grid {
+    display: none;
+  }
+
+  .desktop-contact-section {
+    display: none;
+  }
+
+  .contact-forms-grid > div:last-child {
+    display: none;
+  }
+
+  .contact-forms-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero-sub {
+    display: none;
+  }
+
+  .contact-map-section {
+    display: none;
+  }
 }
 
 /* ===========================================
@@ -3713,7 +3699,6 @@ footer {
     50%{transform:translateX(6px);}
 }
 .mobile-products-page {
-  margin-top: 40px;
   background: #fff;
   padding: 20px 16px 40px;
 }
@@ -3743,7 +3728,7 @@ footer {
   color: var(--muted);
   text-decoration: none;
   border-radius: 12px;
-  transition: .3s ease;
+  transition: var(--tr);
 }
 
 .product-nav a i {
@@ -3756,6 +3741,9 @@ footer {
   background: rgba(255, 255, 255, .05);
 }
 
+.mobile-products-page {
+  padding-bottom: 90px;
+}
 
 .product-slider {
 
@@ -3896,7 +3884,7 @@ footer {
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 16px;
-  transition: .3s;
+  transition: var(--tr);
 }
 
 .contact-card i {
@@ -3904,7 +3892,7 @@ footer {
   height: 48px;
   border-radius: 12px;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3929,45 +3917,16 @@ footer {
   display: block;
 }
 
-@media (max-width:768px) {
+/* Contact page mobile overrides — consolidated into @media (max-width: 768px) at line ~3447 */
+/* Rules moved: .mobile-contact-info, .contact-info-grid, .desktop-contact-section,
+   .contact-forms-grid > div:last-child, .contact-forms-grid, .page-hero-sub,
+   .sec-body (contact page), .contact-map-section */
 
-  /* Show mobile contact cards */
-  .mobile-contact-info {
-    display: block;
-    padding: 30px 20px;
-  }
-
-  /* Hide ONLY the desktop contact cards */
-  .contact-info-grid {
-    display: none;
-  }
-
-  /* Hide ONLY the first section heading */
-  .desktop-contact-section {
-    display: none;
-  }
-
-  /* Hide second form */
-  .contact-forms-grid>div:last-child {
-    display: none;
-  }
-
-  /* Make first form full width */
-  .contact-forms-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .page-hero-sub {
-    display: none;
-  }
-
-  .sec-body {
-    display: none;
-  }
-
-  section:last-of-type {
-    display: none;
-  }
-
-
+/* ─── SERVICE SECTION TITLE ──────────────────────────── */
+/* Replaces repeated inline style on <h3> blocks in services.html */
+.service-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: .02em;
+  margin-bottom: 16px;
 }

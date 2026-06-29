@@ -3259,9 +3259,13 @@ body.no-scroll::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: var(--bg);
+  background:
+  radial-gradient(circle at 20% 20%, rgba(139, 0, 4, 0.08), transparent 40%),
+  radial-gradient(circle at 80% 30%, rgba(198, 40, 40, 0.06), transparent 45%),
+  var(--bg);
   z-index: 9998;
 }
+
 
 .panel-close {
   position: absolute;
@@ -3393,8 +3397,8 @@ body.no-scroll::before {
 }
 
 .mobile-footer-brand img {
-  width: 28px;
-  height: 28px;
+  width: 78px;
+  height: 78px;
   object-fit: contain;
 }
 

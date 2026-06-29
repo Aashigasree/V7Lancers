@@ -394,13 +394,24 @@ slider.addEventListener("scroll",()=>{
   }
 
 });
-
 function openPanel(id) {
+    scrollPosition = window.pageYOffset;
+
     document.getElementById(id).classList.add("active");
     document.body.classList.add("no-scroll");
+
+    document.body.style.top = `-${scrollPosition}px`;
+    document.body.style.position = "fixed";
+    document.body.style.width = "100%";
 }
 
 function closePanel(id) {
     document.getElementById(id).classList.remove("active");
     document.body.classList.remove("no-scroll");
+
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.width = "";
+
+    window.scrollTo(0, scrollPosition);
 }

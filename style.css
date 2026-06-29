@@ -1907,7 +1907,7 @@ a.nav-logo:hover .site-logo {
 /* ── Per-image fine-tuning ───────────────────────────── */
 /* web-development.png  1536×1024 — standard ratio, needs modest boost */
 .service-image[src*="web-development"] {
-  transform: scale(1.18);
+  transform: scale(1.20);
 }
 
 /* ecommerce-development.png  1536×1024 — similar, slight boost */
@@ -1928,7 +1928,8 @@ a.nav-logo:hover .site-logo {
 
 /* app-development.png  1408×1024 — tallest ratio, moderate boost */
 .service-image[src*="app-development"] {
-  transform: scale(1.08);
+  height: 550px;
+  width: auto;
 }
 
 
@@ -2203,7 +2204,7 @@ a.nav-logo:hover .site-logo {
   aspect-ratio: 3 / 4;
   margin: auto;
   overflow: hidden;
-  transform: translateX(-20px) translateY(-90px);
+  transform: translate(-20px, -90px);
 }
 
 .timeline-left-img img {
@@ -2234,95 +2235,288 @@ a.nav-logo:hover .site-logo {
 }
 
 /* ═════════ DIRECTOR SECTION ═══════════════════════════ */
-
-.director-img {
+ 
+/* ── Director grid override ─────────────────────────────────────────────── */
+.director-grid {
+  align-items: stretch;        /* both cols same height */
+  gap: 0;                      /* no gap — columns touch */
+  border-radius: 16px;
+  overflow: hidden;
+}
+ 
+/* ── Photo column ───────────────────────────────────────────────────────── */
+.director-photo-col {
+  background: var(--bg);
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2rem 1.5rem 1.75rem;
+  min-height: 420px;
+}
+ 
+/* If using the real image instead of placeholder */
+.director-photo-col .director-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 10px;
+  margin-bottom: auto;
 }
-
+ 
+.director-photo-placeholder {
+  width: 170px;
+  height: 210px;
+  border-radius: 12px;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  margin-bottom: auto;
+}
+ 
+.director-initials {
+  font-size: 54px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: -2px;
+}
+ 
+.director-photo-label {
+  margin-top: 1.25rem;
+  text-align: center;
+}
+ 
+.director-photo-name {
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+}
+ 
+.director-role-pill {
+  display: inline-block;
+  margin-top: 6px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 10.5px;
+  padding: 3px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+ 
+.director-edu-badge {
+  margin-top: 14px;
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.65;
+}
+ 
+/* ── Info column ────────────────────────────────────────────────────────── */
 .director-info {
   display: flex;
   flex-direction: column;
+  padding: 2.25rem 2rem 1.75rem;
+  background: var(--surface);
 }
-
-.director-name {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  line-height: 1.1;
-  color: var(--text);
-  margin-bottom: 10px;
+ 
+.director-info .sec-title {
+  margin-bottom: 4px;
 }
-
-.director-qualification {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-  margin-bottom: 24px;
+ 
+.director-info .sec-body {
+  margin: 8px 0 20px;
+  max-width: 380px;
 }
-
-.director-heading {
-  margin: 32px 0 16px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--accent);
-}
-
-.director-quote {
-  margin-top: 32px;
-  padding: 18px 0 18px 20px;
-  border-left: 4px solid var(--accent);
-  color: var(--muted);
-  font-style: italic;
-  line-height: 1.8;
-}
-
-.director-quote::before,
-.director-quote::after {
-  content: none;
-}
-
-@media (max-width: 768px) {
-  .director-name {
-    font-size: 2rem;
-  }
-
-  .director-qualification {
-    font-size: 0.8rem;
-  }
-
-  .director-heading {
-    margin-top: 28px;
-  }
-
-  .director-quote {
-    margin-top: 24px;
-    padding-left: 16px;
-  }
-}
-
-.director-info .check-list {
-  gap: 10px;
+ 
+/* ── Tabs ───────────────────────────────────────────────────────────────── */
+.director-tabs {
   margin-top: 0;
 }
+ 
+.tab-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+ 
+.tab-btn {
+  padding: 9px 18px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+ 
+.tab-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+ 
+.tab-btn.active {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
+}
+ 
+.tab-content {
+  display: none;
+  animation: fadeTab 0.22s ease;
+}
+ 
+.tab-content.active {
+  display: block;
+}
+ 
+@keyframes fadeTab {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+ 
+/* ── Check list (highlights tab) ───────────────────────────────────────── */
 
 .director-info .check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
   padding: 0;
   min-height: auto;
-  line-height: 1.5;
 }
-
-.director-info .director-heading {
-  margin: 24px 0 10px;
+ 
+/* ── Role cards (roles tab) ─────────────────────────────────────────────── */
+.role-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
-
-.director-info .sec-body {
-  margin: 12px 0 24px;
+ 
+.role-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--bg);
+  border-radius: 10px;
+  border: 1px solid var(--border);
 }
+ 
+.role-card-icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  color: var(--accent);
+}
+ 
+.role-card-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+}
+ 
+.role-card-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+ 
+/* ── Stats row ──────────────────────────────────────────────────────────── */
+.director-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 1.75rem;
+}
+ 
+.director-stat {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  text-align: center;
+}
+ 
+.director-stat .stat-num {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+}
+ 
+.director-stat .stat-label {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+ 
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .director-grid {
+    grid-template-columns: 1fr;
+    border-radius: 14px;
+  }
+ 
+  .director-photo-col {
+    min-height: 280px;
+    padding: 1.5rem 1.25rem 1.25rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+ 
+  .director-photo-placeholder {
+    width: 100px;
+    height: 120px;
+    margin-bottom: 0;
+  }
+ 
+  .director-initials {
+    font-size: 32px;
+  }
+ 
+  .director-photo-label {
+    margin-top: 0;
+    align-self: flex-end;
+    text-align: left;
+  }
+ 
+  .director-edu-badge {
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
+  }
+ 
+  .director-info {
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+ 
+  .director-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+ 
 
 /* ─── TEAM CARDS ─────────────────────────────────────── */
 .team-grid {

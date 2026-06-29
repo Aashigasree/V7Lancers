@@ -417,3 +417,13 @@ function closePanel(id) {
 
     window.scrollTo(0, scrollPosition);
 }
+
+
+document.querySelectorAll(".read-more").forEach(button => {
+    button.addEventListener("click", function (e) {
+        e.stopPropagation();
+
+        const card = this.closest(".service-card");
+        card.classList.toggle("active");
+    });
+});

@@ -3623,6 +3623,7 @@ footer {
 }
 
 .mobile-products-page {
+  margin-top: 40px;
   background: #fff;
   padding: 20px 16px 40px;
 }
@@ -3665,9 +3666,6 @@ footer {
   background: rgba(255, 255, 255, .05);
 }
 
-.mobile-products-page {
-  padding-bottom: 90px;
-}
 
 .product-slider {
 

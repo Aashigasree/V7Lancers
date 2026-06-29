@@ -3137,6 +3137,19 @@ footer {
   color: var(--text);
   margin: 0;
 }
+.service-tip{
+    text-align:center;
+    color:var(--accent);
+    font-size:.78rem;
+    font-weight:600;
+    margin-bottom:14px;
+    animation:float 1.8s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-4px);}
+}
 
 /* ── Service Card ───────────────────────────────────────────────── */
 .service-card {

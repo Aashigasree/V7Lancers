@@ -3267,8 +3267,10 @@ footer {
   display: grid;
   place-items: center;
   font-size: 22px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  color: var(--on-accent);
+
+    background: var(--accent);
+    color: var(--on-accent);
+
 }
 
 .hub-card h3 {
@@ -3318,7 +3320,8 @@ footer {
 .panel-title {
   margin: 0 0 20px;
   font-size: 1.5rem;
-  color: var(--accent2);
+ color:  var(--accent);
+   
 }
 
 .panel-title span {
@@ -3326,18 +3329,27 @@ footer {
 }
 
 .panel-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px;
-  margin-bottom: 12px;
-  border-radius: 14px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--text);
-  text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+}
+.panel-item > div {
+    flex: 1;
+    margin: 0;
 }
 
+.panel-item strong,
+.panel-item small {
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
 .panel-item strong {
   display: block;
   font-size: 14px;
@@ -3394,13 +3406,16 @@ footer {
   display: grid;
   place-items: center;
   font-size: 20px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  color: var(--on-accent);
+
+    background: var(--accent);
+    color: var(--on-accent);
+
   flex-shrink: 0;
 }
 
 .mobile-footer-contact-card h4 {
   margin: 0;
+  font-family: var(--font-display);
   font-size: 15px;
   color: var(--text);
 }
@@ -3585,6 +3600,15 @@ footer {
   }
 
   /* Mobile hub */
+  .mobile-hub-title,
+.hub-card h3,
+.hub-card p,
+.panel-title,
+.panel-item strong,
+.panel-item small,
+.panel-close {
+    font-family: var(--font-display);
+}
   .mobile-hub {
     padding: 30px 20px;
     text-align: center;
@@ -3601,7 +3625,7 @@ footer {
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 25px;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    background: var(--accent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -3632,7 +3656,7 @@ footer {
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 24px;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    background:var(--accent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -3763,18 +3787,32 @@ footer {
 .product-slide h2 {
   margin-top: 20px;
   font-size: 1.8rem;
+  font-family: var(--font-display);
+   
+    font-weight: 700;
+    line-height: .95;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin: 18px 0 10px;
+
+
 }
 
 .tagline {
   display: block;
   color: var(--accent);
-  font-weight: 700;
+ 
   margin-bottom: 15px;
+  font-family: var(--font-mono);
 }
 
 .product-slide p {
-  color: #666;
-  line-height: 1.7;
+
+   font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
 }
 
 .product-slide ul {
@@ -3786,6 +3824,8 @@ footer {
 
 .product-slide ul li {
   padding: 10px 0;
+   font-family: var(--font-body);
+    color: var(--text);
   
 }
 
@@ -3794,7 +3834,10 @@ footer {
   margin-right: 10px;
   color: var(--accent);
 }
-
+.product-features i{
+    color: var(--accent);
+    margin-right: 5px;
+}
 .slide-actions {
   display: flex;
   gap: 12px;

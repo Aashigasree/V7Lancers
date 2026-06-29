@@ -3265,28 +3265,139 @@ footer {
 }
 
 /* ── Service Card (mobile accordion — guarded) ──────────────────── */
+/* ================================
+   SERVICE PREVIEW
+================================ */
+.service-preview{
+    position:relative;
+    overflow:hidden;
 
-.service-preview {
-  padding: 18px;
+    background:#fff;
+    border:2px solid #e8e8e8;
+    border-radius:16px;
+
+    min-height:170px;
+    margin-bottom: 15px;
 }
 
-.service-preview h3 {
-  color: var(--text);
-  font-size: 1.15rem;
-  margin-bottom: 12px;
+/* ---------------- LEFT ---------------- */
+
+.service-left{
+    position:absolute;
+    inset:0 auto 0 0;
+
+    width:35%;
+    z-index:2;
+
+ background: var(--accent);
+
+    padding:26px 18px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
 }
 
-.service-preview ul {
-  margin: 0;
-  padding-left: 18px;
+.service-left::after{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    right:-60px;
+
+    width:120px;
+    height:100%;
+ background: var(--accent);
+
+    clip-path:polygon(
+        0 0,
+        100% 0,
+        38% 100%,
+        0 100%
+    );
 }
 
-.service-preview li {
-  color: var(--muted);
-  font-size: 0.92rem;
-  margin-bottom: 6px;
+.service-left>*{
+    position:relative;
+    z-index:3;
 }
 
+
+.service-left p{
+    margin:0;
+
+   font-family: var(--font-display);
+  color: var(--on-accent);
+ font-size: 1rem;
+ 
+}
+
+/* ---------------- RIGHT ---------------- */
+
+.service-right{
+
+    margin-left:42%;
+
+    height:170px;
+
+    display:flex;
+    align-items:center;
+
+    padding-left:38px;
+    padding-right:22px;
+}
+
+.product-features{
+
+    width:100%;
+
+    margin:0;
+    padding:0;
+
+    list-style:none;
+}
+
+.product-features li{
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    height:46px;
+
+    font-weight:600;
+    font-size:.92rem;
+
+    color:#6b6b6b;
+}
+
+.product-features li+li{
+
+    border-top:1px solid #ececec;
+}
+
+.product-features i{
+
+    color:#7c4dff;
+
+    font-size:14px;
+
+    width:18px;
+
+    text-align:center;
+}
+
+.product-features li:hover{
+
+    color:#7c4dff;
+
+    transform:translateX(6px);
+
+    transition:.3s;
+}
 /* ── Expandable Details ─────────────────────────────────────────── */
 .service-expand {
   max-height: 0;

@@ -406,18 +406,6 @@
       </button>
       <a href="contact.html" class="cta">Get Free Consultation</a>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-  </nav>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html" onclick="closeMobile()">Home</a>
-    <a href="about.html" onclick="closeMobile()">About</a>
-    <a href="products.html" onclick="closeMobile()">Products</a>
-    <a href="services.html" onclick="closeMobile()">Services</a>
-    <a href="portfolio.html" onclick="closeMobile()">Portfolio</a>
-    <a href="testimonials.html" onclick="closeMobile()">Testimonials</a>
-    <a href="gallery.html" onclick="closeMobile()">Gallery</a>
-    <a href="contact.html" onclick="closeMobile()">Contact</a>
     <button class="mobile-theme-toggle" id="mobileThemeToggle" aria-label="Toggle theme">
       <svg class="toggle-icon toggle-icon--sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -440,6 +428,18 @@
       <span class="mobile-theme-label mobile-theme-label--dark">Dark Mode</span>
       <span class="mobile-theme-label mobile-theme-label--light">Light Mode</span>
     </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobile()">Home</a>
+    <a href="about.html" onclick="closeMobile()">About</a>
+    <a href="products.html" onclick="closeMobile()">Products</a>
+    <a href="services.html" onclick="closeMobile()">Services</a>
+    <a href="portfolio.html" onclick="closeMobile()">Portfolio</a>
+    <a href="testimonials.html" onclick="closeMobile()">Testimonials</a>
+    <a href="gallery.html" onclick="closeMobile()">Gallery</a>
+    <a href="contact.html" onclick="closeMobile()">Contact</a>
   </div>
 
   <!-- ══════════════════════════════════════════════
@@ -1271,98 +1271,166 @@
   <!-- ══════════════════════════════════════════════
        MOBILE VERSION
   ══════════════════════════════════════════════ -->
-  <section class="mobile-products-page mobile-only">
-    <div class="mobile-product-header">
-      <h1>Product Suite</h1>
-      <p>Explore our AI-powered products</p>
-    </div>
+<section class="mobile-products-page mobile-only">
+  <div class="mobile-product-header">
+    <h1>Product Suite</h1>
+    <p>Explore our AI-powered products</p>
+  </div>
 
-    <div class="product-tip">
-      Swipe to discover our products
-    </div>
-    <div class="product-slider" id="productSlider">
+  <div class="product-tip">
+    Swipe to discover our products
+  </div>
 
-      <!-- EezyCRM -->
-      <article class="product-slide" id="eezycrm">
-        <img src="assets/home-product/eezycrm-dashboard.png" alt="EezyCRM">
+  <div class="product-slider" id="productSlider">
+
+    <!-- EezyCRM -->
+    <article class="product-slide" id="eezycrm">
+      <img src="assets/home-product/eezycrm-dashboard.png" alt="EezyCRM">
+
+      <div class="product-slide-content">
         <h2>EezyCRM</h2>
         <span class="tagline">CRM Platform</span>
-        <p>Manage leads, customers, projects, support operations, and business performance from one unified system.</p>
+
+        <p>
+          Manage leads, customers, projects, support operations,
+          and business performance from one unified system.
+        </p>
+
         <ul class="product-features">
           <li><i class="fas fa-user-group"></i> Lead Management</li>
           <li><i class="fas fa-handshake"></i> Project Collaboration</li>
           <li><i class="fas fa-chart-pie"></i> Finance Reports</li>
           <li><i class="fas fa-headset"></i> Customer Support</li>
         </ul>
+
         <div class="slide-actions">
           <a href="contact.html" class="btn btn-primary">Request Demo</a>
-          <a href="products.html" class="btn btn-outline">Download Brochure</a>
+          <a href="assets/brochures/eezycrm-brochure.pdf"
+             class="btn btn-outline"
+             download>
+            Download Brochure
+          </a>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- MeriTrack -->
-      <article class="product-slide" id="meritrack">
-        <img src="assets/home-product/meritrack-dashboard.png" alt="MeriTrack">
+    <!-- MeriTrack -->
+    <article class="product-slide" id="meritrack">
+      <img src="assets/home-product/meritrack-dashboard.png" alt="MeriTrack">
+
+      <div class="product-slide-content">
         <h2>MeriTrack</h2>
         <span class="tagline">AI Exam Platform</span>
-        <p>AI-powered examination platform for schools, colleges, academies and training centres.</p>
+
+        <p>
+          AI-powered examination platform for schools, colleges,
+          academies and training centres.
+        </p>
+
         <ul class="product-features">
           <li><i class="fas fa-infinity"></i> Unlimited Exams</li>
           <li><i class="fas fa-robot"></i> AI Question Generation</li>
           <li><i class="fas fa-user-shield"></i> Smart Proctoring</li>
           <li><i class="fas fa-bolt"></i> Instant Evaluation</li>
         </ul>
+
         <div class="slide-actions">
           <a href="contact.html" class="btn btn-primary">Request Demo</a>
-          <a href="products.html" class="btn btn-outline">Download Brochure</a>
+          <a href="assets/brochures/meritrack-brochure.pdf"
+             class="btn btn-outline"
+             download>
+            Download Brochure
+          </a>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- DocWave -->
-      <article class="product-slide" id="docwave">
-        <img src="assets/home-product/docwave-dashboard.png" alt="DocWave">
+    <!-- DocWave -->
+    <article class="product-slide" id="docwave">
+      <img src="assets/home-product/docwave-dashboard.png" alt="DocWave">
+
+      <div class="product-slide-content">
         <h2>DocWave</h2>
         <span class="tagline">Document Management</span>
-        <p>Securely store, organize and retrieve documents with AI-powered search and workflow automation.</p>
+
+        <p>
+          Securely store, organize and retrieve documents with
+          AI-powered search and workflow automation.
+        </p>
+
         <ul class="product-features">
           <li><i class="fas fa-magnifying-glass"></i> AI Search</li>
           <li><i class="fas fa-diagram-project"></i> Approval Workflow</li>
           <li><i class="fas fa-share-nodes"></i> File Sharing</li>
           <li><i class="fas fa-lock"></i> Auto Encryption</li>
         </ul>
+
         <div class="slide-actions">
           <a href="contact.html" class="btn btn-primary">Request Demo</a>
-          <a href="products.html" class="btn btn-outline">Download Brochure</a>
+          <a href="assets/brochures/docwave-brochure.pdf"
+             class="btn btn-outline"
+             download>
+            Download Brochure
+          </a>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- EezyTrack -->
-      <article class="product-slide" id="product-eezytrack">
-        <img src="assets/home-product/eezytrack-dashboard.png" alt="EezyTrack">
+    <!-- EezyTrack -->
+    <article class="product-slide" id="product-eezytrack">
+      <img src="assets/home-product/eezytrack-dashboard.png" alt="EezyTrack">
+
+      <div class="product-slide-content">
         <h2>EezyTrack</h2>
         <span class="tagline">Field Tracking Platform</span>
-        <p>Track field teams, routes, travel activity and productivity in real time.</p>
+
+        <p>
+          Track field teams, routes, travel activity and productivity
+          in real time.
+        </p>
+
         <ul class="product-features">
           <li><i class="fas fa-location-dot"></i> Live Tracking</li>
           <li><i class="fas fa-route"></i> Route Analytics</li>
           <li><i class="fas fa-file-lines"></i> Travel Reports</li>
           <li><i class="fas fa-chart-line"></i> Productivity Insights</li>
         </ul>
+
         <div class="slide-actions">
           <a href="contact.html" class="btn btn-primary">Request Demo</a>
-          <a href="products.html" class="btn btn-outline">Download Brochure</a>
+          <a href="assets/brochures/eezytrack-brochure.pdf"
+             class="btn btn-outline"
+             download>
+            Download Brochure
+          </a>
         </div>
-      </article>
+      </div>
+    </article>
 
-    </div>
+  </div>
 
-    <div class="product-nav">
-      <a href="#eezycrm" title="EezyCRM"><i class="fas fa-users"></i></a>
-      <a href="#meritrack" title="MeriTrack"><i class="fas fa-graduation-cap"></i></a>
-      <a href="#docwave" title="DocWave"><i class="fas fa-file-lines"></i></a>
-      <a href="#product-eezytrack" title="EezyTrack"><i class="fas fa-location-dot"></i></a>
-    </div>
-  </section>
+<div class="product-nav">
+    <a href="#eezycrm" >
+        <i class="fas fa-users"></i>
+        <span>EezyCRM</span>
+    </a>
+
+    <a href="#meritrack">
+        <i class="fas fa-graduation-cap"></i>
+        <span>MeriTrack</span>
+    </a>
+
+    <a href="#docwave">
+        <i class="fas fa-file-lines"></i>
+        <span>DocWave</span>
+    </a>
+
+    <a href="#product-eezytrack">
+        <i class="fas fa-location-dot"></i>
+        <span>EezyTrack</span>
+    </a>
+</div>
+</section>
 
   <script src="script.js"></script>
   <script>

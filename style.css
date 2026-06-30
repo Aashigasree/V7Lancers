@@ -4306,12 +4306,18 @@ body.no-scroll::before {
     transition: max-height 0.45s ease, opacity 0.3s ease, padding 0.3s ease;
   }
 
+  .feature-title{
+  margin: 4px 0 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: .3px;
+}
+
   .service-card.expanded .feature-block {
     max-height: 1000px;
     opacity: 1;
-
-    border-top: 1px solid var(--border);
-    margin-top: 16px;
+    margin-top: 4px;
   }
 
   .service-card.expanded .show-more-btn i {
@@ -4322,7 +4328,7 @@ body.no-scroll::before {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-bottom: 20px;
+    margin: 0 0 20px;
   }
 
   .feature-block .check-item {

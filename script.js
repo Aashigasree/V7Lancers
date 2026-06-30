@@ -427,3 +427,22 @@ document.querySelectorAll(".read-more").forEach(button => {
         card.classList.toggle("active");
     });
 });
+
+function switchServiceTab(btn,id){
+
+    event.stopPropagation();
+
+    const preview = btn.closest(".service-preview");
+
+    preview.querySelectorAll(".service-tab").forEach(tab=>{
+        tab.classList.remove("active");
+    });
+
+    btn.classList.add("active");
+
+    preview.querySelectorAll(".service-tab-content").forEach(content=>{
+        content.classList.remove("active");
+    });
+
+    preview.querySelector("#"+id).classList.add("active");
+}

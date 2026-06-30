@@ -529,70 +529,113 @@
       <p>Explore our digital solutions</p>
 
     </div>
-   
+
 
     <!-- WEBSITE -->
- <div class="service-card" id="website" onclick="this.classList.toggle('active')">
+    <div class="service-card" id="website" onclick="this.classList.toggle('active')">
 
-    <img src="assets/services/web-development.png" alt="Website Development">
+      <img src="assets/services/web-development.png" alt="Website Development">
 
-    <div class="service-preview">
+      <div class="service-preview">
+
         <h3>🌐 Web Development</h3>
 
-        <ul class="product-features">
-            <li><i class="fas fa-mobile-alt"></i> Responsive</li>
-            <li><i class="fas fa-search"></i> SEO Ready</li>
-            <li><i class="fas fa-bolt"></i> Fast Loading</li>
-        </ul>
-         
-    </div>
-     <div class="read-more">
-            
-            <i class="fas fa-chevron-down"></i>
+        <div class="service-tabs">
+          <button class="service-tab active" onclick="event.stopPropagation();switchServiceTab(this,'core1')">
+            Core Services
+          </button>
+
+          <button class="service-tab" onclick="event.stopPropagation();switchServiceTab(this,'benefit1')">
+            Key Benefits
+          </button>
         </div>
 
-    <div class="service-expand">
+        <div class="service-tab-content active" id="core1">
+          <ul class="product-features">
+            <li><i class="fas fa-check"></i> Website Design & Development</li>
+            <li><i class="fas fa-check"></i> Responsive UI Development</li>
+            <li><i class="fas fa-check"></i> CMS & WordPress Solutions</li>
+          </ul>
+        </div>
+
+        <div class="service-tab-content" id="benefit1">
+          <ul class="product-features">
+            <li><i class="fas fa-check"></i> Mobile-first responsive layouts</li>
+            <li><i class="fas fa-check"></i> SEO-ready & fast loading</li>
+            <li><i class="fas fa-check"></i> Custom design for your brand</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="read-more">
+
+        <i class="fas fa-chevron-down"></i>
+      </div>
+
+      <div class="service-expand">
         <p>
-            Professional websites built with modern technologies
-            to improve brand visibility and generate leads.
+          Professional websites built with modern technologies
+          to improve brand visibility and generate leads.
         </p>
 
         <div class="service-tags">
-            <span>HTML</span>
-            <span>React</span>
-            <span>WordPress</span>
+          <span>HTML</span>
+          <span>React</span>
+          <span>WordPress</span>
         </div>
 
         <a href="contact.html" class="service-btn">
-            Get Quote
+          Get Quote
         </a>
+      </div>
+
     </div>
-
-</div>
-
 
     <!-- ECOMMERCE -->
     <div class="service-card" id="ecommerce" onclick="this.classList.toggle('active')">
 
-    <img src="assets/services/ecommerce-development.png" alt="Ecommerce">
+      <img src="assets/services/ecommerce-development.png" alt="Ecommerce">
 
-    <div class="service-preview">
+      <div class="service-preview">
+
         <h3>🛒 Ecommerce</h3>
 
-        <ul class="product-features">
-            <li><i class="fas fa-store"></i> Online Store</li>
-            <li><i class="fas fa-credit-card"></i> Payments</li>
-            <li><i class="fas fa-boxes-stacked"></i> Inventory</li>
-        </ul>
-    </div>
- <div class="read-more">
-            
-            <i class="fas fa-chevron-down"></i>
+        <div class="service-tabs">
+          <button class="service-tab active" onclick="event.stopPropagation();switchServiceTab(this,'core2')">
+            Core Services
+          </button>
+
+          <button class="service-tab" onclick="event.stopPropagation();switchServiceTab(this,'benefit2')">
+            Key Benefits
+          </button>
         </div>
-    <div class="service-expand">
+
+        <div class="service-tab-content active" id="core2">
+          <ul class="product-features">
+            <li><i class="fas fa-check"></i> Online Store Development</li>
+            <li><i class="fas fa-check"></i> Payment Gateway Integration</li>
+            <li><i class="fas fa-check"></i> Inventory & Order Management</li>
+          </ul>
+        </div>
+
+        <div class="service-tab-content" id="benefit2">
+          <ul class="product-features">
+            <li><i class="fas fa-check"></i> Secure online transactions</li>
+            <li><i class="fas fa-check"></i> Easy product & inventory management</li>
+            <li><i class="fas fa-check"></i> Scalable store for business growth</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="read-more">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+
+      <div class="service-expand">
         <p>
-            Complete ecommerce solutions with secure payments,
-            shipping and order management.
+          Complete ecommerce solutions with secure payments,
+          shipping and order management.
         </p>
 
         <div class="service-tags">
@@ -603,32 +646,55 @@
         <a href="contact.html" class="service-btn">
           Get Quote
         </a>
-    </div>
+      </div>
 
     </div>
     <!-- DELIVERY -->
 
-<div class="service-card" id="delivery" onclick="this.classList.toggle('active')">
+    <div class="service-card" id="delivery" onclick="this.classList.toggle('active')">
 
-    <img src="assets/services/online-delivery.png" alt="Delivery Apps">
+      <img src="assets/services/online-delivery.png" alt="Delivery Apps">
 
-    <div class="service-preview">
+      <div class="service-preview">
+
         <h3>🚚 Delivery Apps</h3>
 
-        <ul class="product-features">
-            <li><i class="fas fa-location-dot"></i> Live Tracking</li>
-            <li><i class="fas fa-bell"></i> Notifications</li>
-            <li><i class="fas fa-credit-card"></i> Payments</li>
-        </ul>
-    </div>
- <div class="read-more">
-            
-            <i class="fas fa-chevron-down"></i>
+        <div class="service-tabs">
+          <button class="service-tab active" onclick="event.stopPropagation();switchServiceTab(this,'core3')">
+            Core Services
+          </button>
+
+          <button class="service-tab" onclick="event.stopPropagation();switchServiceTab(this,'benefit3')">
+            Key Benefits
+          </button>
         </div>
-    <div class="service-expand">
+
+        <div class="service-tab-content active" id="core3">
+          <ul class="product-features">
+            <li><i class="fas fa-check"></i> Delivery App Development</li>
+            <li><i class="fas fa-check"></i> Live Order Tracking</li>
+            <li><i class="fas fa-check"></i> Payment Gateway Integration</li>
+          </ul>
+        </div>
+
+        <div class="service-tab-content" id="benefit3">
+          <ul class="product-features">
+            <li><i class="fas fa-check"></i> Real-time driver & order tracking</li>
+            <li><i class="fas fa-check"></i> Faster delivery management</li>
+            <li><i class="fas fa-check"></i> Secure payments & notifications</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="read-more">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+
+      <div class="service-expand">
         <p>
-            Delivery solutions with real-time tracking,
-            fleet management and secure payments.
+          Delivery solutions with real-time tracking,
+          fleet management and secure payments.
         </p>
 
         <div class="service-tags">
@@ -639,29 +705,52 @@
         <a href="contact.html" class="service-btn">
           Get Quote
         </a>
-    </div>
+      </div>
 
     </div>
 
     <!-- SOFTWARE -->
-<div class="service-card" id="software" onclick="this.classList.toggle('active')">
+    <div class="service-card" id="software" onclick="this.classList.toggle('active')">
 
-    <img src="assets/services/software-development.png" alt="Custom Software">
+      <img src="assets/services/software-development.png" alt="Custom Software">
 
-    <div class="service-preview">
+      <div class="service-preview">
+
         <h3>💻 Custom Software</h3>
 
-       <ul class="product-features">
-    <li><i class="fas fa-users-gear"></i> CRM Tools</li>
-    <li><i class="fas fa-building"></i> ERP Suite</li>
-    <li><i class="fas fa-gears"></i> Automation</li>
-</ul>
-    </div>
- <div class="read-more">
-            
-            <i class="fas fa-chevron-down"></i>
+        <div class="service-tabs">
+          <button class="service-tab active" onclick="event.stopPropagation();switchServiceTab(this,'core4')">
+            Core Services
+          </button>
+
+          <button class="service-tab" onclick="event.stopPropagation();switchServiceTab(this,'benefit4')">
+            Key Benefits
+          </button>
         </div>
-    <div class="service-expand">
+
+        <div class="service-tab-content active" id="core4">
+          <ul class="product-features">
+            <li><i class="fas fa-check"></i> CRM & ERP Development</li>
+            <li><i class="fas fa-check"></i> Business Process Automation</li>
+            <li><i class="fas fa-check"></i> Custom Enterprise Solutions</li>
+          </ul>
+        </div>
+
+        <div class="service-tab-content" id="benefit4">
+          <ul class="product-features">
+            <li><i class="fas fa-check"></i> Streamlined business operations</li>
+            <li><i class="fas fa-check"></i> Increased productivity & efficiency</li>
+            <li><i class="fas fa-check"></i> Scalable software built for growth</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="read-more">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+
+      <div class="service-expand">
         <p>
           Tailor-made software systems designed to automate
           business processes and streamline operations.
@@ -676,30 +765,54 @@
         <a href="contact.html" class="service-btn">
           Get Quote
         </a>
-    </div>
+      </div>
 
     </div>
-
     <!-- MOBILE APP -->
 
- <div class="service-card" id="mobileapp" onclick="this.classList.toggle('active')">
+    <div class="service-card" id="mobileapp" onclick="this.classList.toggle('active')">
 
-    <img src="assets/services/app-development.png" alt="Mobile Apps">
+      <img src="assets/services/app-development.png" alt="Mobile Apps">
 
-    <div class="service-preview">
+      <div class="service-preview">
+
         <h3>📱 Mobile Apps</h3>
 
-      <ul class="product-features">
-    <li><i class="fas fa-bolt"></i> Fast Launch</li>
-    <li><i class="fas fa-shield-alt"></i> App Security</li>
-    <li><i class="fas fa-sync-alt"></i> Auto Update</li>
-</ul>
-    </div>
- <div class="read-more">
-            
-            <i class="fas fa-chevron-down"></i>
+        <div class="service-tabs">
+          <button class="service-tab active" onclick="event.stopPropagation();switchServiceTab(this,'core5')">
+            Core Services
+          </button>
+
+          <button class="service-tab" onclick="event.stopPropagation();switchServiceTab(this,'benefit5')">
+            Key Benefits
+          </button>
         </div>
-    <div class="service-expand">
+
+        <div class="service-tab-content active" id="core5">
+          <ul class="product-features">
+            <li><i class="fas fa-check"></i> Android & iOS App Development</li>
+            <li><i class="fas fa-check"></i> Cross-Platform Solutions</li>
+            <li><i class="fas fa-check"></i> Backend API Integration</li>
+          </ul>
+        </div>
+
+        <div class="service-tab-content" id="benefit5">
+          <ul class="product-features">
+            <li><i class="fas fa-check"></i> Fast, smooth user experience</li>
+            <li><i class="fas fa-check"></i> Secure & scalable architecture</li>
+            <li><i class="fas fa-check"></i> Easy deployment & maintenance</li>
+          </ul>
+
+
+        </div>
+
+        <div class="read-more">
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </div>
+
+
+      <div class="service-expand">
         <p>
           High-performance Android and iOS applications
           with modern UI and scalable backend systems.
@@ -713,35 +826,38 @@
         <a href="contact.html" class="service-btn">
           Get Quote
         </a>
+      </div>
+
+
     </div>
 
-</div>
-   <div class="service-nav">
-    <a href="#website" title="Website">
+
+    <div class="service-nav">
+      <a href="#website" title="Website">
         <i class="fas fa-globe"></i>
         <span>Website</span>
-    </a>
+      </a>
 
-    <a href="#ecommerce" title="Ecommerce">
+      <a href="#ecommerce" title="Ecommerce">
         <i class="fas fa-cart-shopping"></i>
         <span>Store</span>
-    </a>
+      </a>
 
-    <a href="#delivery" title="Delivery Apps">
+      <a href="#delivery" title="Delivery Apps">
         <i class="fas fa-truck"></i>
         <span>Delivery</span>
-    </a>
+      </a>
 
-    <a href="#software" title="Custom Software">
+      <a href="#software" title="Custom Software">
         <i class="fas fa-code"></i>
         <span>Software</span>
-    </a>
+      </a>
 
-    <a href="#mobileapp" title="Mobile Apps">
+      <a href="#mobileapp" title="Mobile Apps">
         <i class="fas fa-mobile-screen-button"></i>
         <span>Apps</span>
-    </a>
-</div>
+      </a>
+    </div>
   </section>
 
 

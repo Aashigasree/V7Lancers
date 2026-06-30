@@ -368,34 +368,36 @@ document.querySelectorAll('.services-grid a.service-card').forEach(card => {
 const slider = document.getElementById("productSlider");
 const tabs = document.querySelectorAll(".product-nav button");
 
-tabs.forEach((tab,index)=>{
+if (slider) {
+  tabs.forEach((tab,index)=>{
 
-  tab.addEventListener("click",()=>{
+    tab.addEventListener("click",()=>{
 
-    slider.scrollTo({
-      left:index * slider.clientWidth,
-      behavior:"smooth"
+      slider.scrollTo({
+        left:index * slider.clientWidth,
+        behavior:"smooth"
+      });
+
+      tabs.forEach(t=>t.classList.remove("active"));
+      tab.classList.add("active");
     });
 
-    tabs.forEach(t=>t.classList.remove("active"));
-    tab.classList.add("active");
   });
 
-});
+  slider.addEventListener("scroll",()=>{
 
-slider.addEventListener("scroll",()=>{
+    const index = Math.round(
+      slider.scrollLeft / slider.clientWidth
+    );
 
-  const index = Math.round(
-    slider.scrollLeft / slider.clientWidth
-  );
+    tabs.forEach(t=>t.classList.remove("active"));
 
-  tabs.forEach(t=>t.classList.remove("active"));
+    if(tabs[index]){
+      tabs[index].classList.add("active");
+    }
 
-  if(tabs[index]){
-    tabs[index].classList.add("active");
-  }
-
-});
+  });
+}
 function openPanel(id) {
     scrollPosition = window.pageYOffset;
 
@@ -428,21 +430,18 @@ document.querySelectorAll(".read-more").forEach(button => {
     });
 });
 
-function switchServiceTab(btn,id){
+function toggleService(btn) {
+  const card = btn.closest('.service-card');
+  const expanded = card.classList.toggle('expanded');
 
-    event.stopPropagation();
-
-    const preview = btn.closest(".service-preview");
-
-    preview.querySelectorAll(".service-tab").forEach(tab=>{
-        tab.classList.remove("active");
-    });
-
-    btn.classList.add("active");
-
-    preview.querySelectorAll(".service-tab-content").forEach(content=>{
-        content.classList.remove("active");
-    });
-
-    preview.querySelector("#"+id).classList.add("active");
+  btn.querySelector('.btn-text').textContent = expanded
+    ? 'Show less'
+    : 'Show more';
 }
+
+document.querySelectorAll('.service-nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelectorAll('.service-nav a').forEach(a => a.classList.remove('active'));
+    link.classList.add('active');
+  });
+});

@@ -58,7 +58,7 @@
       </button>
       <a href="contact.html" class="cta">Get Free Consultation</a>
     </div>
-   <div class="mobile-controls">
+    <div class="mobile-controls">
       <button class="mobile-theme-toggle" id="mobileThemeToggle" aria-label="Toggle theme">
         <svg class="toggle-icon toggle-icon--sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
           viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -121,7 +121,7 @@
         </div>
 
         <!-- Service 1 -->
-        <div class="about-grid" style="margin-bottom:80px;align-items:center">
+        <div class="about-grid" id="web-development" style="margin-bottom:80px;align-items:center">
           <div class="reveal">
             <div class="sec-tag">Service 01</div>
             <h3 class="service-section-title">
@@ -150,7 +150,7 @@
         </div>
 
         <!-- Service 2 -->
-        <div class="about-grid" style="margin-bottom:80px;align-items:center">
+        <div class="about-grid" id="ecommerce" style="margin-bottom:80px;align-items:center">
           <div class="service-visual reveal">
             <div class="service-visual-bg"></div>
             <img src="assets/services/ecommerce-development.png" alt="Ecommerce Development" class="service-image" />
@@ -178,7 +178,7 @@
         </div>
 
         <!-- Service 3 -->
-        <div class="about-grid" style="margin-bottom:80px;align-items:center">
+        <div class="about-grid" id="delivery-apps" style="margin-bottom:80px;align-items:center">
           <div class="reveal">
             <div class="sec-tag">Service 03</div>
             <h3 class="service-section-title">
@@ -206,7 +206,7 @@
         </div>
 
         <!-- Service 4 -->
-        <div class="about-grid" style="margin-bottom:80px;align-items:center">
+        <div class="about-grid" id="custom-software" style="margin-bottom:80px;align-items:center">
           <div class="service-visual reveal">
             <div class="service-visual-bg"></div>
             <img src="assets/services/software-development.png" alt="Customized Software Development"
@@ -236,7 +236,7 @@
         </div>
 
         <!-- Service 5 -->
-        <div class="about-grid" style="align-items:center">
+        <div class="about-grid" id="mobile-apps" style="align-items:center">
           <div class="reveal">
             <div class="sec-tag">Service 05</div>
             <h3 class="service-section-title">
@@ -493,11 +493,11 @@
           <div>
             <div class="footer-col-title">Services</div>
             <div class="footer-links">
-              <a href="services.html">Web Development</a>
-              <a href="services.html">Ecommerce</a>
-              <a href="services.html">Delivery Apps</a>
-              <a href="services.html">Custom Software</a>
-              <a href="services.html">Mobile Apps</a>
+<a href="services.html#web-development">Web Development</a>
+<a href="services.html#ecommerce">Ecommerce</a>
+<a href="services.html#delivery-apps">Delivery Apps</a>
+<a href="services.html#custom-software">Custom Software</a>
+<a href="services.html#mobile-apps">Mobile Apps</a>
             </div>
           </div>
           <div>
@@ -523,239 +523,227 @@
     </footer>
   </div>
 
-<!-- MOBILE SERVICES PAGE -->
-<section class="mobile-services-page mobile-only">
+  <!-- MOBILE SERVICES PAGE -->
+  <section class="mobile-services-page mobile-only">
 
-  <div class="mobile-service-header">
-    <h1>Our Services</h1>
-    <p>Explore our digital solutions</p>
-  </div>
+    <div class="mobile-service-header">
+      <h1>Our Services</h1>
+      <p>Explore our digital solutions</p>
+    </div>
 
-  <!-- WEBSITE -->
-  <div class="service-card" id="website">
-    <img src="assets/services/web-development.png"
-         alt="Website Design & Development"
-         class="service-image"
-         loading="lazy">
+    <!-- WEBSITE -->
+    <div class="service-card" id="website">
+      <img src="assets/services/web-development.png" alt="Website Design & Development" class="service-image"
+        loading="lazy">
 
-    <div class="service-preview">
+      <div class="service-preview">
 
-      <div class="sec-tag">Service 01</div>
-      <h3 class="service-section-title">Website Design & Development</h3>
+        <div class="sec-tag">Service 01</div>
+        <h3 class="service-section-title">Website Design & Development</h3>
 
-      <p class="sec-body">
-        Fast, responsive business websites built for SEO, performance, and lead conversion.
-      </p>
+        <p class="sec-body">
+          Fast, responsive business websites built for SEO, performance, and lead conversion.
+        </p>
 
-      <div class="service-tech">
-        <span class="tech-tag">HTML/CSS</span>
-        <span class="tech-tag">Bootstrap</span>
-        <span class="tech-tag">React</span>
-      </div>
-
-     <button class="show-more-btn" onclick="toggleService(this)">
-  <span class="btn-text">Show more</span>
-  <i class="fas fa-chevron-down"></i>
-</button>
-
-      <div class="feature-block">
-          <h4 class="feature-title">Key Features</h4>
-        <div class="check-list">
-          <div class="check-item">Custom brand-based design</div>
-          <div class="check-item">Mobile-first responsive layout</div>
-          <div class="check-item">SEO-optimized structure</div>
-          <div class="check-item">CMS integration</div>
-          <div class="check-item">Maintenance & support</div>
+        <div class="service-tech">
+          <span class="tech-tag">HTML/CSS</span>
+          <span class="tech-tag">Bootstrap</span>
+          <span class="tech-tag">React</span>
         </div>
 
-        <a href="contact.html" class="btn btn-primary">Get Quote →</a>
-      </div>
+        <button class="show-more-btn" onclick="toggleService(this)">
+          <span class="btn-text">Show more</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
 
-    </div>
-  </div>
-
-  <!-- ECOMMERCE -->
-  <div class="service-card" id="ecommerce">
-    <img src="assets/services/ecommerce-development.png"
-         alt="Ecommerce Development"
-         class="service-image"
-         loading="lazy">
-
-    <div class="service-preview">
-
-      <div class="sec-tag">Service 02</div>
-      <h3 class="service-section-title">Ecommerce Development</h3>
-
-      <p class="sec-body">
-        Scalable online stores with secure payments and smooth shopping experience.
-      </p>
-
-      <div class="service-tech">
-        <span class="tech-tag">Shopify</span>
-        <span class="tech-tag">WooCommerce</span>
-        <span class="tech-tag">PHP</span>
-      </div>
-
-     <button class="show-more-btn" onclick="toggleService(this)">
-  <span class="btn-text">Show more</span>
-  <i class="fas fa-chevron-down"></i>
-</button>
-
-      <div class="feature-block">
+        <div class="feature-block">
           <h4 class="feature-title">Key Features</h4>
-        <div class="check-list">
-          <div class="check-item">Secure payment gateways</div>
-          <div class="check-item">Product & inventory system</div>
-          <div class="check-item">Order & shipping management</div>
-          <div class="check-item">Customer accounts & wishlist</div>
-          <div class="check-item">Coupons & offers system</div>
+          <div class="check-list">
+            <div class="check-item">Custom brand-based design</div>
+            <div class="check-item">Mobile-first responsive layout</div>
+            <div class="check-item">SEO-optimized structure</div>
+            <div class="check-item">CMS integration</div>
+            <div class="check-item">Maintenance & support</div>
+          </div>
+
+          <a href="contact.html" class="btn btn-primary">Get Quote →</a>
         </div>
 
-        <a href="contact.html" class="btn btn-primary">Get Quote →</a>
       </div>
-
     </div>
-  </div>
 
-  <!-- DELIVERY -->
-  <div class="service-card" id="delivery">
-    <img src="assets/services/online-delivery.png"
-         alt="Online Delivery App"
-         class="service-image"
-         loading="lazy">
+    <!-- ECOMMERCE -->
+    <div class="service-card" id="ecommerce">
+      <img src="assets/services/ecommerce-development.png" alt="Ecommerce Development" class="service-image"
+        loading="lazy">
 
-    <div class="service-preview">
+      <div class="service-preview">
 
-      <div class="sec-tag">Service 03</div>
-      <h3 class="service-section-title">Delivery Applications</h3>
+        <div class="sec-tag">Service 02</div>
+        <h3 class="service-section-title">Ecommerce Development</h3>
 
-      <p class="sec-body">
-        Real-time tracking delivery apps with order and fleet management system.
-      </p>
+        <p class="sec-body">
+          Scalable online stores with secure payments and smooth shopping experience.
+        </p>
 
-      <div class="service-tech">
-        <span class="tech-tag">Flutter</span>
-        <span class="tech-tag">Firebase</span>
-        <span class="tech-tag">Maps API</span>
-      </div>
-
-      <button class="show-more-btn" onclick="toggleService(this)">
-  <span class="btn-text">Show more</span>
-  <i class="fas fa-chevron-down"></i>
-</button>
-
-      <div class="feature-block">
-          <h4 class="feature-title">Key Features</h4>
-        <div class="check-list">
-          <div class="check-item">Live tracking system</div>
-          <div class="check-item">Customer & delivery apps</div>
-          <div class="check-item">Admin dashboard</div>
-          <div class="check-item">Push notifications</div>
-          <div class="check-item">COD & online payments</div>
+        <div class="service-tech">
+          <span class="tech-tag">Shopify</span>
+          <span class="tech-tag">WooCommerce</span>
+          <span class="tech-tag">PHP</span>
         </div>
 
-        <a href="contact.html" class="btn btn-primary">Get Quote →</a>
-      </div>
+        <button class="show-more-btn" onclick="toggleService(this)">
+          <span class="btn-text">Show more</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
 
-    </div>
-  </div>
-
-  <!-- SOFTWARE -->
-  <div class="service-card" id="software">
-    <img src="assets/services/software-development.png"
-         alt="Custom Software Development"
-         class="service-image"
-         loading="lazy">
-
-    <div class="service-preview">
-
-      <div class="sec-tag">Service 04</div>
-      <h3 class="service-section-title">Custom Software</h3>
-
-      <p class="sec-body">
-        Tailor-made software to automate business workflows and operations.
-      </p>
-
-      <div class="service-tech">
-        <span class="tech-tag">Python</span>
-        <span class="tech-tag">Node.js</span>
-        <span class="tech-tag">AWS</span>
-      </div>
-
-      <button class="show-more-btn" onclick="toggleService(this)">
-  <span class="btn-text">Show more</span>
-  <i class="fas fa-chevron-down"></i>
-</button>
-
-      <div class="feature-block">
+        <div class="feature-block">
           <h4 class="feature-title">Key Features</h4>
-        <div class="check-list">
-          <div class="check-item">ERP / CRM systems</div>
-          <div class="check-item">Workflow automation</div>
-          <div class="check-item">API integrations</div>
-          <div class="check-item">Billing systems</div>
-          <div class="check-item">Cloud-based architecture</div>
+          <div class="check-list">
+            <div class="check-item">Secure payment gateways</div>
+            <div class="check-item">Product & inventory system</div>
+            <div class="check-item">Order & shipping management</div>
+            <div class="check-item">Customer accounts & wishlist</div>
+            <div class="check-item">Coupons & offers system</div>
+          </div>
+
+          <a href="contact.html" class="btn btn-primary">Get Quote →</a>
         </div>
 
-        <a href="contact.html" class="btn btn-primary">Get Quote →</a>
       </div>
-
     </div>
-  </div>
 
-  <!-- MOBILE APP -->
-  <div class="service-card" id="mobileapp">
-    <img src="assets/services/app-development.png"
-         alt="Mobile App Development"
-         class="service-image"
-         loading="lazy">
+    <!-- DELIVERY -->
+    <div class="service-card" id="delivery">
+      <img src="assets/services/online-delivery.png" alt="Online Delivery App" class="service-image" loading="lazy">
 
-    <div class="service-preview">
+      <div class="service-preview">
 
-      <div class="sec-tag">Service 05</div>
-      <h3 class="service-section-title">Mobile Apps</h3>
+        <div class="sec-tag">Service 03</div>
+        <h3 class="service-section-title">Delivery Applications</h3>
 
-      <p class="sec-body">
-        High-performance Android & iOS apps with smooth user experience.
-      </p>
+        <p class="sec-body">
+          Real-time tracking delivery apps with order and fleet management system.
+        </p>
 
-      <div class="service-tech">
-        <span class="tech-tag">Flutter</span>
-        <span class="tech-tag">React</span>
-        <span class="tech-tag">Firebase</span>
-      </div>
-
-      <button class="show-more-btn" onclick="toggleService(this)">
-  <span class="btn-text">Show more</span>
-  <i class="fas fa-chevron-down"></i>
-</button>
-
-      <div class="feature-block">
-          <h4 class="feature-title">Key Features</h4>
-        <div class="check-list">
-          <div class="check-item">Cross-platform apps</div>
-          <div class="check-item">Push notifications</div>
-          <div class="check-item">Play Store & App Store support</div>
-          <div class="check-item">Backend API integration</div>
-          <div class="check-item">Post-launch support</div>
+        <div class="service-tech">
+          <span class="tech-tag">Flutter</span>
+          <span class="tech-tag">Firebase</span>
+          <span class="tech-tag">Maps API</span>
         </div>
 
-        <a href="contact.html" class="btn btn-primary">Get Quote →</a>
+        <button class="show-more-btn" onclick="toggleService(this)">
+          <span class="btn-text">Show more</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+
+        <div class="feature-block">
+          <h4 class="feature-title">Key Features</h4>
+          <div class="check-list">
+            <div class="check-item">Live tracking system</div>
+            <div class="check-item">Customer & delivery apps</div>
+            <div class="check-item">Admin dashboard</div>
+            <div class="check-item">Push notifications</div>
+            <div class="check-item">COD & online payments</div>
+          </div>
+
+          <a href="contact.html" class="btn btn-primary">Get Quote →</a>
+        </div>
+
       </div>
-
     </div>
-  </div>
 
-  <!-- NAV -->
-  <div class="service-nav">
-    <a href="#website"><i class="fas fa-globe"></i><span>Web</span></a>
-    <a href="#ecommerce"><i class="fas fa-cart-shopping"></i><span>Store</span></a>
-    <a href="#delivery"><i class="fas fa-truck"></i><span>Delivery</span></a>
-    <a href="#software"><i class="fas fa-code"></i><span>Soft</span></a>
-    <a href="#mobileapp"><i class="fas fa-mobile-screen-button"></i><span>Apps</span></a>
-  </div>
+    <!-- SOFTWARE -->
+    <div class="service-card" id="software">
+      <img src="assets/services/software-development.png" alt="Custom Software Development" class="service-image"
+        loading="lazy">
 
-</section>
+      <div class="service-preview">
+
+        <div class="sec-tag">Service 04</div>
+        <h3 class="service-section-title">Custom Software</h3>
+
+        <p class="sec-body">
+          Tailor-made software to automate business workflows and operations.
+        </p>
+
+        <div class="service-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">AWS</span>
+        </div>
+
+        <button class="show-more-btn" onclick="toggleService(this)">
+          <span class="btn-text">Show more</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+
+        <div class="feature-block">
+          <h4 class="feature-title">Key Features</h4>
+          <div class="check-list">
+            <div class="check-item">ERP / CRM systems</div>
+            <div class="check-item">Workflow automation</div>
+            <div class="check-item">API integrations</div>
+            <div class="check-item">Billing systems</div>
+            <div class="check-item">Cloud-based architecture</div>
+          </div>
+
+          <a href="contact.html" class="btn btn-primary">Get Quote →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MOBILE APP -->
+    <div class="service-card" id="mobileapp">
+      <img src="assets/services/app-development.png" alt="Mobile App Development" class="service-image" loading="lazy">
+
+      <div class="service-preview">
+
+        <div class="sec-tag">Service 05</div>
+        <h3 class="service-section-title">Mobile Apps</h3>
+
+        <p class="sec-body">
+          High-performance Android & iOS apps with smooth user experience.
+        </p>
+
+        <div class="service-tech">
+          <span class="tech-tag">Flutter</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Firebase</span>
+        </div>
+
+        <button class="show-more-btn" onclick="toggleService(this)">
+          <span class="btn-text">Show more</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+
+        <div class="feature-block">
+          <h4 class="feature-title">Key Features</h4>
+          <div class="check-list">
+            <div class="check-item">Cross-platform apps</div>
+            <div class="check-item">Push notifications</div>
+            <div class="check-item">Play Store & App Store support</div>
+            <div class="check-item">Backend API integration</div>
+            <div class="check-item">Post-launch support</div>
+          </div>
+
+          <a href="contact.html" class="btn btn-primary">Get Quote →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- NAV -->
+    <div class="service-nav">
+      <a href="#website"><i class="fas fa-globe"></i><span>Web</span></a>
+      <a href="#ecommerce"><i class="fas fa-cart-shopping"></i><span>Store</span></a>
+      <a href="#delivery"><i class="fas fa-truck"></i><span>Delivery</span></a>
+      <a href="#software"><i class="fas fa-code"></i><span>Soft</span></a>
+      <a href="#mobileapp"><i class="fas fa-mobile-screen-button"></i><span>Apps</span></a>
+    </div>
+
+  </section>
 
   <script src="script.js"></script>
 </body>

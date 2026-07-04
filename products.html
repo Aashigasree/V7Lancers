@@ -267,47 +267,21 @@
 
     /* Mock UI Visualization */
     .pcc-visual {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 30px;
-      height: 380px;
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-      box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.2);
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
     }
 
-    .mock-header {
-      height: 12px;
-      width: 40%;
-      background: var(--border);
-      border-radius: 4px;
-    }
-
-    .mock-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      flex-grow: 1;
-    }
-
-    .mock-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 20px;
-    }
-
-    .mock-line {
-      height: 8px;
-      background: var(--border);
-      margin-bottom: 10px;
-      border-radius: 4px;
-    }
-
-    .mock-line.short {
-      width: 60%;
+    .pcc-image {
+      width: 100%;
+      max-width: 500px;
+      /* Adjust as needed */
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      object-fit: cover;
     }
 
     /* Responsive adjustments */
@@ -520,21 +494,7 @@
               </div>
 
               <div class="pcc-visual">
-                <div class="mock-header"></div>
-                <div class="mock-grid">
-                  <div class="mock-card">
-                    <div class="mock-line"></div>
-                    <div class="mock-line short"></div>
-                  </div>
-                  <div class="mock-card">
-                    <div class="mock-line"></div>
-                    <div class="mock-line short"></div>
-                  </div>
-                  <div class="mock-card" style="grid-column: span 2">
-                    <div class="mock-line"></div>
-                    <div class="mock-line"></div>
-                  </div>
-                </div>
+                <img src="assets/home-product/eezycrm-dashboard.png" alt="Project Preview" class="pcc-image">
               </div>
 
               <!-- FULL-WIDTH ACTIONS ROW -->
@@ -552,66 +512,127 @@
             <!-- EezyCRM MORE FEATURES -->
             <div class="more-features-wrap" id="eezy-more">
               <div class="more-features-grid">
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">📬</span>
-                  <div class="mf-card-title">Automated Follow-Ups</div>
-                  <div class="mf-card-desc">Schedule drip campaigns and auto-reminders to keep leads warm.</div>
+                  <span class="mf-card-icon">👥</span>
+                  <div class="mf-card-title">Unlimited Users</div>
+                  <div class="mf-card-desc">
+                    Create unlimited users across departments with role-based permissions and access.
+                  </div>
                 </div>
+
+                <div class="mf-card">
+                  <span class="mf-card-icon">⏰</span>
+                  <div class="mf-card-title">Login Hours</div>
+                  <div class="mf-card-desc">
+                    Track and calculate login hours for every user to monitor attendance.
+                  </div>
+                </div>
+
+                <div class="mf-card">
+                  <span class="mf-card-icon">📝</span>
+                  <div class="mf-card-title">Onboarding Process</div>
+                  <div class="mf-card-desc">
+                    Manage employee onboarding with predefined processes and checklists.
+                  </div>
+                </div>
+
+                <div class="mf-card">
+                  <span class="mf-card-icon">🎯</span>
+                  <div class="mf-card-title">Lead Management</div>
+                  <div class="mf-card-desc">
+                    Create, manage, and nurture leads with reminders, notes, lead scoring, and activity logs.
+                  </div>
+                </div>
+
                 <div class="mf-card">
                   <span class="mf-card-icon">👤</span>
-                  <div class="mf-card-title">Contact & Account Management</div>
-                  <div class="mf-card-desc">Centralize all client profiles, history, and interactions.</div>
+                  <div class="mf-card-title">Customer Management</div>
+                  <div class="mf-card-desc">
+                    Maintain customer profiles with multiple contacts and complete interaction history.
+                  </div>
                 </div>
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">🗂️</span>
-                  <div class="mf-card-title">Custom Fields & Data Structures</div>
-                  <div class="mf-card-desc">Build flexible forms and records tailored to your workflow.</div>
+                  <span class="mf-card-icon">📄</span>
+                  <div class="mf-card-title">Quotations & Estimates</div>
+                  <div class="mf-card-desc">
+                    Create quotations and estimates, send reminders, and track quote status.
+                  </div>
                 </div>
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">🔐</span>
-                  <div class="mf-card-title">Role-Based Permissions</div>
-                  <div class="mf-card-desc">Control team access with granular user roles and visibility rules.</div>
+                  <span class="mf-card-icon">💳</span>
+                  <div class="mf-card-title">Invoices & Payments</div>
+                  <div class="mf-card-desc">
+                    Generate invoices, monitor overdue payments, and send automatic payment reminders.
+                  </div>
                 </div>
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">📧</span>
-                  <div class="mf-card-title">Email Integration & Inbox Sync</div>
-                  <div class="mf-card-desc">Connect your mailbox and track all client email threads directly.</div>
+                  <span class="mf-card-icon">📊</span>
+                  <div class="mf-card-title">Project Management</div>
+                  <div class="mf-card-desc">
+                    Manage projects with stages, milestones, tasks, files, and a powerful dashboard.
+                  </div>
                 </div>
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">🧾</span>
-                  <div class="mf-card-title">Quotation & Invoice Generation</div>
-                  <div class="mf-card-desc">Create and send professional quotes and invoices in seconds.</div>
+                  <span class="mf-card-icon">✅</span>
+                  <div class="mf-card-title">Task Management</div>
+                  <div class="mf-card-desc">
+                    Assign tasks with priorities, deadlines, checklists, comments, and overdue reminders.
+                  </div>
                 </div>
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">🛍️</span>
-                  <div class="mf-card-title">Product & Service Catalogue</div>
-                  <div class="mf-card-desc">Maintain a master list of offerings with pricing and descriptions.</div>
+                  <span class="mf-card-icon">🎧</span>
+                  <div class="mf-card-title">Support Management</div>
+                  <div class="mf-card-desc">
+                    Allow clients to raise support tickets and monitor them until resolution.
+                  </div>
                 </div>
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">💱</span>
-                  <div class="mf-card-title">Multi-Currency & Tax Support</div>
-                  <div class="mf-card-desc">Handle global clients with auto currency conversion and tax rules.</div>
+                  <span class="mf-card-icon">🎯</span>
+                  <div class="mf-card-title">Goal Management</div>
+                  <div class="mf-card-desc">
+                    Set and monitor goals for leads, conversions, revenue, contracts, and more.
+                  </div>
                 </div>
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">📎</span>
-                  <div class="mf-card-title">Document Storage & Attachments</div>
-                  <div class="mf-card-desc">Attach contracts, images, and files directly to records and deals.</div>
+                  <span class="mf-card-icon">📑</span>
+                  <div class="mf-card-title">Contract Management</div>
+                  <div class="mf-card-desc">
+                    Manage contracts with renewal history, digital signatures, and expiry reminders.
+                  </div>
                 </div>
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">📱</span>
-                  <div class="mf-card-title">Mobile-Friendly Dashboard</div>
-                  <div class="mf-card-desc">Access your CRM on the go with a fully responsive mobile interface.</div>
+                  <span class="mf-card-icon">🤖</span>
+                  <div class="mf-card-title">AI Reports</div>
+                  <div class="mf-card-desc">
+                    Generate intelligent reports and gain insights through AI-powered data analysis.
+                  </div>
                 </div>
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">🔌</span>
-                  <div class="mf-card-title">API & Third-Party Integrations</div>
-                  <div class="mf-card-desc">Connect to your favourite tools via open API and native integrations.</div>
+                  <span class="mf-card-icon">🌐</span>
+                  <div class="mf-card-title">Customer Care Portal</div>
+                  <div class="mf-card-desc">
+                    Let clients track projects, raise tickets, download invoices, and access files.
+                  </div>
                 </div>
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">📋</span>
-                  <div class="mf-card-title">Audit Trail & Compliance Logs</div>
-                  <div class="mf-card-desc">Track every action with timestamped logs for full accountability.</div>
+                  <span class="mf-card-icon">🔗</span>
+                  <div class="mf-card-title">Third-Party Integrations</div>
+                  <div class="mf-card-desc">
+                    Seamlessly integrate with WhatsApp, Meta, JustDial, IndiaMart, PayPal, Stripe, Razorpay, and more.
+                  </div>
                 </div>
+
               </div>
             </div>
 
@@ -635,14 +656,7 @@
               </div>
 
               <div class="pcc-visual">
-                <div class="mock-header" style="width:60%; background:var(--accent)"></div>
-                <div class="mock-card"
-                  style="flex-grow:1; display:flex; flex-direction:column; justify-content:center; align-items:center;">
-                  <div style="font-size:3rem; margin-bottom:15px; color:var(--accent); font-family:var(--font-display)">
-                    88%</div>
-                  <div class="mock-line" style="width:80%"></div>
-                  <div class="mock-line short" style="width:40%"></div>
-                </div>
+                <img src="assets/home-product/meritrack-dashboard.png" alt="Project Preview" class="pcc-image">
               </div>
 
               <!-- FULL-WIDTH ACTIONS ROW -->
@@ -660,72 +674,128 @@
             <!-- MeriTrack MORE FEATURES -->
             <div class="more-features-wrap" id="meri-more">
               <div class="more-features-grid">
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">🧠</span>
-                  <div class="mf-card-title">AI Question Bank Builder</div>
-                  <div class="mf-card-desc">Auto-generate topic-wise questions at varied difficulty levels using AI.
+                  <span class="mf-card-icon">👥</span>
+                  <div class="mf-card-title">User Groups</div>
+                  <div class="mf-card-desc">
+                    Create and categorize students into user groups based on course, branch, admission, or other
+                    parameters.
                   </div>
                 </div>
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">⏱️</span>
-                  <div class="mf-card-title">Timed & Scheduled Exams</div>
-                  <div class="mf-card-desc">Set exam windows, auto-start, auto-submit, and time-limit controls.</div>
-                </div>
-                <div class="mf-card">
-                  <span class="mf-card-icon">🎯</span>
-                  <div class="mf-card-title">Instant Result & Score Cards</div>
-                  <div class="mf-card-desc">Publish results immediately after submission with detailed score breakdowns.
+                  <span class="mf-card-icon">👨‍🏫</span>
+                  <div class="mf-card-title">Instructor Portal</div>
+                  <div class="mf-card-desc">
+                    Manage students, courses, learning materials, quizzes, exams, and student progress from one portal.
                   </div>
                 </div>
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">👁️</span>
-                  <div class="mf-card-title">AI Proctoring & Tab Detection</div>
-                  <div class="mf-card-desc">Monitor screen activity, tab switches, and suspicious behaviour in real
-                    time.</div>
-                </div>
-                <div class="mf-card">
-                  <span class="mf-card-icon">📊</span>
-                  <div class="mf-card-title">Student Performance Analytics</div>
-                  <div class="mf-card-desc">Track progress trends, weak areas, and improvement over multiple attempts.
+                  <span class="mf-card-icon">📚</span>
+                  <div class="mf-card-title">Practice Sets & Assignments</div>
+                  <div class="mf-card-desc">
+                    Create unlimited practice sets and assignments to help students learn and earn credits.
                   </div>
                 </div>
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">🏫</span>
-                  <div class="mf-card-title">Multi-Batch & Class Management</div>
-                  <div class="mf-card-desc">Organise students into batches, sections, and assign exams accordingly.
+                  <span class="mf-card-icon">❓</span>
+                  <div class="mf-card-title">Quiz Portal</div>
+                  <div class="mf-card-desc">
+                    Schedule quizzes for user groups with leaderboards, reports, and progress tracking.
                   </div>
                 </div>
+
                 <div class="mf-card">
                   <span class="mf-card-icon">📝</span>
-                  <div class="mf-card-title">Descriptive & MCQ Support</div>
-                  <div class="mf-card-desc">Support both multiple-choice and long-form descriptive answer formats.</div>
-                </div>
-                <div class="mf-card">
-                  <span class="mf-card-icon">🔀</span>
-                  <div class="mf-card-title">Question Randomisation</div>
-                  <div class="mf-card-desc">Shuffle questions and options per student to prevent copying.</div>
-                </div>
-                <div class="mf-card">
-                  <span class="mf-card-icon">📜</span>
-                  <div class="mf-card-title">Auto Certificate Generation</div>
-                  <div class="mf-card-desc">Issue branded certificates automatically upon exam completion and passing.
+                  <div class="mf-card-title">Mock Exam Portal</div>
+                  <div class="mf-card-desc">
+                    Organize certification, course completion, and mock exams with multiple sections and cut-offs.
                   </div>
                 </div>
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">🌐</span>
-                  <div class="mf-card-title">Multilingual Exam Support</div>
-                  <div class="mf-card-desc">Conduct exams in multiple languages for diverse student groups.</div>
+                  <span class="mf-card-icon">🎥</span>
+                  <div class="mf-card-title">Multi-Format Questions</div>
+                  <div class="mf-card-desc">
+                    Create engaging questions using audio, video, comprehension, fill-in-the-blanks, and more.
+                  </div>
                 </div>
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">📱</span>
-                  <div class="mf-card-title">Mobile-Optimised Interface</div>
-                  <div class="mf-card-desc">Students can attempt exams seamlessly on any smartphone or tablet.</div>
+                  <span class="mf-card-icon">📖</span>
+                  <div class="mf-card-title">Learning Materials</div>
+                  <div class="mf-card-desc">
+                    Upload videos and digital study materials under subjects and chapters for student access.
+                  </div>
                 </div>
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">🔗</span>
-                  <div class="mf-card-title">LMS & Portal Integration</div>
-                  <div class="mf-card-desc">Embed MeriTrack into your existing learning management system via API.</div>
+                  <span class="mf-card-icon">💡</span>
+                  <div class="mf-card-title">Solutions & Explanations</div>
+                  <div class="mf-card-desc">
+                    Allow students to view solutions and explanations after completing assessments.
+                  </div>
                 </div>
+
+                <div class="mf-card">
+                  <span class="mf-card-icon">📑</span>
+                  <div class="mf-card-title">Multi-Section Exam</div>
+                  <div class="mf-card-desc">
+                    Conduct exams with multiple sections, section-wise cut-offs, and time limits.
+                  </div>
+                </div>
+
+                <div class="mf-card">
+                  <span class="mf-card-icon">🏆</span>
+                  <div class="mf-card-title">Leader Board</div>
+                  <div class="mf-card-desc">
+                    Automatically generate rankings and percentiles after every assessment.
+                  </div>
+                </div>
+
+                <div class="mf-card">
+                  <span class="mf-card-icon">📅</span>
+                  <div class="mf-card-title">Fixed & Flexible Schedules</div>
+                  <div class="mf-card-desc">
+                    Create exams with fixed or flexible schedules and multiple slots for different user groups.
+                  </div>
+                </div>
+
+                <div class="mf-card">
+                  <span class="mf-card-icon">🗂️</span>
+                  <div class="mf-card-title">Question Bank</div>
+                  <div class="mf-card-desc">
+                    Manage 100,000+ categorized questions with easy Excel import support.
+                  </div>
+                </div>
+
+                <div class="mf-card">
+                  <span class="mf-card-icon">🤖</span>
+                  <div class="mf-card-title">AI Question Generator</div>
+                  <div class="mf-card-desc">
+                    Generate questions automatically using AI from subjects or uploaded study materials.
+                  </div>
+                </div>
+
+                <div class="mf-card">
+                  <span class="mf-card-icon">📊</span>
+                  <div class="mf-card-title">Analytical Reports</div>
+                  <div class="mf-card-desc">
+                    Analyze student performance with insights on speed, accuracy, strengths, and improvement areas.
+                  </div>
+                </div>
+
+                <div class="mf-card">
+                  <span class="mf-card-icon">💳</span>
+                  <div class="mf-card-title">Subscription Plans</div>
+                  <div class="mf-card-desc">
+                    Create paid packages and online subscription plans to unlock quizzes and exams.
+                  </div>
+                </div>
+
               </div>
             </div>
 
@@ -749,13 +819,7 @@
               </div>
 
               <div class="pcc-visual">
-                <div class="mock-grid">
-                  <div class="mock-card" style="background:var(--border)"></div>
-                  <div class="mock-card" style="background:var(--border)"></div>
-                  <div class="mock-card" style="background:var(--border)"></div>
-                  <div class="mock-card" style="background:var(--border)"></div>
-                </div>
-                <div class="mock-line" style="margin-top:10px"></div>
+                <img src="assets/home-product/docwave-dashboard.png" alt="Project Preview" class="pcc-image">
               </div>
 
               <!-- FULL-WIDTH ACTIONS ROW -->
@@ -773,72 +837,111 @@
             <!-- DocWave MORE FEATURES -->
             <div class="more-features-wrap" id="doc-more">
               <div class="more-features-grid">
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">🔍</span>
-                  <div class="mf-card-title">AI Full-Text Search</div>
-                  <div class="mf-card-desc">Search inside document content, not just filenames, with AI-powered
-                    indexing.</div>
-                </div>
-                <div class="mf-card">
-                  <span class="mf-card-icon">✅</span>
-                  <div class="mf-card-title">Multi-Level Approval Workflows</div>
-                  <div class="mf-card-desc">Route documents through sequential or parallel approval chains
-                    automatically.</div>
-                </div>
-                <div class="mf-card">
-                  <span class="mf-card-icon">🔒</span>
-                  <div class="mf-card-title">Document Encryption at Rest</div>
-                  <div class="mf-card-desc">All files are encrypted at storage level with AES-256 security standards.
+                  <span class="mf-card-icon">📁</span>
+                  <div class="mf-card-title">File & Document Manager</div>
+                  <div class="mf-card-desc">
+                    Organize and store all files and documents centrally with different access levels.
                   </div>
                 </div>
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">🗃️</span>
-                  <div class="mf-card-title">Smart Folder & Tag System</div>
-                  <div class="mf-card-desc">Auto-categorise documents using tags, metadata, and AI-suggested folders.
+                  <span class="mf-card-icon">📄</span>
+                  <div class="mf-card-title">Document Version</div>
+                  <div class="mf-card-desc">
+                    Manage multiple document versions, view history, and restore previous versions anytime.
                   </div>
                 </div>
+
                 <div class="mf-card">
                   <span class="mf-card-icon">📤</span>
-                  <div class="mf-card-title">Secure External Sharing</div>
-                  <div class="mf-card-desc">Share files via expiry-linked secure URLs with download controls.</div>
-                </div>
-                <div class="mf-card">
-                  <span class="mf-card-icon">📆</span>
-                  <div class="mf-card-title">Document Expiry & Renewal Alerts</div>
-                  <div class="mf-card-desc">Get notified before contracts, licences, or certificates expire.</div>
-                </div>
-                <div class="mf-card">
-                  <span class="mf-card-icon">🖊️</span>
-                  <div class="mf-card-title">e-Signature Integration</div>
-                  <div class="mf-card-desc">Collect legally binding digital signatures directly within the platform.
+                  <div class="mf-card-title">Bulk File Upload</div>
+                  <div class="mf-card-desc">
+                    Upload multiple files in one click, categorize them, and assign access permissions.
                   </div>
                 </div>
-                <div class="mf-card">
-                  <span class="mf-card-icon">📋</span>
-                  <div class="mf-card-title">Version Control & History</div>
-                  <div class="mf-card-desc">Track every edit, compare versions, and restore previous document states.
-                  </div>
-                </div>
-                <div class="mf-card">
-                  <span class="mf-card-icon">👥</span>
-                  <div class="mf-card-title">Team & Department Access Control</div>
-                  <div class="mf-card-desc">Restrict document visibility by team, role, or department level.</div>
-                </div>
+
                 <div class="mf-card">
                   <span class="mf-card-icon">🔗</span>
-                  <div class="mf-card-title">ERP & CRM Integration</div>
-                  <div class="mf-card-desc">Connect DocWave to your ERP, CRM, or HRMS for seamless document flow.</div>
+                  <div class="mf-card-title">File Request Link</div>
+                  <div class="mf-card-desc">
+                    Generate secure file request links with passwords, expiry dates, and upload limits.
+                  </div>
                 </div>
+
                 <div class="mf-card">
-                  <span class="mf-card-icon">📊</span>
-                  <div class="mf-card-title">Usage & Compliance Reports</div>
-                  <div class="mf-card-desc">Generate audit-ready reports on document access, edits, and approvals.</div>
+                  <span class="mf-card-icon">🔄</span>
+                  <div class="mf-card-title">Workflow Management</div>
+                  <div class="mf-card-desc">
+                    Route documents through multi-stage workflows with step-by-step tracking.
+                  </div>
                 </div>
+
+                <div class="mf-card">
+                  <span class="mf-card-icon">🗄️</span>
+                  <div class="mf-card-title">Archive & Expiry Files</div>
+                  <div class="mf-card-desc">
+                    Automatically move files to archive or expiry folders for better organization.
+                  </div>
+                </div>
+
+                <div class="mf-card">
+                  <span class="mf-card-icon">🔍</span>
+                  <div class="mf-card-title">Deep Search</div>
+                  <div class="mf-card-desc">
+                    OCR-powered search lets you find documents instantly using words inside the files.
+                  </div>
+                </div>
+
+                <div class="mf-card">
+                  <span class="mf-card-icon">📨</span>
+                  <div class="mf-card-title">File Sharing</div>
+                  <div class="mf-card-desc">
+                    Securely share files with internal or external users using passwords and expiry links.
+                  </div>
+                </div>
+
+                <div class="mf-card">
+                  <span class="mf-card-icon">📋</span>
+                  <div class="mf-card-title">Document Audit Trail</div>
+                  <div class="mf-card-desc">
+                    Track every document activity with a complete audit log of user actions.
+                  </div>
+                </div>
+
+                <div class="mf-card">
+                  <span class="mf-card-icon">💬</span>
+                  <div class="mf-card-title">Comments & Notes</div>
+                  <div class="mf-card-desc">
+                    Add comments and notes to documents to keep track of discussions and updates.
+                  </div>
+                </div>
+
+                <div class="mf-card">
+                  <span class="mf-card-icon">🖨️</span>
+                  <div class="mf-card-title">TWAIN Scanner</div>
+                  <div class="mf-card-desc">
+                    Scan documents directly into DocWave without storing them locally.
+                  </div>
+                </div>
+
                 <div class="mf-card">
                   <span class="mf-card-icon">☁️</span>
-                  <div class="mf-card-title">Cloud & On-Premise Deployment</div>
-                  <div class="mf-card-desc">Choose cloud-hosted or self-hosted deployment to match your IT policy.</div>
+                  <div class="mf-card-title">Amazon S3 Storage</div>
+                  <div class="mf-card-desc">
+                    Store files locally or on Amazon S3 with seamless dual-storage support.
+                  </div>
                 </div>
+
+                <div class="mf-card">
+                  <span class="mf-card-icon">🤖</span>
+                  <div class="mf-card-title">AI Document Writer</div>
+                  <div class="mf-card-desc">
+                    Generate professional documents and templates instantly using integrated AI tools.
+                  </div>
+                </div>
+
               </div>
             </div>
 
@@ -862,13 +965,7 @@
               </div>
 
               <div class="pcc-visual">
-                <div class="mock-grid">
-                  <div class="mock-card" style="background:var(--border)"></div>
-                  <div class="mock-card" style="background:var(--border)"></div>
-                  <div class="mock-card" style="background:var(--border)"></div>
-                  <div class="mock-card" style="background:var(--border)"></div>
-                </div>
-                <div class="mock-line" style="margin-top:10px"></div>
+                <img src="assets/home-product/eezytrack-dashboard.png" alt="Project Preview" class="pcc-image">
               </div>
 
               <!-- FULL-WIDTH ACTIONS ROW -->
@@ -1273,166 +1370,158 @@
   <!-- ══════════════════════════════════════════════
        MOBILE VERSION
   ══════════════════════════════════════════════ -->
-<section class="mobile-products-page mobile-only">
-  <div class="mobile-product-header">
-    <h1>Product Suite</h1>
-    <p>Explore our AI-powered products</p>
-  </div>
+  <section class="mobile-products-page mobile-only">
+    <div class="mobile-product-header">
+      <h1>Product Suite</h1>
+      <p>Explore our AI-powered products</p>
+    </div>
 
-  <div class="product-tip">
-    Swipe to discover our products
-  </div>
+    <div class="product-tip">
+      Swipe to discover our products
+    </div>
 
-  <div class="product-slider" id="productSlider">
+    <div class="product-slider" id="productSlider">
 
-    <!-- EezyCRM -->
-    <article class="product-slide" id="eezycrm">
-      <img src="assets/home-product/eezycrm-dashboard.png" alt="EezyCRM">
+      <!-- EezyCRM -->
+      <article class="product-slide" id="eezycrm">
+        <img src="assets/home-product/eezycrm-dashboard.png" alt="EezyCRM">
 
-      <div class="product-slide-content">
-        <h2>EezyCRM</h2>
-        <span class="tagline">CRM Platform</span>
+        <div class="product-slide-content">
+          <h2>EezyCRM</h2>
+          <span class="tagline">CRM Platform</span>
 
-        <p>
-          Manage leads, customers, projects, support operations,
-          and business performance from one unified system.
-        </p>
+          <p>
+            Manage leads, customers, projects, support operations,
+            and business performance from one unified system.
+          </p>
 
-        <ul class="product-features">
-          <li><i class="fas fa-user-group"></i> Lead Management</li>
-          <li><i class="fas fa-handshake"></i> Project Collaboration</li>
-          <li><i class="fas fa-chart-pie"></i> Finance Reports</li>
-          <li><i class="fas fa-headset"></i> Customer Support</li>
-        </ul>
+          <ul class="product-features">
+            <li><i class="fas fa-user-group"></i> Lead Management</li>
+            <li><i class="fas fa-handshake"></i> Project Collaboration</li>
+            <li><i class="fas fa-chart-pie"></i> Finance Reports</li>
+            <li><i class="fas fa-headset"></i> Customer Support</li>
+          </ul>
 
-        <div class="slide-actions">
-          <a href="contact.html" class="btn btn-primary">Request Demo</a>
-          <a href="assets/brochures/eezycrm-brochure.pdf"
-             class="btn btn-outline"
-             download>
-            Download Brochure
-          </a>
+          <div class="slide-actions">
+            <a href="contact.html" class="btn btn-primary">Request Demo</a>
+            <a href="assets/brochures/eezycrm-brochure.pdf" class="btn btn-outline" download>
+              Download Brochure
+            </a>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <!-- MeriTrack -->
-    <article class="product-slide" id="meritrack">
-      <img src="assets/home-product/meritrack-dashboard.png" alt="MeriTrack">
+      <!-- MeriTrack -->
+      <article class="product-slide" id="meritrack">
+        <img src="assets/home-product/meritrack-dashboard.png" alt="MeriTrack">
 
-      <div class="product-slide-content">
-        <h2>MeriTrack</h2>
-        <span class="tagline">AI Exam Platform</span>
+        <div class="product-slide-content">
+          <h2>MeriTrack</h2>
+          <span class="tagline">AI Exam Platform</span>
 
-        <p>
-          AI-powered examination platform for schools, colleges,
-          academies and training centres.
-        </p>
+          <p>
+            AI-powered examination platform for schools, colleges,
+            academies and training centres.
+          </p>
 
-        <ul class="product-features">
-          <li><i class="fas fa-infinity"></i> Unlimited Exams</li>
-          <li><i class="fas fa-robot"></i> AI Question Generation</li>
-          <li><i class="fas fa-user-shield"></i> Smart Proctoring</li>
-          <li><i class="fas fa-bolt"></i> Instant Evaluation</li>
-        </ul>
+          <ul class="product-features">
+            <li><i class="fas fa-infinity"></i> Unlimited Exams</li>
+            <li><i class="fas fa-robot"></i> AI Question Generation</li>
+            <li><i class="fas fa-user-shield"></i> Smart Proctoring</li>
+            <li><i class="fas fa-bolt"></i> Instant Evaluation</li>
+          </ul>
 
-        <div class="slide-actions">
-          <a href="contact.html" class="btn btn-primary">Request Demo</a>
-          <a href="assets/brochures/meritrack-brochure.pdf"
-             class="btn btn-outline"
-             download>
-            Download Brochure
-          </a>
+          <div class="slide-actions">
+            <a href="contact.html" class="btn btn-primary">Request Demo</a>
+            <a href="assets/brochures/meritrack-brochure.pdf" class="btn btn-outline" download>
+              Download Brochure
+            </a>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <!-- DocWave -->
-    <article class="product-slide" id="docwave">
-      <img src="assets/home-product/docwave-dashboard.png" alt="DocWave">
+      <!-- DocWave -->
+      <article class="product-slide" id="docwave">
+        <img src="assets/home-product/docwave-dashboard.png" alt="DocWave">
 
-      <div class="product-slide-content">
-        <h2>DocWave</h2>
-        <span class="tagline">Document Management</span>
+        <div class="product-slide-content">
+          <h2>DocWave</h2>
+          <span class="tagline">Document Management</span>
 
-        <p>
-          Securely store, organize and retrieve documents with
-          AI-powered search and workflow automation.
-        </p>
+          <p>
+            Securely store, organize and retrieve documents with
+            AI-powered search and workflow automation.
+          </p>
 
-        <ul class="product-features">
-          <li><i class="fas fa-magnifying-glass"></i> AI Search</li>
-          <li><i class="fas fa-diagram-project"></i> Approval Workflow</li>
-          <li><i class="fas fa-share-nodes"></i> File Sharing</li>
-          <li><i class="fas fa-lock"></i> Auto Encryption</li>
-        </ul>
+          <ul class="product-features">
+            <li><i class="fas fa-magnifying-glass"></i> AI Search</li>
+            <li><i class="fas fa-diagram-project"></i> Approval Workflow</li>
+            <li><i class="fas fa-share-nodes"></i> File Sharing</li>
+            <li><i class="fas fa-lock"></i> Auto Encryption</li>
+          </ul>
 
-        <div class="slide-actions">
-          <a href="contact.html" class="btn btn-primary">Request Demo</a>
-          <a href="assets/brochures/docwave-brochure.pdf"
-             class="btn btn-outline"
-             download>
-            Download Brochure
-          </a>
+          <div class="slide-actions">
+            <a href="contact.html" class="btn btn-primary">Request Demo</a>
+            <a href="assets/brochures/docwave-brochure.pdf" class="btn btn-outline" download>
+              Download Brochure
+            </a>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <!-- EezyTrack -->
-    <article class="product-slide" id="product-eezytrack">
-      <img src="assets/home-product/eezytrack-dashboard.png" alt="EezyTrack">
+      <!-- EezyTrack -->
+      <article class="product-slide" id="product-eezytrack">
+        <img src="assets/home-product/eezytrack-dashboard.png" alt="EezyTrack">
 
-      <div class="product-slide-content">
-        <h2>EezyTrack</h2>
-        <span class="tagline">Field Tracking Platform</span>
+        <div class="product-slide-content">
+          <h2>EezyTrack</h2>
+          <span class="tagline">Field Tracking Platform</span>
 
-        <p>
-          Track field teams, routes, travel activity and productivity
-          in real time.
-        </p>
+          <p>
+            Track field teams, routes, travel activity and productivity
+            in real time.
+          </p>
 
-        <ul class="product-features">
-          <li><i class="fas fa-location-dot"></i> Live Tracking</li>
-          <li><i class="fas fa-route"></i> Route Analytics</li>
-          <li><i class="fas fa-file-lines"></i> Travel Reports</li>
-          <li><i class="fas fa-chart-line"></i> Productivity Insights</li>
-        </ul>
+          <ul class="product-features">
+            <li><i class="fas fa-location-dot"></i> Live Tracking</li>
+            <li><i class="fas fa-route"></i> Route Analytics</li>
+            <li><i class="fas fa-file-lines"></i> Travel Reports</li>
+            <li><i class="fas fa-chart-line"></i> Productivity Insights</li>
+          </ul>
 
-        <div class="slide-actions">
-          <a href="contact.html" class="btn btn-primary">Request Demo</a>
-          <a href="assets/brochures/eezytrack-brochure.pdf"
-             class="btn btn-outline"
-             download>
-            Download Brochure
-          </a>
+          <div class="slide-actions">
+            <a href="contact.html" class="btn btn-primary">Request Demo</a>
+            <a href="assets/brochures/eezytrack-brochure.pdf" class="btn btn-outline" download>
+              Download Brochure
+            </a>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
 
-  </div>
+    </div>
 
-<div class="product-nav">
-    <a href="#eezycrm" >
+    <div class="product-nav">
+      <a href="#eezycrm">
         <i class="fas fa-users"></i>
         <span>EezyCRM</span>
-    </a>
+      </a>
 
-    <a href="#meritrack">
+      <a href="#meritrack">
         <i class="fas fa-graduation-cap"></i>
         <span>MeriTrack</span>
-    </a>
+      </a>
 
-    <a href="#docwave">
+      <a href="#docwave">
         <i class="fas fa-file-lines"></i>
         <span>DocWave</span>
-    </a>
+      </a>
 
-    <a href="#product-eezytrack">
+      <a href="#product-eezytrack">
         <i class="fas fa-location-dot"></i>
         <span>EezyTrack</span>
-    </a>
-</div>
-</section>
+      </a>
+    </div>
+  </section>
 
   <script src="script.js"></script>
   <script>

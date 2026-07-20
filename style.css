@@ -2230,10 +2230,10 @@ a.nav-logo:hover .site-logo {
   position: relative;
   width: 100%;
   max-width: 550px;
-  aspect-ratio: 3 / 4;
-  margin: auto;
+  margin: 70px auto 0;
   overflow: hidden;
-  transform: translate(-20px, -90px);
+  transform: translateX(-20px);
+  aspect-ratio: 1402 / 1082;
 }
 
 .timeline-left-img img {

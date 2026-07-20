@@ -2278,73 +2278,114 @@ a.nav-logo:hover .site-logo {
 /* ── Photo column ───────────────────────────────────────────────────────── */
 .director-photo-col {
   background: var(--bg);
-  display: flex !important;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 2rem 1.5rem 1.75rem;
   min-height: 420px;
-}
-
-/* If using the real image instead of placeholder */
-.director-photo-col .director-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 10px;
-  margin-bottom: auto;
-}
-
-.director-photo-placeholder {
-  width: 170px;
-  height: 210px;
-  border-radius: 12px;
-  background: var(--surface);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  margin-bottom: auto;
+  padding: 0;
+}
+
+/* Main profile card */
+.director-profile-card {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  background: var(--bg);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative circles */
+.director-profile-card::before,
+.director-profile-card::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.director-profile-card::before {
+  width: 280px;
+  height: 280px;
+  top: -140px;
+  right: -120px;
+}
+
+.director-profile-card::after {
+  width: 220px;
+  height: 220px;
+  bottom: -100px;
+  left: -90px;
+}
+
+/* Placeholder */
+.director-photo-placeholder {
+  width: 170px;
+  height: 210px;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .director-initials {
-  font-size: 54px;
-  font-weight: 700;
+  font-size: 64px;
+  font-weight: 800;
   color: var(--muted);
   letter-spacing: -2px;
 }
 
-.director-photo-label {
-  margin-top: 1.25rem;
-  text-align: center;
+.director-profile-content {
+  position: relative;
+  z-index: 2;
 }
 
 .director-photo-name {
   color: var(--text);
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: .75rem;
 }
 
 .director-role-pill {
   display: inline-block;
-  margin-top: 6px;
+  padding: 6px 16px;
+  border-radius: 999px;
   background: var(--surface);
-  color: var(--muted);
-  font-size: 10.5px;
-  padding: 3px 12px;
-  border-radius: 20px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  color: var(--primary);
+  border: 1px solid rgba(255, 255, 255, .08);
+  font-size: .72rem;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.director-quote {
+  max-width: 340px;
+  margin: 1.5rem auto;
+  color: var(--muted);
+  font-size: .95rem;
+  line-height: 1.8;
+  font-style: italic;
 }
 
 .director-edu-badge {
-  margin-top: 14px;
-  font-size: 11px;
+  margin-top: 1.5rem;
   color: var(--muted);
-  text-align: center;
-  line-height: 1.65;
+  font-size: .85rem;
+  line-height: 1.7;
 }
 
 /* ── Info column ────────────────────────────────────────────────────────── */
